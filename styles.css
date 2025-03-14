@@ -72,6 +72,7 @@
     @apply text-base md:text-lg;
   }
 
+  /* Ensure text is not stretched across the full screen */
   .content {
     @apply max-w-screen-xl mx-auto px-6;
   }
@@ -117,8 +118,27 @@
     @apply glass-card hover:bg-blue-700/5 transition-all duration-300;
   }
 
+  /* Hero section with the background image */
+  .hero-section {
+    background-image: url('images/Hero Image.JPG'); /* Link to the hero image */
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .hero-text {
+    @apply font-bold text-4xl sm:text-5xl md:text-6xl text-shadow-lg;
+  }
+
+  /* Parallax effect section */
   .parallax {
-    background: linear-gradient(to bottom right, #6ee7b7, #3b82f6);
+    background: linear-gradient(to bottom right, #6ee7b7, #3b82f6); /* Gradient from green to blue */
     height: 100vh;
     background-size: cover;
     background-position: center;
@@ -131,6 +151,7 @@
     padding: 2rem;
   }
 
+  /* Call to Action Button Styling */
   .cta-button {
     background-color: #1e40af;
     color: #fff;
