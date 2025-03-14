@@ -1,4 +1,4 @@
-/* Global Reset */
+/* Reset some default browser styles */
 * {
     margin: 0;
     padding: 0;
@@ -7,35 +7,16 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f7f7f7;
+    line-height: 1.6;
+    background-color: #f9f9f9;
     color: #333;
-    overflow-x: hidden;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--primary-color);
-}
-
-/* Color Palette */
-:root {
-    --primary-color: #00B8A9; /* Main Accent */
-    --secondary-color: #007A7D;
-    --cta-color: #FF7A00;
-    --background-color: #f8f8f8;
-    --footer-background: #222222;
-    --text-color: #333;
-}
-
-/* Header Styles */
-header {
-    background: var(--background-color);
-    padding: 60px 0;
+/* Hero Section */
+#hero {
+    background: linear-gradient(135deg, #00B8A9, #007A7D);
+    color: white;
+    padding: 80px 0;
     text-align: center;
     animation: fadeIn 1s ease-out;
 }
@@ -43,62 +24,40 @@ header {
 .hero-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
-    color: var(--text-color);
+    padding: 0 20px;
 }
 
 .hero-container h1 {
     font-size: 4rem;
     font-weight: bold;
-    color: var(--primary-color);
     margin-bottom: 20px;
 }
 
 .hero-container p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: var(--text-color);
+    font-size: 1.5rem;
+    line-height: 1.8;
     margin-bottom: 30px;
 }
 
-/* Action Buttons */
+.cta-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
 .cta {
-    background-color: var(--primary-color);
+    background-color: #FF7A00;
     color: white;
     padding: 15px 30px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    margin: 10px;
-    opacity: 0;
-    animation: fadeInUp 1s forwards;
+    transition: all 0.3s ease;
 }
 
 .cta:hover {
-    background-color: var(--cta-color);
-    transform: scale(1.1);
-}
-
-.cta:nth-child(1) {
-    animation-delay: 0.2s;
-}
-
-.cta:nth-child(2) {
-    animation-delay: 0.4s;
-}
-
-/* Section Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    background-color: #ff5500;
 }
 
 @keyframes fadeIn {
@@ -110,163 +69,68 @@ header {
     }
 }
 
+/* Section Styles */
+section {
+    padding: 80px 20px;
+    background-color: white;
+    margin-bottom: 30px;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+section ul {
+    list-style-type: none;
+}
+
+section ul li {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
 /* Problem Section */
 #problem {
-    background-color: #fff;
-    padding: 50px 0;
-    opacity: 0;
-    animation: fadeInUp 1s forwards;
-}
-
-#problem h2 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: var(--secondary-color);
-    margin-bottom: 20px;
-}
-
-#problem ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-#problem li {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-}
-
-/* Market Opportunity Section */
-#market-opportunity {
-    background-color: #fff;
-    padding: 50px 0;
-    text-align: center;
-    opacity: 0;
-    animation: fadeInUp 1s forwards;
-}
-
-#market-opportunity h2 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-#market-opportunity ul {
-    list-style: none;
-    padding-left: 0;
-    font-size: 1.2rem;
-}
-
-#market-opportunity li {
-    margin-bottom: 15px;
-}
-
-/* About KitchIN Section */
-#about {
-    padding: 50px 0;
     background-color: #f8f8f8;
-    text-align: center;
-    opacity: 0;
-    animation: fadeInUp 1s forwards;
 }
 
-#about h2 {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-#about p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: var(--text-color);
-    margin-bottom: 20px;
-}
-
-/* Competitive Advantage Section */
-#competitive-advantage {
-    padding: 50px 0;
-    background-color: #fff;
-    text-align: center;
-    opacity: 0;
-    animation: fadeInUp 1s forwards;
-}
-
-#competitive-advantage h2 {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-#competitive-advantage h3 {
-    font-size: 2rem;
-    color: var(--secondary-color);
-    margin-top: 30px;
-}
-
-#competitive-advantage ul {
-    list-style: none;
-    padding-left: 0;
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-#competitive-advantage li {
-    margin-bottom: 15px;
+.download-report {
+    display: inline-block;
+    background-color: #00B8A9;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-decoration: none;
 }
 
 /* Footer */
 footer {
-    background-color: var(--footer-background);
-    color: #fff;
-    padding: 30px 0;
     text-align: center;
-}
-
-footer a {
-    color: #fff;
-    margin: 0 15px;
-    text-decoration: none;
-}
-
-footer a:hover {
-    color: var(--primary-color);
-}
-
-/* Join Now Section */
-#join-now {
-    background-color: var(--primary-color);
-    padding: 50px 0;
+    background-color: #333;
     color: white;
-    text-align: center;
+    padding: 30px 0;
 }
 
-#join-now h2 {
-    font-size: 3rem;
+footer .socials {
+    list-style-type: none;
     margin-bottom: 20px;
 }
 
-#join-now h3 {
-    font-size: 1.5rem;
-    margin-bottom: 40px;
+footer .socials li {
+    display: inline;
+    margin: 0 15px;
 }
 
-#join-now .cta {
-    margin: 10px;
-}
-
-/* Button Hover Animation */
-button {
-    background-color: var(--primary-color);
+footer .socials a {
     color: white;
-    border: none;
-    padding: 15px 25px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    text-decoration: none;
 }
 
-button:hover {
-    background-color: var(--cta-color);
+footer p a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
 }
