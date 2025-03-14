@@ -1,181 +1,232 @@
-/* General Styling */
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f7f7f7; /* Soft light grey background */
+    font-family: 'Arial', sans-serif;
     color: #333;
+    background-color: #f7f7f7;
 }
 
-h1, h2, h3, h4 {
-    font-weight: 700;
-    color: #222;
+/* Color Palette */
+:root {
+    --primary-color: #00B8A9; /* Main Accent */
+    --secondary-color: #007A7D; /* Darker Teal */
+    --background-color: #f8f8f8; /* Light Background */
+    --text-color: #333; /* Primary Text Color */
+    --cta-color: #FF7A00; /* CTA Button Color */
+    --link-color: #007A7D; /* Link Color */
+    --footer-background: #222222; /* Footer Background */
+    --header-background: #ffffff; /* Header Background */
 }
 
-/* Hero Section */
-.hero-container {
-    text-align: center;
-    background-color: #ffffff; /* White background for the hero section */
-    padding: 100px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.hero-container h1 {
-    font-size: 4em;
-    color: #222; /* Dark text for prominence */
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-
-.hero-container p {
-    font-size: 1.25em;
-    color: #555;
-    margin-bottom: 30px;
-    line-height: 1.5;
-}
-
-/* Buttons */
-.hero-container .cta {
-    padding: 15px 40px;
-    background-color: #00B8A9; /* Accent color */
-    color: #fff;
-    border: none;
-    border-radius: 30px;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.hero-container .cta:hover {
-    background-color: #009f8a; /* Slightly darker shade on hover */
-    transform: scale(1.05);
-}
-
-.hero-container .cta:focus {
-    outline: none;
-}
-
-/* Section Styling */
-section {
-    padding: 80px 0;
-    text-align: center;
-    background-color: #ffffff;
-}
-
-h2 {
-    font-size: 2.5em;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-p {
-    font-size: 1.1em;
-    color: #666;
-    margin-bottom: 30px;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: 1.1em;
-    color: #555;
-    text-align: left;
-    display: inline-block;
-    max-width: 700px;
-}
-
-ul li {
-    margin-bottom: 10px;
-}
-
-ul li strong {
-    color: #00B8A9; /* Accent color for important text */
-}
-
+/* Global Styles */
 a {
-    color: #00B8A9;
     text-decoration: none;
-    font-weight: 600;
+    color: var(--link-color);
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #009f8a;
+    color: var(--primary-color);
 }
 
-/* Footer Styling */
-footer {
-    background-color: #333;
-    color: #fff;
+/* Header Styles */
+header {
+    background: var(--header-background);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    color: var(--text-color);
+}
+
+.hero-container h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.hero-container p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin-bottom: 30px;
+}
+
+.cta {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin: 10px;
+}
+
+.cta:hover {
+    background-color: var(--cta-color);
+}
+
+/* Problem Section */
+#problem {
+    background-color: #fff;
+    padding: 50px 0;
+}
+
+#problem h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+#problem ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#problem li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* Market Opportunity Section */
+#market-opportunity {
+    background-color: #fff;
     padding: 50px 0;
     text-align: center;
 }
 
-footer .socials {
-    display: flex;
-    justify-content: center;
+#market-opportunity h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
     margin-bottom: 20px;
 }
 
-footer .socials a {
-    margin: 0 15px;
-    font-size: 1.2em;
+#market-opportunity ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 1.2rem;
+}
+
+#market-opportunity li {
+    margin-bottom: 15px;
+}
+
+/* About KitchIN Section */
+#about {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+/* Competitive Advantage Section */
+#competitive-advantage {
+    padding: 50px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+#competitive-advantage h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+#competitive-advantage h3 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-top: 30px;
+}
+
+#competitive-advantage ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+#competitive-advantage li {
+    margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--footer-background);
     color: #fff;
-    transition: color 0.3s ease;
+    padding: 30px 0;
+    text-align: center;
 }
 
-footer .socials a:hover {
-    color: #00B8A9; /* Accent color for hover */
+footer a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
 }
 
-footer p {
-    font-size: 0.9em;
-    color: #ddd;
+footer a:hover {
+    color: var(--primary-color);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero-container h1 {
-        font-size: 2.8em; /* Adjust font size on smaller screens */
-    }
-
-    .hero-container p {
-        font-size: 1.1em;
-    }
-
-    .cta {
-        font-size: 1em;
-        padding: 12px 30px;
-    }
-
-    section {
-        padding: 60px 0;
-    }
-
-    footer .socials a {
-        font-size: 1.1em;
-    }
+/* Button Styles */
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-/* Animations */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+button:hover {
+    background-color: var(--cta-color);
 }
 
-section {
-    animation: fadeIn 1s ease-out;
+/* Join Now Section */
+#join-now {
+    background-color: var(--primary-color);
+    padding: 50px 0;
+    color: white;
+    text-align: center;
 }
 
-/* Hover Effects */
-section .cta:hover {
-    background-color: #009f8a;
-    transform: scale(1.05);
+#join-now h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+#join-now h3 {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+}
+
+#join-now .cta {
+    margin: 10px;
 }
