@@ -64,3 +64,17 @@ h2 {
 a.download-report {
     display: inline-block;
     padding: 10px 
+
+/* Form popup transition */
+.form-popup.show {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
