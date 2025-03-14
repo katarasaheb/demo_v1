@@ -16,15 +16,18 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Open Form Popup
+    // Function to open the form popup
     function openForm() {
-        formPopup.style.display = "flex";  // Show the popup
+        formPopup.classList.add("show");  // Add 'show' class to display the form
     }
 
-    // Close Form Popup
-    closeBtn.addEventListener("click", () => {
-        formPopup.style.display = "none";  // Hide the popup
-    });
+    // Function to close the form popup
+    function closeForm() {
+        formPopup.classList.remove("show");  // Remove 'show' class to hide the form
+    }
+
+    // Close form when the close button ('X') is clicked
+    closeBtn.addEventListener("click", closeForm);
 
     // Assign openForm to the Join Now buttons
     const joinButtons = document.querySelectorAll('#join-now .cta');
