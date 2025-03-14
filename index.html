@@ -26,15 +26,15 @@
         <div class="form-container">
             <span class="close-btn">&times;</span>
             <h2>Join Us</h2>
-            <form action="https://docs.google.com/forms/d/e/1FAIpQLSeJxvHyL5uK7Phde8KxdB_wXJGGhR0xd4T_2p11T82r-s9LFA/formResponse" method="post">
+            <form action="https://formspree.io/f/your-email" method="POST">
                 <label for="name">Full Name:</label>
-                <input type="text" id="name" name="entry.2005620554" required>
+                <input type="text" id="name" name="name" required>
 
                 <label for="email">Email Address:</label>
-                <input type="email" id="email" name="entry.1045781291" required>
+                <input type="email" id="email" name="email" required>
 
                 <label for="message">Message (Optional, 180 words max):</label>
-                <textarea id="message" name="entry.839337160" maxlength="180"></textarea>
+                <textarea id="message" name="message" maxlength="180"></textarea>
 
                 <input type="submit" value="Submit" class="cta">
             </form>
@@ -58,17 +58,76 @@
         </div>
     </section>
 
-    <!-- Join Now Section -->
-    <section id="join-now">
+    <!-- Market Opportunity Section -->
+    <section id="market-opportunity">
         <div class="section-content">
-            <h2>Join Us Now</h2>
-            <h3>Sign up to stay connected and be part of the grocery revolution.</h3>
-            <button class="cta" onclick="openForm()">For Customers</button>
-            <button class="cta" onclick="openForm()">For Investors</button>
-            <button class="cta" onclick="openForm()">For Partners</button>
+            <h2>Market Opportunity</h2>
+            <p>The grocery industry is ripe for disruption with significant gaps in affordability, accessibility, and personalized experiences. KitchIN is uniquely positioned to address these challenges with a hyper-local, technology-driven model.</p>
+            <ul>
+                <li><strong>Market Size & Potential:</strong> $5B market by 2026 with a 20% CAGR in online grocery.</li>
+                <li><strong>Consumer Behavior & Validation:</strong> Surveys show 90% interest in culturally tailored grocery services.</li>
+                <li><strong>Market Competitiveness & Barriers to Entry:</strong> KitchIN’s unique value proposition positions it to compete effectively.</li>
+                <li><strong>A Market Ready for Disruption:</strong> The grocery delivery market presents substantial opportunities for innovation.</li>
+            </ul>
         </div>
     </section>
 
+    <!-- About KitchIN Section -->
+    <section id="about">
+        <div class="section-content">
+            <h2>About KitchIN</h2>
+            <p>KitchIN is Canada's first grocery super app, built on a dark store network to make shopping faster, cheaper, and more efficient.</p>
+            <ul>
+                <li>Direct manufacturer pricing</li>
+                <li>Faster delivery times</li>
+                <li>Lower overhead costs</li>
+                <li>Minimal food waste</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Competitive Advantage Section -->
+    <section id="competitive-advantage">
+        <div class="section-content">
+            <h2>Competitive Advantage</h2>
+            <h3>Better for Customers</h3>
+            <ul>
+                <li><strong>Personalized AI Shopping:</strong> Smart recommendations tailored to your habits.</li>
+                <li><strong>Local Sourcing, Sustainable Choices:</strong> Fresh produce with a lower carbon footprint.</li>
+                <li><strong>Superfast Delivery:</strong> Get groceries delivered in minutes.</li>
+            </ul>
+            <button class="cta">Signup for Launch Updates</button>
+
+            <h3>Better for Investors</h3>
+            <ul>
+                <li><strong>Disrupting a $100B Industry:</strong> We're reshaping the future of food retail.</li>
+                <li><strong>Scalable, Tech-Driven Model:</strong> High-margin operations and strong economics.</li>
+                <li><strong>First-Mover Advantage:</strong> The only dark store grocery network in Canada.</li>
+            </ul>
+            <button class="cta">Invest in KitchIN</button>
+        </div>
+    </section>
+
+    <!-- Sustainability Section -->
+    <section id="sustainability">
+        <div class="section-content">
+            <h2>Sustainability</h2>
+            <p>We use electric vehicles and sustainable sourcing practices to reduce our carbon footprint. Our lean supply chain eliminates food waste and supports Canadian businesses.</p>
+        </div>
+    </section>
+
+   <!-- Join Now Section -->
+   <section id="join-now">
+        <div class="section-content">
+            <h2>Join Us Now</h2>
+            <h3>Sign up to stay connected and be part of the grocery revolution.</h3>
+            <button class="cta" onclick="openForm('customer')">For Customers</button>
+            <button class="cta" onclick="openForm('investor')">For Investors</button>
+            <button class="cta" onclick="openForm('partner')">For Partners</button>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
     <footer>
         <ul class="socials">
             <li><a href="#">Facebook</a></li>
