@@ -15,7 +15,7 @@ h1, h2, h3 {
 
 /* Hero Section */
 #hero {
-    background: url(C:\Users\varen\Documents\GitHub\demo_v1\images\Hero Image.JPG) no-repeat center center/cover;
+    background: url('C:\Users\varen\Documents\GitHub\demo_v1\images\IMG_5159JPG) no-repeat center center/cover;
     height: 100vh;
     display: flex;
     justify-content: center;
