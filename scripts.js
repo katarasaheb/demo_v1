@@ -1,17 +1,26 @@
-console.log("scripts.js is loaded and running!");
+// Function to open the form popup
+function openForm(formType) {
+    var formPopup = document.getElementById("form-popup");
+    formPopup.style.display = "flex"; // Show the form popup
 
-// Add hover effect on CTA buttons
-document.querySelectorAll(".cta").forEach(button => {
-    button.addEventListener("mouseenter", () => {
-        button.style.transform = "scale(1.05)";
-        button.style.transition = "transform 0.3s ease";
-    });
-    button.addEventListener("mouseleave", () => {
-        button.style.transform = "scale(1)";
-    });
-});
+    // You can add logic here to modify the form based on the 'formType'
+    // E.g., show different labels or fields based on the user type (Customer, Investor, Partner)
+}
 
-// Handle Join Revolution Button Click
-document.getElementById("join-revolution-btn").addEventListener("click", () => {
-    alert("Thanks for joining the revolution! Stay tuned for updates.");
+// Function to close the form popup
+function closeForm() {
+    var formPopup = document.getElementById("form-popup");
+    formPopup.style.display = "none"; // Hide the form popup
+}
+
+// Add event listener to close the form when clicking the close button
+var closeBtn = document.querySelector('.close-btn');
+closeBtn.addEventListener('click', closeForm);
+
+// Close form when clicking outside the form container
+window.addEventListener('click', function(event) {
+    var formPopup = document.getElementById("form-popup");
+    if (event.target === formPopup) {
+        closeForm();
+    }
 });
