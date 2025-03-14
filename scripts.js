@@ -1,3 +1,5 @@
+console.log("scripts.js is loaded and running!");
+
 document.addEventListener("DOMContentLoaded", () => {
     const ctaButtons = document.querySelectorAll(".cta");
     const formPopup = document.getElementById("form-popup");
