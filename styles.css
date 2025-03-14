@@ -1,140 +1,87 @@
-/* General Reset */
-* {
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
+h1, h2 {
     color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #666;
+    line-height: 1.5;
+}
+
+button.cta {
+    background-color: #5cb85c;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button.cta:hover {
+    background-color: #4cae4c;
 }
 
 /* Hero Section */
 #hero {
-    background: linear-gradient(135deg, #00B8A9, #007A7D);
-    color: white;
-    padding: 100px 0;
+    background: #f4f4f4;
+    padding: 50px;
     text-align: center;
 }
 
-.hero-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.hero-container h1 {
-    font-size: 4rem;
-    font-weight: bold;
+#hero h1 {
+    font-size: 3em;
     margin-bottom: 20px;
 }
 
-.hero-container p {
-    font-size: 1.5rem;
-    line-height: 1.8;
-    margin-bottom: 30px;
+/* Section Styling */
+section {
+    padding: 40px 20px;
 }
 
-/* CTA Buttons */
-.cta {
-    background-color: #FF7A00;
-    color: white;
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-.cta:hover {
-    background-color: #ff5500;
-    transform: scale(1.05);
-}
-
-/* Form Popup */
-.form-popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    justify-content: center;
-    align-items: center;
-    z-index: 9999; /* Ensure it's on top of other elements */
-    opacity: 0;
-    transition: opacity 0.3s ease; /* Smooth fade-in/out */
-}
-
-.form-popup.show {
-    display: flex; /* Show the form popup */
-    opacity: 1; /* Fade-in */
-}
-
-.form-container {
-    background-color: white;
-    padding: 40px;
-    border-radius: 8px;
-    max-width: 600px;
-    width: 100%;
-}
-
-.form-container h2 {
-    font-size: 2rem;
+#problem, #market-opportunity, #about, #why-kitchin, #how-it-works, #our-journey, #get-involved {
+    background: #f9f9f9;
     margin-bottom: 20px;
 }
 
-.form-container input, .form-container textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.form-container input[type="submit"] {
-    background-color: #00B8A9;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.form-container input[type="submit"]:hover {
-    background-color: #007A7D;
-}
-
-.close-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 2rem;
-    color: #333;
-    cursor: pointer;
-}
-
-/* Other Styles */
+/* Footer */
 footer {
+    background: #333;
+    color: white;
+    padding: 20px;
     text-align: center;
-    background-color: #333;
-    color: white;
-    padding: 30px 0;
 }
 
-footer .socials {
-    list-style-type: none;
-    margin-bottom: 20px;
-}
-
-footer .socials li {
-    display: inline;
-    margin: 0 15px;
-}
-
-footer .socials a {
-    color: white;
+footer a {
+    color: #5cb85c;
     text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Social Links */
+.socials {
+    list-style-type: none;
+    padding: 0;
+}
+
+.socials li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.socials a {
+    color: white;
+    font-size: 20px;
 }
