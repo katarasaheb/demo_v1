@@ -3,5 +3,4 @@ function openForm() {
 }
 
 function closeForm() {
-    document.getElementById("form-popup").style.display = "none";
-}
+    document.get
