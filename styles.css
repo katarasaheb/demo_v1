@@ -16,6 +16,7 @@
     text-align: center;
     position: relative;
     color: #fff;
+    background-image: url ('images/hero image.jpg') ;
 }
 
 .hero-section h1 {
@@ -66,6 +67,7 @@ html {
     height: 500px;
     position: relative;
     background-attachment: fixed;
+    background-image: url('images/problem image.jpg') ;
 }
 
 .parallax-content {
