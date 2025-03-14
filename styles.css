@@ -95,15 +95,25 @@ section ul li {
     background-color: #f8f8f8;
 }
 
+/* "Download Full Report" Button - Same Style as CTA */
 .download-report {
     display: inline-block;
-    background-color: #00B8A9;
+    background-color: #FF7A00;
     color: white;
-    padding: 10px 20px;
+    padding: 15px 30px;
     border-radius: 5px;
-    margin-top: 20px;
     text-decoration: none;
+    margin-top: 20px;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
+
+/* Hover Effect for Download Full Report Button */
+.download-report:hover {
+    background-color: #ff5500;
+    transform: translateY(-3px);
+}
+
 
 
 /* New Section - Join Now */
