@@ -9,6 +9,7 @@ body {
     font-family: 'Arial', sans-serif;
     color: #333;
     background-color: #f7f7f7;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 /* Color Palette */
@@ -39,6 +40,7 @@ header {
     background: var(--header-background);
     padding: 60px 0;
     text-align: center;
+    animation: fadeIn 1s ease-out;
 }
 
 .hero-container {
@@ -62,6 +64,7 @@ header {
     margin-bottom: 30px;
 }
 
+/* Action Buttons with Hover Animation */
 .cta {
     background-color: var(--primary-color);
     color: white;
@@ -70,18 +73,31 @@ header {
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
     margin: 10px;
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
 }
 
 .cta:hover {
     background-color: var(--cta-color);
+    transform: scale(1.1);
+}
+
+.cta:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.cta:nth-child(2) {
+    animation-delay: 0.4s;
 }
 
 /* Problem Section */
 #problem {
     background-color: #fff;
     padding: 50px 0;
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
 }
 
 #problem h2 {
@@ -106,6 +122,8 @@ header {
     background-color: #fff;
     padding: 50px 0;
     text-align: center;
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
 }
 
 #market-opportunity h2 {
@@ -130,6 +148,8 @@ header {
     padding: 50px 0;
     background-color: #f8f8f8;
     text-align: center;
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
 }
 
 #about h2 {
@@ -150,6 +170,8 @@ header {
     padding: 50px 0;
     background-color: #fff;
     text-align: center;
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
 }
 
 #competitive-advantage h2 {
@@ -229,4 +251,36 @@ button:hover {
 
 #join-now .cta {
     margin: 10px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
