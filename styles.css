@@ -1,366 +1,181 @@
-/* General Styles */
-* {
+/* General Styling */
+body {
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #f7f9fb;
+    background-color: #f7f7f7; /* Soft light grey background */
     color: #333;
-    line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-/* Container for main layout */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Header */
-header {
-    background-color: #fff;
-    padding: 40px 0;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-header h1 {
-    font-size: 3.5em;
+h1, h2, h3, h4 {
     font-weight: 700;
-    color: #000;
-    margin-bottom: 15px;
-}
-
-header p {
-    font-size: 1.2em;
-    color: #777;
-    margin-bottom: 30px;
+    color: #222;
 }
 
 /* Hero Section */
 .hero-container {
-    background-color: #fff;
-    padding: 120px 0;
     text-align: center;
+    background-color: #ffffff; /* White background for the hero section */
+    padding: 100px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .hero-container h1 {
-    font-size: 3.8em;
-    font-weight: 700;
-    color: #000;
-    margin-bottom: 20px;
+    font-size: 4em;
+    color: #222; /* Dark text for prominence */
+    margin-bottom: 15px;
+    font-weight: bold;
 }
 
 .hero-container p {
-    font-size: 1.2em;
+    font-size: 1.25em;
     color: #555;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    line-height: 1.5;
 }
 
+/* Buttons */
 .hero-container .cta {
-    font-size: 1.1em;
-    padding: 15px 30px;
+    padding: 15px 40px;
     background-color: #00B8A9; /* Accent color */
     color: #fff;
     border: none;
-    border-radius: 25px;
+    border-radius: 30px;
+    font-size: 1.2em;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin: 0 15px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .hero-container .cta:hover {
-    background-color: #009f8e; /* Darker shade on hover */
+    background-color: #009f8a; /* Slightly darker shade on hover */
+    transform: scale(1.05);
 }
 
-/* The Problem Section */
-#problem {
-    background-color: #f1f4f9;
-    padding: 100px 0;
+.hero-container .cta:focus {
+    outline: none;
 }
 
-#problem h2 {
-    font-size: 2.5em;
-    font-weight: 700;
+/* Section Styling */
+section {
+    padding: 80px 0;
     text-align: center;
-    margin-bottom: 30px;
-    color: #000;
+    background-color: #ffffff;
 }
 
-#problem p {
+h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     font-size: 1.1em;
     color: #555;
-    line-height: 1.8;
-    margin-bottom: 40px;
-    text-align: center;
+    text-align: left;
+    display: inline-block;
+    max-width: 700px;
 }
 
-#problem ul {
-    text-align: center;
-}
-
-#problem li {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-    color: #444;
-}
-
-#problem li strong {
-    font-weight: 700;
-}
-
-/* Market Opportunity Section */
-#market-opportunity {
-    background-color: #fff;
-    padding: 100px 0;
-}
-
-#market-opportunity h2 {
-    font-size: 2.5em;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 30px;
-    color: #000;
-}
-
-#market-opportunity ul {
-    text-align: center;
-}
-
-#market-opportunity li {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-    color: #444;
-}
-
-#market-opportunity li strong {
-    font-weight: 700;
-}
-
-/* Impact Section */
-#impact {
-    background-color: #f1f4f9;
-    padding: 100px 0;
-}
-
-#impact h2 {
-    font-size: 2.5em;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 30px;
-    color: #000;
-}
-
-#impact p {
-    font-size: 1.2em;
-    color: #555;
-    text-align: center;
-    line-height: 1.8;
-    margin-bottom: 40px;
-}
-
-/* About KitchIN Section */
-#about {
-    background-color: #fff;
-    padding: 100px 0;
-}
-
-#about h2 {
-    font-size: 2.5em;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 30px;
-    color: #000;
-}
-
-#about p {
-    font-size: 1.2em;
-    color: #555;
-    line-height: 1.8;
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-#about h3 {
-    font-size: 1.8em;
-    font-weight: 600;
-    margin-top: 30px;
-    text-align: center;
-    color: #333;
-}
-
-#about ul {
-    text-align: center;
-    margin-top: 20px;
-}
-
-#about ul li {
-    font-size: 1.2em;
-    color: #444;
+ul li {
     margin-bottom: 10px;
 }
 
-/* Competitive Advantage Section */
-#competitive-advantage {
-    background-color: #f7f9fb;
-    padding: 100px 0;
+ul li strong {
+    color: #00B8A9; /* Accent color for important text */
 }
 
-#competitive-advantage h2 {
-    font-size: 2.5em;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 30px;
-    color: #000;
-}
-
-#competitive-advantage h3 {
-    font-size: 2em;
-    font-weight: 700;
-    color: #000;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-#competitive-advantage ul {
-    list-style-type: none;
-    padding-left: 0;
-    text-align: center;
-}
-
-#competitive-advantage li {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-    color: #444;
-}
-
-#competitive-advantage li strong {
-    font-weight: 700;
-}
-
-/* Sustainability Section */
-#sustainability {
-    background-color: #fff;
-    padding: 100px 0;
-}
-
-#sustainability h2 {
-    font-size: 2.5em;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 30px;
-    color: #000;
-}
-
-#sustainability p {
-    font-size: 1.2em;
-    color: #555;
-    line-height: 1.8;
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-/* Join Now Section */
-#join-now {
-    background-color: #f1f4f9;
-    padding: 100px 0;
-}
-
-#join-now h2 {
-    font-size: 2.5em;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 30px;
-    color: #000;
-}
-
-#join-now h3 {
-    font-size: 1.8em;
+a {
+    color: #00B8A9;
+    text-decoration: none;
     font-weight: 600;
-    text-align: center;
-    color: #333;
-    margin-bottom: 40px;
+    transition: color 0.3s ease;
 }
 
-#join-now .cta {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #00B8A9;
-    color: #fff;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 1.2em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: background-color 0.3s ease;
-    margin: 0 15px;
+a:hover {
+    color: #009f8a;
 }
 
-#join-now .cta:hover {
-    background-color: #009f8e;
-}
-
-/* Footer */
+/* Footer Styling */
 footer {
-    background-color: #fff;
-    padding: 40px 0;
+    background-color: #333;
+    color: #fff;
+    padding: 50px 0;
     text-align: center;
-    border-top: 1px solid #eaeaea;
 }
 
 footer .socials {
-    list-style: none;
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
 }
 
-footer .socials li {
-    margin: 0 10px;
-}
-
-footer .socials li a {
-    color: #00B8A9;
-    font-weight: 600;
-    text-transform: uppercase;
+footer .socials a {
+    margin: 0 15px;
+    font-size: 1.2em;
+    color: #fff;
     transition: color 0.3s ease;
 }
 
-footer .socials li a:hover {
-    color: #009f8e;
+footer .socials a:hover {
+    color: #00B8A9; /* Accent color for hover */
 }
 
 footer p {
-    font-size: 1em;
-    color: #555;
+    font-size: 0.9em;
+    color: #ddd;
 }
 
-footer a {
-    color: #00B8A9;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-container h1 {
+        font-size: 2.8em; /* Adjust font size on smaller screens */
+    }
+
+    .hero-container p {
+        font-size: 1.1em;
+    }
+
+    .cta {
+        font-size: 1em;
+        padding: 12px 30px;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    footer .socials a {
+        font-size: 1.1em;
+    }
 }
 
-footer a:hover {
-    color: #009f8e;
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+section {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Hover Effects */
+section .cta:hover {
+    background-color: #009f8a;
+    transform: scale(1.05);
 }
