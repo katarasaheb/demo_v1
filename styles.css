@@ -1,210 +1,294 @@
-/* Reset some defaults */
-* {
+/* Global Styles */
+body {
+    font-family: 'Lovable', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background-color: #f8f8f8;
+    color: #333;
 }
 
-/* Body and Global Settings */
-body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #ffffff; /* Light background */
-    color: #333333; /* Dark text for readability */
-    line-height: 1.6;
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-/* Header (Hero Section) */
-header {
-    position: relative;
+/* Hero Section */
+.hero-container {
     text-align: center;
-    padding: 10% 0;
-    background-color: #f1f1f1; /* Subtle light gray background */
-    color: #222;
+    padding: 80px 50px;
+    background: linear-gradient(to right, #f8f8f8, #ffffff);
+    border-bottom: 2px solid #eaeaea;
 }
 
 .hero-container h1 {
-    font-size: 4em;
-    font-weight: 700;
+    font-size: 3.5em;
+    font-weight: bold;
+    color: #333;
     margin-bottom: 20px;
+    transition: font-size 0.3s ease-in-out; /* Smooth transition for font size */
+}
+
+.hero-container h1:hover {
+    font-size: 3.8em; /* Slightly larger on hover for attention */
 }
 
 .hero-container p {
-    font-size: 1.5em;
-    font-weight: 300;
-    max-width: 80%;
-    margin: 0 auto 40px;
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 40px;
 }
 
 .cta {
     display: inline-block;
-    margin: 15px 30px;
-    padding: 12px 30px;
-    background-color: #00B8A9; /* Accent color */
-    color: #ffffff;
-    font-size: 1.2em;
-    border: 2px solid #00B8A9;
-    border-radius: 50px;
+    padding: 15px 30px;
+    background-color: #00B8A9;
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 30px;
     text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .cta:hover {
-    background-color: #ffffff;
-    color: #00B8A9;
+    background-color: #008c73; /* Darker shade of accent color */
+    transform: translateY(-5px); /* Subtle lift effect */
 }
 
-/* General Section Style */
-section {
-    padding: 60px 15%;
+.cta:focus {
+    outline: none;
+}
+
+/* Problem Section */
+#problem {
+    background-color: #ffffff;
+    padding: 60px 50px;
+    text-align: center;
+    border-bottom: 2px solid #eaeaea;
+}
+
+#problem h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#problem p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+#problem ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#problem li {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+#problem .download-report {
+    background-color: #00B8A9;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#problem .download-report:hover {
+    background-color: #008c73;
+    transform: translateY(-3px);
+}
+
+/* Market Opportunity Section */
+#market-opportunity {
+    padding: 60px 50px;
+    background-color: #f1f1f1;
     text-align: center;
 }
 
-h2 {
-    font-size: 3em;
-    font-weight: 700;
+#market-opportunity h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
     margin-bottom: 20px;
-    color: #00B8A9; /* Accent color */
 }
 
-p, ul {
+#market-opportunity p {
     font-size: 1.1em;
-    font-weight: 300;
-    line-height: 1.8;
+    color: #666;
     margin-bottom: 30px;
-    color: #555555;
 }
 
-ul {
-    list-style: none;
+/* About KitchIN Section */
+#about {
+    padding: 60px 50px;
+    background-color: #ffffff;
+    text-align: center;
 }
 
-ul li {
-    margin: 15px 0;
-    font-size: 1.2em;
-}
-
-/* Market Opportunity and Impact */
-#market-opportunity, #impact, #sustainability {
-    background-color: #f9f9f9;
-    padding: 60px 15%;
-}
-
-h3 {
-    font-size: 2em;
-    font-weight: 600;
-    color: #444444;
+#about h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
     margin-bottom: 20px;
 }
 
-/* Competitive Advantage */
+#about p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+#about ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#about li {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+/* Competitive Advantage Section */
 #competitive-advantage {
-    background-color: #ffffff;
+    padding: 60px 50px;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+#competitive-advantage h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#competitive-advantage h3 {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+    margin-top: 30px;
 }
 
 #competitive-advantage ul {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
+    list-style-type: none;
+    padding: 0;
 }
 
 #competitive-advantage li {
-    width: 30%;
-    text-align: left;
-    font-weight: 300;
-    color: #444444;
+    font-size: 1.1em;
+    margin: 10px 0;
 }
 
-/* Footer */
-footer {
-    background-color: #333333;
-    color: #ffffff;
+/* Sustainability Section */
+#sustainability {
+    padding: 60px 50px;
+    background-color: #ffffff;
     text-align: center;
-    padding: 40px 0;
+}
+
+#sustainability h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#sustainability p {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Join Now Section */
+#join-now {
+    padding: 60px 50px;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+#join-now h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#join-now h3 {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+#join-now button {
+    padding: 15px 30px;
+    background-color: #00B8A9;
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#join-now button:hover {
+    background-color: #008c73;
+    transform: translateY(-5px);
+}
+
+#join-now button:focus {
+    outline: none;
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
 }
 
 footer a {
-    color: #ffffff;
+    color: white;
     text-decoration: none;
-    margin: 0 10px;
-    font-size: 1.1em;
+    margin: 0 15px;
+    font-size: 1em;
 }
 
 footer a:hover {
-    text-decoration: underline;
+    color: #00B8A9; /* Accent color for links in footer */
 }
 
-/* Form Popup */
-.form-popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    justify-content: center;
-    align-items: center;
-}
-
-.form-popup .show {
-    display: flex;
-}
-
-#form-frame {
-    width: 80%;
-    height: 80%;
-    border-radius: 8px;
-}
-
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #00B8A9;
-    border: none;
-    color: #fff;
-    font-size: 1.5em;
-    cursor: pointer;
-    padding: 10px 15px;
-    border-radius: 50%;
-}
-
-.close-btn:hover {
-    background-color: #ffffff;
-    color: #00B8A9;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    header {
-        padding: 20% 0;
-    }
-
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
     .hero-container h1 {
         font-size: 2.5em;
     }
 
-    .hero-container p {
-        font-size: 1.2em;
-    }
-
-    section {
-        padding: 40px 10%;
-    }
-
     .cta {
-        padding: 10px 20px;
+        padding: 12px 25px;
+        font-size: 1em;
     }
 
-    #competitive-advantage li {
-        width: 100%;
-        margin-bottom: 20px;
+    #join-now button {
+        padding: 12px 25px;
+        font-size: 1em;
     }
 
-    #form-frame {
-        width: 90%;
-        height: 90%;
+    #problem p,
+    #market-opportunity p,
+    #about p,
+    #competitive-advantage p {
+        font-size: 1em;
     }
 }
