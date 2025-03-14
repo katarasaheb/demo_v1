@@ -106,6 +106,7 @@ section ul li {
 }
 
 
+/* New Section - Join Now */
 #join-now {
     background-color: #f8f8f8;
     padding: 80px 0;
@@ -148,7 +149,6 @@ section ul li {
 #join-now .cta:focus {
     outline: none;
 }
-
 
 
 /* Footer */
