@@ -67,7 +67,7 @@ html {
     height: 500px;
     position: relative;
     background-attachment: fixed;
-    background-image: url('images/Problem Image.jpg') ;
+    background-image: url(images/Problem Image.JPG) ;
 }
 
 .parallax-content {
