@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KitchIN - Redefining Grocery Shopping</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
@@ -16,31 +15,48 @@
             <p>Your Smart Grocery Super App</p>
             <p>Fresh. Affordable. Fast. Sustainable.</p>
             <div class="cta-container">
-                <button class="cta">Join the Grocery Revolution</button>
+                <button class="cta" id="join-revolution-btn">Join the Revolution</button>
                 <button class="cta">Invest in Our Future</button>
             </div>
         </div>
     </header>
 
-    <!-- Problem Section -->
-<section id="problem">
-    <div class="section-content">
-        <h2>Canada's Grocery System is Broken</h2>
-        <p>Canadian grocery shopping is expensive, inefficient, and monopolized.</p>
-        <ul>
-            <li><strong>Monopolized Market:</strong> 3 companies control 75% of the grocery market.</li>
-            <li><strong>Bloated Supply Chains:</strong> Inefficient distribution channels lead to high costs.</li>
-            <li><strong>US Import Dependency:</strong> Heavy reliance on US imports creates vulnerability.</li>
-            <li><strong>Outdated Supermarkets:</strong> Traditional stores have high operational costs.</li>
-        </ul>
-        <!-- Updated Button with PDF Icon -->
-        <a href="link_to_report.pdf" class="download-report">
-            <i class="fas fa-file-pdf"></i> Download Full Report
-        </a>
+    <!-- Form Section (appears when any CTA is clicked) -->
+    <div id="form-popup" class="form-popup">
+        <div class="form-container">
+            <span class="close-btn">&times;</span>
+            <h2>Join Us</h2>
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSeJxvHyL5uK7Phde8KxdB_wXJGGhR0xd4T_2p11T82r-s9LFA/formResponse" method="post">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="entry.2005620554" required>
 
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="entry.1045781291" required>
+
+                <label for="message">Message (Optional, 180 words max):</label>
+                <textarea id="message" name="entry.839337160" maxlength="180"></textarea>
+
+                <input type="submit" value="Submit" class="cta">
+            </form>
+        </div>
     </div>
-</section>
 
+    <!-- Problem Section -->
+    <section id="problem">
+        <div class="section-content">
+            <h2>Canada's Grocery System is Broken</h2>
+            <p>Canadian grocery shopping is expensive, inefficient, and monopolized.</p>
+            <ul>
+                <li><strong>Monopolized Market:</strong> 3 companies control 75% of the grocery market.</li>
+                <li><strong>Bloated Supply Chains:</strong> Inefficient distribution channels lead to high costs.</li>
+                <li><strong>US Import Dependency:</strong> Heavy reliance on US imports creates vulnerability.</li>
+                <li><strong>Outdated Supermarkets:</strong> Traditional stores have high operational costs.</li>
+            </ul>
+            <a href="link_to_report.pdf" class="download-report">
+                <i class="fas fa-file-pdf"></i> Download Full Report
+            </a>
+        </div>
+    </section>
 
     <!-- Market Opportunity Section -->
     <section id="market-opportunity">
@@ -113,8 +129,7 @@
 
 
 
-    
-    <!-- Footer Section -->
+   <!-- Footer Section -->
     <footer>
         <ul class="socials">
             <li><a href="#">Facebook</a></li>
@@ -127,3 +142,4 @@
     <script src="scripts.js"></script>
 </body>
 </html>
+
