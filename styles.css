@@ -1,4 +1,4 @@
-/* Reset some default browser styles */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +7,6 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    line-height: 1.6;
     background-color: #f9f9f9;
     color: #333;
 }
@@ -16,7 +15,7 @@ body {
 #hero {
     background: linear-gradient(135deg, #00B8A9, #007A7D);
     color: white;
-    padding: 80px 0;
+    padding: 100px 0;
     text-align: center;
     animation: fadeIn 1s ease-out;
 }
@@ -74,6 +73,7 @@ section {
     padding: 80px 20px;
     background-color: white;
     margin-bottom: 30px;
+    animation: slideIn 1s ease-out;
 }
 
 section h2 {
@@ -91,7 +91,6 @@ section ul li {
     font-size: 1.2rem;
 }
 
-/* Problem Section */
 #problem {
     background-color: #f8f8f8;
 }
@@ -133,4 +132,16 @@ footer p a {
     color: white;
     text-decoration: none;
     margin: 0 10px;
+}
+
+/* Section Animations */
+@keyframes slideIn {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
