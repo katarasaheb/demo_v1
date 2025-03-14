@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const ctaButtons = document.querySelectorAll(".cta");
+    const formPopup = document.getElementById("form-popup");
+    const closeBtn = document.querySelector(".close-btn");
 
     // Add hover effect on CTA buttons
     ctaButtons.forEach(button => {
@@ -12,26 +14,19 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Function to open the form popup when a button is clicked
-    function openForm(type) {
-        const formPopup = document.getElementById("form-popup");
-        formPopup.classList.add("show"); // Add show class to trigger the popup
-
-        // Dynamically change the form title based on the type (e.g., Customer, Investor, Partner)
-        const formTitle = formPopup.querySelector("h2");
-        if (type === "customer") {
-            formTitle.textContent = "Join Us as a Customer";
-        } else if (type === "investor") {
-            formTitle.textContent = "Join Us as an Investor";
-        } else if (type === "partner") {
-            formTitle.textContent = "Join Us as a Partner";
-        }
+    // Open Form Popup
+    function openForm() {
+        formPopup.style.display = "flex";  // Show the popup
     }
 
-    // Close the form popup when the close button is clicked
-    const closeBtn = document.querySelector(".close-btn");
+    // Close Form Popup
     closeBtn.addEventListener("click", () => {
-        const formPopup = document.getElementById("form-popup");
-        formPopup.classList.remove("show"); // Remove show class to hide the popup
+        formPopup.style.display = "none";  // Hide the popup
+    });
+
+    // Assign openForm to the Join Now buttons
+    const joinButtons = document.querySelectorAll('#join-now .cta');
+    joinButtons.forEach(button => {
+        button.addEventListener("click", openForm);
     });
 });
