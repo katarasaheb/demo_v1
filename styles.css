@@ -15,15 +15,21 @@ body {
 
 /* Hero Section */
 .hero-section {
-    background-image: url(C:\Users\varen\Documents\GitHub\demo_v1\images\Hero Image.JPG);
+    background-image: url(C:\Users\varen\Documents\GitHub\demo_v1\images\Hero Image.JPG);  /* Corrected path */
     background-size: cover;
     background-position: center;
-    height: 80vh;
+    background-repeat: no-repeat;
+    height: 100vh; /* Full viewport height */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    color: white;
+    padding: 20px;
 }
+
+
 
 .hero-text h1 {
     font-size: 3rem;
