@@ -1,42 +1,147 @@
-#join-now {
-    background-color: #f8f8f8;
-    padding: 80px 0;
-    text-align: center;
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#join-now h2 {
-    font-size: 2.5em;
-    font-weight: bold;
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
     color: #333;
+}
+
+/* Hero Section */
+#hero {
+    background: linear-gradient(135deg, #00B8A9, #007A7D);
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-container h1 {
+    font-size: 4rem;
+    font-weight: bold;
     margin-bottom: 20px;
 }
 
-#join-now h3 {
-    font-size: 1.25em;
-    color: #666;
-    margin-bottom: 40px;
-    max-width: 800px;
-    margin: 0 auto 40px auto;
+.hero-container p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
 }
 
-#join-now .cta {
-    background-color: #00B8A9;
-    color: #fff;
-    font-size: 1.2em;
+.cta-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cta {
+    background-color: #FF7A00;
+    color: white;
     padding: 15px 30px;
+    font-size: 1.2rem;
     border: none;
-    margin: 10px;
     cursor: pointer;
-    border-radius: 50px;
+    border-radius: 5px;
     transition: all 0.3s ease;
+}
+
+.cta:hover {
+    background-color: #ff5500;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Section Styles */
+section {
+    padding: 80px 20px;
+    background-color: white;
+    margin-bottom: 30px;
+    animation: slideIn 1s ease-out;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
     font-weight: bold;
 }
 
-#join-now .cta:hover {
-    background-color: #009C8C;
-    transform: translateY(-3px);
+section ul {
+    list-style-type: none;
 }
 
-#join-now .cta:focus {
-    outline: none;
+section ul li {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+#problem {
+    background-color: #f8f8f8;
+}
+
+.download-report {
+    display: inline-block;
+    background-color: #00B8A9;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 30px 0;
+}
+
+footer .socials {
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+footer .socials li {
+    display: inline;
+    margin: 0 15px;
+}
+
+footer .socials a {
+    color: white;
+    text-decoration: none;
+}
+
+footer p a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Section Animations */
+@keyframes slideIn {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
