@@ -15,7 +15,7 @@ h1, h2, h3 {
 
 /* Hero Section */
 #hero {
-    background: url('C:\Users\varen\Documents\GitHub\demo_v1\images\Hero Image.JPG') no-repeat center center/cover;
+    background: url(C:\Users\varen\Documents\GitHub\demo_v1\images\Hero Image.JPG) no-repeat center center/cover;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -46,7 +46,7 @@ h1, h2, h3 {
 
 .cta {
     background-color: #ff9900;
-    color: Blue;
+    color: white;
     border: none;
     padding: 10px 20px;
     font-size: 1.2rem;
@@ -57,6 +57,12 @@ h1, h2, h3 {
 
 .cta:hover {
     background-color: #e68a00;
+}
+
+/* Hero Section - Shared Text Color */
+.hero-text {
+    color: #4169E1;  /* Royal Blue */
+    font-weight: 600; /* Optional: Makes the text bold */
 }
 
 /* Form Section (Popup) */
