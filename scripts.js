@@ -12,16 +12,27 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Additional functionality for the Join Now section
-    // If you have forms for each of the "For Customers", "For Investors", "For Partners" buttons,
-    // you can add a function to show the form or other relevant actions
-    function openForm(type) {
-        // Add logic to open respective forms or take action based on the type (customer, investor, partner)
-        alert(`Opening form for ${type}`);
+    // Form popup functionality
+    const formPopup = document.getElementById('form-popup');
+    const closeBtn = document.querySelector('.close-btn');
+
+    // Function to open the form popup
+    function openForm(formType) {
+        formPopup.style.display = 'flex';
     }
 
-    // You can add this function call in your HTML button onclick as needed:
-    // <button class="cta" onclick="openForm('customer')">For Customers</button>
-    // <button class="cta" onclick="openForm('investor')">For Investors</button>
-    // <button class="cta" onclick="openForm('partner')">For Partners</button>
+    // Function to close the form popup
+    closeBtn.addEventListener('click', () => {
+        formPopup.style.display = 'none';
+    });
+
+    // Close the form if the user clicks outside of the form container
+    window.addEventListener('click', (event) => {
+        if (event.target === formPopup) {
+            formPopup.style.display = 'none';
+        }
+    });
+
+    // Expose openForm function globally to use in HTML onClick events
+    window.openForm = openForm;
 });
