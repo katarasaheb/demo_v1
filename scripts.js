@@ -16,14 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Function to open the form popup
+    // Open the form popup
     function openForm() {
-        formPopup.classList.add("show");  // Add 'show' class to display the form
+        formPopup.classList.add("show");
     }
 
-    // Function to close the form popup
+    // Close the form popup
     function closeForm() {
-        formPopup.classList.remove("show");  // Remove 'show' class to hide the form
+        formPopup.classList.remove("show");
     }
 
     // Close form when the close button ('X') is clicked
