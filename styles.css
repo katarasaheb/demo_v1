@@ -126,6 +126,7 @@ section h2 {
 section p {
     font-size: 1.2rem;
     line-height: 1.5;
+    font-family: 'Nunito', sans-serif; /* Nunito for paragraphs */
 }
 
 ul {
@@ -162,6 +163,7 @@ button.cta {
     border-radius: 5px;
     margin-top: 20px;
     border: none;
+    font-family: 'Poppins', sans-serif;
 }
 
 button.cta:hover {
