@@ -26,20 +26,15 @@ h1, h2, h3 {
     padding: 20px;
 }
 
-/* Flexbox styling for the hero-subheading to display all p elements in one line */
 .hero-subheading {
     display: flex; /* Aligns items in a row */
-    gap: 20px; /* Optional: Adds space between the items */
-    font-size: 24px; /* Adjust font size */
-    font-weight: 600; /* Optional: Adjust font weight */
-    margin: 20px 0; /* Optional: Adds space between the heading and subheading */
+    gap: 20px; /* Adds space between the items */
 }
 
 .hero-subheading p {
     margin: 0; /* Removes default margin of paragraphs */
-    color: #3498db; /* Optional: Apply color (Royal Blue) */
+    font-size: 24px; /* Optional: Adjust font size */
 }
-
 
 .hero-container {
     max-width: 800px;
