@@ -12,27 +12,26 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Form popup functionality
-    const formPopup = document.getElementById('form-popup');
-    const closeBtn = document.querySelector('.close-btn');
+    // Function to open the form popup when a button is clicked
+    function openForm(type) {
+        const formPopup = document.getElementById("form-popup");
+        formPopup.classList.add("show"); // Add show class to trigger the popup
 
-    // Function to open the form popup
-    function openForm(formType) {
-        formPopup.style.display = 'flex';
+        // Dynamically change the form title based on the type (e.g., Customer, Investor, Partner)
+        const formTitle = formPopup.querySelector("h2");
+        if (type === "customer") {
+            formTitle.textContent = "Join Us as a Customer";
+        } else if (type === "investor") {
+            formTitle.textContent = "Join Us as an Investor";
+        } else if (type === "partner") {
+            formTitle.textContent = "Join Us as a Partner";
+        }
     }
 
-    // Function to close the form popup
-    closeBtn.addEventListener('click', () => {
-        formPopup.style.display = 'none';
+    // Close the form popup when the close button is clicked
+    const closeBtn = document.querySelector(".close-btn");
+    closeBtn.addEventListener("click", () => {
+        const formPopup = document.getElementById("form-popup");
+        formPopup.classList.remove("show"); // Remove show class to hide the popup
     });
-
-    // Close the form if the user clicks outside of the form container
-    window.addEventListener('click', (event) => {
-        if (event.target === formPopup) {
-            formPopup.style.display = 'none';
-        }
-    });
-
-    // Expose openForm function globally to use in HTML onClick events
-    window.openForm = openForm;
 });
