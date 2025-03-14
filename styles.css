@@ -21,6 +21,13 @@ header p {
     font-size: 1.2em;
 }
 
+.hero-container, .hero-content {
+    text-align: center;
+    padding: 50px;
+    background: #fff;
+    border-bottom: 2px solid #eaeaea;
+}
+
 button.cta {
     padding: 15px 25px;
     font-size: 1em;
@@ -104,4 +111,3 @@ footer a:hover {
 .close-btn:hover {
     background: #e63900;
 }
-
