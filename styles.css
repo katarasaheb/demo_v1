@@ -24,16 +24,7 @@ h1, h2, h3 {
     text-align: center;
     color: white;
     padding: 20px;
-}
-
-.hero-subheading {
-    display: flex; /* Aligns items in a row */
-    gap: 20px; /* Adds space between the items */
-}
-
-.hero-subheading p {
-    margin: 0; /* Removes default margin of paragraphs */
-    font-size: 24px; /* Optional: Adjust font size */
+    position: relative;
 }
 
 .hero-container {
@@ -50,6 +41,7 @@ h1, h2, h3 {
 .hero-container p {
     font-size: 1.5rem;
     margin-bottom: 20px;
+    font-family: 'Nunito', sans-serif; /* Nunito for text */
 }
 
 .cta-container {
@@ -66,10 +58,12 @@ h1, h2, h3 {
     margin: 5px;
     border-radius: 5px;
     font-family: 'Poppins', sans-serif; /* Poppins for buttons */
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .cta:hover {
     background-color: #e68a00;
+    transform: scale(1.1);
 }
 
 /* Form Section (Popup) */
@@ -90,6 +84,7 @@ h1, h2, h3 {
     padding: 20px;
     border-radius: 8px;
     width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .form-container input[type="text"],
@@ -161,6 +156,7 @@ ul li {
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
 .download-report:hover {
@@ -178,10 +174,12 @@ button.cta {
     margin-top: 20px;
     border: none;
     font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button.cta:hover {
     background-color: #e68a00;
+    transform: scale(1.1);
 }
 
 /* Footer */
