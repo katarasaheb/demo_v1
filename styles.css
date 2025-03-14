@@ -1,122 +1,42 @@
-/* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
+#join-now {
     background-color: #f8f8f8;
-    color: #333;
-    transition: all 0.3s ease;
-}
-
-/* Hero Section */
-.hero-container {
-    text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(145deg, #00b8a9, #e0f7f2);  /* Accent Color */
-    color: #fff;
-}
-
-.hero-container h1 {
-    font-size: 3.5em;
-    font-weight: bold;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-}
-
-.hero-container p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-}
-
-.cta {
-    background-color: #00b8a9;
-    border: none;
-    color: white;
-    padding: 15px 25px;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    border-radius: 5px;
-    margin: 10px;
-}
-
-.cta-join:hover, .cta-invest:hover {
-    background-color: #008c7d; /* Darker Shade on Hover */
-    transform: scale(1.05);  /* Slight Grow Effect */
-}
-
-/* Section Styling */
-section {
-    padding: 60px 20px;
+    padding: 80px 0;
     text-align: center;
 }
 
-h2 {
+#join-now h2 {
     font-size: 2.5em;
+    font-weight: bold;
     color: #333;
     margin-bottom: 20px;
 }
 
-p {
-    font-size: 1.1em;
-    color: #555;
+#join-now h3 {
+    font-size: 1.25em;
+    color: #666;
     margin-bottom: 40px;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
 }
 
-ul {
-    list-style: none;
-    margin-bottom: 20px;
-}
-
-ul li {
+#join-now .cta {
+    background-color: #00B8A9;
+    color: #fff;
     font-size: 1.2em;
-    margin-bottom: 10px;
+    padding: 15px 30px;
+    border: none;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-weight: bold;
 }
 
-/* Footer Styling */
-footer {
-    text-align: center;
-    background-color: #333;
-    padding: 20px;
-    color: white;
+#join-now .cta:hover {
+    background-color: #009C8C;
+    transform: translateY(-3px);
 }
 
-footer .socials {
-    margin-bottom: 15px;
+#join-now .cta:focus {
+    outline: none;
 }
-
-footer .socials li {
-    display: inline;
-    margin: 0 15px;
-}
-
-footer a {
-    color: #00b8a9;
-    text-decoration: none;
-}
-
-/* Add Animations */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-section {
-    animation: fadeIn 1s ease-out;
-}
-
-/* Hover Effects for Buttons */
-.cta:hover {
-    background-color: #008c7d;
-    transform: scale(1.05);
-}
-
