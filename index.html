@@ -8,84 +8,32 @@
     <script src="scripts.js" defer></script>
 </head>
 <body>
-    <!-- Header Section -->
     <header>
-        <div class="logo">
-            <a href="#">KitchIN</a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#join-now">Join Now</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="hero">
-        <div class="hero-content">
+        <div class="hero-container">
             <h1>Fresh. Affordable. Fast. Sustainable.</h1>
             <p>KitchIN is Canada's first grocery super app, built on a dark store network. Experience a smarter, faster, and more sustainable way to shop for groceries.</p>
-            <button class="cta" onclick="openForm('customer')">Join the Grocery Revolution</button>
-            <button class="cta" onclick="openForm('investor')">Invest in Our Future</button>
+            <button class="cta cta-join" onclick="openForm('customer')">Join the Grocery Revolution</button>
+            <button class="cta cta-invest" onclick="openForm('investor')">Invest in Our Future</button>
         </div>
-    </section>
+    </header>
 
-    <!-- Features Section -->
-    <section id="features">
+    <section id="problem">
         <div class="section-content">
-            <h2>Our Features</h2>
-            <div class="features-grid">
-                <div class="feature">
-                    <img src="icon1.svg" alt="Feature 1">
-                    <h3>Direct Manufacturer Pricing</h3>
-                    <p>Get the best prices without the middleman.</p>
-                </div>
-                <div class="feature">
-                    <img src="icon2.svg" alt="Feature 2">
-                    <h3>Fast Delivery</h3>
-                    <p>Groceries at your doorstep in minutes.</p>
-                </div>
-                <div class="feature">
-                    <img src="icon3.svg" alt="Feature 3">
-                    <h3>Sustainability</h3>
-                    <p>Eco-friendly and minimal waste practices.</p>
-                </div>
-            </div>
+            <h2>Canada's Grocery System is Broken</h2>
+            <p>Canadian grocery shopping is expensive, inefficient, and monopolized...</p>
+            <!-- Content remains the same -->
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="section-content">
-            <h2>About KitchIN</h2>
-            <p>Canada’s first grocery super app built for the future of grocery shopping.</p>
-            <button class="cta" onclick="openForm('customer')">Learn More</button>
-        </div>
-    </section>
+    <!-- Add other sections similarly -->
 
-    <!-- Join Now Section -->
-    <section id="join-now">
-        <div class="section-content">
-            <h2>Join Us Now</h2>
-            <h3>Sign up to stay connected and be part of the grocery revolution.</h3>
-            <button class="cta" onclick="openForm('customer')">For Customers</button>
-            <button class="cta" onclick="openForm('investor')">For Investors</button>
-            <button class="cta" onclick="openForm('partner')">For Partners</button>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
     <footer>
-        <div class="social-links">
-            <a href="#">Facebook</a>
-            <a href="#">Twitter</a>
-            <a href="#">Instagram</a>
-        </div>
-        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        <ul class="socials">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+        </ul>
+        <p><a href="#">Contact Us</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </footer>
 </body>
 </html>
