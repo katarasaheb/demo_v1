@@ -25,6 +25,12 @@ h1, h2, h3 {
     padding: 20px;
 }
 
+.hero-subheading p {
+    display: inline-block; /* Makes the p elements display inline */
+    margin-right: 20px; /* Adds space between the paragraphs */
+    font-size: 24px; /* Optional: Adjust font size */
+}
+
 .hero-container {
     max-width: 800px;
     margin: 0 auto;
