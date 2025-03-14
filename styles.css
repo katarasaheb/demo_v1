@@ -16,7 +16,7 @@ h1, h2, h3 {
 
 /* Hero Section */
 #hero {
-    background: url('images/IMG_5159.JPG') no-repeat center center/cover; !important;
+    background: url('images/1.JPG') no-repeat center center/cover; !important;
     height: 100vh;
     display: flex;
     justify-content: center;
