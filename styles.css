@@ -2,7 +2,7 @@
 body, html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif; /* Default font */
     background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
@@ -11,11 +11,12 @@ body, html {
 h1, h2, h3 {
     font-weight: bold;
     color: #333;
+    font-family: 'Montserrat', sans-serif; /* Montserrat for headings */
 }
 
 /* Hero Section */
 #hero {
-    background: url('images\IMG_5159JPG);
+    background: url('hero-image.jpg') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -25,9 +26,13 @@ h1, h2, h3 {
     padding: 20px;
 }
 
+.hero-subheading {
+    display: flex; /* Aligns items in a row */
+    gap: 20px; /* Adds space between the items */
+}
+
 .hero-subheading p {
-    display: inline-block; /* Makes the p elements display inline */
-    margin-right: 20px; /* Adds space between the paragraphs */
+    margin: 0; /* Removes default margin of paragraphs */
     font-size: 24px; /* Optional: Adjust font size */
 }
 
@@ -39,6 +44,7 @@ h1, h2, h3 {
 .hero-container h1 {
     font-size: 4rem;
     margin-bottom: 20px;
+    font-family: 'Playfair Display', serif; /* Playfair for brand title */
 }
 
 .hero-container p {
@@ -59,16 +65,11 @@ h1, h2, h3 {
     cursor: pointer;
     margin: 5px;
     border-radius: 5px;
+    font-family: 'Poppins', sans-serif; /* Poppins for buttons */
 }
 
 .cta:hover {
     background-color: #e68a00;
-}
-
-/* Hero Section - Shared Text Color */
-.hero-text {
-    color: #4169E1;  /* Royal Blue */
-    font-weight: 600; /* Optional: Makes the text bold */
 }
 
 /* Form Section (Popup) */
@@ -133,6 +134,7 @@ section {
 section h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 section p {
