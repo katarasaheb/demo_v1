@@ -1,34 +1,17 @@
 console.log("scripts.js is loaded and running!");
 
-document.addEventListener("DOMContentLoaded", () => {
-    const ctaButtons = document.querySelectorAll(".cta");
-    const formPopup = document.getElementById("form-popup");
-    const closeBtn = document.querySelector(".close-btn");
-
-    // Add hover effect on CTA buttons
-    ctaButtons.forEach(button => {
-        button.addEventListener("mouseenter", () => {
-            button.style.transform = "scale(1.05)";
-            button.style.transition = "transform 0.3s ease";
-        });
-        button.addEventListener("mouseleave", () => {
-            button.style.transform = "scale(1)";
-        });
+// Add hover effect on CTA buttons
+document.querySelectorAll(".cta").forEach(button => {
+    button.addEventListener("mouseenter", () => {
+        button.style.transform = "scale(1.05)";
+        button.style.transition = "transform 0.3s ease";
     });
-
-    // Open Form Popup
-    function openForm() {
-        formPopup.style.display = "flex";  // Show the popup
-    }
-
-    // Close Form Popup
-    closeBtn.addEventListener("click", () => {
-        formPopup.style.display = "none";  // Hide the popup
+    button.addEventListener("mouseleave", () => {
+        button.style.transform = "scale(1)";
     });
+});
 
-    // Assign openForm to the Join Now buttons
-    const joinButtons = document.querySelectorAll('#join-now .cta');
-    joinButtons.forEach(button => {
-        button.addEventListener("click", openForm);
-    });
+// Handle Join Revolution Button Click
+document.getElementById("join-revolution-btn").addEventListener("click", () => {
+    alert("Thanks for joining the revolution! Stay tuned for updates.");
 });
