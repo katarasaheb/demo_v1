@@ -13,68 +13,13 @@ header {
     border-bottom: 2px solid #eaeaea;
 }
 
-header h1 {
-    font-size: 2.5em;
-    font-weight: bold;
-}
-
-header p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-}
-
-.hero-container, .hero-content {
+.hero-container {
     text-align: center;
     padding: 50px;
     background: linear-gradient(to right, #f8f8f8, #ffffff);
     border-bottom: 2px solid #eaeaea;
 }
 
-button.cta {
-    padding: 15px 25px;
-    font-size: 1em;
-    color: #fff;
-    background: #ff4500;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-button.cta:hover {
-    background: #e63900;
-}
-
-.section-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 50px;
-    background: #fff;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #ff4500;
-}
-
-a.download-report {
-    display: inline-block;
-    padding: 10px 
-
-/* Form popup transition */
-.form-popup.show {
-    animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
+.hero-container h1 {
+    font-size: 2.5em;
+    font-weight: bold;
