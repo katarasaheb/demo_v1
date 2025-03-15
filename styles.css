@@ -1,632 +1,201 @@
 /* General Styles */
-body, html {
+body {
+    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    font-family: 'Inter', sans-serif; /* Default font */
     background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
 }
 
 h1, h2, h3 {
-    font-weight: bold;
-    color: #333;
-    font-family: 'Montserrat', sans-serif; /* Montserrat for headings */
-}
-
-/* Hero Section */
-#hero {
-    background: url('images/1.JPG') no-repeat center center/cover; !important;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    padding: 20px;
-}
-
-.hero-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.hero-container h1 {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    font-family: 'Playfair Display', serif; /* Playfair for brand title */
-    color: #ffffff;
-}
-
-.hero-container p {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    font-family: 'Nunito', sans-serif; /* Nunito for text */
-}
-
-.cta-container {
-    margin-top: 20px;
-}
-
-.cta {
-    background-color: #ff9900;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    margin: 5px;
-    border-radius: 5px;
-    font-family: 'Poppins', sans-serif; /* Poppins for buttons */
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.cta:hover {
-    background-color: #e68a00;
-    transform: scale(1.1);
-}
-
-/* Form Section (Popup) */
-.form-popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-}
-
-.form-container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 400px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.form-container input[type="text"],
-.form-container input[type="email"],
-.form-container textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.form-container input[type="submit"] {
-    background-color: #ff9900;
-    color: white;
-    padding: 10px;
-    border: none;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.form-container input[type="submit"]:hover {
-    background-color: #e68a00;
-}
-
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 2rem;
-    cursor: pointer;
-}
-
-/* Section Styles */
-section {
-    padding: 40px;
-    background-color: white;
-    margin-bottom: 20px;
-}
-
-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
     font-family: 'Montserrat', sans-serif;
 }
 
-section p {
-    font-size: 1.2rem;
-    line-height: 1.5;
-    font-family: 'Nunito', sans-serif; /* Nunito for paragraphs */
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 ul {
     list-style-type: none;
-    padding-left: 0;
+    padding: 0;
 }
 
-ul li {
-    font-size: 1.1rem;
+.cta {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.cta:hover {
+    background-color: #45a049;
+}
+
+/* Hero Section Styling */
+#hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black; /* Fallback background color */
+}
+
+.hero-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 1;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.hero-video-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Content */
+.hero-content {
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-heading {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-subheading {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+.cta-container button {
+    padding: 15px 30px;
+    font-size: 1rem;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.cta-container button:hover {
+    transform: scale(1.1);
+}
+
+.cta {
+    background-color: #ff5733; /* Primary CTA color */
+    color: white;
+}
+
+.cta:hover {
+    background-color: #e04a1d;
+}
+
+/* Problem Section */
+.problem-section {
+    background-color: #fff;
+    padding: 40px 20px;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.problem-description {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.problem-stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.stat {
+    text-align: center;
+    margin: 20px;
+    width: 200px;
+}
+
+.stat-title {
+    font-size: 18px;
+    font-weight: 600;
     margin-bottom: 10px;
 }
 
-.download-report {
-    display: inline-block;
+.download-btn-container {
+    text-align: center;
     margin-top: 20px;
-    background-color: #ff9900;
+}
+
+.download-btn {
+    background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
+    font-size: 18px;
     border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
 }
 
-.download-report:hover {
-    background-color: #e68a00;
-}
-
-/* Buttons */
-button.cta {
-    background-color: #ff9900;
-    color: white;
-    padding: 12px 24px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 20px;
-    border: none;
-    font-family: 'Poppins', sans-serif;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-button.cta:hover {
-    background-color: #e68a00;
-    transform: scale(1.1);
+.download-btn:hover {
+    background-color: #45a049;
 }
 
 /* Footer */
 footer {
     background-color: #333;
     color: white;
-    padding: 20px;
     text-align: center;
+    padding: 20px 0;
 }
 
-footer .socials {
-    list-style-type: none;
-    padding: 0;
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
-footer .socials li {
-    display: inline;
-    margin-right: 15px;
-}
-
-footer .socials li a {
+.socials li a {
     color: white;
-    text-decoration: none;
-}
-
-footer p {
-    margin-top: 10px;
+    font-size: 18px;
 }
 
 footer p a {
     color: white;
-    text-decoration: none;
+    margin: 0 10px;
 }
 
-/* NEW STYLES FOR 'Canada's Grocery System is Broken' SECTION */
-
-/* Main Section */
-.grocery-system {
-    background: url('images/2.JPEG') no-repeat center center/cover;
-    padding: 50px 20px;
-    text-align: center;
-    color: white;
-}
-
-.grocery-system h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.grocery-system .points {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.grocery-system .point {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-    width: 200px;
-    cursor: pointer;
-    text-align: center;
-    font-size: 1.2rem;
-    font-family: 'Nunito', sans-serif;
-}
-
-.grocery-system .point:hover {
-    transform: scale(1.1);
-}
-
-.grocery-system .point:nth-child(1) {
-    background-color: rgba(255, 0, 0, 0.8);
-}
-
-.grocery-system .point:nth-child(2) {
-    background-color: rgba(0, 255, 0, 0.8);
-}
-
-.grocery-system .point:nth-child(3) {
-    background-color: rgba(0, 0, 255, 0.8);
-}
-
-.grocery-system .point:nth-child(4) {
-    background-color: rgba(255, 255, 0, 0.8);
-}
-
-.download-btn {
-    background-color: #ff9900;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 30px;
-}
-
-.download-btn:hover {
-    background-color: #e68a00;
-}
-
-/* Interactive elements (hover effects, scale, and transition) */
-.interactive-element {
-    position: relative;
-    display: inline-block;
-    margin: 20px;
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    font-family: 'Montserrat', sans-serif;
-    color: #ffffff;
-    background-color: #333;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: center;
-}
-
-.interactive-element:hover {
-    background-color: #ff9900;
-    transform: scale(1.1) rotate(2deg);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
-
-.interactive-element h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.interactive-element p {
-    font-size: 1rem;
-    line-height: 1.4;
-}
-
-/* Section container for video and interactive elements */
-#broken-grocery-system {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 30px;
-    padding: 60px 30px;
-    background-color: #222; /* Dark background for contrast */
-    color: white;
-}
-
-#broken-grocery-system .video-container {
-    flex: 1;
-    max-width: 50%;
-    min-width: 300px;
-    position: relative;
-}
-
-#broken-grocery-system .video-container iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-#broken-grocery-system .interactive-elements-container {
-    flex: 1;
-    max-width: 45%;
-    min-width: 300px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    #broken-grocery-system {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #broken-grocery-system .video-container {
-        max-width: 100%;
-        margin-bottom: 30px;
-    }
-
-    #broken-grocery-system .interactive-elements-container {
-        max-width: 100%;
-    }
-}
-
-/* Section Item Title */
-.section-item {
-    position: relative;
-    overflow: hidden;
-    height: 200px; /* Adjust the height to fit your design */
-}
-
-/* Title Styling */
-.section-item .title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: white;
-    z-index: 10; /* Make sure title is always on top */
-    transition: transform 0.3s ease;
-}
-
-/* Subtitle Styling (Initially Hidden) */
-.section-item .subtitle {
-    font-size: 1rem;
-    color: #ff9900;
-    position: absolute;
-    bottom: 10px; /* Adjust as needed */
-    left: 10px; /* Adjust as needed */
-    right: 10px; /* Adjust as needed */
-    opacity: 0;
-    transform: translateY(20px); /* Subtitle starts hidden below */
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* On Hover: Show Subtitle and Animate Title */
-.section-item:hover .subtitle {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.section-item:hover .title {
-    transform: translateY(-20px); /* Move the title up slightly on hover */
-}
-
-/* Video Container Styling */
-.video-container {
-    margin-top: 40px;
-    text-align: center;
-}
-
-.video-container iframe {
-    width: 100%;
-    max-width: 1000px;
-    height: 500px;
-    border: none;
-    border-radius: 8px;
-}
-
-/* Interactive Elements Styling */
-.interactive-elements-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: space-between;
-    margin-top: 40px;
-}
-
-.section-item {
-    position: relative;
-    width: 100%;
-    max-width: 280px;
-    overflow: hidden;
-    height: 200px; /* Adjust as needed */
-    margin-bottom: 30px;
-}
-
-/* Title Styling */
-.section-item .title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: white;
-    z-index: 10;
-    transition: transform 0.3s ease;
-}
-
-/* Subtitle Styling */
-.section-item .subtitle {
-    font-size: 1rem;
-    color: #ff9900;
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* Hover Effects */
-.section-item:hover .subtitle {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.section-item:hover .title {
-    transform: translateY(-20px);
-}
-
-/* Download Button Styling */
-.download-btn-container {
-    margin-top: 40px;
-    text-align: center;
-}
-
-.download-btn {
-    display: inline-block;
-    background-color: #ff9900;
-    color: white;
-    padding: 12px 24px;
-    font-size: 1.2rem;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.download-btn:hover {
-    background-color: #e68a00;
-}
-
-/* General Section Styling */
-#grocery-system {
-    background: #1d1f21; /* Dark background to keep the theme consistent */
-    color: white;
-    padding: 60px 20px;
-    font-family: 'Roboto', sans-serif;
-}
-
-.grocery-system-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-/* Section Title Styling */
-#grocery-system h2 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 40px;
-    color: #ff9900;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-/* Video Section Styling */
-.video-container {
-    margin-bottom: 60px;
-}
-
-.video-container iframe {
-    width: 100%;
-    max-width: 1000px;
-    height: 500px;
-    border: none;
-    border-radius: 8px;
-}
-
-/* Interactive Elements Styling */
-.interactive-elements-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-}
-
-.section-item {
-    position: relative;
-    width: 100%;
-    max-width: 280px;
-    height: 220px;
-    background: #333;
-    border-radius: 8px;
-    overflow: hidden;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.section-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-/* Title Styling */
-.section-item .title {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #ff9900;
-    z-index: 10;
-    transition: transform 0.3s ease;
-}
-
-/* Subtitle Styling */
-.section-item .subtitle {
-    font-size: 1rem;
-    color: white;
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* Hover Effects for Subtitle */
-.section-item:hover .subtitle {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.section-item:hover .title {
-    transform: translateY(-20px);
-}
-
-/* Download Button Styling */
-.download-btn-container {
-    margin-top: 40px;
-    text-align: center;
-}
-
-.download-btn {
-    display: inline-block;
-    background-color: #ff9900;
-    color: white;
-    padding: 12px 24px;
-    font-size: 1.2rem;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.download-btn:hover {
-    background-color: #e68a00;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .interactive-elements-container {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .video-container iframe {
-        height: 400px;
-    }
-
-    .section-item {
-        max-width: 100%;
-        height: 180px;
-    }
-
-    .download-btn-container {
-        margin-top: 30px;
-    }
+footer p a:hover {
+    text-decoration: underline;
 }
