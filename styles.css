@@ -1517,3 +1517,41 @@ body, html {
         margin-bottom: 20px;
     }
 }
+/* Fix for section title visibility */
+.problem-section .section-title {
+    visibility: visible !important; /* Ensure title is visible */
+    opacity: 1 !important; /* Ensure it doesn't get overridden by animations */
+}
+
+/* Fix for transparent white box */
+.problem-section .problem-stats {
+    background-color: transparent; /* Make sure the box is transparent */
+}
+
+/* Apply margin-left shift for specific elements */
+.problem-section .problem-content {
+    margin-left: 20%; /* Adjust the content to move left */
+}
+
+/* Ensure competition button is visible */
+.problem-section .download-btn-container a {
+    opacity: 1; /* Ensure button is visible */
+    visibility: visible; /* Make sure it's not hidden */
+}
+
+/* Additional styles to ensure elements animate as desired */
+.problem-section .stat {
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out; /* Smooth transition for stats */
+}
+
+.problem-section .stat:hover {
+    transform: scale(1.05); /* Add hover animation */
+    opacity: 0.9; /* Slight opacity change on hover */
+}
+
+/* Ensure background image is set correctly */
+.problem-section {
+    background-image: url('path/to/your/image.jpg');
+    background-size: cover;
+    background-position: center;
+}
