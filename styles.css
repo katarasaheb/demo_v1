@@ -57,7 +57,7 @@ nav a:hover {
 
 /* Hero Section */
 .hero {
-  background: url('your-image-path.jpg') no-repeat center center/cover;
+  background: url('images/3.jpg') no-repeat center center/cover;
   height: 80vh;
   display: flex;
   justify-content: center;
