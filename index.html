@@ -25,14 +25,13 @@
             z-index: -1; /* Make sure the background is behind the text */
         }
 
-        .hero-background iframe {
+        .hero-background video {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            border: none;
-            pointer-events: none; /* Make sure the video doesn't interfere with clicking on content */
+            object-fit: cover; /* Ensures the video covers the entire container */
         }
 
         .hero-content {
@@ -82,15 +81,20 @@
         <div class="hero-container">
             <!-- Background Video -->
             <div class="hero-background">
-                <!-- Embed YouTube Video -->
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/hOgVAYpHPCc?si=GcqEbB6pYwrIKm6u&amp;controls=0&amp;start=7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+                <!-- Replace the YouTube embed with your local video file -->
+                <video autoplay loop muted playsinline>
+                    <source src="images/HV.mp4" type="video/mp4">
+                    <!-- Add additional formats for compatibility -->
+                    <source src="images/HV.webm" type="video/webm">
+                    <source src="images/HV.ogv" type="video/ogv">
+                    Your browser does not support the video tag.
+                </video>
             </div>
 
-            <!-- Hero Content -->
+            <!-- Hero Content (unchanged) -->
             <div class="hero-content">
                 <h1 class="hero-heading">kitchin</h1>
-                <p class="hero-subheading">Fast.   Fresh.Affordable. Sustainable.</p>
+                <p class="hero-subheading">Fast  Fresh  Sustainable  Affordable</p>
                 <div class="cta-container">
                     <button class="cta" id="join-revolution-btn">Join the Revolution</button>
                     <button class="cta">Invest in Our Future</button>
@@ -100,7 +104,7 @@
     </header>
 
     <!-- Your Other Sections Go Here -->
-    
+
     <!-- Footer Section -->
     <footer>
         <ul class="socials">
