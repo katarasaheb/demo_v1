@@ -1555,3 +1555,39 @@ body, html {
     background-size: cover;
     background-position: center;
 }
+
+/* Ensure all stat elements are the same size */
+.problem-section .stat {
+    width: 22%; /* Adjust width for uniformity */
+    margin: 0 1.5%; /* Add margin for spacing between the stats */
+    text-align: center; /* Align text centrally */
+    background-color: rgba(0, 0, 0, 0.1); /* Light background for better contrast */
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+/* Apply hover effect for stat elements */
+.problem-section .stat:hover {
+    transform: scale(1.05); /* Slight scaling on hover */
+    opacity: 0.9;
+}
+
+/* Make sure font sizes are consistent */
+.problem-section .stat h3 {
+    font-size: 1.5em; /* Larger font for titles */
+    margin-bottom: 10px; /* Space between title and description */
+}
+
+.problem-section .stat p {
+    font-size: 1em; /* Standardize font size */
+    margin-bottom: 10px; /* Space below the paragraph */
+}
+
+/* Align everything in a row (flex layout) */
+.problem-section .problem-stats {
+    display: flex;
+    justify-content: space-around; /* Space out the stats evenly */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    margin-top: 20px;
+}
