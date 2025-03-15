@@ -100,3 +100,13 @@ document.querySelector('.close-btn').addEventListener('click', function() {
 window.onload = function() {
     document.getElementById('form-popup').style.display = 'none'; // Hide on page load
 };
+
+// JavaScript to add class when scrolling into view
+window.addEventListener('scroll', () => {
+    const section = document.querySelector('.problem-section');
+    const sectionPosition = section.getBoundingClientRect().top;
+
+    if (sectionPosition < window.innerHeight) {
+        section.classList.add('active');
+    }
+});
