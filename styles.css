@@ -439,51 +439,81 @@ ul {
     line-height: 1.4;
 }
 
-/* Industry Trends Section */
+/* General Styling for Industry Trends */
 .industry-trends {
-    margin-bottom: 60px;
+    margin: 40px 0;
+    text-align: center;
 }
 
 .industry-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2em;
-    font-weight: 600;
+    font-size: 2.5em;
+    font-weight: 700;
     color: #333;
     text-transform: uppercase;
+    letter-spacing: 3px;
     margin-bottom: 20px;
 }
 
-.trend p {
+.trend {
     font-family: 'Poppins', sans-serif;
     font-size: 1.2em;
-    color: #666;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.6;
 }
 
-/* Potential Impact Section */
+.trend strong {
+    color: #ff7b00; /* Highlighted numbers */
+}
+
+/* General Styling for Potential Impact */
 .potential-impact {
-    margin-bottom: 60px;
+    margin: 40px 0;
+    text-align: center;
 }
 
 .impact-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2em;
-    font-weight: 600;
+    font-size: 2.5em;
+    font-weight: 700;
     color: #333;
     text-transform: uppercase;
+    letter-spacing: 3px;
     margin-bottom: 20px;
 }
 
 .potential-impact p {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.3em;
-    font-weight: 500;
-    color: #ff7b00;
+    font-size: 1.5em;
+    font-weight: 400;
+    color: #333;
+    margin-top: 10px;
 }
 
-/* Image */
+/* Image Styling */
+.solution-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    text-align: center;
+}
+
 .solution-image img {
-    width: 100%;
-    max-width: 800px;
-    margin: 50px auto;
-    border-radius: 10px;
+    width: 80%; /* Adjust the width of the image */
+    max-width: 800px; /* Set a max width to ensure the image doesn't stretch too far */
+    border-radius: 10px; /* Add rounded corners to the image for a soft, modern look */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow to make the image stand out */
+}
+
+/* Optional: Center content and spacing */
+.container {
+    padding: 0 20px; /* Add some padding inside the container */
+}
+
+/* Add some spacing to the sections to ensure separation */
+section {
+    padding: 80px 0;
 }
