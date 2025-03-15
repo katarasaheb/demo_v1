@@ -105,7 +105,7 @@
         /* Call to Action buttons */
         .cta-container {
             margin-top: 30px;
-            opacity: 0;
+            opacity: 1; /* Ensure CTA container is visible */
             animation: fadeIn 2s forwards;
             animation-delay: 1s;
         }
@@ -120,6 +120,10 @@
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.2s ease;
             border-radius: 5px;
+            opacity: 1;
+            transform: translateY(0);
+            animation: fadeIn 1s forwards;
+            animation-delay: 1.5s;
         }
 
         .cta:hover {
@@ -137,6 +141,114 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+
+        /* Problem Section */
+        #grocery-system {
+            background: url('images/3.JPG') no-repeat center center/cover; /* Add background image */
+            padding: 80px 20px;
+            color: white;
+            text-align: center;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5em;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        /* Problem Description Text */
+        .problem-description {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.6em;
+            color: white;
+            margin: 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            line-height: 1.4;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            animation-delay: 0.5s;
+        }
+
+        /* Interactive Points (Stats) */
+        .problem-stats {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .stat {
+            width: 22%;
+            padding: 20px;
+            margin-bottom: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .stat:hover {
+            background-color: rgba(255, 123, 0, 0.8);
+            transform: scale(1.05); /* Scale effect on hover */
+        }
+
+        .stat-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .stat-description {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2em;
+            line-height: 1.5;
+        }
+
+        /* Industry Trends */
+        .industry-trends {
+            margin-top: 40px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .industry-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5em;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .trend {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2em;
+            font-weight: 400;
+            color: #fff;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            width: 30%;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .trend strong {
+            color: #ff7b00; /* Highlighted numbers */
         }
 
         /* Footer Section */
@@ -166,6 +278,28 @@
         footer p a:hover {
             text-decoration: underline;
         }
+
+        /* Mobile Responsiveness */
+        @media screen and (max-width: 768px) {
+            .problem-stats {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .stat {
+                width: 80%; /* Full-width on mobile */
+                margin-bottom: 20px;
+            }
+
+            .industry-trends {
+                flex-direction: column;
+            }
+
+            .trend {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+        }
     </style>
 </head>
 
@@ -194,45 +328,55 @@
         </div>
     </header>
 
-
     <!-- Problem Section -->
-<section id="grocery-system" class="grocery-system problem-section">
-    <div class="container">
-        <h2 class="section-title">State Of The Canadian Supermarket</h2>
+    <section id="grocery-system" class="grocery-system problem-section">
+        <div class="container">
+            <h2 class="section-title">State Of The Canadian Supermarket</h2>
 
+            <!-- Interactive Points -->
+            <div class="problem-stats">
+                <div class="stat">
+                    <h3 class="stat-title">Oliogopoly </h3>
+                    <p class="stat-description">3 companies control 75% of the grocery market</p>
+                </div>
+                <div class="stat">
+                    <h3 class="stat-title">Inefficient </h3>
+                    <p class="stat-description">High costs due to inefficient distribution</p>
+                </div>
+                <div class="stat">
+                    <h3 class="stat-title">Vulnerability </h3>
+                    <p class="stat-description">Vulnerable due to over-reliance on US imports</p>
+                </div>
+                <div class="stat">
+                    <h3 class="stat-title">Obsolescence </h3>
+                    <p class="stat-description">Traditional stores have high operational costs</p>
+                </div>
+            </div>
 
-        
+            <!-- Industry Trends -->
+            <div class="industry-trends">
+                <h3 class="industry-title">Current Industry Trends</h3>
+                <div class="trend">
+                    <p><strong>20%</strong> CAGR in Online Grocery</p>
+                </div>
+                <div class="trend">
+                    <p><strong>$5B</strong> Market by 2026</p>
+                </div>
+                <div class="trend">
+                    <p><strong>75%</strong> Controlled by 3 Companies</p>
+                </div>
+            </div>
 
-        <!-- Interactive Points -->
-        <div class="problem-stats">
-            <div class="stat">
-                <h3 class="stat-title">Oliogopoly </h3>
-                <p class="stat-description">3 companies control 75% of the grocery market</p>
-            </div>
-            <div class="stat">
-                <h3 class="stat-title">Inefficient </h3>
-                <p class="stat-description">High costs due to inefficient distribution</p>
-            </div>
-            <div class="stat">
-                <h3 class="stat-title">Vulnerability </h3>
-                <p class="stat-description">Vulnerable due to over-reliance on US imports</p>
-            </div>
-            <div class="stat">
-                <h3 class="stat-title">Obsolescence </h3>
-                <p class="stat-description">Traditional stores have high operational costs</p>
+            <!-- Download Button -->
+            <div class="download-btn-container">
+                <a href="https://competition-bureau.canada.ca/sites/default/files/attachments/2023/CB-Retail-Grocery-Market-Study-Report-EN-2023-06-23.pdf" class="download-btn" target="_blank">
+                    Competition Bureau Retail Study Report
+                </a>
             </div>
         </div>
+    </section>
 
-        <!-- Download Button -->
-        <div class="download-btn-container">
-            <a href="https://competition-bureau.canada.ca/sites/default/files/attachments/2023/CB-Retail-Grocery-Market-Study-Report-EN-2023-06-23.pdf" class="download-btn" target="_blank">
-                Competition Bureau Retail Study Report
-            </a>
-        </div>
-    </div>
-</section>
-
-    <!-- Solution Section -->
+     <!-- Solution Section -->
 <section id="our-solution" class="our-solution">
     <div class="container">
         <h2 class="section-title">Our Solution</h2>
@@ -263,154 +407,11 @@
             </div>
         </div>
 
-        <!-- Industry Trends -->
-        <div class="industry-trends">
-            <h3 class="industry-title">Current Industry Trends</h3>
-            <div class="trend">
-                <p><strong>20%</strong> CAGR in Online Grocery</p>
-            </div>
-            <div class="trend">
-                <p><strong>$5B</strong> Market by 2026</p>
-            </div>
-            <div class="trend">
-                <p><strong>75%</strong> Controlled by 3 Companies</p>
-            </div>
-        </div>
-
-        <!-- Potential Impact -->
+         <!-- Potential Impact -->
         <div class="potential-impact">
             <h3 class="impact-title">Our Potential Impact</h3>
             <p><strong>30%</strong> Potential Cost Saving</p>
         </div>
-
-        <!-- Image -->
-        <div class="solution-image">
-            <img src="images/IMG_5160.JPEG" alt="KitchIN Solution">
-        </div>
-    </div>
-</section>
-
-
-<style>
-    /* Problem Section */
-    #grocery-system {
-        background: url('images/3.JPG') no-repeat center center/cover; /* Add background image */
-        padding: 80px 20px;
-        color: white;
-        text-align: center;
-    }
-
-    /* Section Title */
-    .section-title {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 3.5em;
-        font-weight: 700;
-        color: white;
-        margin-bottom: 20px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        opacity: 0;
-        animation: fadeIn 1s forwards;
-    }
-
-    /* Problem Description Text */
-    .problem-description {
-        font-family: 'Poppins', sans-serif;
-        font-size: 1.6em;
-        color: white;
-        margin: 20px 0;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        line-height: 1.4;
-        opacity: 0;
-        animation: fadeIn 1s forwards;
-        animation-delay: 0.5s;
-    }
-
-    /* Interactive Points (Stats) */
-    .problem-stats {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        margin-top: 40px;
-    }
-
-    .stat {
-        width: 22%;
-        padding: 20px;
-        margin-bottom: 20px;
-        background: rgba(0, 0, 0, 0.5);
-        border-radius: 8px;
-        transition: transform 0.3s ease, background-color 0.3s ease;
-    }
-
-    .stat:hover {
-        background-color: rgba(255, 123, 0, 0.8);
-        transform: scale(1.05); /* Scale effect on hover */
-    }
-
-    .stat-title {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 1.8em;
-        font-weight: 600;
-        margin-bottom: 10px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-    }
-
-    .stat-description {
-        font-family: 'Poppins', sans-serif;
-        font-size: 1.2em;
-        line-height: 1.5;
-    }
-
-    /* Download Button */
-    .download-btn-container {
-        margin-top: 30px;
-    }
-
-    .download-btn {
-        background-color: #ff7b00;
-        color: white;
-        padding: 15px 30px;
-        font-size: 1.1em;
-        font-weight: 500;
-        text-transform: uppercase;
-        text-decoration: none;
-        border-radius: 5px;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    .download-btn:hover {
-        background-color: #ff5c00;
-        transform: scale(1.05); /* Slight scale effect on hover */
-    }
-
-    /* Fade-in Animation */
-    @keyframes fadeIn {
-        0% {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    /* Mobile Responsiveness */
-    @media screen and (max-width: 768px) {
-        .problem-stats {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .stat {
-            width: 80%; /* Full-width on mobile */
-            margin-bottom: 20px;
-        }
-    }
-</style>
 
     <!-- Footer Section -->
     <footer>
