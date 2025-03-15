@@ -1,23 +1,13 @@
-/* General Resets and Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* General Styles */
 body {
     font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f8f8f8;
-    font-size: 16px;
+    margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
 }
 
 h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    color: #111;
 }
 
 a {
@@ -25,138 +15,154 @@ a {
     color: inherit;
 }
 
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.cta {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.cta:hover {
+    background-color: #45a049;
+}
+
 /* Hero Section */
 #hero {
-    background-color: #00a859;
-    color: #fff;
+    background-color: #333;
+    color: white;
+    padding: 60px 20px;
     text-align: center;
-    padding: 100px 20px;
-    position: relative;
-    transition: opacity 1s ease-in-out, transform 1s ease;
-    opacity: 0;
 }
 
-#hero.fade-in {
-    opacity: 1;
+.hero-container h1 {
+    font-size: 48px;
+    font-weight: 700;
 }
 
-#hero h1 {
-    font-size: 4rem;
-    letter-spacing: -2px;
-    font-weight: 800;
-    margin-bottom: 10px;
-    transform: translateY(0);
-    transition: transform 0.2s ease;
+.hero-container p {
+    font-size: 20px;
+    margin: 10px 0;
 }
 
-/* Mobile Parallax Effect for Hero */
-#hero h1 {
-    transition: transform 0.2s ease;
+.cta-container {
+    margin-top: 30px;
+}
+
+/* Mobile Navigation */
+.nav-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.nav-toggle .bar {
+    background-color: #fff;
+    height: 4px;
+    width: 30px;
+    margin: 6px 0;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-menu a {
+    padding: 10px;
+    color: white;
+    font-size: 16px;
+}
+
+.nav-menu a:hover {
+    color: #4CAF50;
 }
 
 /* Problem Section */
 .problem-section {
-    padding: 80px 20px;
     background-color: #fff;
+    padding: 40px 20px;
 }
 
-/* Competetive Advantage and Sustainability Sections */
-#competitive-advantage, #sustainability {
-    background-color: #f8f8f8;
-    padding: 80px 20px;
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
     text-align: center;
+    margin-bottom: 20px;
 }
 
-#competitive-advantage h2, #sustainability h2 {
-    font-size: 2.5rem;
+.problem-description {
+    font-size: 20px;
+    text-align: center;
     margin-bottom: 30px;
-    color: #333;
 }
 
-#competitive-advantage button, #join-now button {
-    background-color: #ffcc00;
-    color: #111;
-    font-size: 1rem;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 50px;
-    margin-top: 30px;
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+.problem-stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
-#competitive-advantage button:hover, #join-now button:hover {
-    background-color: #ffb300;
-    transform: scale(1.05);
+.stat {
+    text-align: center;
+    margin: 20px;
+    width: 200px;
 }
 
-/* Footer Section */
+.stat-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.download-btn-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.download-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.download-btn:hover {
+    background-color: #45a049;
+}
+
+/* Footer */
 footer {
     background-color: #333;
-    color: #fff;
-    padding: 40px 20px;
+    color: white;
     text-align: center;
+    padding: 20px 0;
 }
 
-footer .socials a:hover {
-    color: #ffcc00;
-    transform: scale(1.1);
-    transition: transform 0.3s ease, color 0.3s ease;
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
-/* Sticky Header */
-header.sticky {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    transition: all 0.3s ease;
+.socials li a {
+    color: white;
+    font-size: 18px;
 }
 
-.nav-toggle {
-    cursor: pointer;
+footer p a {
+    color: white;
+    margin: 0 10px;
 }
 
-body.no-scroll {
-    overflow: hidden;
+footer p a:hover {
+    text-decoration: underline;
 }
-
-html {
-    scroll-behavior: smooth;
-}
-
-/* Form Popup */
-.form-popup {
-    display: none;
-    transition: all 0.3s ease;
-}
-
-.form-popup.active {
-    display: block;
-    opacity: 1;
-}
-
-.form-popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-}
-
-/* Parallax Effect for Hero Text */
-body {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-body.loaded {
-    opacity: 1;
-}
-
