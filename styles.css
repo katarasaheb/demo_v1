@@ -722,3 +722,96 @@ footer p a {
     background-color: #e68a00;
     transform: scale(1.05);
 }
+
+/* Main Section for Problem */
+.grocery-system {
+    background: url('images/3.JPG') no-repeat center center/cover;
+    height: 100vh; /* Same height as hero */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+/* Container for Content in the Problem Section */
+.grocery-system .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.grocery-system h2 {
+    font-size: 4rem; /* Same as hero heading */
+    font-family: 'Playfair Display', serif; /* Same as hero title */
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.grocery-system p {
+    font-size: 1.5rem; /* Same as hero text */
+    font-family: 'Nunito', sans-serif; /* Same as hero text */
+    margin-bottom: 20px;
+}
+
+.grocery-system .points {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.grocery-system .point {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+}
+
+.grocery-system .point:hover {
+    transform: scale(1.1);
+}
+
+.grocery-system .cta-container {
+    margin-top: 20px;
+}
+
+.cta-container .cta {
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-container .cta:hover {
+    background-color: #e68a00;
+    transform: scale(1.1);
+}
+
+/* Adjust the "Download Report" button */
+.download-report {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #ff9900;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.download-report:hover {
+    background-color: #e68a00;
+}
+
