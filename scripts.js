@@ -110,3 +110,13 @@ window.addEventListener('scroll', () => {
         section.classList.add('active');
     }
 });
+
+// JavaScript to add class when scrolling into view
+window.addEventListener('scroll', () => {
+    const section = document.querySelector('.problem-section');
+    const sectionPosition = section.getBoundingClientRect().top;
+
+    if (sectionPosition < window.innerHeight) {
+        section.classList.add('active');
+    }
+});
