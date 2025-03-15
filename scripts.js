@@ -24,3 +24,18 @@ window.addEventListener('click', function(event) {
         closeForm();
     }
 });
+
+// Function to open the popup
+function openForm(formType) {
+    document.getElementById('form-popup').style.display = 'block'; // Show popup
+}
+
+// Function to close the popup
+document.querySelector('.close-btn').addEventListener('click', function() {
+    document.getElementById('form-popup').style.display = 'none'; // Close popup
+});
+
+// To prevent the popup from opening on load, ensure no code opens the popup automatically
+window.onload = function() {
+    document.getElementById('form-popup').style.display = 'none'; // Hide on page load
+};
