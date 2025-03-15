@@ -284,3 +284,86 @@ footer p a {
 .download-btn:hover {
     background-color: #e68a00;
 }
+
+/* Interactive elements (hover effects, scale, and transition) */
+.interactive-element {
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    background-color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.interactive-element:hover {
+    background-color: #ff9900;
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.interactive-element h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.interactive-element p {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* Section container for video and interactive elements */
+#broken-grocery-system {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 60px 30px;
+    background-color: #222; /* Dark background for contrast */
+    color: white;
+}
+
+#broken-grocery-system .video-container {
+    flex: 1;
+    max-width: 50%;
+    min-width: 300px;
+    position: relative;
+}
+
+#broken-grocery-system .video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#broken-grocery-system .interactive-elements-container {
+    flex: 1;
+    max-width: 45%;
+    min-width: 300px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #broken-grocery-system {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #broken-grocery-system .video-container {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    #broken-grocery-system .interactive-elements-container {
+        max-width: 100%;
+    }
+}
+
