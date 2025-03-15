@@ -35,6 +35,7 @@ h1, h2, h3 {
     font-size: 4rem;
     margin-bottom: 20px;
     font-family: 'Playfair Display', serif; /* Playfair for brand title */
+    color: #ffffff;
 }
 
 .hero-container p {
