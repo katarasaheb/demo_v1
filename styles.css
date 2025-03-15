@@ -824,3 +824,27 @@ footer p a {
   display: table;
   clear: both;
 }
+
+/* Add this CSS for the popup form */
+.form-popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed positioning on screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark transparent background */
+    z-index: 9999; /* High z-index to appear on top */
+    display: flex; /* Center content */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Form container styling */
+.form-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%; /* Adjust width */
+    max-width: 500px; /* Prevent large form */
+}
