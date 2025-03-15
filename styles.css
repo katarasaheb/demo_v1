@@ -1136,3 +1136,44 @@ h1, h2, h3, h4 {
     position: relative;
     z-index: 2; /* Ensures the text is on top of the overlay */
 }
+
+.grocery-points {
+    display: flex; /* Use Flexbox for the layout */
+    justify-content: space-between; /* Space elements evenly */
+    flex-wrap: wrap; /* Ensure they wrap on smaller screens */
+    gap: 20px; /* Space between the points */
+    margin-top: 30px;
+}
+
+.point {
+    flex: 1 1 23%; /* Ensure 4 elements fit in one row */
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: give them a background */
+    border-radius: 8px;
+    margin-bottom: 20px; /* Add space below each point */
+}
+
+.point h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.point p {
+    font-size: 14px;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .point {
+        flex: 1 1 48%; /* On small screens, make them 2 per row */
+    }
+}
+
+@media (max-width: 480px) {
+    .point {
+        flex: 1 1 100%; /* On very small screens, make them stack vertically */
+    }
+}
+
