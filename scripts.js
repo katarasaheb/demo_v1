@@ -68,11 +68,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const navToggle = document.querySelector(".nav-toggle");
     const navMenu = document.querySelector(".nav-menu");
 
+    document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector(".nav-toggle");
+    const navMenu = document.querySelector(".nav-menu");
+
     if (navToggle && navMenu) {
         navToggle.addEventListener("click", function () {
             navMenu.classList.toggle("active");
-            document.body.classList.toggle("no-scroll"); // Prevent body scrolling when menu is open
         });
+    }
+});
 
         // Close the navigation menu when a link is clicked (for mobile responsiveness)
         const navLinks = document.querySelectorAll(".nav-menu a");
