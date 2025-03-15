@@ -1,122 +1,108 @@
-// Function to open the form popup
-function openForm(formType) {
-    var formPopup = document.getElementById("form-popup");
-    formPopup.style.display = "flex"; // Show the form popup
+// For smooth scrolling on anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+        e.preventDefault();
 
-    // You can add logic here to modify the form based on the 'formType'
-    // E.g., show different labels or fields based on the user type (Customer, Investor, Partner)
-}
-
-// Function to close the form popup
-function closeForm() {
-    var formPopup = document.getElementById("form-popup");
-    formPopup.style.display = "none"; // Hide the form popup
-}
-
-// Add event listener to close the form when clicking the close button
-var closeBtn = document.querySelector('.close-btn');
-closeBtn.addEventListener('click', closeForm);
-
-// Close form when clicking outside the form container
-window.addEventListener('click', function(event) {
-    var formPopup = document.getElementById("form-popup");
-    if (event.target === formPopup) {
-        closeForm();
-    }
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    });
 });
 
-// Function to open the popup
-function openForm(formType) {
-    // Show the popup
-    document.getElementById('form-popup').style.display = 'block';
+// Handle Form Popup functionality
+function openForm(userType) {
+    const formPopup = document.getElementById("form-popup");
+    const formTitle = formPopup.querySelector("h2");
 
-    // Select the form container to update the content dynamically
-    var formContainer = document.querySelector('.form-container');
-
-    // Clear the existing form content
-    formContainer.innerHTML = '';
-
-    // Dynamically change the content based on the form type
-    if (formType === 'customer') {
-        formContainer.innerHTML = `
-            <span class="close-btn">&times;</span>
-            <h2>Join Us as a Customer</h2>
-            <form action="https://formspree.io/f/your-email" method="POST">
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Message (Optional, 180 words max):</label>
-                <textarea id="message" name="message" maxlength="180"></textarea>
-
-                <input type="submit" value="Submit" class="cta">
-            </form>
-        `;
-    } else if (formType === 'investor') {
-        formContainer.innerHTML = `
-            <span class="close-btn">&times;</span>
-            <h2>Join Us as an Investor</h2>
-            <form action="https://formspree.io/f/your-email" method="POST">
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="investment">Investment Amount:</label>
-                <input type="text" id="investment" name="investment" required>
-
-                <input type="submit" value="Submit" class="cta">
-            </form>
-        `;
-    } else if (formType === 'partner') {
-        formContainer.innerHTML = `
-            <span class="close-btn">&times;</span>
-            <h2>Join Us as a Partner</h2>
-            <form action="https://formspree.io/f/your-email" method="POST">
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="company">Company Name:</label>
-                <input type="text" id="company" name="company" required>
-
-                <input type="submit" value="Submit" class="cta">
-            </form>
-        `;
+    // Adjust the form title based on the user type (Customer, Investor, Partner)
+    if (userType === "customer") {
+        formTitle.textContent = "Join Us as a Customer";
+    } else if (userType === "investor") {
+        formTitle.textContent = "Join Us as an Investor";
+    } else if (userType === "partner") {
+        formTitle.textContent = "Join Us as a Partner";
     }
+
+    formPopup.style.display = "block";  // Show the form popup
+    document.body.style.overflow = "hidden"; // Prevent page scrolling
 }
 
-// Function to close the form
-document.querySelector('.close-btn').addEventListener('click', function() {
-    document.getElementById('form-popup').style.display = 'none';
+// Close the form popup
+document.querySelector(".close-btn").addEventListener("click", function() {
+    const formPopup = document.getElementById("form-popup");
+    formPopup.style.display = "none";
+    document.body.style.overflow = "auto"; // Re-enable page scrolling
 });
 
-// To prevent the popup from opening on load, ensure no code opens the popup automatically
-window.onload = function() {
-    document.getElementById('form-popup').style.display = 'none'; // Hide on page load
+// Scroll effect for the Hero section (fade-in)
+document.addEventListener("DOMContentLoaded", function () {
+    const hero = document.getElementById("hero");
+    const fadeInEffect = () => {
+        const heroHeight = hero.offsetHeight;
+        const scrollPosition = window.scrollY;
+
+        // Add fade-in effect as the user scrolls
+        if (scrollPosition > heroHeight * 0.2) {
+            hero.classList.add("fade-in");
+        } else {
+            hero.classList.remove("fade-in");
+        }
+    };
+
+    window.addEventListener("scroll", fadeInEffect);
+    fadeInEffect(); // Ensure it's applied on page load
+});
+
+// Mobile Navigation Toggle
+const navToggle = document.querySelector(".nav-toggle");
+const navMenu = document.querySelector(".nav-menu");
+
+navToggle.addEventListener("click", function () {
+    navMenu.classList.toggle("active");
+});
+
+// Close the navigation menu when a link is clicked (for mobile responsiveness)
+const navLinks = document.querySelectorAll(".nav-menu a");
+
+navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        if (navMenu.classList.contains("active")) {
+            navMenu.classList.remove("active");
+        }
+    });
+});
+
+// Adding a smooth fade-out animation when the page loads
+document.body.style.opacity = 0;
+window.onload = () => {
+    document.body.style.transition = "opacity 1s ease-in-out";
+    document.body.style.opacity = 1;
 };
 
-// JavaScript to add class when scrolling into view
-window.addEventListener('scroll', () => {
-    const section = document.querySelector('.problem-section');
-    const sectionPosition = section.getBoundingClientRect().top;
-
-    if (sectionPosition < window.innerHeight) {
-        section.classList.add('active');
+// Sticky Header (if needed)
+window.onscroll = function () {
+    const header = document.querySelector("header");
+    if (window.scrollY > 0) {
+        header.classList.add("sticky");
+    } else {
+        header.classList.remove("sticky");
     }
+};
+
+// Function for the download button click (Example: download report)
+document.querySelector(".download-btn").addEventListener("click", function () {
+    window.open("https://competition-bureau.canada.ca/sites/default/files/attachments/2023/CB-Retail-Grocery-Market-Study-Report-EN-2023-06-23.pdf", "_blank");
 });
 
-// JavaScript to add class when scrolling into view
-window.addEventListener('scroll', () => {
-    const section = document.querySelector('.problem-section');
-    const sectionPosition = section.getBoundingClientRect().top;
+// Form Validation (Example)
+const form = document.querySelector("form");
+form.addEventListener("submit", function (e) {
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
 
-    if (sectionPosition < window.innerHeight) {
-        section.classList.add('active');
+    if (name.value.trim() === "" || email.value.trim() === "") {
+        e.preventDefault(); // Prevent form submission
+        alert("Please fill in all required fields.");
     }
 });
