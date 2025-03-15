@@ -65,31 +65,22 @@ document.addEventListener('DOMContentLoaded', function () {
     fadeInEffect(); // Ensure it's applied on page load
 
     // Mobile Navigation Toggle
-const navToggle = document.querySelector(".nav-toggle");
-const navMenu = document.querySelector(".nav-menu");
+    const navToggle = document.querySelector(".nav-toggle");
+    const navMenu = document.querySelector(".nav-menu");
 
-navToggle.addEventListener("click", function () {
-    navMenu.classList.toggle("active");
-    document.body.classList.toggle("no-scroll"); // Prevent body scrolling when menu is open
-});
+    if (navToggle && navMenu) {  // Ensure the nav-toggle and nav-menu elements exist
+        navToggle.addEventListener("click", function () {
+            navMenu.classList.toggle("active");
+            document.body.classList.toggle("no-scroll"); // Prevent body scrolling when menu is open
+        });
+    }
 
-// Close the navigation menu when a link is clicked (for mobile responsiveness)
-const navLinks = document.querySelectorAll(".nav-menu a");
+    // Close the navigation menu when a link is clicked (for mobile responsiveness)
+    const navLinks = document.querySelectorAll(".nav-menu a");
 
-navLinks.forEach(link => {
-    link.addEventListener("click", () => {
-        if (navMenu.classList.contains("active")) {
-            navMenu.classList.remove("active");
-            document.body.classList.remove("no-scroll");
-        }
-    });
-});
-
-        // Close the navigation menu when a link is clicked (for mobile responsiveness)
-        const navLinks = document.querySelectorAll(".nav-menu a");
-
-        navLinks.forEach(link => {
-            link.addEventListener("click", () => {
+    if (navLinks.length > 0) {  // Ensure nav links exist before adding event listeners
+        navLinks.forEach(function (link) {
+            link.addEventListener("click", function () {
                 if (navMenu.classList.contains("active")) {
                     navMenu.classList.remove("active");
                     document.body.classList.remove("no-scroll");
