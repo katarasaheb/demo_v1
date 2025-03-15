@@ -27,12 +27,73 @@ window.addEventListener('click', function(event) {
 
 // Function to open the popup
 function openForm(formType) {
-    document.getElementById('form-popup').style.display = 'block'; // Show popup
+    // Show the popup
+    document.getElementById('form-popup').style.display = 'block';
+
+    // Select the form container to update the content dynamically
+    var formContainer = document.querySelector('.form-container');
+
+    // Clear the existing form content
+    formContainer.innerHTML = '';
+
+    // Dynamically change the content based on the form type
+    if (formType === 'customer') {
+        formContainer.innerHTML = `
+            <span class="close-btn">&times;</span>
+            <h2>Join Us as a Customer</h2>
+            <form action="https://formspree.io/f/your-email" method="POST">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message (Optional, 180 words max):</label>
+                <textarea id="message" name="message" maxlength="180"></textarea>
+
+                <input type="submit" value="Submit" class="cta">
+            </form>
+        `;
+    } else if (formType === 'investor') {
+        formContainer.innerHTML = `
+            <span class="close-btn">&times;</span>
+            <h2>Join Us as an Investor</h2>
+            <form action="https://formspree.io/f/your-email" method="POST">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="investment">Investment Amount:</label>
+                <input type="text" id="investment" name="investment" required>
+
+                <input type="submit" value="Submit" class="cta">
+            </form>
+        `;
+    } else if (formType === 'partner') {
+        formContainer.innerHTML = `
+            <span class="close-btn">&times;</span>
+            <h2>Join Us as a Partner</h2>
+            <form action="https://formspree.io/f/your-email" method="POST">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="company">Company Name:</label>
+                <input type="text" id="company" name="company" required>
+
+                <input type="submit" value="Submit" class="cta">
+            </form>
+        `;
+    }
 }
 
-// Function to close the popup
+// Function to close the form
 document.querySelector('.close-btn').addEventListener('click', function() {
-    document.getElementById('form-popup').style.display = 'none'; // Close popup
+    document.getElementById('form-popup').style.display = 'none';
 });
 
 // To prevent the popup from opening on load, ensure no code opens the popup automatically
