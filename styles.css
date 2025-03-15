@@ -24,11 +24,14 @@ h1, h2, h3 {
     text-align: center;
     color: white;
     padding: 20px;
+    position: relative; /* Makes sure content stays in place */
 }
+
 
 .hero-container {
     max-width: 800px;
-    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 20px; /* Space between hero content and next section */
 }
 
 .hero-container h1 {
