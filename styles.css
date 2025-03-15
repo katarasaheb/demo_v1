@@ -1591,3 +1591,33 @@ body, html {
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
     margin-top: 20px;
 }
+
+/* Style for the download button */
+.download-btn-container {
+    text-align: center; /* Center the button */
+    margin-top: 20px; /* Add some space from the stats section */
+}
+
+/* Styling for the download button */
+.download-btn {
+    display: inline-block; /* Make it behave like a block element */
+    padding: 15px 30px; /* Add padding for better clickability */
+    background-color: #007BFF; /* Primary color for the button */
+    color: #fff; /* White text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Slight rounding of the corners */
+    font-size: 1.2em; /* Bigger font for the button */
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transition on hover */
+}
+
+/* Hover effect for the button */
+.download-btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: scale(1.05); /* Slight scale-up effect */
+}
+
+/* Focus effect for accessibility */
+.download-btn:focus {
+    outline: none; /* Remove the default focus outline */
+    border: 2px solid #0056b3; /* Add custom focus border */
+}
