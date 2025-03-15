@@ -405,3 +405,89 @@ footer p a {
 .section-item:hover .title {
     transform: translateY(-20px); /* Move the title up slightly on hover */
 }
+
+/* Video Container Styling */
+.video-container {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.video-container iframe {
+    width: 100%;
+    max-width: 1000px;
+    height: 500px;
+    border: none;
+    border-radius: 8px;
+}
+
+/* Interactive Elements Styling */
+.interactive-elements-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.section-item {
+    position: relative;
+    width: 100%;
+    max-width: 280px;
+    overflow: hidden;
+    height: 200px; /* Adjust as needed */
+    margin-bottom: 30px;
+}
+
+/* Title Styling */
+.section-item .title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    z-index: 10;
+    transition: transform 0.3s ease;
+}
+
+/* Subtitle Styling */
+.section-item .subtitle {
+    font-size: 1rem;
+    color: #ff9900;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effects */
+.section-item:hover .subtitle {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-item:hover .title {
+    transform: translateY(-20px);
+}
+
+/* Download Button Styling */
+.download-btn-container {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.download-btn {
+    display: inline-block;
+    background-color: #ff9900;
+    color: white;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #e68a00;
+}
+
