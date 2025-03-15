@@ -1353,3 +1353,81 @@ body, html {
         margin-left: 0; /* Reset margin on smaller screens */
     }
 }
+
+/* General Layout */
+.problem-section {
+    position: relative;
+    padding: 50px 0;
+    background-color: #1e1e1e;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Title and Description */
+.problem-section .section-title,
+.problem-section .problem-description {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.problem-section .problem-stats .stat {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Hover Effect on Stat Items */
+.problem-section .problem-stats .stat:hover {
+    transform: translateY(-10px) scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.problem-section .stat-title {
+    transition: color 0.3s ease;
+}
+
+.problem-section .stat-description {
+    opacity: 0.6;
+}
+
+/* Hover Animation */
+.problem-section .problem-stats .stat:hover .stat-description {
+    opacity: 1;
+}
+
+.problem-section .stat:hover .stat-title {
+    color: #00c2ff; /* Change to a highlight color when hovered */
+}
+
+/* Animation when Scrolling into View */
+.problem-section.active .section-title,
+.problem-section.active .problem-description {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.problem-section.active .problem-stats .stat {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Add Smooth Background Image to Section */
+.problem-section {
+    background-image: url('path/to/your/image.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .problem-section .section-title,
+    .problem-section .problem-description {
+        font-size: 1.2em;
+    }
+
+    .problem-section .problem-stats .stat {
+        margin-bottom: 20px;
+    }
+}
