@@ -20,6 +20,7 @@ ul {
     padding: 0;
 }
 
+/* Button Styles */
 .cta {
     background-color: #4CAF50;
     color: white;
@@ -29,13 +30,15 @@ ul {
     font-size: 16px;
     margin: 10px;
     border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .cta:hover {
     background-color: #45a049;
+    transform: translateY(-5px);
 }
 
-/* Style the Hero Section */
+/* Hero Section */
 #hero {
     position: relative;
     height: 100vh;
@@ -48,7 +51,7 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Make sure the background is behind the text */
+    z-index: -1;
 }
 
 .hero-background video {
@@ -57,10 +60,9 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the video covers the entire container */
+    object-fit: cover;
 }
 
-/* Hero Content Section */
 .hero-content {
     position: absolute;
     top: 50%;
@@ -68,46 +70,43 @@ ul {
     transform: translate(-50%, -50%);
     text-align: center;
     color: white;
-    z-index: 10; /* Ensure content is above the video */
-    max-width: 80%; /* Limit the width of the content */
+    z-index: 10;
+    max-width: 80%;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black background for contrast */
-    border-radius: 10px; /* Rounded corners for the hero content box */
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
 }
 
-/* Hero Heading - kitchin */
 .hero-heading {
-    font-family: 'Poppins', sans-serif; /* Using Poppins for modern, clean look */
-    font-size: 4em; /* Increased font size */
-    font-weight: 700; /* Bold weight for emphasis */
-    text-transform: uppercase; /* Make text uppercase */
-    letter-spacing: 8px; /* Increased spacing between letters */
+    font-family: 'Poppins', sans-serif;
+    font-size: 4em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 8px;
     color: #fff;
-    margin: 0; /* Remove default margin */
-    text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.6); /* Stronger shadow for better contrast */
+    margin: 0;
+    text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.6);
     opacity: 0;
     transform: translateY(30px);
-    animation: fadeInUp 1s ease-out forwards; /* Animation on load */
+    animation: fadeInUp 1s ease-out forwards;
 }
 
-/* Hero Subheading */
 .hero-subheading {
-    font-family: 'Poppins', sans-serif; /* Keep the font in line with the hero-heading */
-    font-size: 2.5em; /* Adjusted font size for better hierarchy */
-    font-weight: 400; /* Normal weight for clarity */
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5em;
+    font-weight: 400;
     color: #fff;
-    margin: 20px 0; /* Add space above and below */
-    text-transform: uppercase; /* Make the text uppercase */
-    letter-spacing: 3px; /* Space out words slightly */
-    line-height: 1.5; /* Adjust line height for readability */
-    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for readability */
+    margin: 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 1.5;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
     opacity: 0;
     transform: translateY(30px);
-    animation: fadeInUp 1.2s ease-out forwards; /* Animation on load */
-    animation-delay: 0.2s; /* Delay for subheading to appear after the heading */
+    animation: fadeInUp 1.2s ease-out forwards;
+    animation-delay: 0.2s;
 }
 
-/* Hero Content CTA buttons */
 .cta-container {
     margin-top: 30px;
 }
@@ -121,92 +120,11 @@ ul {
     margin: 10px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    border-radius: 5px; /* Slightly rounded corners */
+    border-radius: 5px;
     opacity: 0;
     transform: translateY(30px);
-    animation: fadeInUp 1s ease-out forwards; /* Animation on load */
-    animation-delay: 0.4s; /* Delay for CTA buttons to appear after text */
-}
-
-/* Hover effect on CTA buttons */
-.cta:hover {
-    background-color: #ff5c00; /* More vibrant hover color */
-    transform: translateY(-5px); /* Slight upward movement for interactive feel */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Add shadow on hover for emphasis */
-}
-
-/* Text animation for smooth entrance */
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-}
-
-.socials {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.socials li a {
-    color: white;
-    font-size: 18px;
-}
-
-footer p a {
-    color: white;
-    margin: 0 10px;
-}
-
-footer p a:hover {
-    text-decoration: underline;
-}
-
-
-/* Other Styling as Before */
-
-
-/* Call to Action buttons */
-.cta-container {
-    margin-top: 30px;
-}
-
-.cta {
-    background-color: #ff7b00;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 1.1em;
-    margin: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    border-radius: 5px; /* Slightly rounded corners */
-}
-
-.cta:hover {
-    background-color: #ff5c00;
-}
-
-/* Hover effect on the text in the hero section */
-.hero-heading:hover {
-    color: #ff7b00; /* Change text color on hover */
-}
-
-.hero-subheading:hover {
-    color: #ff7b00; /* Change text color on hover */
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 0.4s;
 }
 
 /* Footer */
@@ -239,13 +157,12 @@ footer p a:hover {
 
 /* Problem Section */
 #grocery-system {
-    background: url('images/3.JPG') no-repeat center center/cover; /* Add background image */
+    background: url('images/3.JPG') no-repeat center center/cover;
     padding: 80px 20px;
     color: white;
     text-align: center;
 }
 
-/* Section Title */
 .section-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 3.5em;
@@ -258,7 +175,6 @@ footer p a:hover {
     animation: fadeIn 1s forwards;
 }
 
-/* Problem Description Text */
 .problem-description {
     font-family: 'Poppins', sans-serif;
     font-size: 1.6em;
@@ -272,7 +188,6 @@ footer p a:hover {
     animation-delay: 0.5s;
 }
 
-/* Interactive Points (Stats) */
 .problem-stats {
     display: flex;
     justify-content: space-between;
@@ -291,7 +206,7 @@ footer p a:hover {
 
 .stat:hover {
     background-color: rgba(255, 123, 0, 0.8);
-    transform: scale(1.05); /* Scale effect on hover */
+    transform: scale(1.05);
 }
 
 .stat-title {
@@ -309,7 +224,6 @@ footer p a:hover {
     line-height: 1.5;
 }
 
-/* Download Button */
 .download-btn-container {
     margin-top: 30px;
 }
@@ -328,7 +242,7 @@ footer p a:hover {
 
 .download-btn:hover {
     background-color: #ff5c00;
-    transform: scale(1.05); /* Slight scale effect on hover */
+    transform: scale(1.05);
 }
 
 /* Fade-in Animation */
@@ -351,46 +265,9 @@ footer p a:hover {
     }
 
     .stat {
-        width: 80%; /* Full-width on mobile */
+        width: 80%;
         margin-bottom: 20px;
     }
-}
-
-/* General Styles */
-body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.cta {
-    background-color: #4CAF50;
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    margin: 10px;
-    border-radius: 5px;
-}
-
-.cta:hover {
-    background-color: #45a049;
 }
 
 /* Solution Section */
@@ -439,7 +316,7 @@ ul {
     line-height: 1.4;
 }
 
-/* General Styling for Industry Trends */
+/* Industry Trends */
 .industry-trends {
     margin: 40px 0;
     text-align: center;
@@ -465,10 +342,10 @@ ul {
 }
 
 .trend strong {
-    color: #ff7b00; /* Highlighted numbers */
+    color: #ff7b00;
 }
 
-/* General Styling for Potential Impact */
+/* Potential Impact */
 .potential-impact {
     margin: 40px 0;
     text-align: center;
@@ -502,18 +379,17 @@ ul {
 }
 
 .solution-image img {
-    width: 80%; /* Adjust the width of the image */
-    max-width: 800px; /* Set a max width to ensure the image doesn't stretch too far */
-    border-radius: 10px; /* Add rounded corners to the image for a soft, modern look */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow to make the image stand out */
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Optional: Center content and spacing */
 .container {
-    padding: 0 20px; /* Add some padding inside the container */
+    padding: 0 20px;
 }
 
-/* Add some spacing to the sections to ensure separation */
 section {
     padding: 80px 0;
 }
