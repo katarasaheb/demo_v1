@@ -159,7 +159,7 @@ footer p a:hover {
 #grocery-system {
     background: url('images/3.JPG') no-repeat center center/cover;
     padding: 80px 20px;
-    color: Blue;
+    color: white;
     text-align: center;
 }
 
@@ -182,7 +182,7 @@ footer p a:hover {
     margin: 20px 0;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    line-height: 1.1;
+    line-height: 1.4;
     opacity: 0;
     animation: fadeIn 1s forwards;
     animation-delay: 0.5s;
@@ -272,7 +272,7 @@ footer p a:hover {
 
 /* Solution Section */
 #our-solution {
-    background-color: #4169E1;
+    background-color: #ffffff;
     padding: 80px 0;
     text-align: center;
 }
