@@ -367,3 +367,41 @@ footer p a {
     }
 }
 
+/* Section Item Title */
+.section-item {
+    position: relative;
+    overflow: hidden;
+    height: 200px; /* Adjust the height to fit your design */
+}
+
+/* Title Styling */
+.section-item .title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    z-index: 10; /* Make sure title is always on top */
+    transition: transform 0.3s ease;
+}
+
+/* Subtitle Styling (Initially Hidden) */
+.section-item .subtitle {
+    font-size: 1rem;
+    color: #ff9900;
+    position: absolute;
+    bottom: 10px; /* Adjust as needed */
+    left: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    opacity: 0;
+    transform: translateY(20px); /* Subtitle starts hidden below */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* On Hover: Show Subtitle and Animate Title */
+.section-item:hover .subtitle {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-item:hover .title {
+    transform: translateY(-20px); /* Move the title up slightly on hover */
+}
