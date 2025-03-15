@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Close the navigation menu when a link is clicked (for mobile responsiveness)
-    const navLinks = document.querySelectorAll(".nav-menu a");
+    const navLinks = document.querySelectorAll(".nav-menu a"); // Declare navLinks only once
 
     if (navLinks.length > 0) {  // Ensure nav links exist before adding event listeners
         navLinks.forEach(function (link) {
