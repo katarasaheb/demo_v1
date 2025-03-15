@@ -1020,3 +1020,94 @@ h1, h2, h3, h4 {
     display: none;  /* Hide popup by default */
     /* other popup styles */
 }
+
+/* General Section Styling */
+.section {
+    padding: 4rem 2rem;
+    background-color: #121212; /* Dark mode background */
+    color: #fff;
+    font-family: 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+}
+
+.problem-section {
+    background-color: #1a1a1a; /* Slightly lighter for contrast */
+    text-align: center;
+    border-radius: 10px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #f0f0f0;
+}
+
+.problem-description {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+    color: #bbb;
+}
+
+/* Stat Block Styling */
+.problem-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    text-align: left;
+}
+
+.stat {
+    padding: 2rem;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.stat:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+.stat-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.stat-description {
+    font-size: 1rem;
+    color: #aaa;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .problem-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .problem-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .problem-description {
+        font-size: 1.1rem;
+    }
+}
+
