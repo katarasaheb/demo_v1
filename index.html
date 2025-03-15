@@ -12,7 +12,7 @@
         /* Style the Hero Section */
         #hero {
             position: relative;
-            height: 100vh; /* Full screen height */
+            height: 100vh;
             overflow: hidden;
         }
 
@@ -83,7 +83,7 @@
             <!-- Background Video -->
             <div class="hero-background">
                 <!-- Embed YouTube Video -->
-                <iframe src="https://www.youtube.com/watch?v=YGpsjeqPIEo&list=PLxox4EslpGPwLppU_bRR92jGlMfqZ3lOH&index=14" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/YGpsjeqPIEo?si=yri6CdIi2gXMGCXq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
 
             <!-- Hero Content -->
@@ -98,65 +98,8 @@
         </div>
     </header>
 
-    <!-- Form Section (appears when any CTA is clicked) -->
-    <div id="form-popup" class="form-popup">
-        <div class="form-container">
-            <span class="close-btn">&times;</span>
-            <h2>Join Us</h2>
-            <form action="https://formspree.io/f/your-email" method="POST">
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Message (Optional, 180 words max):</label>
-                <textarea id="message" name="message" maxlength="180"></textarea>
-
-                <input type="submit" value="Submit" class="cta">
-            </form>
-        </div>
-    </div>
-
-    <!-- Problem Section -->
-    <section id="grocery-system" class="grocery-system problem-section">
-        <div class="container">
-            <section class="state-of-canadian-supermarket">
-                <h2 class="section-title">State Of The Canadian Supermarket</h2>
-                <p class="problem-description">
-                    Monopolized, Inefficient and Outdated. It's time for a Grocery Revolution.
-                </p>
-
-                <!-- Interactive Points -->
-                <div class="problem-stats">
-                    <div class="stat">
-                        <h3 class="stat-title">Monopolized Market</h3>
-                        <p class="stat-description">3 companies control 75% of the grocery market.</p>
-                    </div>
-                    <div class="stat">
-                        <h3 class="stat-title">Bloated Supply Chains</h3>
-                        <p class="stat-description">High costs due to inefficient distribution.</p>
-                    </div>
-                    <div class="stat">
-                        <h3 class="stat-title">US Import Dependency</h3>
-                        <p class="stat-description">Vulnerable due to over-reliance on US imports.</p>
-                    </div>
-                    <div class="stat">
-                        <h3 class="stat-title">Outdated Supermarkets</h3>
-                        <p class="stat-description">Traditional stores have high operational costs.</p>
-                    </div>
-                </div>
-
-                <!-- Download Button -->
-                <div class="download-btn-container">
-                    <a href="https://competition-bureau.canada.ca/sites/default/files/attachments/2023/CB-Retail-Grocery-Market-Study-Report-EN-2023-06-23.pdf" class="download-btn" target="_blank">
-                        Competition Bureau Retail Study Report
-                    </a>
-                </div>
-            </section>
-        </div>
-    </section>
-
+    <!-- Your Other Sections Go Here -->
+    
     <!-- Footer Section -->
     <footer>
         <ul class="socials">
@@ -167,7 +110,6 @@
         <p><a href="#">Contact Us</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </footer>
 
-    <!-- JavaScript -->
     <script src="scripts.js"></script>
 </body>
 
