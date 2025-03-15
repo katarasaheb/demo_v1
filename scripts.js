@@ -111,3 +111,43 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+// Ensure DOM is fully loaded
+document.addEventListener("DOMContentLoaded", function () {
+    
+    // Scroll animation for The KitchIN Advantage Section
+    function animateKitchinAdvantage() {
+        const section = document.getElementById("kitchin-advantage");
+        if (section && section.getBoundingClientRect().top < window.innerHeight - 100) {
+            section.classList.add("fade-in");
+        }
+    }
+    
+    // Scroll animation for Stage 1: Alberta Section
+    function animateStage1Alberta() {
+        const section = document.getElementById("stage-1-alberta");
+        if (section && section.getBoundingClientRect().top < window.innerHeight - 100) {
+            section.classList.add("fade-in");
+        }
+    }
+
+    // Scroll animation for Build the Future Section
+    function animateBuildFuture() {
+        const section = document.getElementById("build-future");
+        if (section && section.getBoundingClientRect().top < window.innerHeight - 100) {
+            section.classList.add("fade-in");
+        }
+    }
+
+    // Listen for scroll events
+    window.addEventListener("scroll", function () {
+        animateKitchinAdvantage();
+        animateStage1Alberta();
+        animateBuildFuture();
+    });
+
+    // Ensure animations trigger on page load if sections are already in view
+    animateKitchinAdvantage();
+    animateStage1Alberta();
+    animateBuildFuture();
+});
