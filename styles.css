@@ -389,3 +389,95 @@ footer p a:hover {
 .scroll-to-top:hover {
     background-color: #ff5c00;
 }
+
+/* The KitchIN Advantage Section */
+#kitchin-advantage {
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+    background-size: cover;
+    background-position: center;
+}
+
+.kitchin-advantage .subtitle {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.subsection {
+    margin-top: 50px;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.subsection h3 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.subsection ul {
+    list-style: none;
+    padding: 0;
+}
+
+.subsection ul li {
+    font-size: 1.2em;
+    padding: 10px 0;
+}
+
+/* Stage 1: Alberta Section */
+#stage-1-alberta {
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+    background-size: cover;
+    background-position: center;
+}
+
+#stage-1-alberta table {
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+#stage-1-alberta th, #stage-1-alberta td {
+    padding: 15px;
+    border: 1px solid white;
+    text-align: center;
+}
+
+/* Build the Future Section */
+#build-future {
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Footer Section */
+footer {
+    background-color: #111;
+    padding: 30px 0;
+    text-align: center;
+    color: white;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ff7b00;
+}
