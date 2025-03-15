@@ -1431,3 +1431,89 @@ body, html {
         margin-bottom: 20px;
     }
 }
+
+/* General Layout */
+.problem-section {
+    position: relative;
+    padding: 50px 0;
+    background-color: transparent; /* Ensures background is transparent */
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    background-image: url('path/to/your/image.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Title and Description */
+.problem-section .section-title,
+.problem-section .problem-description {
+    opacity: 1; /* Ensure title and description are visible */
+    transform: translateY(0);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Shift Elements Left */
+.problem-section {
+    margin-left: 30%;
+}
+
+/* Hover Effect on Stat Items */
+.problem-section .problem-stats .stat:hover {
+    transform: translateY(-10px) scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* Hover Animation */
+.problem-section .problem-stats .stat:hover .stat-description {
+    opacity: 1;
+}
+
+.problem-section .stat-title {
+    transition: color 0.3s ease;
+}
+
+.problem-section .stat-description {
+    opacity: 0.6;
+}
+
+/* Active Class Animation */
+.problem-section.active .section-title,
+.problem-section.active .problem-description {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.problem-section.active .problem-stats .stat {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ensure the button is visible */
+.download-btn-container a {
+    opacity: 1; /* Ensure the button is visible */
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00c2ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.download-btn-container a:hover {
+    background-color: #0085a2; /* Darker shade on hover */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .problem-section .section-title,
+    .problem-section .problem-description {
+        font-size: 1.2em;
+    }
+
+    .problem-section .problem-stats .stat {
+        margin-bottom: 20px;
+    }
+}
