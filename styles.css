@@ -1015,3 +1015,8 @@ h1, h2, h3, h4 {
     padding: 20px 10px;
   }
 }
+
+.form-popup {
+    display: none;  /* Hide popup by default */
+    /* other popup styles */
+}
