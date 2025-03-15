@@ -13,10 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const target = document.querySelector(this.getAttribute('href'));
 
             // Scroll smoothly to the target element
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start',
-            });
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                });
+            }
         });
     });
 
