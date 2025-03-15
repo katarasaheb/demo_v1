@@ -64,19 +64,25 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener("scroll", fadeInEffect);
     fadeInEffect(); // Ensure it's applied on page load
 
-    // Mobile Navigation Toggle with smooth animation
-    const navToggle = document.querySelector(".nav-toggle");
-    const navMenu = document.querySelector(".nav-menu");
+    // Mobile Navigation Toggle
+const navToggle = document.querySelector(".nav-toggle");
+const navMenu = document.querySelector(".nav-menu");
 
-    document.addEventListener('DOMContentLoaded', function() {
-    const navToggle = document.querySelector(".nav-toggle");
-    const navMenu = document.querySelector(".nav-menu");
+navToggle.addEventListener("click", function () {
+    navMenu.classList.toggle("active");
+    document.body.classList.toggle("no-scroll"); // Prevent body scrolling when menu is open
+});
 
-    if (navToggle && navMenu) {
-        navToggle.addEventListener("click", function () {
-            navMenu.classList.toggle("active");
-        });
-    }
+// Close the navigation menu when a link is clicked (for mobile responsiveness)
+const navLinks = document.querySelectorAll(".nav-menu a");
+
+navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        if (navMenu.classList.contains("active")) {
+            navMenu.classList.remove("active");
+            document.body.classList.remove("no-scroll");
+        }
+    });
 });
 
         // Close the navigation menu when a link is clicked (for mobile responsiveness)
