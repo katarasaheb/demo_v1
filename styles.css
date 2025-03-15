@@ -1111,3 +1111,28 @@ h1, h2, h3, h4 {
     }
 }
 
+/* Add this to your CSS */
+.problem-section {
+    background-image: url('path_to_your_image.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0; /* Adjust padding as needed */
+    color: #fff; /* Ensures text is visible on the dark background */
+}
+
+/* Optional: If you want to overlay a dark filter over the image for better contrast */
+.problem-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Adjust opacity for the dark overlay */
+    z-index: 1;
+}
+
+.container {
+    position: relative;
+    z-index: 2; /* Ensures the text is on top of the overlay */
+}
