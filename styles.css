@@ -815,3 +815,9 @@ footer p a {
     background-color: #e68a00;
 }
 
+/* Clearfix for containers */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
