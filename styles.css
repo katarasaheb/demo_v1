@@ -273,6 +273,8 @@ footer p a:hover {
 /* Solution Section */
 #our-solution {
     background-color: #4169E1;
+    #our-solution {
+    color: #4169E1;  /* Royal Blue font color */
     padding: 80px 0;
     text-align: center;
 }
