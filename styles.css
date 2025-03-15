@@ -27,11 +27,17 @@ a {
 
 /* Hero Section */
 #hero {
-    background-color: #00a859; /* Bright green for KitchIN’s branding */
+    background-color: #00a859;
     color: #fff;
     text-align: center;
     padding: 100px 20px;
     position: relative;
+    transition: opacity 1s ease-in-out, transform 1s ease;
+    opacity: 0;
+}
+
+#hero.fade-in {
+    opacity: 1;
 }
 
 #hero h1 {
@@ -39,34 +45,13 @@ a {
     letter-spacing: -2px;
     font-weight: 800;
     margin-bottom: 10px;
+    transform: translateY(0);
+    transition: transform 0.2s ease;
 }
 
-#hero p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    font-weight: 400;
-    text-transform: uppercase;
-}
-
-.cta-container {
-    margin-top: 30px;
-}
-
-.cta {
-    background-color: #ffcc00; /* Bright yellow for CTA */
-    color: #111;
-    font-size: 1rem;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 50px;
-    margin: 10px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.cta:hover {
-    background-color: #ffb300; /* Darker yellow on hover */
+/* Mobile Parallax Effect for Hero */
+#hero h1 {
+    transition: transform 0.2s ease;
 }
 
 /* Problem Section */
@@ -75,164 +60,20 @@ a {
     background-color: #fff;
 }
 
-.problem-section .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.state-of-canadian-supermarket {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.state-of-canadian-supermarket .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.problem-stats {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
-
-.stat {
-    width: 22%;
-    padding: 20px;
-    background-color: #f0f0f0;
-    border-radius: 8px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.stat h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #00a859;
-}
-
-.stat p {
-    font-size: 1rem;
-    color: #333;
-}
-
-.download-btn-container {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.download-btn {
-    background-color: #007bff;
-    color: white;
-    padding: 15px 30px;
-    font-size: 1rem;
-    border-radius: 50px;
-    text-transform: uppercase;
-    cursor: pointer;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-}
-
-.download-btn:hover {
-    background-color: #0056b3;
-}
-
-/* Market Opportunity Section */
-#market-opportunity {
-    background-color: #f8f8f8;
-    padding: 60px 20px;
-    text-align: center;
-}
-
-#market-opportunity h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-#market-opportunity ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 30px;
-    text-align: left;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-#market-opportunity li {
-    font-size: 1.2rem;
-    margin: 10px 0;
-}
-
-/* About KitchIN Section */
-#about {
-    padding: 80px 20px;
-    background-color: #fff;
-}
-
-#about h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-#about ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 40px;
-}
-
-#about li {
-    font-size: 1.2rem;
-    width: 45%;
-    background-color: #f0f0f0;
-    padding: 20px;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Competitive Advantage Section */
-#competitive-advantage {
+/* Competetive Advantage and Sustainability Sections */
+#competitive-advantage, #sustainability {
     background-color: #f8f8f8;
     padding: 80px 20px;
     text-align: center;
 }
 
-#competitive-advantage h2 {
+#competitive-advantage h2, #sustainability h2 {
     font-size: 2.5rem;
     margin-bottom: 30px;
     color: #333;
 }
 
-#competitive-advantage h3 {
-    font-size: 2rem;
-    color: #00a859;
-    margin-bottom: 20px;
-}
-
-#competitive-advantage ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
-    max-width: 800px;
-    text-align: left;
-}
-
-#competitive-advantage li {
-    font-size: 1.2rem;
-    margin: 10px 0;
-}
-
-#competitive-advantage button {
+#competitive-advantage button, #join-now button {
     background-color: #ffcc00;
     color: #111;
     font-size: 1rem;
@@ -242,65 +83,12 @@ a {
     margin-top: 30px;
     cursor: pointer;
     text-transform: uppercase;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-#competitive-advantage button:hover {
+#competitive-advantage button:hover, #join-now button:hover {
     background-color: #ffb300;
-}
-
-/* Sustainability Section */
-#sustainability {
-    background-color: #fff;
-    padding: 80px 20px;
-    text-align: center;
-}
-
-#sustainability h2 {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-#sustainability p {
-    font-size: 1.2rem;
-    color: #555;
-    margin-top: 30px;
-}
-
-/* Join Now Section */
-#join-now {
-    background-color: #00a859;
-    color: #fff;
-    text-align: center;
-    padding: 80px 20px;
-}
-
-#join-now h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-#join-now h3 {
-    font-size: 1.5rem;
-    margin-bottom: 40px;
-}
-
-#join-now button {
-    background-color: #ffcc00;
-    color: #111;
-    font-size: 1rem;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 50px;
-    margin: 10px;
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease;
-}
-
-#join-now button:hover {
-    background-color: #ffb300;
+    transform: scale(1.05);
 }
 
 /* Footer Section */
@@ -311,48 +99,10 @@ footer {
     text-align: center;
 }
 
-footer .socials {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 20px;
-}
-
-footer .socials li {
-    display: inline-block;
-    margin: 0 10px;
-}
-
-footer .socials a {
-    color: #fff;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
-}
-
 footer .socials a:hover {
     color: #ffcc00;
-}
-
-footer p {
-    font-size: 1rem;
-}
-
-footer p a {
-    color: #ffcc00;
-    transition: color 0.3s ease;
-}
-
-footer p a:hover {
-    color: #fff;
-}
-
-/* Hero Section Animations */
-#hero {
-    transition: opacity 1s ease-in-out, transform 1s ease;
-    opacity: 0;
-}
-
-#hero.fade-in {
-    opacity: 1;
+    transform: scale(1.1);
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 /* Sticky Header */
@@ -367,20 +117,6 @@ header.sticky {
     transition: all 0.3s ease;
 }
 
-/* Smooth Transition for Mobile Navigation */
-.nav-menu {
-    position: absolute;
-    top: 0;
-    right: -100%;
-    width: 100%;
-    background-color: #fff;
-    transition: right 0.3s ease;
-}
-
-.nav-menu.active {
-    right: 0;
-}
-
 .nav-toggle {
     cursor: pointer;
 }
@@ -389,10 +125,8 @@ body.no-scroll {
     overflow: hidden;
 }
 
-/* Hero Text Parallax Effect */
-#hero h1 {
-    transform: translateY(0);
-    transition: transform 0.2s ease;
+html {
+    scroll-behavior: smooth;
 }
 
 /* Form Popup */
@@ -406,7 +140,17 @@ body.no-scroll {
     opacity: 1;
 }
 
-/* Fade In Effect */
+.form-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Parallax Effect for Hero Text */
 body {
     opacity: 0;
     transition: opacity 1s ease-in-out;
@@ -415,3 +159,4 @@ body {
 body.loaded {
     opacity: 1;
 }
+
