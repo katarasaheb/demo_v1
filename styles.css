@@ -1,4 +1,15 @@
 /* General Styles */
+/* Base font size for mobile */
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+}
+
+
 body, html {
     margin: 0;
     padding: 0;
@@ -226,6 +237,7 @@ footer p a {
     text-align: center;
     color: white;
 }
+
 
 .grocery-system h2 {
     font-size: 2.5rem;
@@ -847,4 +859,159 @@ footer p a {
     border-radius: 10px;
     width: 90%; /* Adjust width */
     max-width: 500px; /* Prevent large form */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2, h3, h4 {
+  font-size: 2.5em;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h2 {
+    font-size: 1.6em;
+  }
+
+  h3 {
+    font-size: 1.4em;
+  }
+}
+
+/* Mobile first layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col {
+  flex: 1 1 100%; /* Full-width on mobile */
+  padding: 10px;
+}
+
+/* Adjust for tablets and larger screens */
+@media (min-width: 768px) {
+  .col {
+    flex: 1 1 48%; /* 2 columns on medium screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .col {
+    flex: 1 1 30%; /* 3 columns on larger screens */
+  }
+}
+
+/* Collapsible mobile menu */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 15px;
+}
+
+.navbar .menu {
+  display: none; /* Hide the menu by default */
+}
+
+@media (max-width: 768px) {
+  .navbar ul {
+    display: none; /* Hide the navigation items */
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar .menu {
+    display: block; /* Show the menu button */
+  }
+
+  .navbar.active ul {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .grocery-system {
+    padding: 30px 10px; /* Reduce padding for smaller screens */
+  }
+
+  /* Adjust fonts for smaller screens */
+  h1, h2, h3, h4 {
+    font-size: 1.5em;
+  }
+
+  /* Make buttons more touch-friendly */
+  .btn {
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+
+  /* Adjust layout for mobile devices */
+  .container {
+    padding: 0 15px;
+  }
+
+  .footer {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Adjust header size */
+  .header h1 {
+    font-size: 1.4em;
+  }
+
+  /* Adjust form fields */
+  .form-control {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /* Reduce the size of images */
+  .image-responsive {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.grocery-system {
+  background: url('images/3.JPG') no-repeat center center/cover;
+  padding: 50px 20px;
+  text-align: center;
+  color: white;
+  background-size: cover; /* Ensure the background image scales properly */
+}
+
+@media (max-width: 768px) {
+  .grocery-system {
+    padding: 30px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grocery-system {
+    padding: 20px 10px;
+  }
 }
