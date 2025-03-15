@@ -1113,7 +1113,7 @@ h1, h2, h3, h4 {
 
 /* Add this to your CSS */
 .problem-section {
-    background-image: url('images/2.JPEG'); 
+    background-image: url('images/2.JPEG'); !important;
     background-size: cover;
     background-position: center;
     padding: 80px 0; /* Adjust padding as needed */
