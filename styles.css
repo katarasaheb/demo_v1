@@ -1216,3 +1216,9 @@ h1, h2, h3, h4 {
         flex: 1 1 100%;  /* Stack vertically on very small screens */
     }
 }
+
+Apply margin-left for text elements only (30% left shift) */
+.state-of-canadian-supermarket h2,
+.state-of-canadian-supermarket p {
+    margin-left: 30%;
+}
