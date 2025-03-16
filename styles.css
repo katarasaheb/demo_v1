@@ -44,7 +44,6 @@ ul {
 }
 
 /* Hero Section */
-/* Hero Section */
 #hero {
     position: relative;
     height: 100vh;
@@ -269,7 +268,7 @@ ul {
     line-height: 1.5;
 }
 
-/* Kitchin Advantage Section */
+/* Kitchen Advantage Section */
 #kitchin-advantage {
     padding: 80px 20px;
     background: url('images/woman-8656632_1920.jpg') no-repeat center center/cover;
@@ -431,5 +430,19 @@ footer p a:hover {
 
     .advantage-item ul li {
         font-size: 16px;
+    }
+
+    .cta {
+        width: 100%;
+        font-size: 1em;
+        padding: 12px 24px;
+    }
+
+    .hero-heading {
+        font-size: 3.5em;
+    }
+
+    .hero-subheading {
+        font-size: 1.4em;
     }
 }
