@@ -1,62 +1,28 @@
-/* General Styles */
-body {
-    font-family: 'Inter', sans-serif;
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f8f7;
     color: #333;
 }
 
-h1, h2, h3, .cta, .download-btn, .advantage-item h3 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-/* Button Styles */
-.cta, .download-btn, .advantage-item .btn, #competition-report-btn {
-    background-color: #ff7b00;
-    color: white;
-    padding: 15px 30px;
-    font-size: 1.1em;
-    font-weight: 500;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-.cta:hover, .download-btn:hover, .advantage-line:hover, #competition-report-btn:hover {
-    background-color: #ff5c00;
-    transform: scale(1.03); /* Slightly reduced scale for accessibility */
-}
-
-.advantage-line:hover {
-    color: white;
-}
-
 /* Hero Section */
-#hero {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.hero-section {
+    background-color: #000;
+    color: #fff;
+    padding: 100px 0;
     text-align: center;
-    color: white;
-    padding: 0 20px;
+    position: relative;
 }
 
-.hero-background {
+.hero-section .hero-background {
     position: absolute;
     top: 0;
     left: 0;
@@ -65,363 +31,228 @@ ul {
     z-index: -1;
 }
 
-.hero-background video {
-    position: absolute;
-    top: 0;
-    left: 0;
+.hero-section video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.8;
-}
-
-.hero-content {
-    z-index: 10;
-    max-width: 800px;
-    margin: 0 auto;
 }
 
 .hero-heading {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 4.5em;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #fff;
-    margin: 0;
-    letter-spacing: 5px;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 30px;
     opacity: 0;
     animation: fadeIn 1s forwards;
 }
 
 .hero-subheading {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.8em;
-    font-weight: 400;
-    color: #fff;
-    margin: 20px 0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    line-height: 1.4;
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 30px;
     opacity: 0;
-    animation: fadeIn 1.5s forwards;
-    animation-delay: 0.5s;
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1.2s forwards;
 }
 
-.hero-subheading span {
-    display: inline-block;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInWord 1s forwards;
-}
-
-.hero-subheading span:nth-child(1) {
-    animation-delay: 1s;
-}
-
-.hero-subheading span:nth-child(2) {
-    animation-delay: 1.3s;
-}
-
-.hero-subheading span:nth-child(3) {
-    animation-delay: 1.6s;
-}
-
-.hero-subheading span:nth-child(4) {
-    animation-delay: 1.9s;
-}
-
-/* Call to Action buttons */
 .cta-container {
-    margin-top: 30px;
-    opacity: 1;
-    animation: fadeIn 2s forwards;
-    animation-delay: 1s;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 .cta {
-    background-color: #ff7b00;
-    color: white;
+    padding: 12px 40px;
+    background-color: #0071e3;
+    color: #fff;
+    font-size: 18px;
     border: none;
-    padding: 15px 30px;
-    font-size: 1.1em;
-    margin: 10px;
+    border-radius: 30px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    border-radius: 5px;
-    opacity: 1;
-    transform: translateY(0);
-    animation: fadeIn 1s forwards;
-    animation-delay: 1.5s;
+    transition: background-color 0.3s ease;
 }
 
 .cta:hover {
-    background-color: #ff5c00;
-    transform: scale(1.03); /* Slightly reduced scale for accessibility */
+    background-color: #005bb5;
 }
 
-/* Text and Button Fade-in Animation */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInWord {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Join Us Section */
-#join-us {
-    padding: 80px 20px;
-    background-color: #2c3e50;
-    color: white;
-    text-align: center;
-    position: relative;
-}
-
-#join-us .content {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-#join-us h2 {
+/* Section Title */
+.section-title {
     font-size: 36px;
     font-weight: 700;
-    letter-spacing: 1px;
-}
-
-#join-us p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
 }
 
 /* Problem Section */
-.problem-section, .our-solution {
-    position: relative;
-    padding: 80px 20px;
-    color: white;
+.problem-section {
+    padding: 100px 20px;
     text-align: center;
-    overflow: hidden;
-    background-color: #000;
+    background-color: #f8f8f7;
 }
 
-.problem-section .video-background, .our-solution .video-background, #join-us .video-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    object-fit: cover;
+.problem-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
-.content-overlay {
-    position: relative;
-    z-index: 1;
+.stat {
+    width: 220px;
+    text-align: center;
 }
 
-/* Problem Section Title */
-.problem-section .section-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 3.5em;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    animation: fadeIn 1s forwards;
-}
-
-/* Kitchin Advantage Section */
-#kitchin-advantage {
-    padding: 80px 20px;
-    background: url('images/woman-8656632_1920.jpg') no-repeat center center/cover;
-    background-size: cover;
-    background-position: center;
-    color: white;
-}
-
-#kitchin-advantage .container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.section-padding {
-    padding: 80px 20px;
-}
-
-/* Kitchin Advantage Section Title */
-#kitchin-advantage .section-title {
-    font-size: 36px;
+.stat-title {
+    font-size: 24px;
     font-weight: bold;
-    text-align: center;
-    margin-bottom: 40px;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    margin-bottom: 10px;
 }
 
-/* Advantage Items */
-.advantage-item {
+.stat-description {
+    font-size: 16px;
+    color: #666;
+}
+
+.industry-trends {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.industry-title {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.trend {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Solution Section */
+.solution-section {
+    background-color: #f1f1f1;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.solution-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    width: 220px;
+    text-align: center;
+}
+
+.stat-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.solution-description {
+    font-size: 18px;
     margin-bottom: 40px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.interactive-element {
     opacity: 0;
-    animation: fadeIn 1.5s forwards;
+}
+
+.interactive-element.animate {
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
+
+/* Advantage Section */
+.advantage-item {
+    margin-top: 40px;
+    text-align: center;
 }
 
 .advantage-item h3 {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 
 .advantage-list {
-    margin-bottom: 40px;
+    font-size: 18px;
+    line-height: 1.8;
 }
 
 .advantage-line {
-    font-size: 18px;
-    line-height: 1.6;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
     margin-bottom: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.advantage-line:hover {
-    background-color: #ff7b00;
-    color: white;
-    transform: scale(1.03); /* Slightly reduced scale for accessibility */
-}
-
-.advantage-item .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 20px;
-    background-color: #ff7b00;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.advantage-item .btn:hover {
-    background-color: #e67300;
-    transform: translateY(-3px);
-}
-
-/* Stage 1: Alberta Section */
-#stage-1-alberta {
-    padding: 100vh 20px 80px;
-    background-color: #2c3e50;
-    color: white;
-    text-align: center;
-}
-
-#stage-1-alberta .content {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-#stage-1-alberta h2 {
-    font-size: 36px;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-#stage-1-alberta p {
+.btn {
+    padding: 12px 40px;
+    background-color: #0071e3;
+    color: #fff;
     font-size: 18px;
-    line-height: 1.6;
-    margin-top: 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #005bb5;
 }
 
 /* Footer */
 footer {
-    background-color: #111;
-    color: white;
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
     text-align: center;
-    padding: 30px 0;
+}
+
+footer p {
+    font-size: 14px;
+    margin-bottom: 20px;
 }
 
 footer .socials {
+    list-style: none;
+    padding: 0;
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
 }
 
 footer .socials li a {
-    color: white;
+    color: #fff;
+    text-decoration: none;
     font-size: 18px;
 }
 
-footer p a {
-    color: white;
-    margin: 0 10px;
-}
-
-footer p a:hover {
-    text-decoration: underline;
-}
-
-/* Mobile Responsiveness */
-@media screen and (max-width: 768px) {
-    .problem-stats {
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cta-container {
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
+    }
+
+    .problem-stats,
+    .solution-stats {
+        flex-direction: column;
     }
 
     .stat {
-        width: 90%;
-        margin-bottom: 20px;
-    }
-
-    .industry-trends {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .trend {
-        width: 90%;
-        margin-bottom: 20px;
-    }
-
-    .cta-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .cta {
         width: 100%;
-        padding: 12px 20px;
-    }
-
-    .section-title {
-        font-size: 28px;
-    }
-
-    .advantage-item h3 {
-        font-size: 24px;
-    }
-
-    .advantage-item ul li {
-        font-size: 16px;
+        margin-bottom: 20px;
     }
 }
