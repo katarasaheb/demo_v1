@@ -481,3 +481,71 @@ footer {
 .footer-links a:hover {
     color: #ff7b00;
 }
+
+/* Hero Section Styling */
+.hero-section {
+    position: relative;
+    background-color: #000; /* Dark background color */
+    color: #fff; /* Text color for contrast */
+    padding: 100px 0; /* Top and bottom padding */
+    text-align: center; /* Centering content */
+}
+
+.hero-section .container {
+    max-width: 1200px; /* Ensure the container doesn't stretch too wide */
+    margin: 0 auto; /* Center the container */
+    padding: 0 15px; /* Add some padding for responsiveness */
+}
+
+.hero-section .section-title {
+    font-size: 3rem; /* Larger title */
+    margin-bottom: 20px; /* Space below title */
+    font-weight: bold; /* Bold text for emphasis */
+    letter-spacing: 2px; /* Letter spacing for a sleek look */
+    color: #fff; /* White text color */
+}
+
+.hero-section .hero-description {
+    font-size: 1.5rem; /* Medium-sized description */
+    margin-bottom: 40px; /* Space below description */
+    font-weight: normal;
+    color: #fff; /* White text color */
+}
+
+.hero-section .cta-container {
+    display: flex; /* Flexbox for button alignment */
+    justify-content: center; /* Center buttons */
+    gap: 20px; /* Space between buttons */
+}
+
+.hero-section .cta {
+    background-color: #007BFF; /* Blue button background */
+    color: #fff; /* White text color */
+    padding: 12px 25px; /* Button padding */
+    border: none; /* Remove borders */
+    border-radius: 30px; /* Rounded edges */
+    font-size: 1.1rem; /* Slightly larger text for the button */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.hero-section .cta:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.hero-section .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/sparkler-4629347.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5; /* Slight transparency to let text stand out */
+    z-index: -1; /* Place the background behind the content */
+}
+
+.hero-section .hero-image {
+    display: none; /* Hide the fallback image, it's replaced by background */
+}
