@@ -161,6 +161,7 @@ footer p a:hover {
     padding: 80px 20px;
     color: white;
     text-align: center;
+    min-height: 600px;
 }
 
 .section-title {
@@ -287,6 +288,7 @@ footer p a:hover {
     padding: 80px 20px;
     color: white;
     text-align: center;
+    min-height: 600px;
 }
 
 .solution-description {
