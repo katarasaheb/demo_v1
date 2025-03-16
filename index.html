@@ -52,7 +52,7 @@
             z-index: 1;
             max-width: 90%;
             padding: 30px;
-            background-color: rgba(0, 0, 0, 0.5); /* Translucent background */
+            background-color: rgba(0, 0, 0, 0.5);
             border-radius: 15px;
         }
 
@@ -95,7 +95,7 @@
             align-items: center;
             flex-direction: column;
             text-align: center;
-            height: 100vh; /* Ensure full viewport height */
+            height: 100vh;
         }
 
         .problem-section .section-title {
@@ -138,32 +138,27 @@
             color: #bbb;
         }
 
-        /* Solution Section */
-        .solution-section {
+        /* The Kitchin Advantage Section */
+        .kitchin-advantage-section {
             padding: 100px 20px;
             background-color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
             text-align: center;
-            height: 100vh;
+            color: #fff;
         }
 
-        .solution-section .section-title {
+        .kitchin-advantage-section .section-title {
             font-size: 36px;
-            color: #f2f2f2;
             margin-bottom: 40px;
         }
 
-        .solution-container {
+        .advantage-container {
             display: flex;
-            justify-content: center;
-            gap: 40px;
+            justify-content: space-around;
+            gap: 30px;
             flex-wrap: wrap;
         }
 
-        .solution-card {
+        .advantage-card {
             background-color: rgba(255, 255, 255, 0.1);
             padding: 30px;
             border-radius: 12px;
@@ -174,69 +169,50 @@
             margin-bottom: 20px;
         }
 
-        .solution-card:hover {
+        .advantage-card:hover {
             transform: scale(1.05);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         }
 
-        .solution-card h3 {
+        .advantage-card h3 {
             font-size: 24px;
             margin-bottom: 15px;
             color: #fff;
         }
 
-        .solution-card p {
+        .advantage-card p {
             font-size: 16px;
             color: #bbb;
         }
 
-        /* Stage 1 - Alberta Section */
-        .stage-1-alberta {
+        /* Join the Revolution Section */
+        .join-revolution-section {
+            background: #222;
             padding: 100px 20px;
-            background-color: #444;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
             text-align: center;
-            height: 100vh;
         }
 
-        .stage-1-alberta .section-title {
+        .join-revolution-section .section-title {
             font-size: 36px;
-            color: #f2f2f2;
-            margin-bottom: 40px;
-        }
-
-        .stage-1-alberta .problem-container {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .stage-1-alberta .problem-card {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            width: 280px;
-            text-align: center;
+            color: #fff;
             margin-bottom: 20px;
         }
 
-        .stage-1-alberta .problem-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Interactive Element Hover Effect */
-        .problem-card:hover, .solution-card:hover, .problem-card a:hover, .solution-card a:hover {
-            background-color: #444;
+        .join-revolution-btn {
+            background-color: #0071e3;
+            color: #fff;
+            padding: 15px 40px;
+            font-size: 20px;
+            border: none;
+            border-radius: 30px;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
+
+        .join-revolution-btn:hover {
+            background-color: #005bb5;
+        }
+
     </style>
 </head>
 
@@ -282,14 +258,6 @@
                 </div>
             </div>
 
-            <div class="problem-container">
-                <div class="problem-card">
-                    <h3>Current Industry Trends</h3>
-                    <p>$5B market by 2026</p>
-                    <p>20% CAGR in Online Grocery</p>
-                </div>
-            </div>
-
             <div>
                 <a href="https://competition-bureau.canada.ca/sites/default/files/attachments/2023/CB-Retail-Grocery-Market-Study-Report-EN-2023-06-23.pdf" class="cta-btn">Competition Bureau Retail Study Report</a>
             </div>
@@ -329,7 +297,7 @@
     </section>
 
     <!-- The Kitchin Advantage Section -->
-    <section class="section">
+    <section class="section kitchin-advantage-section">
         <video autoplay loop muted>
             <source src="images/83863-584870628.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -337,32 +305,32 @@
         <div class="content-overlay">
             <h2 class="section-title">The Kitchin Advantage</h2>
 
-            <div class="problem-container">
-                <div class="problem-card">
+            <div class="advantage-container">
+                <div class="advantage-card">
                     <h3>For Customers</h3>
                     <p>The Grocery Experience You Deserve</p>
-                    <div class="problem-card">
+                    <div class="advantage-card">
                         <p>Bespoke Recommendations</p>
                     </div>
-                    <div class="problem-card">
+                    <div class="advantage-card">
                         <p>Sustainable Freshness</p>
                     </div>
-                    <div class="problem-card">
+                    <div class="advantage-card">
                         <p>Swift Fulfillment</p>
                     </div>
                     <a href="#signup" class="cta-btn">Sign up for updates</a>
                 </div>
 
-                <div class="problem-card">
+                <div class="advantage-card">
                     <h3>For Investors</h3>
                     <p>A Booming Prospect</p>
-                    <div class="problem-card">
+                    <div class="advantage-card">
                         <p>Market Disruption</p>
                     </div>
-                    <div class="problem-card">
+                    <div class="advantage-card">
                         <p>Business Efficiency</p>
                     </div>
-                    <div class="problem-card">
+                    <div class="advantage-card">
                         <p>Proprietary Network</p>
                     </div>
                     <a href="#signup" class="cta-btn">Invest in Kitchin</a>
@@ -371,33 +339,10 @@
         </div>
     </section>
 
-    <!-- Stage 1 - Alberta Section -->
-    <section class="section stage-1-alberta">
-        <video autoplay loop muted>
-            <source src="images/168388-839220647.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="content-overlay">
-            <h2 class="section-title">Stage 1: Alberta</h2>
-            <p class="section-subtitle">A $3B Market Opportunity with Untapped Potential</p>
-
-            <div class="problem-container">
-                <div class="problem-card">
-                    <h3>70% of Alberta's Population</h3>
-                    <p>Close to 3 million residents served via 50+ dark stores</p>
-                </div>
-                <div class="problem-card">
-                    <h3>Centralized Distribution Hub</h3>
-                    <p>Efficiently servicing Alberta from one central location</p>
-                </div>
-                <div class="problem-card">
-                    <h3>$3B Market Potential</h3>
-                    <p>Alberta represents a booming market for groceries</p>
-                </div>
-            </div>
-
-            <button class="cta-btn" id="join-revolution-btn">Join the Revolution</button>
-        </div>
+    <!-- Join the Revolution Section -->
+    <section class="join-revolution-section">
+        <h2 class="section-title">Join the Revolution</h2>
+        <button class="join-revolution-btn">Join Now</button>
     </section>
 
     <!-- Footer Section -->
