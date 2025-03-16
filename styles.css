@@ -161,6 +161,9 @@ footer p a:hover {
     padding: 80px 20px;
     color: white;
     text-align: center;
+    min-height: 600px; 
+    background-position: center center;  /* Keep the image centered */
+    background-repeat: no-repeat;  /* Avoid tiling of the image */
 }
 
 .section-title {
@@ -287,6 +290,9 @@ footer p a:hover {
     padding: 80px 20px;
     color: white;
     text-align: center;
+    min-height: 600px;
+    background-position: center center;  /* Keep the image centered */
+    background-repeat: no-repeat;  /* Avoid tiling of the image */
 }
 
 .solution-description {
