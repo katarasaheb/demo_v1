@@ -24,7 +24,7 @@
             background-color: #111;
         }
 
-        /* Full-screen section with video background */
+        /* Hero Section */
         .section {
             position: relative;
             width: 100%;
@@ -42,7 +42,7 @@
             z-index: -1;
         }
 
-        /* Hero Section */
+        /* Hero Content */
         .hero-content-overlay {
             position: absolute;
             top: 50%;
@@ -138,66 +138,21 @@
             color: #bbb;
         }
 
-        /* Kitchin Advantage Section */
-        .kitchin-advantage-section {
-            padding: 100px 20px;
-            background-color: #333;
-            text-align: center;
-            color: #fff;
+        /* Smooth Scrolling Animation */
+        .animate {
+            opacity: 1;
+            transition: opacity 1s ease-out;
         }
 
-        .kitchin-advantage-section .section-title {
-            font-size: 36px;
-            margin-bottom: 40px;
+        .interactive-element {
+            opacity: 0;
         }
 
-        .advantage-container {
-            display: flex;
-            justify-content: space-around;
-            gap: 30px;
-            flex-wrap: wrap;
+        .hovered {
+            transform: scale(1.1);
         }
 
-        .advantage-card {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            width: 280px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .advantage-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        .advantage-card h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: #fff;
-        }
-
-        .advantage-card p {
-            font-size: 16px;
-            color: #bbb;
-        }
-
-        /* Join the Revolution Section */
-        .join-revolution-section {
-            background: #222;
-            padding: 100px 20px;
-            text-align: center;
-        }
-
-        .join-revolution-section .section-title {
-            font-size: 36px;
-            color: #fff;
-            margin-bottom: 20px;
-        }
-
+        /* Button Styling */
         .join-revolution-btn {
             background-color: #0071e3;
             color: #fff;
@@ -213,44 +168,21 @@
             background-color: #005bb5;
         }
 
-        /* Alberta Section */
-        .alberta-section {
-            background-color: #444;
-            padding: 100px 20px;
+        /* Footer */
+        footer {
             text-align: center;
-            color: #fff;
+            padding: 20px 0;
+            background-color: #222;
         }
 
-        .alberta-section h2 {
-            font-size: 36px;
-            margin-bottom: 40px;
+        footer a {
+            color: #0071e3;
+            text-decoration: none;
         }
 
-        .alberta-section .alberta-card {
-            background-color: #333;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            width: 300px;
-            margin: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        footer a:hover {
+            text-decoration: underline;
         }
-
-        .alberta-section .alberta-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        .alberta-section .alberta-card h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-
-        .alberta-section .alberta-card p {
-            font-size: 16px;
-            color: #bbb;
-        }
-
     </style>
 </head>
 
@@ -263,8 +195,8 @@
             Your browser does not support the video tag.
         </video>
         <div class="hero-content-overlay">
-            <h1>Kitchin</h1>
-            <p>Fast. Fresh. Sustainable. Affordable.</p>
+            <h1 class="hero-heading">Kitchin</h1>
+            <p class="hero-subheading">Fast. Fresh. Sustainable. Affordable.</p>
             <button class="cta-btn" id="join-revolution-btn">Join the Revolution</button>
         </div>
     </section>
@@ -278,152 +210,95 @@
         <div class="content-overlay">
             <h2 class="section-title">State Of The Canadian Supermarket</h2>
             <div class="problem-container">
-                <div class="problem-card">
+                <div class="problem-card interactive-element">
                     <h3>Oligopoly</h3>
                     <p>3 companies control 75% of the grocery market</p>
                 </div>
-                <div class="problem-card">
+                <div class="problem-card interactive-element">
                     <h3>Inefficient</h3>
                     <p>High costs due to inefficient distribution</p>
                 </div>
-                <div class="problem-card">
+                <div class="problem-card interactive-element">
                     <h3>Vulnerability</h3>
                     <p>Vulnerable due to over-reliance on US imports</p>
                 </div>
-                <div class="problem-card">
+                <div class="problem-card interactive-element">
                     <h3>Obsolescence</h3>
                     <p>Traditional stores have high operational costs</p>
                 </div>
             </div>
-
-            <div>
-                <a href="https://competition-bureau.canada.ca/sites/default/files/attachments/2023/CB-Retail-Grocery-Market-Study-Report-EN-2023-06-23.pdf" class="cta-btn">Competition Bureau Retail Study Report</a>
-            </div>
+            <a href="https://competition-bureau.canada.ca/sites/default/files/attachments/2023/CB-Retail-Grocery-Market-Study-Report-EN-2023-06-23.pdf" id="download-report" class="cta-btn">Competition Bureau Retail Study Report</a>
         </div>
     </section>
 
-    <!-- Solution Section -->
-    <section class="section solution-section">
-        <video autoplay loop muted>
-            <source src="images/175717-854057981.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="content-overlay">
-            <h2 class="section-title">Our Solution</h2>
-            <p>Canada's First Grocery Super App: A smarter, faster, and more sustainable shopping experience.</p>
-            <div class="solution-container">
-                <div class="solution-card">
-                    <h3>Canada's 1st Dark Store Network</h3>
-                </div>
-                <div class="solution-card">
-                    <h3>Direct Manufacturer Sourcing</h3>
-                </div>
-                <div class="solution-card">
-                    <h3>Made for Canadians by Canadians</h3>
-                </div>
-                <div class="solution-card">
-                    <h3>Content as a Catalyst</h3>
-                </div>
-                <div class="solution-card">
-                    <h3>AI Powered Shopping</h3>
-                </div>
-            </div>
-            <div>
-                <button class="cta-btn" id="explore-solution">Explore the Solution</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- The Kitchin Advantage Section -->
-    <section class="section kitchin-advantage-section">
-        <video autoplay loop muted>
-            <source src="images/83863-584870628.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="content-overlay">
-            <h2 class="section-title">The Kitchin Advantage</h2>
-
-            <div class="advantage-container">
-                <div class="advantage-card">
-                    <h3>For Customers</h3>
-                    <p>The Grocery Experience You Deserve</p>
-                    <div class="advantage-card">
-                        <p>Bespoke Recommendations</p>
-                    </div>
-                    <div class="advantage-card">
-                        <p>Sustainable Freshness</p>
-                    </div>
-                    <div class="advantage-card">
-                        <p>Swift Fulfillment</p>
-                    </div>
-                    <a href="#signup" class="cta-btn">Sign up for updates</a>
-                </div>
-
-                <div class="advantage-card">
-                    <h3>For Investors</h3>
-                    <p>A Booming Prospect</p>
-                    <div class="advantage-card">
-                        <p>Market Disruption</p>
-                    </div>
-                    <div class="advantage-card">
-                        <p>Business Efficiency</p>
-                    </div>
-                    <div class="advantage-card">
-                        <p>Proprietary Network</p>
-                    </div>
-                    <a href="#signup" class="cta-btn">Invest in Kitchin</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
- <!-- Stage 1 - Alberta Section -->
-    <section class="section stage-1-alberta">
-        <video autoplay loop muted>
-            <source src="images/168388-839220647.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="content-overlay">
-            <h2 class="section-title">Stage 1: Alberta</h2>
-            <p class="section-subtitle">A $3B Market Opportunity with Untapped Potential</p>
-
-            <div class="problem-container">
-                <div class="problem-card">
-                    <h3>70% of Alberta's Population</h3>
-                    <p>Close to 3 million residents served via 50+ dark stores</p>
-                </div>
-                <div class="problem-card">
-                    <h3>Centralized Distribution Hub</h3>
-                    <p>Efficiently servicing Alberta from one central location</p>
-                </div>
-                <div class="problem-card">
-                    <h3>$3B Market Potential</h3>
-                    <p>Alberta represents a booming market for groceries</p>
-                </div>
-            </div>
-
-            <button class="cta-btn" id="join-revolution-btn">Join the Revolution</button>
-        </div>
-    </section>
-    
     <!-- Join the Revolution Section -->
-    <section class="join-revolution-section">
-         <video autoplay loop muted>
-            <source src="images/46284-446732347.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="content-overlay">
-            <h2 class="section-title">Join the Revolution</h2>
-        <button class="join-revolution-btn">Join Now</button>
+    <section id="join-revolution-section">
+        <h2 class="section-title">Join the Revolution</h2>
+        <button class="join-revolution-btn" id="join-revolution-btn">Join Now</button>
     </section>
 
     <!-- Footer Section -->
-    <footer style="text-align:center; padding: 20px 0; background-color: #222;">
+    <footer>
         <p>&copy; 2025 Kitchin | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
         <div>
             <a href="#">FB</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Hero Animation
+            setTimeout(function () {
+                const heroHeading = document.querySelector(".hero-heading");
+                const heroSubheading = document.querySelector(".hero-subheading");
+                if (heroHeading && heroSubheading) {
+                    heroHeading.classList.add("animate");
+                    heroSubheading.classList.add("animate");
+                }
+            }, 500);
+
+            // Join the Revolution Button - Scroll to Join the Revolution Section
+            const joinRevolutionBtn = document.getElementById("join-revolution-btn");
+            if (joinRevolutionBtn) {
+                joinRevolutionBtn.addEventListener("click", function () {
+                    const joinRevolutionSection = document.getElementById("join-revolution-section");
+                    if (joinRevolutionSection) {
+                        joinRevolutionSection.scrollIntoView({ behavior: "smooth" });
+                    }
+                });
+            }
+
+            // Interactive Element Animation (Cards, Stats)
+            const interactiveElements = document.querySelectorAll(".interactive-element");
+            window.addEventListener("scroll", function () {
+                interactiveElements.forEach(function (element) {
+                    const rect = element.getBoundingClientRect();
+                    if (rect.top <= window.innerHeight) {
+                        element.classList.add("animate");
+                    }
+                });
+            });
+
+            // Hover Effect for Problem Section Cards
+            const problemElements = document.querySelectorAll(".problem-card");
+            problemElements.forEach(function (element) {
+                element.addEventListener("mouseenter", function () {
+                    element.classList.add("hovered");
+                });
+                element.addEventListener("mouseleave", function () {
+                    element.classList.remove("hovered");
+                });
+            });
+
+            // Competition Bureau Report Button - Redirect to PDF
+            const downloadReportBtn = document.getElementById("download-report");
+            if (downloadReportBtn) {
+                downloadReportBtn.addEventListener("click", function () {
+                    window.location.href = "https://competition-bureau.canada.ca/sites/default/files/attachments/2023/CB-Retail-Grocery-Market-Study-Report-EN-2023-06-23.pdf";
+                });
+            }
+        });
+    </script>
 
 </body>
 
