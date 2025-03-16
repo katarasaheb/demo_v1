@@ -3,13 +3,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // Handle Scroll Animations for Hero Section
     const heroHeading = document.querySelector('.hero-heading');
     const heroSubheading = document.querySelector('.hero-subheading');
-    const ctaButton = document.querySelector('.cta');
+    const ctaButtons = document.querySelectorAll('.cta'); // Adjusted to target both buttons
     
     // Hero Animation
     function fadeInHero() {
         heroHeading.classList.add('animate');
         heroSubheading.classList.add('animate');
-        ctaButton.classList.add('animate');
+        ctaButtons.forEach(button => button.classList.add('animate'));
     }
 
     // Function to handle scroll event debouncing
@@ -37,12 +37,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Handle Problem Stats Animation
     const problemDescription = document.querySelector('.problem-description');
-    const sectionTitle = document.querySelector('.section-title');
+    const problemSectionTitle = document.querySelector('.section-title');
     const problemStats = document.querySelectorAll('.stat');
 
     // Problem Section Animation
     function animateProblemSection() {
-        sectionTitle.classList.add('animate');
+        problemSectionTitle.classList.add('animate');
         problemDescription.classList.add('animate');
         problemStats.forEach((stat, index) => {
             setTimeout(() => {
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Listen to window scroll event for Problem Section Animation
     window.addEventListener('scroll', function () {
         debounceScroll(function () {
-            const problemSectionOffsetTop = document.getElementById('problem-section').offsetTop;
+            const problemSectionOffsetTop = document.getElementById('grocery-system').offsetTop;
             const scrollPosition = window.scrollY + window.innerHeight;
             if (scrollPosition > problemSectionOffsetTop) {
                 animateProblemSection();
@@ -64,8 +64,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Handle Solution Section Animation
     const solutionSection = document.querySelector('#our-solution');
-    const solutionTitle = document.querySelector('.solution-title');
-    const solutionItems = document.querySelectorAll('.solution-stat');
+    const solutionTitle = document.querySelector('.section-title'); // Assuming the title is also in the solution section
+    const solutionItems = document.querySelectorAll('.stat'); // Assuming these are the items in the solution section
 
     function animateSolutionSection() {
         solutionTitle.classList.add('animate');
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Handle The KitchIN Advantage Section Animation
+    // Handle KitchIN Advantage Section Animation
     const kitchinAdvantageSection = document.getElementById('kitchin-advantage');
 
     function animateKitchinAdvantage() {
@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Optional: Smooth scroll to 'Investors' section for the "Invest in Our Future" button
     document.querySelectorAll('.cta')[1].addEventListener('click', function () {
-        document.getElementById('investors').scrollIntoView({
+        document.getElementById('Join Us').scrollIntoView({
             behavior: 'smooth',
             block: 'start'
         });
