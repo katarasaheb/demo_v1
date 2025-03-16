@@ -42,8 +42,8 @@
             z-index: -1;
         }
 
-        /* Section Title and Subtitle */
-        .section .content-overlay {
+        /* Hero Section */
+        .hero-content-overlay {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -51,9 +51,12 @@
             text-align: center;
             z-index: 1;
             max-width: 90%;
+            padding: 30px;
+            background-color: rgba(0, 0, 0, 0.5); /* Translucent background */
+            border-radius: 15px;
         }
 
-        .section .section-title {
+        .hero-content-overlay h1 {
             font-size: 48px;
             font-weight: 600;
             margin-bottom: 20px;
@@ -61,7 +64,7 @@
             letter-spacing: 2px;
         }
 
-        .section .section-subtitle {
+        .hero-content-overlay p {
             font-size: 24px;
             font-weight: 400;
             margin-bottom: 30px;
@@ -83,7 +86,7 @@
             background-color: #005bb5;
         }
 
-        /* For Problem Section */
+        /* Problem Section */
         .problem-section .section-title {
             font-size: 36px;
             color: #f2f2f2;
@@ -121,21 +124,6 @@
         .problem-card p {
             font-size: 16px;
             color: #bbb;
-        }
-
-        /* Animation for fade-in effect */
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        .fadeIn {
-            animation: fadeIn 1s ease-in-out;
         }
 
         /* New "Join the Revolution" Section */
@@ -193,6 +181,83 @@
             background-color: #005bb5;
         }
 
+        /* Solution Section */
+        .solution-section .section-title {
+            font-size: 36px;
+            color: #f2f2f2;
+            margin-bottom: 20px;
+        }
+
+        .solution-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .solution-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 280px;
+            text-align: center;
+        }
+
+        .solution-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .solution-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .solution-card p {
+            font-size: 16px;
+            color: #bbb;
+        }
+
+        /* Stage 1 - Alberta Section */
+        .stage-1-alberta .section-title {
+            font-size: 36px;
+            color: #f2f2f2;
+        }
+
+        .stage-1-alberta .problem-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .stage-1-alberta .problem-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 280px;
+            text-align: center;
+        }
+
+        .stage-1-alberta .problem-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Interactive Element Hover Effect */
+        .problem-card:hover, .solution-card:hover, .problem-card a:hover, .solution-card a:hover {
+            background-color: #444;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
     </style>
 </head>
 
@@ -204,9 +269,9 @@
             <source src="images/HV3.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <div class="content-overlay fadeIn">
-            <h1 class="section-title">Kitchin</h1>
-            <p class="section-subtitle">Fast. Fresh. Sustainable. Affordable.</p>
+        <div class="hero-content-overlay fadeIn">
+            <h1>Kitchin</h1>
+            <p>Fast. Fresh. Sustainable. Affordable.</p>
             <button class="cta-btn" id="join-revolution-btn">Join the Revolution</button>
         </div>
     </section>
@@ -237,60 +302,101 @@
                     <p>Traditional stores have high operational costs</p>
                 </div>
             </div>
+
+            <!-- New Interactive Element -->
+            <div class="problem-container">
+                <div class="problem-card">
+                    <h3>Current Industry Trends</h3>
+                    <p>$5B market by 2026</p>
+                    <p>20% CAGR in Online Grocery</p>
+                </div>
+            </div>
+
             <div>
-                <button class="cta-btn" id="download-report">Download Report</button>
+                <a href="https://competition-bureau.canada.ca/sites/default/files/attachments/2023/CB-Retail-Grocery-Market-Study-Report-EN-2023-06-23.pdf" class="cta-btn">Competition Bureau Retail Study Report</a>
             </div>
         </div>
     </section>
 
     <!-- Solution Section -->
-    <section class="section">
+    <section class="section solution-section">
         <video autoplay loop muted>
-            <source src="images/175717-854057981.mp4" type="video/mp4">
+            <source src="images/HV.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="content-overlay fadeIn">
             <h2 class="section-title">Our Solution</h2>
             <p>Canada's First Grocery Super App: A smarter, faster, and more sustainable shopping experience.</p>
+            <div class="solution-container">
+                <div class="solution-card">
+                    <h3>Canada's 1st Dark Store Network</h3>
+                </div>
+                <div class="solution-card">
+                    <h3>Direct Manufacturer Sourcing</h3>
+                </div>
+                <div class="solution-card">
+                    <h3>Made for Canadians by Canadians</h3>
+                </div>
+                <div class="solution-card">
+                    <h3>Content as a Catalyst</h3>
+                </div>
+                <div class="solution-card">
+                    <h3>AI Powered Shopping</h3>
+                </div>
+            </div>
             <div>
                 <button class="cta-btn" id="explore-solution">Explore the Solution</button>
             </div>
         </div>
     </section>
 
-    <!-- Advantage Section -->
+    <!-- The Kitchin Advantage Section -->
     <section class="section">
         <video autoplay loop muted>
-            <source src="images/83863-584870628.mp4" type="video/mp4">
+            <source src="images/HV.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="content-overlay fadeIn">
             <h2 class="section-title">The Kitchin Advantage</h2>
-            <div>
-                <h3>For Customers: The Grocery Experience You Deserve</h3>
-                <ul>
-                    <li>Bespoke Recommendations</li>
-                    <li>Sustainable Freshness</li>
-                    <li>Swift Fulfillment</li>
-                </ul>
-                <a href="#signup" class="cta-btn">Join the Revolution</a>
-            </div>
-            <div>
-                <h3>For Investors: A Booming Prospect</h3>
-                <ul>
-                    <li>Market Disruption</li>
-                    <li>Business Efficiency</li>
-                    <li>Proprietary Network</li>
-                </ul>
-                <a href="#signup" class="cta-btn">Invest in Our Future</a>
+
+            <div class="problem-container">
+                <div class="problem-card">
+                    <h3>For Customers</h3>
+                    <p>The Grocery Experience You Deserve</p>
+                    <div class="problem-card">
+                        <p>Bespoke Recommendations</p>
+                    </div>
+                    <div class="problem-card">
+                        <p>Sustainable Freshness</p>
+                    </div>
+                    <div class="problem-card">
+                        <p>Swift Fulfillment</p>
+                    </div>
+                    <a href="#signup" class="cta-btn">Sign up for updates</a>
+                </div>
+
+                <div class="problem-card">
+                    <h3>For Investors</h3>
+                    <p>A Booming Prospect</p>
+                    <div class="problem-card">
+                        <p>Market Disruption</p>
+                    </div>
+                    <div class="problem-card">
+                        <p>Business Efficiency</p>
+                    </div>
+                    <div class="problem-card">
+                        <p>Proprietary Network</p>
+                    </div>
+                    <a href="#signup" class="cta-btn">Invest in Kitchin</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Stage 1 - Alberta Section -->
-    <section class="section" id="stage-1-alberta">
+    <section class="section stage-1-alberta">
         <video autoplay loop muted>
-            <source src="images/168388-839220647.mp4" type="video/mp4">
+            <source src="images/HV.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="content-overlay fadeIn">
@@ -317,25 +423,6 @@
             <button class="cta-btn" id="join-revolution-btn">Join the Revolution</button>
         </div>
     </section>
-
-<!-- Join the Revolution Section -->
-<section class="join-revolution">
-    <video autoplay loop muted>
-        <source src="images/46284-446732347.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <div class="content-overlay fadeIn">
-        <h2 class="section-title">Join the Revolution</h2>
-        <p class="section-subtitle">Be a part of transforming the grocery industry in Canada. Sign up now for exclusive updates and early access.</p>
-
-        <!-- Form Container -->
-        <div class="form-container">
-            <input type="email" placeholder="Enter your email" id="email" />
-            <button class="cta-btn" id="join-btn">Join Now</button>
-        </div>
-    </div>
-</section>
-
 
     <!-- Footer Section -->
     <footer style="text-align:center; padding: 20px 0; background-color: #222;">
