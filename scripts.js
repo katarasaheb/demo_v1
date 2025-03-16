@@ -62,3 +62,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Join the Revolution Button functionality
+    const joinRevolutionBtn = document.getElementById("join-revolution-btn");
+    const joinRevolutionSection = document.getElementById("join-revolution-section");
+
+    joinRevolutionBtn.addEventListener("click", function() {
+        // Scroll to the "Join the Revolution" section when the button is clicked
+        joinRevolutionSection.scrollIntoView({ behavior: "smooth" });
+    });
+});
