@@ -1,6 +1,5 @@
-// Wait for the DOM to fully load before running the script
 document.addEventListener("DOMContentLoaded", function () {
-    
+
     // Handle Scroll Animations for Hero Section
     const heroHeading = document.querySelector('.hero-heading');
     const heroSubheading = document.querySelector('.hero-subheading');
@@ -55,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Listen to window scroll event for Problem Section Animation
     window.addEventListener('scroll', function () {
         debounceScroll(function () {
-            const problemSectionOffsetTop = document.getElementById('grocery-system').offsetTop;
+            const problemSectionOffsetTop = document.getElementById('problem-section').offsetTop;
             const scrollPosition = window.scrollY + window.innerHeight;
             if (scrollPosition > problemSectionOffsetTop) {
                 animateProblemSection();
@@ -63,25 +62,70 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Handle Industry Trends Animation
-    const industryTrendsSection = document.querySelector('.industry-trends');
+    // Handle Solution Section Animation
+    const solutionSection = document.querySelector('#our-solution');
+    const solutionTitle = document.querySelector('.solution-title');
+    const solutionItems = document.querySelectorAll('.solution-stat');
 
-    function animateIndustryTrends() {
-        industryTrendsSection.classList.add('animate');
+    function animateSolutionSection() {
+        solutionTitle.classList.add('animate');
+        solutionItems.forEach((item, index) => {
+            setTimeout(() => {
+                item.classList.add('animate');
+            }, 300 * index);
+        });
     }
 
-    // Listen to window scroll event for Industry Trends Section
     window.addEventListener('scroll', function () {
         debounceScroll(function () {
-            const industryTrendsOffsetTop = document.querySelector('.industry-trends').offsetTop;
+            const solutionSectionOffsetTop = document.getElementById('our-solution').offsetTop;
             const scrollPosition = window.scrollY + window.innerHeight;
-            if (scrollPosition > industryTrendsOffsetTop) {
-                animateIndustryTrends();
+            if (scrollPosition > solutionSectionOffsetTop) {
+                animateSolutionSection();
             }
         });
     });
 
-    // Handle Scroll Back to Top Button
+    // Handle The KitchIN Advantage Section Animation
+    const kitchinAdvantageSection = document.getElementById('kitchin-advantage');
+
+    function animateKitchinAdvantage() {
+        if (kitchinAdvantageSection && kitchinAdvantageSection.getBoundingClientRect().top < window.innerHeight - 100) {
+            kitchinAdvantageSection.classList.add("fade-in");
+        }
+    }
+
+    window.addEventListener("scroll", function () {
+        debounceScroll(function () {
+            animateKitchinAdvantage();
+        });
+    });
+
+    // Handle Stage 1: Alberta Section Animation
+    function animateStage1Alberta() {
+        const section = document.getElementById('stage-1-alberta');
+        if (section && section.getBoundingClientRect().top < window.innerHeight - 100) {
+            section.classList.add("fade-in");
+            animateInteractiveElements(section);
+        }
+    }
+
+    function animateInteractiveElements(section) {
+        const elements = section.querySelectorAll(".interactive-element");
+        elements.forEach((el, index) => {
+            setTimeout(() => {
+                el.classList.add("fade-in-scale");
+            }, index * 200);
+        });
+    }
+
+    window.addEventListener("scroll", function () {
+        debounceScroll(function () {
+            animateStage1Alberta();
+        });
+    });
+
+    // Scroll Back to Top Button
     const scrollToTopButton = document.createElement('button');
     scrollToTopButton.innerHTML = "↑";
     scrollToTopButton.classList.add('scroll-to-top');
@@ -112,70 +156,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Smooth scrolling for Hero Section Buttons
-    document.getElementById('join-revolution-btn').addEventListener('click', function() {
-        // Scroll smoothly to the solution section
+    document.getElementById('join-revolution-btn').addEventListener('click', function () {
         document.getElementById('our-solution').scrollIntoView({
             behavior: 'smooth',
             block: 'start'
         });
     });
 
-    // Optional: Smooth scroll to 'Investors' section or external link for the "Invest in Our Future" button
-    document.querySelectorAll('.cta')[1].addEventListener('click', function() {
-        // Example: Scroll to an investment section or open an external link
-        // window.location.href = "https://www.example.com/invest"; // Uncomment to open external page
-
-        // Or scroll to a section like "Investors" (assuming you have an ID for it)
+    // Optional: Smooth scroll to 'Investors' section for the "Invest in Our Future" button
+    document.querySelectorAll('.cta')[1].addEventListener('click', function () {
         document.getElementById('investors').scrollIntoView({
             behavior: 'smooth',
             block: 'start'
         });
     });
-    
-    // Scroll animation for The KitchIN Advantage Section
-    function animateKitchinAdvantage() {
-        const section = document.getElementById("kitchin-advantage");
-        if (section && section.getBoundingClientRect().top < window.innerHeight - 100) {
-            section.classList.add("fade-in");
-        }
-    }
-    
-    // Scroll animation for Stage 1: Alberta Section
-    function animateStage1Alberta() {
-        const section = document.getElementById("stage-1-alberta");
-        if (section && section.getBoundingClientRect().top < window.innerHeight - 100) {
-            section.classList.add("fade-in");
-            animateInteractiveElements(section);
-        }
-    }
-
-    // Scroll animation for Build the Future Section
-    function animateBuildFuture() {
-        const section = document.getElementById("build-future");
-        if (section && section.getBoundingClientRect().top < window.innerHeight - 100) {
-            section.classList.add("fade-in");
-        }
-    }
-
-    // Function to animate interactive elements
-    function animateInteractiveElements(section) {
-        const elements = section.querySelectorAll(".interactive-element");
-        elements.forEach((el, index) => {
-            setTimeout(() => {
-                el.classList.add("fade-in-scale");
-            }, index * 200);
-        });
-    }
-
-    // Listen for scroll events
-    window.addEventListener("scroll", function () {
-        animateKitchinAdvantage();
-        animateStage1Alberta();
-        animateBuildFuture();
-    });
 
     // Ensure animations trigger on page load if sections are already in view
     animateKitchinAdvantage();
     animateStage1Alberta();
-    animateBuildFuture();
 });
