@@ -291,15 +291,6 @@ footer p a:hover {
 }
 
 /* Solution Section */
-#our-solution {
-  background: url('images/3.JPG') no-repeat center center/cover;
-    padding: 80px 20px;
-    color: white;
-    text-align: center;
-    min-height: 600px;
-    background-position: center center;  /* Keep the image centered */
-    background-repeat: no-repeat;  /* Avoid tiling of the image */
-}
 
 .solution-description {
     font-family: 'Poppins', sans-serif;
