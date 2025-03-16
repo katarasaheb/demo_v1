@@ -128,6 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const section = document.getElementById("stage-1-alberta");
         if (section && section.getBoundingClientRect().top < window.innerHeight - 100) {
             section.classList.add("fade-in");
+            animateInteractiveElements(section);
         }
     }
 
@@ -137,6 +138,16 @@ document.addEventListener("DOMContentLoaded", function () {
         if (section && section.getBoundingClientRect().top < window.innerHeight - 100) {
             section.classList.add("fade-in");
         }
+    }
+
+    // Function to animate interactive elements
+    function animateInteractiveElements(section) {
+        const elements = section.querySelectorAll(".interactive-element");
+        elements.forEach((el, index) => {
+            setTimeout(() => {
+                el.classList.add("fade-in-scale");
+            }, index * 200);
+        });
     }
 
     // Listen for scroll events
