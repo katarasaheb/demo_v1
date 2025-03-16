@@ -23,7 +23,7 @@ ul {
 }
 
 /* Button Styles */
-.cta, .download-btn, .advantage-item .btn {
+.cta, .download-btn, .advantage-item .btn, #competition-report-btn {
     background-color: #ff7b00;
     color: white;
     padding: 15px 30px;
@@ -34,7 +34,7 @@ ul {
     transition: all 0.3s ease-in-out;
 }
 
-.cta:hover, .download-btn:hover, .advantage-line:hover {
+.cta:hover, .download-btn:hover, .advantage-line:hover, #competition-report-btn:hover {
     background-color: #ff5c00;
     transform: scale(1.05);
 }
@@ -110,6 +110,29 @@ ul {
     text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
 }
 
+.hero-subheading span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInWord 1s forwards;
+}
+
+.hero-subheading span:nth-child(1) {
+    animation-delay: 1s;
+}
+
+.hero-subheading span:nth-child(2) {
+    animation-delay: 1.3s;
+}
+
+.hero-subheading span:nth-child(3) {
+    animation-delay: 1.6s;
+}
+
+.hero-subheading span:nth-child(4) {
+    animation-delay: 1.9s;
+}
+
 /* Call to Action buttons */
 .cta-container {
     margin-top: 30px;
@@ -151,6 +174,43 @@ ul {
     }
 }
 
+@keyframes fadeInWord {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Join Us Section */
+#join-us {
+    padding: 80px 20px;
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+#join-us .content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#join-us h2 {
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+#join-us p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
 /* Problem Section */
 .problem-section, .our-solution {
     position: relative;
@@ -161,14 +221,14 @@ ul {
     background-color: #000;
 }
 
-.problem-section .video-background, .our-solution .video-background {
+.problem-section .video-background, .our-solution .video-background, #join-us .video-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: -1;
-    object-fit: cover; /* Ensures the video fills the section */
+    object-fit: cover;
 }
 
 .content-overlay {
@@ -185,83 +245,6 @@ ul {
     letter-spacing: 2px;
     text-transform: uppercase;
     animation: fadeIn 1s forwards;
-}
-
-.problem-stats, .solution-stats {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-top: 40px;
-}
-
-.stat {
-    width: 22%;
-    padding: 20px;
-    margin-bottom: 20px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    text-align: center;
-}
-
-.stat:hover {
-    background-color: rgba(255, 123, 0, 0.8);
-    transform: scale(1.05);
-}
-
-.stat-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.8em;
-    font-weight: 600;
-    margin-bottom: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.stat-description {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.2em;
-    line-height: 1.5;
-}
-
-/* Solution Section */
-.solution-description {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.5em;
-    font-weight: 400;
-    color: #333;
-    margin-bottom: 40px;
-    line-height: 1.5;
-}
-
-.solution-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-bottom: 60px;
-}
-
-.stat {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.stat-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.6em;
-    font-weight: 600;
-    color: #333;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-}
-
-.stat-description {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1em;
-    color: #555;
-    line-height: 1.5;
 }
 
 /* Kitchin Advantage Section */
