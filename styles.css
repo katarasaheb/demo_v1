@@ -428,3 +428,8 @@ footer p a:hover {
   z-index: 1;
   color: #ffffff; /* Adjust text color for better visibility */
 }
+
+/* Increase z-index to content-overlay to ensure it's on top of the video */
+.hero-content, .problem-section .content-overlay, .our-solution .content-overlay {
+    z-index: 2;  /* Ensure the content is above the background video */
+}
