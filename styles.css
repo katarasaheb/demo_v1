@@ -337,7 +337,7 @@ footer p a:hover {
 /* KitchIN Advantage Section */
 #kitchin-advantage {
     padding: 80px 20px;
-    background: url('images/whisky-8381774.jpg') no-repeat center center/cover; /* Replace with your background image */
+    background: url('images/your-image.jpg') no-repeat center center/cover; /* Replace with your background image */
     background-size: cover;
     background-position: center;
     color: white; /* Ensure the text is readable over the background */
@@ -373,18 +373,26 @@ footer p a:hover {
     margin-bottom: 15px;
 }
 
-.advantage-item ul {
-    list-style-type: none;
-    padding: 0;
+.advantage-list {
+    margin-bottom: 40px;
 }
 
-.advantage-item ul li {
+.advantage-line {
     font-size: 18px;
     line-height: 1.6;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.advantage-item ul li strong {
-    color: #f3f3f3; /* Light text for emphasis */
+/* Hover effect for interactive lines */
+.advantage-line:hover {
+    background-color: #007bff;
+    color: white;
+    transform: scale(1.05);
 }
 
 .advantage-item .btn {
@@ -421,4 +429,3 @@ footer p a:hover {
         font-size: 16px;
     }
 }
-
