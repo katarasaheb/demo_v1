@@ -368,3 +368,41 @@ footer .socials li a {
 #join-revolution-section .cta-btn:hover {
     background-color: #005bb5;
 }
+
+/* Alberta Section */
+.alberta-section {
+    background-color: #444;
+    padding: 100px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.alberta-section h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.alberta-section .alberta-card {
+    background-color: #333;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    margin: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.alberta-section .alberta-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.alberta-section .alberta-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.alberta-section .alberta-card p {
+    font-size: 16px;
+    color: #bbb;
+}
