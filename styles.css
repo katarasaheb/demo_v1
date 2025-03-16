@@ -404,3 +404,45 @@ footer p a:hover {
         font-size: 16px;
     }
 }
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Ensure the video stays in the background */
+}
+@media screen and (max-width: 768px) {
+    .problem-stats {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .stat {
+        width: 90%; /* More flexible width on mobile */
+        margin-bottom: 20px;
+    }
+
+    .industry-trends {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .trend {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .cta-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta {
+        width: 100%; /* Full width for CTAs on mobile */
+    }
+}
