@@ -1,181 +1,34 @@
-// Wait for the DOM to fully load before running the script
 document.addEventListener("DOMContentLoaded", function () {
-    
-    // Handle Scroll Animations for Hero Section
-    const heroHeading = document.querySelector('.hero-heading');
-    const heroSubheading = document.querySelector('.hero-subheading');
-    const ctaButton = document.querySelector('.cta');
-    
     // Hero Animation
-    function fadeInHero() {
-        heroHeading.classList.add('animate');
-        heroSubheading.classList.add('animate');
-        ctaButton.classList.add('animate');
-    }
+    setTimeout(function () {
+        const heroHeading = document.querySelector(".hero-heading");
+        const heroSubheading = document.querySelector(".hero-subheading");
+        heroHeading.classList.add("animate");
+        heroSubheading.classList.add("animate");
+    }, 500);
 
-    // Function to handle scroll event debouncing
-    let isScrolling = false;
-    function debounceScroll(callback) {
-        if (!isScrolling) {
-            isScrolling = true;
-            window.requestAnimationFrame(function () {
-                callback();
-                isScrolling = false;
+    // Join the Revolution Button - Scroll to Sign Up Section (Example for Interaction)
+    const joinRevolutionBtn = document.getElementById("join-revolution-btn");
+    if (joinRevolutionBtn) {
+        joinRevolutionBtn.addEventListener("click", function () {
+            window.scrollTo({
+                top: document.getElementById("join-us").offsetTop,
+                behavior: "smooth",
             });
-        }
-    }
-
-    // Listen to window scroll event for hero fade-in
-    window.addEventListener('scroll', function () {
-        debounceScroll(function () {
-            const heroOffsetTop = document.getElementById('hero').offsetTop;
-            const scrollPosition = window.scrollY + window.innerHeight;
-            if (scrollPosition > heroOffsetTop) {
-                fadeInHero();
-            }
-        });
-    });
-
-    // Handle Problem Stats Animation
-    const problemDescription = document.querySelector('.problem-description');
-    const sectionTitle = document.querySelector('.section-title');
-    const problemStats = document.querySelectorAll('.stat');
-
-    // Problem Section Animation
-    function animateProblemSection() {
-        sectionTitle.classList.add('animate');
-        problemDescription.classList.add('animate');
-        problemStats.forEach((stat, index) => {
-            setTimeout(() => {
-                stat.classList.add('animate');
-            }, 300 * index);
         });
     }
 
-    // Listen to window scroll event for Problem Section Animation
-    window.addEventListener('scroll', function () {
-        debounceScroll(function () {
-            const problemSectionOffsetTop = document.getElementById('grocery-system').offsetTop;
-            const scrollPosition = window.scrollY + window.innerHeight;
-            if (scrollPosition > problemSectionOffsetTop) {
-                animateProblemSection();
-            }
-        });
-    });
-
-    // Handle Industry Trends Animation
-    const industryTrendsSection = document.querySelector('.industry-trends');
-
-    function animateIndustryTrends() {
-        industryTrendsSection.classList.add('animate');
-    }
-
-    // Listen to window scroll event for Industry Trends Section
-    window.addEventListener('scroll', function () {
-        debounceScroll(function () {
-            const industryTrendsOffsetTop = document.querySelector('.industry-trends').offsetTop;
-            const scrollPosition = window.scrollY + window.innerHeight;
-            if (scrollPosition > industryTrendsOffsetTop) {
-                animateIndustryTrends();
-            }
-        });
-    });
-
-    // Handle Scroll Back to Top Button
-    const scrollToTopButton = document.createElement('button');
-    scrollToTopButton.innerHTML = "↑";
-    scrollToTopButton.classList.add('scroll-to-top');
-    document.body.appendChild(scrollToTopButton);
-
-    // Show or Hide Scroll-to-Top Button
-    window.addEventListener('scroll', function () {
-        debounceScroll(function () {
-            if (window.scrollY > 300) {
-                scrollToTopButton.style.display = 'block';
-            } else {
-                scrollToTopButton.style.display = 'none';
-            }
-        });
-    });
-
-    // Scroll to Top on Button Click
-    scrollToTopButton.addEventListener('click', function () {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // Handle Download Button Click
-    const downloadBtn = document.querySelector('.download-btn');
-    if (downloadBtn) {
-        downloadBtn.addEventListener('click', function () {
-            window.location.href = '/path-to-your-download-file'; // Replace with actual file path
-        });
-    }
-
-    // Smooth scrolling for Hero Section Buttons
-    document.getElementById('join-revolution-btn').addEventListener('click', function() {
-        // Scroll smoothly to the solution section
-        document.getElementById('our-solution').scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
-    });
-
-    // Optional: Smooth scroll to 'Investors' section or external link for the "Invest in Our Future" button
-    document.querySelectorAll('.cta')[1].addEventListener('click', function() {
-        // Example: Scroll to an investment section or open an external link
-        // window.location.href = "https://www.example.com/invest"; // Uncomment to open external page
-
-        // Or scroll to a section like "Investors" (assuming you have an ID for it)
-        document.getElementById('investors').scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
-    });
-    
-    // Scroll animation for The KitchIN Advantage Section
-    function animateKitchinAdvantage() {
-        const section = document.getElementById("kitchin-advantage");
-        if (section && section.getBoundingClientRect().top < window.innerHeight - 100) {
-            section.classList.add("fade-in");
-        }
-    }
-    
-    // Scroll animation for Stage 1: Alberta Section
-    function animateStage1Alberta() {
-        const section = document.getElementById("stage-1-alberta");
-        if (section && section.getBoundingClientRect().top < window.innerHeight - 100) {
-            section.classList.add("fade-in");
-            animateInteractiveElements(section);
-        }
-    }
-
-    // Scroll animation for Build the Future Section
-    function animateBuildFuture() {
-        const section = document.getElementById("build-future");
-        if (section && section.getBoundingClientRect().top < window.innerHeight - 100) {
-            section.classList.add("fade-in");
-        }
-    }
-
-    // Function to animate interactive elements
-    function animateInteractiveElements(section) {
-        const elements = section.querySelectorAll(".interactive-element");
-        elements.forEach((el, index) => {
-            setTimeout(() => {
-                el.classList.add("fade-in-scale");
-            }, index * 200);
-        });
-    }
-
-    // Listen for scroll events
+    // Adding Animation for Interactive Elements (like Stats, Cards, etc.)
+    const interactiveElements = document.querySelectorAll(".interactive-element");
     window.addEventListener("scroll", function () {
-        animateKitchinAdvantage();
-        animateStage1Alberta();
-        animateBuildFuture();
+        interactiveElements.forEach(function (element) {
+            const rect = element.getBoundingClientRect();
+            if (rect.top <= window.innerHeight) {
+                element.classList.add("animate");
+            }
+        });
     });
 
-    // Ensure animations trigger on page load if sections are already in view
-    animateKitchinAdvantage();
-    animateStage1Alberta();
-    animateBuildFuture();
+    // Optional: Add event listeners for other elements as needed
+    // Example for video autoplay or modal popups.
 });
