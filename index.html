@@ -24,18 +24,14 @@
             background-color: #111;
         }
 
-        /* Section Layout */
+        /* Hero Section */
         .section {
             position: relative;
             width: 100%;
             height: 100vh;
             overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
-        /* Video Setup for Fullscreen Background */
         .section video {
             position: absolute;
             top: 0;
@@ -46,10 +42,15 @@
             z-index: -1;
         }
 
-        /* Hero Section */
+        /* Hero Content */
         .hero-content-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             text-align: center;
-            max-width: 80%;
+            z-index: 1;
+            max-width: 90%;
             padding: 30px;
             background-color: rgba(0, 0, 0, 0.5);
             border-radius: 15px;
@@ -57,7 +58,7 @@
 
         .hero-content-overlay h1 {
             font-size: 48px;
-            font-weight: 700;
+            font-weight: 600;
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -196,7 +197,7 @@
         <div class="hero-content-overlay">
             <h1 class="hero-heading">Kitchin</h1>
             <p class="hero-subheading">Fast. Fresh. Sustainable. Affordable.</p>
-            <button class="cta-btn" id="join-revolution-hero-btn">Join the Revolution</button>
+            <button class="cta-btn" id="join-revolution-btn">Join the Revolution</button>
         </div>
     </section>
 
@@ -231,7 +232,7 @@
     </section>
 
     <!-- Join the Revolution Section -->
-    <section id="join-revolution-section" class="section">
+    <section id="join-revolution-section">
         <h2 class="section-title">Join the Revolution</h2>
         <button class="join-revolution-btn" id="join-revolution-btn">Join Now</button>
     </section>
@@ -257,9 +258,9 @@
             }, 500);
 
             // Join the Revolution Button - Scroll to Join the Revolution Section
-            const joinRevolutionHeroBtn = document.getElementById("join-revolution-hero-btn");
-            if (joinRevolutionHeroBtn) {
-                joinRevolutionHeroBtn.addEventListener("click", function () {
+            const joinRevolutionBtn = document.getElementById("join-revolution-btn");
+            if (joinRevolutionBtn) {
+                joinRevolutionBtn.addEventListener("click", function () {
                     const joinRevolutionSection = document.getElementById("join-revolution-section");
                     if (joinRevolutionSection) {
                         joinRevolutionSection.scrollIntoView({ behavior: "smooth" });
