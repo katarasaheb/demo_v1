@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kitchin - Redefining Grocery Shopping</title>
-    
+
     <!-- Google Fonts Integration (Apple-like Fonts) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
     <!-- External CSS (can also inline as needed) -->
     <link rel="stylesheet" href="styles.css">
-    
+
     <style>
         /* Reset Styles */
         * {
@@ -19,14 +19,14 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
             color: #fff;
             background-color: #111;
         }
-        
+
         /* Full-screen section with video background */
         .section {
             position: relative;
@@ -128,8 +128,13 @@
 
         /* Animation for fade-in effect */
         @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
         }
 
         .fadeIn {
@@ -228,30 +233,53 @@
         </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer style="text-align:center; padding: 20px 0; background-color: #222;">
-        <p>&copy; 2025 Kitchin | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-        <div>
-            <a href="#">FB</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
-        </div>
-    </footer>
+    <!-- Stage 1 - Alberta Section -->
+    <section class="section" id="stage-1-alberta">
+        <video autoplay loop muted>
+            <source src="images/alberta-background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="content-overlay fadeIn">
+            <h2 class="section-title">Stage 1: Alberta</h2>
+            <p class="section-subtitle">
+                A $3B Market Opportunity with Untapped Potential
+            </p>
 
-</body>
-</html>
-<!DOCTYPE html>
+            <!-- Key Stats -->
+            <div class="problem-container">
+                <div class="problem-card">
+                    <h3>70% of Alberta's Population</h3>
+                    <p>Close to 3 million residents served via 50+ dark stores</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Centralized Distribution Hub</h3>
+                    <p>Efficiently servicing Alberta from one central location</p>
+                </div>
+                <div class="problem-card">
+                    <h3>$3B Market Potential</h3>
+                    <p>Alberta represents a booming market for groceries</p>
+                </div>
+            </div>
+
+            <!-- Action Button -->
+            <button class="cta-btn" id="join-revolution-btn">Join the Revolution</button>
+        </div>
+    </section>
+
+    <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kitchin - Redefining Grocery Shopping</title>
-    
+
     <!-- Google Fonts Integration (Apple-like Fonts) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
     <!-- External CSS (can also inline as needed) -->
     <link rel="stylesheet" href="styles.css">
-    
+
     <style>
         /* Reset Styles */
         * {
@@ -259,7 +287,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
@@ -326,19 +354,90 @@
             background-color: #005bb5;
         }
 
-        /* For Problem Section */
-        .problem-section .section-title {
-            font-size: 36px;
-            color: #f2f2f2;
+        /* New "Join the Revolution" Section */
+        .join-revolution {
+            background-color: #222;
+            padding: 60px 0;
+            text-align: center;
         }
 
-        .problem-container {
+        .join-revolution .section-title {
+            font-size: 48px;
+            color: #fff;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .join-revolution .section-subtitle {
+            font-size: 20px;
+            color: #bbb;
+            margin-bottom: 30px;
+        }
+
+        .join-revolution .form-container {
             display: flex;
             justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            margin-top: 40px;
+            align-items: center;
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
-        .problem-card {
-            background-color
+        .join-revolution input,
+        .join-revolution button {
+            padding: 15px;
+            font-size: 16px;
+            border-radius: 30px;
+            border: 1px solid #ddd;
+        }
+
+        .join-revolution input {
+            flex: 1;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .join-revolution button {
+            background-color: #0071e3;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .join-revolution button:hover {
+            background-color: #005bb5;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Your other sections here (Hero, Problem, Solution, etc.) -->
+
+    <!-- Join the Revolution Section -->
+    <section class="join-revolution">
+        <div class="content-overlay">
+            <h2 class="section-title">Join the Revolution</h2>
+            <p class="section-subtitle">Be a part of transforming the grocery industry in Canada. Sign up now for exclusive updates and early access.</p>
+
+            <!-- Form Container -->
+            <div class="form-container">
+                <input type="email" placeholder="Enter your email" id="email" />
+                <button class="cta-btn" id="join-btn">Join Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer style="text-align:center; padding: 20px 0; background-color: #222;">
+        <p>&copy; 2025 Kitchin | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        <div>
+            <a href="#">FB</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
+        </div>
+    </footer>
+
+   
+
+</body>
+
+</html>
