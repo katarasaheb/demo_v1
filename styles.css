@@ -6,8 +6,8 @@ body {
     background-color: #f4f4f4;
 }
 
-h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
+h1, h2, h3, .cta, .download-btn, .advantage-item h3 {
+    font-family: 'Inter', sans-serif;  /* Or any consistent font you prefer */
 }
 
 a {
@@ -21,22 +21,28 @@ ul {
 }
 
 /* Button Styles */
-.cta {
-    background-color: #4CAF50;
+
+.cta, .download-btn, .advantage-item .btn {
+    background-color: #ff7b00; /* Ensure all buttons have the same color */
     color: white;
     padding: 15px 30px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    margin: 10px;
+    font-size: 1.1em;  /* Ensure consistent font size */
+    font-weight: 500;  /* Same weight */
     border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
-.cta:hover {
-    background-color: #45a049;
-    transform: translateY(-5px);
+.cta:hover, .download-btn:hover, .advantage-line:hover {
+    background-color: #ff5c00;  /* For buttons */
+    transform: scale(1.05);  /* Standardize scaling effect */
 }
+
+.advantage-line:hover {
+    color: white;
+    transform: scale(1.05); /* Make sure all interactive lines have a consistent hover effect */
+}
+
 
 /* Hero Section */
 #hero {
@@ -332,4 +338,104 @@ footer p a:hover {
     font-size: 1.1em;
     color: #555;
     line-height: 1.5;
+}
+
+/* KitchIN Advantage Section */
+#kitchin-advantage {
+    padding: 80px 20px;
+    background: url('images/whisky-8381774.jpg') no-repeat center center/cover;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+#kitchin-advantage .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 80px 20px;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Advantage Items */
+.advantage-item {
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+.advantage-item h3 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.advantage-list {
+    margin-bottom: 40px;
+}
+
+.advantage-line {
+    font-size: 18px;
+    line-height: 1.6;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for interactive lines */
+.advantage-line:hover {
+    background-color: #ff7b00;
+    color: white;
+    transform: scale(1.05);
+}
+
+.advantage-item .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #ff7b00;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.advantage-item .btn:hover {
+    background-color: #e67300;
+    transform: translateY(-3px);
+}
+
+/* Animation for fadeIn */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Adjustment */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 28px;
+    }
+    .advantage-item h3 {
+        font-size: 24px;
+    }
+    .advantage-item ul li {
+        font-size: 16px;
+    }
 }
