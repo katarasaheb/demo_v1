@@ -3,18 +3,20 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(function () {
         const heroHeading = document.querySelector(".hero-heading");
         const heroSubheading = document.querySelector(".hero-subheading");
-        heroHeading.classList.add("animate");
-        heroSubheading.classList.add("animate");
+        if (heroHeading && heroSubheading) {
+            heroHeading.classList.add("animate");
+            heroSubheading.classList.add("animate");
+        }
     }, 500);
 
     // Join the Revolution Button - Scroll to Join the Revolution Section (Updated for new flow)
     const joinRevolutionBtn = document.getElementById("join-revolution-btn");
     if (joinRevolutionBtn) {
         joinRevolutionBtn.addEventListener("click", function () {
-            window.scrollTo({
-                top: document.getElementById("join-us").offsetTop,
-                behavior: "smooth",
-            });
+            const joinRevolutionSection = document.getElementById("join-revolution-section");
+            if (joinRevolutionSection) {
+                joinRevolutionSection.scrollIntoView({ behavior: "smooth" });
+            }
         });
     }
 
@@ -44,10 +46,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const signUpForUpdatesBtn = document.getElementById("join-btn");
     if (signUpForUpdatesBtn) {
         signUpForUpdatesBtn.addEventListener("click", function () {
-            window.scrollTo({
-                top: document.getElementById("join-us").offsetTop,
-                behavior: "smooth",
-            });
+            const joinUsSection = document.getElementById("join-us");
+            if (joinUsSection) {
+                window.scrollTo({
+                    top: joinUsSection.offsetTop,
+                    behavior: "smooth",
+                });
+            }
         });
     }
 
@@ -61,15 +66,4 @@ document.addEventListener("DOMContentLoaded", function () {
             window.location.href = "https://competition-bureau.canada.ca/sites/default/files/attachments/2023/CB-Retail-Grocery-Market-Study-Report-EN-2023-06-23.pdf";
         });
     }
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-    // Join the Revolution Button functionality
-    const joinRevolutionBtn = document.getElementById("join-revolution-btn");
-    const joinRevolutionSection = document.getElementById("join-revolution-section");
-
-    joinRevolutionBtn.addEventListener("click", function() {
-        // Scroll to the "Join the Revolution" section when the button is clicked
-        joinRevolutionSection.scrollIntoView({ behavior: "smooth" });
-    });
 });
