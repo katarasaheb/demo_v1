@@ -110,10 +110,27 @@ document.addEventListener("DOMContentLoaded", function () {
             window.location.href = '/path-to-your-download-file'; // Replace with actual file path
         });
     }
-});
 
-// Ensure DOM is fully loaded
-document.addEventListener("DOMContentLoaded", function () {
+    // Smooth scrolling for Hero Section Buttons
+    document.getElementById('join-revolution-btn').addEventListener('click', function() {
+        // Scroll smoothly to the solution section
+        document.getElementById('our-solution').scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    });
+
+    // Optional: Smooth scroll to 'Investors' section or external link for the "Invest in Our Future" button
+    document.querySelectorAll('.cta')[1].addEventListener('click', function() {
+        // Example: Scroll to an investment section or open an external link
+        // window.location.href = "https://www.example.com/invest"; // Uncomment to open external page
+
+        // Or scroll to a section like "Investors" (assuming you have an ID for it)
+        document.getElementById('investors').scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    });
     
     // Scroll animation for The KitchIN Advantage Section
     function animateKitchinAdvantage() {
