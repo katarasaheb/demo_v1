@@ -302,3 +302,67 @@ footer .socials li a {
         padding: 15px;
     }
 }
+/* Kitchin Advantage Section */
+.kitchin-advantage-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.kitchin-advantage-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 280px;
+}
+
+.kitchin-advantage-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.kitchin-advantage-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.kitchin-advantage-card p {
+    font-size: 16px;
+    color: #bbb;
+}
+
+/* Join the Revolution Section */
+#join-revolution-section {
+    background-color: #111;
+    padding: 60px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+#join-revolution-section h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #f2f2f2;
+}
+
+#join-revolution-section .cta-btn {
+    background-color: #0071e3;
+    color: #fff;
+    font-size: 18px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+#join-revolution-section .cta-btn:hover {
+    background-color: #005bb5;
+}
