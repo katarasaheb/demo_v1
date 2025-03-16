@@ -283,8 +283,9 @@ footer p a:hover {
 
 /* Solution Section */
 #our-solution {
-    background-color: #ffffff;
-    padding: 80px 0;
+  background: url('images/3.JPG') no-repeat center center/cover;
+    padding: 80px 20px;
+    color: white;
     text-align: center;
 }
 
