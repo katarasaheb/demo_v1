@@ -225,6 +225,7 @@ body {
 
 .advantage-line {
     margin-bottom: 10px;
+
 }
 
 .btn {
@@ -302,6 +303,7 @@ footer .socials li a {
         padding: 15px;
     }
 }
+
 /* Kitchin Advantage Section */
 .kitchin-advantage-container {
     display: flex;
