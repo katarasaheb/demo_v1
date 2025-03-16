@@ -2,14 +2,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Handle Scroll Animations for Hero Section
     const heroHeading = document.querySelector('.hero-heading');
-    const heroSubheading = document.querySelector('.hero-subheading');
-    const ctaButtons = document.querySelectorAll('.cta'); // Adjusted to target both buttons
+    const heroKeywords = document.querySelectorAll('.hero-keyword');
+    const ctaButton = document.querySelector('.cta');
     
     // Hero Animation
     function fadeInHero() {
         heroHeading.classList.add('animate');
-        heroSubheading.classList.add('animate');
-        ctaButtons.forEach(button => button.classList.add('animate'));
+        heroKeywords.forEach((keyword, index) => {
+            setTimeout(() => {
+                keyword.classList.add('animate');
+            }, 300 * index);
+        });
+        ctaButton.classList.add('animate');
     }
 
     // Function to handle scroll event debouncing
@@ -36,17 +40,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Handle Problem Stats Animation
-    const problemDescription = document.querySelector('.problem-description');
-    const problemSectionTitle = document.querySelector('.section-title');
-    const problemStats = document.querySelectorAll('.stat');
+    const problemCards = document.querySelectorAll('.problem-card');
 
-    // Problem Section Animation
     function animateProblemSection() {
-        problemSectionTitle.classList.add('animate');
-        problemDescription.classList.add('animate');
-        problemStats.forEach((stat, index) => {
+        problemCards.forEach((card, index) => {
             setTimeout(() => {
-                stat.classList.add('animate');
+                card.classList.add('animate');
             }, 300 * index);
         });
     }
@@ -54,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Listen to window scroll event for Problem Section Animation
     window.addEventListener('scroll', function () {
         debounceScroll(function () {
-            const problemSectionOffsetTop = document.getElementById('grocery-system').offsetTop;
+            const problemSectionOffsetTop = document.getElementById('problem-section').offsetTop;
             const scrollPosition = window.scrollY + window.innerHeight;
             if (scrollPosition > problemSectionOffsetTop) {
                 animateProblemSection();
@@ -63,15 +62,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Handle Solution Section Animation
-    const solutionSection = document.querySelector('#our-solution');
-    const solutionTitle = document.querySelector('.section-title'); // Assuming the title is also in the solution section
-    const solutionItems = document.querySelectorAll('.stat'); // Assuming these are the items in the solution section
+    const solutionCards = document.querySelectorAll('.solution-card');
 
     function animateSolutionSection() {
-        solutionTitle.classList.add('animate');
-        solutionItems.forEach((item, index) => {
+        solutionCards.forEach((card, index) => {
             setTimeout(() => {
-                item.classList.add('animate');
+                card.classList.add('animate');
             }, 300 * index);
         });
     }
@@ -86,92 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Handle KitchIN Advantage Section Animation
-    const kitchinAdvantageSection = document.getElementById('kitchin-advantage');
-
-    function animateKitchinAdvantage() {
-        if (kitchinAdvantageSection && kitchinAdvantageSection.getBoundingClientRect().top < window.innerHeight - 100) {
-            kitchinAdvantageSection.classList.add("fade-in");
-        }
-    }
-
-    window.addEventListener("scroll", function () {
-        debounceScroll(function () {
-            animateKitchinAdvantage();
-        });
-    });
-
-    // Handle Stage 1: Alberta Section Animation
-    function animateStage1Alberta() {
-        const section = document.getElementById('stage-1-alberta');
-        if (section && section.getBoundingClientRect().top < window.innerHeight - 100) {
-            section.classList.add("fade-in");
-            animateInteractiveElements(section);
-        }
-    }
-
-    function animateInteractiveElements(section) {
-        const elements = section.querySelectorAll(".interactive-element");
-        elements.forEach((el, index) => {
-            setTimeout(() => {
-                el.classList.add("fade-in-scale");
-            }, index * 200);
-        });
-    }
-
-    window.addEventListener("scroll", function () {
-        debounceScroll(function () {
-            animateStage1Alberta();
-        });
-    });
-
-    // Scroll Back to Top Button
-    const scrollToTopButton = document.createElement('button');
-    scrollToTopButton.innerHTML = "↑";
-    scrollToTopButton.classList.add('scroll-to-top');
-    document.body.appendChild(scrollToTopButton);
-
-    // Show or Hide Scroll-to-Top Button
-    window.addEventListener('scroll', function () {
-        debounceScroll(function () {
-            if (window.scrollY > 300) {
-                scrollToTopButton.style.display = 'block';
-            } else {
-                scrollToTopButton.style.display = 'none';
-            }
-        });
-    });
-
-    // Scroll to Top on Button Click
-    scrollToTopButton.addEventListener('click', function () {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // Handle Download Button Click
-    const downloadBtn = document.querySelector('.download-btn');
-    if (downloadBtn) {
-        downloadBtn.addEventListener('click', function () {
-            window.location.href = '/path-to-your-download-file'; // Replace with actual file path
-        });
-    }
-
-    // Smooth scrolling for Hero Section Buttons
-    document.getElementById('join-revolution-btn').addEventListener('click', function () {
-        document.getElementById('our-solution').scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
-    });
-
-    // Optional: Smooth scroll to 'Investors' section for the "Invest in Our Future" button
-    document.querySelectorAll('.cta')[1].addEventListener('click', function () {
-        document.getElementById('Join Us').scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
-    });
-
     // Ensure animations trigger on page load if sections are already in view
-    animateKitchinAdvantage();
-    animateStage1Alberta();
+    animateProblemSection();
+    animateSolutionSection();
 });
