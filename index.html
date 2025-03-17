@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>kitchin - The Grocery Revolution</title>
+    <title>Kitchin - The Grocery Revolution</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         /* Global Styles */
@@ -15,7 +15,7 @@
             overflow-x: hidden;
         }
 
-        h1, h2 {
+        h1, h2, h3 {
             margin: 0;
             font-weight: 600;
             text-align: center;
@@ -27,12 +27,12 @@
         }
 
         h2 {
-            font-size: 1.5rem;
+            font-size: 2rem;
             color: #fff;
         }
 
         p {
-            font-size: 1rem;
+            font-size: 1.2rem;
             color: #fff;
             text-align: center;
             margin: 10px 0;
@@ -53,7 +53,6 @@
             background-color: #005bb5;
         }
 
-        /* Section Styles */
         section {
             position: relative;
             overflow: hidden;
@@ -91,26 +90,6 @@
             transform: scale(1.2);
         }
 
-        /* Specific Section Styles */
-        .hero {
-            background: url('images/HV3.mp4') no-repeat center center;
-            background-size: cover;
-        }
-
-        .hero .section-content h1 {
-            font-size: 4rem;
-            text-transform: uppercase;
-        }
-
-        .hero .section-content h2 {
-            font-size: 2rem;
-        }
-
-        .interactive-section {
-            font-size: 2rem;
-        }
-
-        /* Footer Styles */
         footer {
             background-color: #333;
             color: #fff;
@@ -127,7 +106,6 @@
             color: #0071e3;
         }
 
-        /* Form Styles */
         .form-container {
             background: rgba(0, 0, 0, 0.6);
             padding: 20px;
@@ -163,17 +141,20 @@
 <body>
 
 <!-- Hero Section -->
-<section class="hero">
+<section id="hero">
+    <video autoplay loop muted>
+        <source src="images/HV3.mp4" type="video/mp4">
+    </video>
     <div class="section-content">
         <h1>Kitchin</h1>
-        <h2>Fast <span class="interactive-text">Fresh</span> <span class="interactive-text">Affordable</span> <span class="interactive-text">Sustainable</span></h2>
-        <a href="#join-the-revolution">Join the Grocery Revolution</a>
-        <a href="#invest-in-our-future">Invest in Our Future</a>
+        <h2>Fast <span class="interactive-text" onclick="scrollToSection('problem')">Fresh</span> <span class="interactive-text" onclick="scrollToSection('solution')">Affordable</span> <span class="interactive-text" onclick="scrollToSection('advantage')">Sustainable</span></h2>
+        <a href="#join-the-revolution" onclick="scrollToSection('join-the-revolution')">Join the Grocery Revolution</a>
+        <a href="#invest-in-our-future" onclick="scrollToSection('join-the-revolution')">Invest in Our Future</a>
     </div>
 </section>
 
 <!-- Problem Section -->
-<section class="problem">
+<section id="problem">
     <video autoplay loop muted>
         <source src="images/HV.mp4" type="video/mp4">
     </video>
@@ -181,79 +162,46 @@
         <h1>State of the Canadian Grocery Market</h1>
         <h2>The 2023 Canadian Competition Bureau Report revealed that the grocery sector is dominated by just three companies, limiting consumer choice and keeping prices high.</h2>
         <a href="https://competition-bureau.canada.ca/sites/default/files/attachments/2023/CB-Retail-Grocery-Market-Study-Report-EN-2023-06-23.pdf" target="_blank">Competition Bureau Retail Study Report</a>
-        <div class="interactive-section">
-            <p class="interactive-text">Oligopolistic — Big chains control pricing, reducing affordability.</p>
-            <p class="interactive-text">Inefficient — Long, inefficient distribution channels increase costs.</p>
-            <p class="interactive-text">Vulnerable — Tariffs and import costs make groceries more expensive.</p>
-            <p class="interactive-text">Obsolescence — The cost of running physical stores is passed on to you.</p>
-        </div>
+        <div class="interactive-text" onclick="alert('Oligopolistic — Big chains control pricing, reducing affordability.')">Oligopolistic</div>
+        <div class="interactive-text" onclick="alert('Inefficient — Long, inefficient distribution channels increase costs.')">Inefficient</div>
+        <div class="interactive-text" onclick="alert('Vulnerable — Tariffs and import costs make groceries more expensive.')">Vulnerable</div>
+        <div class="interactive-text" onclick="alert('Obsolescence — The cost of running physical stores is passed on to you.')">Obsolescence</div>
     </div>
 </section>
 
 <!-- Solution Section -->
-<section class="solution">
+<section id="solution">
     <video autoplay loop muted>
         <source src="images/175717-854057981.mp4" type="video/mp4">
     </video>
     <div class="section-content">
         <h1>Kitchin - The Grocery Revolution</h1>
         <h2>Canada's First Grocery Superapp. Powered by a Dark Store Network for Faster, Cheaper & Efficient Service</h2>
-        <a href="#join-the-revolution">Join the Grocery Revolution</a>
-        <div class="interactive-section">
-            <p>Canada's First Dark Store Network - Traditional grocery stores waste space, energy, and money. We replace the traditional grocery stores with hyper-efficient fulfillment centers that power superfast grocery delivery at lower prices.</p>
-            <div class="interactive-text">Direct manufacturer pricing</div>
-            <div class="interactive-text">Faster delivery times</div>
-            <div class="interactive-text">Lower overhead costs</div>
-            <div class="interactive-text">Minimal food waste</div>
-
-            <p>Current Industry Trends</p>
-            <div class="interactive-text">20% C.A.G.R. in Online Grocery</div>
-            <div class="interactive-text">$160B Market by 2026</div>
-            <div class="interactive-text">75% controlled by 3 companies</div>
-        </div>
+        <a href="#join-the-revolution" onclick="scrollToSection('join-the-revolution')">Join the Grocery Revolution</a>
+        <div class="interactive-text" onclick="alert('Canada\'s First Dark Store Network - Traditional grocery stores waste space, energy, and money. We replace the traditional grocery stores with hyper-efficient fulfillment centers that power superfast grocery delivery at lower prices.')">Canada's First Dark Store Network</div>
+        <div class="interactive-text" onclick="alert('Direct manufacturer pricing')">Direct manufacturer pricing</div>
+        <div class="interactive-text" onclick="alert('Faster delivery times')">Faster delivery times</div>
+        <div class="interactive-text" onclick="alert('Lower overhead costs')">Lower overhead costs</div>
+        <div class="interactive-text" onclick="alert('Minimal food waste')">Minimal food waste</div>
     </div>
 </section>
 
 <!-- Advantage Section -->
-<section class="advantage">
+<section id="advantage">
     <video autoplay loop muted>
         <source src="images/83863-584870628.mp4" type="video/mp4">
     </video>
     <div class="section-content">
         <h1>The Kitchin Advantage</h1>
         <h2>Better for Customers | Better for Investors</h2>
-        <div class="interactive-section">
-            <h3>For Customers - The Grocery Experience You Deserve</h3>
-            <div class="interactive-text">Personalized AI Shopping</div>
-            <div class="interactive-text">Local Sourcing, Sustainable Choices</div>
-            <div class="interactive-text">Superfast Delivery</div>
-            <a href="#join-the-revolution">Join the Grocery Revolution</a>
-            <h3>For Investors - A High Growth Opportunity Awaits</h3>
-            <div class="interactive-text">Disrupting a $100B Industry</div>
-            <div class="interactive-text">Scalable, Tech-Driven Model</div>
-            <div class="interactive-text">First-Mover Advantage</div>
-            <a href="#join-the-revolution">Invest in Our Future</a>
-        </div>
-    </div>
-</section>
-
-<!-- Alberta Section -->
-<section class="alberta">
-    <video autoplay loop muted>
-        <source src="images/204095-923582446.mp4" type="video/mp4">
-    </video>
-    <div class="section-content">
-        <h1>Stage 1 - Alberta</h1>
-        <h2>A $3B opportunity with untapped potential</h2>
-        <a href="images/Alberta Retail grocery sales 2015-2020.pdf" target="_blank">Alberta Retail Grocery Sales Report 2015-2020</a>
-        <div class="interactive-section">
-            <p>One Centralized Distribution Hub in Bowden</p>
-            <div class="interactive-text">50+ Dark Stores</div>
-            <div class="interactive-text">70% Alberta's resident population</div>
-            <div class="interactive-text">30 minutes delivery</div>
-            <div class="interactive-text">Built for Canada</div>
-            <a href="#join-the-revolution">Join the Grocery Revolution</a>
-        </div>
+        <div class="interactive-text" onclick="alert('Personalized AI Shopping - Smart recommendations tailored to your diet and habits, making grocery shopping effortless.')">Personalized AI Shopping</div>
+        <div class="interactive-text" onclick="alert('Local Sourcing, Sustainable Choices - Fresh, farm-to-table produce with a lower carbon footprint, supporting Canadian farmers.')">Local Sourcing, Sustainable Choices</div>
+        <div class="interactive-text" onclick="alert('Superfast Delivery - Groceries at your doorstep in minutes, with our hyperlocal fulfillment centers.')">Superfast Delivery</div>
+        <a href="#join-the-revolution" onclick="scrollToSection('join-the-revolution')">Join the Grocery Revolution</a>
+        <div class="interactive-text" onclick="alert('Disrupting a $100B Industry - We\'re reshaping the future of food and grocery retail in Canada with innovative technology.')">Disrupting a $100B Industry</div>
+        <div class="interactive-text" onclick="alert('Scalable, Tech-Driven Model - AI and automation create lean operations with strong unit economics.')">Scalable, Tech-Driven Model</div>
+        <div class="interactive-text" onclick="alert('First-Mover Advantage - The only dark store grocery network in Canada, positioned for national and global expansion.')">First-Mover Advantage</div>
+        <a href="#join-the-revolution" onclick="scrollToSection('join-the-revolution')">Invest in Our Future</a>
     </div>
 </section>
 
@@ -266,7 +214,7 @@
         <h1>Join the Revolution</h1>
         <h2>Build the Future of Grocery With Us. Sign up to stay connected and be part of the grocery revolution</h2>
         <div class="form-container">
-            <form action="https://forms.google.com" method="POST">
+            <form id="contact-form" action="https://forms.google.com" method="POST" target="_blank">
                 <input type="text" name="name" placeholder="Enter your name" required>
                 <input type="email" name="email" placeholder="Enter your email" required>
                 <textarea name="message" placeholder="Your Message (max 180 words)" maxlength="180"></textarea>
@@ -290,10 +238,15 @@
         <a href="#problem">Problem</a>
         <a href="#solution">Solution</a>
         <a href="#advantage">Advantage</a>
-        <a href="#alberta">Alberta</a>
         <a href="#join-the-revolution">Join the Revolution</a>
     </div>
 </footer>
+
+<script>
+    function scrollToSection(sectionId) {
+        document.getElementById(sectionId).scrollIntoView({behavior: 'smooth'});
+    }
+</script>
 
 </body>
 </html>
