@@ -26,14 +26,15 @@ section video {
 
 /* Section content styling */
 .section-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    padding: 0 20px; /* Added padding for smaller screens */
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Aligns children vertically */
+    justify-content: space-around; /* Spacing between elements */
+    align-items: center; /* Centers elements horizontally */
+    height: 100%; /* Make sure the content takes up the full section height */
     color: #fff;
     z-index: 1; /* Make sure content is above the video */
+    padding: 20px;
 }
 
 /* Hero Section */
@@ -41,11 +42,13 @@ section video {
     font-size: 4rem;
     font-weight: bold;
     color: #fff;
+    text-align: center;
 }
 
 #hero .section-content h2 {
     font-size: 2.5rem;
     margin: 20px 0;
+    text-align: center;
 }
 
 #hero .section-content a {
@@ -55,10 +58,6 @@ section video {
     border-radius: 50px;
     background-color: #0071e3;
     transition: background-color 0.3s;
-}
-
-#hero .section-content a:hover {
-    background-color: #005bb5;
 }
 
 /* Buttons */
@@ -90,47 +89,6 @@ a:hover, .interactive-text:hover, .form-container button:hover {
     margin-top: 15px;
 }
 
-/* Interactive Text Styling */
-.interactive-text {
-    position: relative;
-    display: inline-block;
-    font-size: 2rem;
-    padding: 10px 15px;
-    margin: 0 10px;
-    cursor: pointer;
-    transition: transform 0.3s ease, width 0.3s ease;
-}
-
-.interactive-text:hover {
-    transform: scale(1.2); /* Expand the text on hover */
-    width: auto; /* Ensure it expands to fit content */
-}
-
-/* Tooltip (subtext) */
-.interactive-text::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: -30px; /* Adjusted to give space below */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    padding: 8px 12px;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    display: none; /* Hidden by default */
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    white-space: nowrap;
-    z-index: 10; /* Ensure it's above other elements */
-}
-
-.interactive-text:hover::after {
-    display: block; /* Show the tooltip when hovered */
-    opacity: 1; /* Fade in */
-    transform: translateX(-50%) translateY(10px); /* Slightly adjust position for smoother effect */
-}
-
 /* Advantage Section */
 #advantage .section-content h1 {
     font-size: 3.5rem;
@@ -141,6 +99,7 @@ a:hover, .interactive-text:hover, .form-container button:hover {
     margin-bottom: 20px;
 }
 
+/* Footer Section */
 footer {
     background-color: #333;
     color: #fff;
