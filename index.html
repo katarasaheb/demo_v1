@@ -12,7 +12,7 @@
 
 <!-- Hero Section -->
 <section id="hero">
-    <video autoplay loop muted>
+    <video autoplay loop muted alt="Hero Section Video Background">
         <source src="images/HV3.mp4" type="video/mp4">
     </video>
     <div class="section-content">
@@ -20,12 +20,12 @@
         <h2>Fast <span class="interactive-text" onclick="scrollToSection('problem')">Fresh</span> <span class="interactive-text" onclick="scrollToSection('solution')">Affordable</span> <span class="interactive-text" onclick="scrollToSection('advantage')">Sustainable</span></h2>
         <a href="#join-the-revolution" onclick="scrollToSection('join-the-revolution')">Join the Grocery Revolution</a>
         <a href="#invest-in-our-future" onclick="scrollToSection('invest-in-our-future')">Invest in Our Future</a>
-</div>
+    </div>
 </section>
 
 <!-- Problem Section -->
 <section id="problem">
-    <video autoplay loop muted>
+    <video autoplay loop muted alt="State of the Canadian Grocery Market">
         <source src="images/HV.mp4" type="video/mp4">
     </video>
     <div class="section-content">
@@ -41,7 +41,7 @@
 
 <!-- Solution Section -->
 <section id="solution">
-    <video autoplay loop muted>
+    <video autoplay loop muted alt="Kitchin Solution">
         <source src="images/175717-854057981.mp4" type="video/mp4">
     </video>
     <div class="section-content">
@@ -58,7 +58,7 @@
 
 <!-- Advantage Section -->
 <section id="advantage">
-    <video autoplay loop muted>
+    <video autoplay loop muted alt="Kitchin Advantage">
         <source src="images/83863-584870628.mp4" type="video/mp4">
     </video>
     <div class="section-content">
@@ -70,48 +70,33 @@
         <a href="#join-the-revolution" onclick="scrollToSection('join-the-revolution')">Join the Grocery Revolution</a>
         <div class="interactive-text" onclick="alert('Disrupting a $100B Industry - We\'re reshaping the future of food and grocery retail in Canada with innovative technology.')">Disrupting a $100B Industry</div>
         <div class="interactive-text" onclick="alert('Scalable, Tech-Driven Model - AI and automation create lean operations with strong unit economics.')">Scalable, Tech-Driven Model</div>
-        <div class="interactive-text" onclick="alert('First-Mover Advantage - The only dark store grocery network in Canada, positioned for national and global expansion.')">First-Mover Advantage</div>
-        <a href="#join-the-revolution" onclick="scrollToSection('join-the-revolution')">Invest in Our Future</a>
+        <div class="interactive-text" onclick="alert('First-Mover Advantage - Kitchin has the chance to dominate the Canadian grocery industry, with a clear path to global expansion.')">First-Mover Advantage</div>
     </div>
 </section>
 
-<!-- Join the Revolution Section -->
+<!-- Form Section -->
 <section id="join-the-revolution">
-    <video autoplay loop muted>
-        <source src="images/Solution.mp4" type="video/mp4">
-    </video>
-    <div class="section-content">
-        <h1>Join the Revolution</h1>
-        <h2>Build the Future of Grocery With Us. Sign up to stay connected and be part of the grocery revolution</h2>
-        <div class="form-container">
-            <form id="contact-form" action="https://forms.google.com" method="POST" target="_blank">
-                <input type="text" name="name" placeholder="Enter your name" required>
-                <input type="email" name="email" placeholder="Enter your email" required>
-                <textarea name="message" placeholder="Your Message (max 180 words)" maxlength="180"></textarea>
-                <select name="interest" required>
-                    <option value="Customer">Customers - Launch Updates</option>
-                    <option value="Investor">Investors - Invest in Our Future</option>
-                    <option value="Partner">Partners - Partner with Us</option>
-                    <option value="Career">Work with Us - Career Portal</option>
-                </select>
-                <input type="file" name="attachment">
-                <button type="submit">Join the Revolution</button>
-            </form>
-        </div>
-    </div>
+    <h2>Join the Revolution</h2>
+    <form action="https://formspree.io/f/maykylkw" method="POST">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <textarea name="message" placeholder="Type your message here (max 180 words)" maxlength="180"></textarea>
+        <select name="interest" required>
+            <option value="Customer">Customers - Launch Updates</option>
+            <option value="Investor">Investors - Invest in Our Future</option>
+            <option value="Partner">Partners - Partner with Us</option>
+            <option value="Career">Work with Us - Career Portal</option>
+        </select>
+        <input type="file" name="attachment">
+        <button type="submit">Join the Revolution</button>
+    </form>
 </section>
 
 <!-- Footer Section -->
 <footer>
-    <div>
-        <a href="#hero">Home</a>
-        <a href="#problem">Problem</a>
-        <a href="#solution">Solution</a>
-        <a href="#advantage">Advantage</a>
-        <a href="#join-the-revolution">Join the Revolution</a>
-    </div>
+    <p>&copy; 2025 Kitchin. All Rights Reserved.</p>
 </footer>
 
-<script src="scripts.js"></script> <!-- Link to external scripts.js -->
+<script src="script.js"></script>
 </body>
 </html>
