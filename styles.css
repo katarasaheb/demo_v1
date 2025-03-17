@@ -72,7 +72,7 @@ section video {
 #problem .section-content h2 {
     font-size: 1.8rem;
     font-weight: 400;
-    margin-top: 15px;
+    margin-top: 5px;
 }
 
 /* Interactive Text Styling */
@@ -80,7 +80,7 @@ section video {
     position: relative;
     display: inline-block;
     font-size: 2rem;
-    padding: 10px 15px;
+    padding: 0px 0px;
     margin: 10px;
     cursor: pointer;
     transition: transform 0.3s ease, width 0.3s ease;
