@@ -1,305 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kitchin - Redefining Grocery Shopping</title>
-
-    <!-- Google Fonts Integration (Apple-like Fonts) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>kitchin - The Grocery Revolution</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* Reset Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* Global Styles */
         body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: #fff;
-            background-color: #111;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff;
+            overflow-x: hidden;
         }
 
-        /* Hero Section */
-        .section {
+        h1, h2 {
+            margin: 0;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: #fff;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #fff;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #fff;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            background-color: #0071e3;
+            margin: 10px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #005bb5;
+        }
+
+        /* Section Styles */
+        section {
             position: relative;
-            width: 100%;
-            height: 100vh;
             overflow: hidden;
         }
 
-        .section video {
-            position: absolute;
-            top: 0;
-            left: 0;
+        section video {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
             z-index: -1;
         }
 
-        /* Hero Content */
-        .hero-content-overlay {
+        .section-content {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
-            z-index: 1;
-            max-width: 90%;
-            padding: 30px;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 15px;
-        }
-
-        .hero-content-overlay h1 {
-            font-size: 48px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .hero-content-overlay p {
-            font-size: 24px;
-            font-weight: 400;
-            margin-bottom: 30px;
-        }
-
-        .cta-btn {
-            background-color: #0071e3;
             color: #fff;
-            font-size: 18px;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 30px;
-            text-transform: uppercase;
+        }
+
+        .interactive-text {
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            display: inline-block;
+            font-size: 2rem;
+            padding: 5px;
+            margin: 0 10px;
+            transition: transform 0.3s ease;
         }
 
-        .cta-btn:hover {
-            background-color: #005bb5;
+        .interactive-text:hover {
+            transform: scale(1.2);
         }
 
-        /* Problem Section */
-        .problem-section {
-            padding: 100px 20px;
-            background-color: #222;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
-            height: 100vh;
+        /* Specific Section Styles */
+        .hero {
+            background: url('images/HV3.mp4') no-repeat center center;
+            background-size: cover;
         }
 
-        .problem-section .section-title {
-            font-size: 36px;
-            color: #f2f2f2;
-            margin-bottom: 40px;
+        .hero .section-content h1 {
+            font-size: 4rem;
+            text-transform: uppercase;
         }
 
-        .problem-container {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
+        .hero .section-content h2 {
+            font-size: 2rem;
         }
 
-        .problem-card {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            width: 280px;
-            text-align: center;
-            margin-bottom: 20px;
+        .interactive-section {
+            font-size: 2rem;
         }
 
-        .problem-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        .problem-card h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: #fff;
-        }
-
-        .problem-card p {
-            font-size: 16px;
-            color: #bbb;
-        }
-
-        /* Smooth Scrolling Animation */
-        .animate {
-            opacity: 1;
-            transition: opacity 1s ease-out;
-        }
-
-        .interactive-element {
-            opacity: 0;
-        }
-
-        .hovered {
-            transform: scale(1.1);
-        }
-
-        /* Button Styling */
-        .join-revolution-btn {
-            background-color: #0071e3;
-            color: #fff;
-            padding: 15px 40px;
-            font-size: 20px;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .join-revolution-btn:hover {
-            background-color: #005bb5;
-        }
-
-        /* Footer */
+        /* Footer Styles */
         footer {
+            background-color: #333;
+            color: #fff;
+            padding: 30px 0;
             text-align: center;
-            padding: 20px 0;
-            background-color: #222;
         }
 
         footer a {
-            color: #0071e3;
-            text-decoration: none;
+            color: #fff;
+            margin: 10px;
         }
 
         footer a:hover {
-            text-decoration: underline;
+            color: #0071e3;
+        }
+
+        /* Form Styles */
+        .form-container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .form-container input,
+        .form-container select,
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #fff;
+            background: transparent;
+            color: #fff;
+        }
+
+        .form-container button {
+            padding: 15px 30px;
+            border: none;
+            background-color: #0071e3;
+            color: #fff;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #005bb5;
         }
     </style>
 </head>
-
 <body>
 
-    <!-- Hero Section -->
-    <section class="section">
-        <video autoplay loop muted>
-            <source src="images/HV3.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="hero-content-overlay">
-            <h1 class="hero-heading">Kitchin</h1>
-            <p class="hero-subheading">Fast. Fresh. Sustainable. Affordable.</p>
-            <button class="cta-btn" id="join-revolution-btn">Join the Revolution</button>
+<!-- Hero Section -->
+<section class="hero">
+    <div class="section-content">
+        <h1>Kitchin</h1>
+        <h2>Fast <span class="interactive-text">Fresh</span> <span class="interactive-text">Affordable</span> <span class="interactive-text">Sustainable</span></h2>
+        <a href="#join-the-revolution">Join the Grocery Revolution</a>
+        <a href="#invest-in-our-future">Invest in Our Future</a>
+    </div>
+</section>
+
+<!-- Problem Section -->
+<section class="problem">
+    <video autoplay loop muted>
+        <source src="images/HV.mp4" type="video/mp4">
+    </video>
+    <div class="section-content">
+        <h1>State of the Canadian Grocery Market</h1>
+        <h2>The 2023 Canadian Competition Bureau Report revealed that the grocery sector is dominated by just three companies, limiting consumer choice and keeping prices high.</h2>
+        <a href="https://competition-bureau.canada.ca/sites/default/files/attachments/2023/CB-Retail-Grocery-Market-Study-Report-EN-2023-06-23.pdf" target="_blank">Competition Bureau Retail Study Report</a>
+        <div class="interactive-section">
+            <p class="interactive-text">Oligopolistic — Big chains control pricing, reducing affordability.</p>
+            <p class="interactive-text">Inefficient — Long, inefficient distribution channels increase costs.</p>
+            <p class="interactive-text">Vulnerable — Tariffs and import costs make groceries more expensive.</p>
+            <p class="interactive-text">Obsolescence — The cost of running physical stores is passed on to you.</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Problem Section -->
-    <section class="section problem-section">
-        <video autoplay loop muted>
-            <source src="images/HV.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="content-overlay">
-            <h2 class="section-title">State Of The Canadian Supermarket</h2>
-            <div class="problem-container">
-                <div class="problem-card interactive-element">
-                    <h3>Oligopoly</h3>
-                    <p>3 companies control 75% of the grocery market</p>
-                </div>
-                <div class="problem-card interactive-element">
-                    <h3>Inefficient</h3>
-                    <p>High costs due to inefficient distribution</p>
-                </div>
-                <div class="problem-card interactive-element">
-                    <h3>Vulnerability</h3>
-                    <p>Vulnerable due to over-reliance on US imports</p>
-                </div>
-                <div class="problem-card interactive-element">
-                    <h3>Obsolescence</h3>
-                    <p>Traditional stores have high operational costs</p>
-                </div>
-            </div>
-            <a href="https://competition-bureau.canada.ca/sites/default/files/attachments/2023/CB-Retail-Grocery-Market-Study-Report-EN-2023-06-23.pdf" id="download-report" class="cta-btn">Competition Bureau Retail Study Report</a>
+<!-- Solution Section -->
+<section class="solution">
+    <video autoplay loop muted>
+        <source src="images/175717-854057981.mp4" type="video/mp4">
+    </video>
+    <div class="section-content">
+        <h1>Kitchin - The Grocery Revolution</h1>
+        <h2>Canada's First Grocery Superapp. Powered by a Dark Store Network for Faster, Cheaper & Efficient Service</h2>
+        <a href="#join-the-revolution">Join the Grocery Revolution</a>
+        <div class="interactive-section">
+            <p>Canada's First Dark Store Network - Traditional grocery stores waste space, energy, and money. We replace the traditional grocery stores with hyper-efficient fulfillment centers that power superfast grocery delivery at lower prices.</p>
+            <div class="interactive-text">Direct manufacturer pricing</div>
+            <div class="interactive-text">Faster delivery times</div>
+            <div class="interactive-text">Lower overhead costs</div>
+            <div class="interactive-text">Minimal food waste</div>
+
+            <p>Current Industry Trends</p>
+            <div class="interactive-text">20% C.A.G.R. in Online Grocery</div>
+            <div class="interactive-text">$160B Market by 2026</div>
+            <div class="interactive-text">75% controlled by 3 companies</div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Join the Revolution Section -->
-    <section id="join-revolution-section">
-        <h2 class="section-title">Join the Revolution</h2>
-        <button class="join-revolution-btn" id="join-revolution-btn">Join Now</button>
-    </section>
-
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2025 Kitchin | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-        <div>
-            <a href="#">FB</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
+<!-- Advantage Section -->
+<section class="advantage">
+    <video autoplay loop muted>
+        <source src="images/83863-584870628.mp4" type="video/mp4">
+    </video>
+    <div class="section-content">
+        <h1>The Kitchin Advantage</h1>
+        <h2>Better for Customers | Better for Investors</h2>
+        <div class="interactive-section">
+            <h3>For Customers - The Grocery Experience You Deserve</h3>
+            <div class="interactive-text">Personalized AI Shopping</div>
+            <div class="interactive-text">Local Sourcing, Sustainable Choices</div>
+            <div class="interactive-text">Superfast Delivery</div>
+            <a href="#join-the-revolution">Join the Grocery Revolution</a>
+            <h3>For Investors - A High Growth Opportunity Awaits</h3>
+            <div class="interactive-text">Disrupting a $100B Industry</div>
+            <div class="interactive-text">Scalable, Tech-Driven Model</div>
+            <div class="interactive-text">First-Mover Advantage</div>
+            <a href="#join-the-revolution">Invest in Our Future</a>
         </div>
-    </footer>
+    </div>
+</section>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Hero Animation
-            setTimeout(function () {
-                const heroHeading = document.querySelector(".hero-heading");
-                const heroSubheading = document.querySelector(".hero-subheading");
-                if (heroHeading && heroSubheading) {
-                    heroHeading.classList.add("animate");
-                    heroSubheading.classList.add("animate");
-                }
-            }, 500);
+<!-- Alberta Section -->
+<section class="alberta">
+    <video autoplay loop muted>
+        <source src="images/204095-923582446.mp4" type="video/mp4">
+    </video>
+    <div class="section-content">
+        <h1>Stage 1 - Alberta</h1>
+        <h2>A $3B opportunity with untapped potential</h2>
+        <a href="images/Alberta Retail grocery sales 2015-2020.pdf" target="_blank">Alberta Retail Grocery Sales Report 2015-2020</a>
+        <div class="interactive-section">
+            <p>One Centralized Distribution Hub in Bowden</p>
+            <div class="interactive-text">50+ Dark Stores</div>
+            <div class="interactive-text">70% Alberta's resident population</div>
+            <div class="interactive-text">30 minutes delivery</div>
+            <div class="interactive-text">Built for Canada</div>
+            <a href="#join-the-revolution">Join the Grocery Revolution</a>
+        </div>
+    </div>
+</section>
 
-            // Join the Revolution Button - Scroll to Join the Revolution Section
-            const joinRevolutionBtn = document.getElementById("join-revolution-btn");
-            if (joinRevolutionBtn) {
-                joinRevolutionBtn.addEventListener("click", function () {
-                    const joinRevolutionSection = document.getElementById("join-revolution-section");
-                    if (joinRevolutionSection) {
-                        joinRevolutionSection.scrollIntoView({ behavior: "smooth" });
-                    }
-                });
-            }
+<!-- Join the Revolution Section -->
+<section id="join-the-revolution">
+    <video autoplay loop muted>
+        <source src="images/Solution.mp4" type="video/mp4">
+    </video>
+    <div class="section-content">
+        <h1>Join the Revolution</h1>
+        <h2>Build the Future of Grocery With Us. Sign up to stay connected and be part of the grocery revolution</h2>
+        <div class="form-container">
+            <form action="https://forms.google.com" method="POST">
+                <input type="text" name="name" placeholder="Enter your name" required>
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <textarea name="message" placeholder="Your Message (max 180 words)" maxlength="180"></textarea>
+                <select name="interest" required>
+                    <option value="Customer">Customers - Launch Updates</option>
+                    <option value="Investor">Investors - Invest in Our Future</option>
+                    <option value="Partner">Partners - Partner with Us</option>
+                    <option value="Career">Work with Us - Career Portal</option>
+                </select>
+                <input type="file" name="attachment">
+                <button type="submit">Join the Revolution</button>
+            </form>
+        </div>
+    </div>
+</section>
 
-            // Interactive Element Animation (Cards, Stats)
-            const interactiveElements = document.querySelectorAll(".interactive-element");
-            window.addEventListener("scroll", function () {
-                interactiveElements.forEach(function (element) {
-                    const rect = element.getBoundingClientRect();
-                    if (rect.top <= window.innerHeight) {
-                        element.classList.add("animate");
-                    }
-                });
-            });
-
-            // Hover Effect for Problem Section Cards
-            const problemElements = document.querySelectorAll(".problem-card");
-            problemElements.forEach(function (element) {
-                element.addEventListener("mouseenter", function () {
-                    element.classList.add("hovered");
-                });
-                element.addEventListener("mouseleave", function () {
-                    element.classList.remove("hovered");
-                });
-            });
-
-            // Competition Bureau Report Button - Redirect to PDF
-            const downloadReportBtn = document.getElementById("download-report");
-            if (downloadReportBtn) {
-                downloadReportBtn.addEventListener("click", function () {
-                    window.location.href = "https://competition-bureau.canada.ca/sites/default/files/attachments/2023/CB-Retail-Grocery-Market-Study-Report-EN-2023-06-23.pdf";
-                });
-            }
-        });
-    </script>
+<!-- Footer Section -->
+<footer>
+    <div>
+        <a href="#hero">Home</a>
+        <a href="#problem">Problem</a>
+        <a href="#solution">Solution</a>
+        <a href="#advantage">Advantage</a>
+        <a href="#alberta">Alberta</a>
+        <a href="#join-the-revolution">Join the Revolution</a>
+    </div>
+</footer>
 
 </body>
-
 </html>
