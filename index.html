@@ -17,7 +17,7 @@
     </video>
     <div class="section-content">
         <h1>Kitchin</h1>
-        <h2>Fast <span class="interactive-text" onclick="scrollToSection('problem')">Fresh</span> <span class="interactive-text" onclick="scrollToSection('solution')">Affordable</span> <span class="interactive-text" onclick="scrollToSection('advantage')">Sustainable</span></h2>
+        <h2> | Fresh | Affordable | Fast | Sustainable | </h2>
         <a href="#join-the-revolution" onclick="scrollToSection('join-the-revolution')">Join the Grocery Revolution</a>
         <a href="#invest-in-our-future" onclick="scrollToSection('invest-in-our-future')">Invest in Our Future</a>
     </div>
@@ -94,27 +94,42 @@
     </div>
 </section>
 
-<!-- Form Section -->
+<!-- Join the Revolution Section -->
 <section id="join-the-revolution">
-    <h2>Join the Revolution</h2>
-    <form action="https://formspree.io/f/maykylkw" method="POST">
-        <input type="text" name="name" placeholder="Full Name" required>
-        <input type="email" name="email" placeholder="Email Address" required>
-        <textarea name="message" placeholder="Type your message here (max 180 words)" maxlength="180"></textarea>
-        <select name="interest" required>
-            <option value="Customer">Customers - Launch Updates</option>
-            <option value="Investor">Investors - Invest in Our Future</option>
-            <option value="Partner">Partners - Partner with Us</option>
-            <option value="Career">Work with Us - Career Portal</option>
-        </select>
-        <input type="file" name="attachment">
-        <button type="submit">Join the Revolution</button>
-    </form>
+    <video autoplay loop muted>
+        <source src="images/Solution.mp4" type="video/mp4">
+    </video>
+    <div class="section-content">
+        <h1>Join the Revolution</h1>
+        <h2>Build the Future of Grocery With Us. Sign up to stay connected and be part of the grocery revolution</h2>
+        <div class="form-container">
+            <form action="https://forms.google.com" method="POST">
+                <input type="text" name="name" placeholder="Enter your name" required>
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <textarea name="message" placeholder="Your Message (max 180 words)" maxlength="180"></textarea>
+                <select name="interest" required>
+                    <option value="Customer">Customers - Launch Updates</option>
+                    <option value="Investor">Investors - Invest in Our Future</option>
+                    <option value="Partner">Partners - Partner with Us</option>
+                    <option value="Career">Work with Us - Career Portal</option>
+                </select>
+                <input type="file" name="attachment">
+                <button type="submit">Join the Revolution</button>
+            </form>
+        </div>
+    </div>
 </section>
 
 <!-- Footer Section -->
 <footer>
-    <p>&copy; 2025 Kitchin. All Rights Reserved.</p>
+    <div>
+        <a href="#hero">Home</a>
+        <a href="#problem">Problem</a>
+        <a href="#solution">Solution</a>
+        <a href="#advantage">Advantage</a>
+        <a href="#alberta">Alberta</a>
+        <a href="#join-the-revolution">Join the Revolution</a>
+    </div>
 </footer>
 
 <script src="script.js"></script>
