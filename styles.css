@@ -145,35 +145,33 @@ section video {
 }
 
 /* Problem Section */
+/* Problem Section */
 #problem .section-content h1 {
     font-size: 3rem;
     font-weight: 600;
+    text-align: center;
+    color: #fff;
 }
 
-#problem .section-content h2 {
-    font-size: 1.8rem;
-    font-weight: 400;
-    margin-top: 5px;
-}
-
-/* Interactive Text Styling */
-.interactive-text {
+/* Applying the same interactive text style from Hero Section to Problem Section */
+#problem .section-content .interactive-text {
     position: relative;
     display: inline-block;
-    font-size: 2rem;
-    padding: 0px 0px;
+    font-size: 2.5rem;
+    padding: 0 10px;
     margin: 10px;
     cursor: pointer;
     transition: transform 0.3s ease, width 0.3s ease;
+    color: #fff; /* Text color */
 }
 
-.interactive-text:hover {
+#problem .section-content .interactive-text:hover {
     transform: scale(1.2);
     width: auto;
 }
 
-/* Tooltip (subtext) */
-.interactive-text::after {
+/* Tooltip Styling for Problem Section */
+#problem .section-content .interactive-text::after {
     content: attr(data-tooltip);
     position: absolute;
     bottom: -30px;
@@ -191,10 +189,50 @@ section video {
     z-index: 10;
 }
 
-.interactive-text:hover::after {
+#problem .section-content .interactive-text:hover::after {
     display: block;
     opacity: 1;
     transform: translateX(-50%) translateY(10px);
+}
+
+/* Action Button for Problem Section (same as Hero Section) */
+#problem .action-button {
+    margin-top: 30px;
+    padding: 18px 40px;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    background-color: #ff5722; /* Dark orange */
+    color: #fff; /* White text color */
+    transition: background-color 0.3s, transform 0.3s ease; /* Animation transition */
+    display: inline-block;
+    position: absolute;
+    bottom: 50px; /* Position the button outside of the section-content */
+    left: 50%;
+    transform: translateX(-50%); /* Center the button horizontally */
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+}
+
+#problem .action-button:hover {
+    background-color: #e64a19; /* Darker orange on hover */
+    transform: translateY(-5px); /* Slight movement on hover */
+}
+
+/* Button Animation (same as Hero Section) */
+@keyframes buttonAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#problem .action-button {
+    animation: buttonAnimation 1.5s ease-in-out infinite; /* Apply animation */
 }
 
 /* Solution Section */
