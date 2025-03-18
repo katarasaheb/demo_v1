@@ -786,7 +786,7 @@ section video {
 .form-container select,
 .form-container textarea {
     width: 100%;
-    padding: 15px;
+    padding: 30px;
     margin: 15px 0;
     border: 1px solid #fff;
     background: transparent;
