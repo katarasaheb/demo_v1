@@ -124,26 +124,42 @@
     <video autoplay loop muted>
         <source src="images/175717-854057981.mp4" type="video/mp4">
     </video>
+    
+    <!-- Translucent Box for Section Content -->
     <div class="section-content">
-        <h1>Build the Future of Grocery With Us</h1>
-          <div class="form-container">
+        <h1 class="animated-header">Build the Future of Grocery With Us</h1>
+        
+        <!-- Form Container with Redesigned Styling -->
+        <div class="form-container">
             <form action="https://forms.google.com" method="POST">
-                <input type="text" name="name" placeholder="Enter your name" required>
-                <input type="email" name="email" placeholder="Enter your email" required>
-                <textarea name="message" placeholder="Your Message (max 180 words)" maxlength="180"></textarea>
-                <select name="interest" required>
-                    <option value="Customer">Customers - Launch Updates</option>
-                    <option value="Investor">Investors - Invest in Our Future</option>
-                    <option value="Partner">Partners - Partner with Us</option>
-                    <option value="Career">Work with Us - Career Portal</option>
-                </select>
-                <input type="file" name="attachment">
-                <button type="submit">Join the Revolution</button>
+                <div class="input-group">
+                    <input type="text" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group">
+                    <textarea name="message" placeholder="Your Message (max 180 words)" maxlength="180"></textarea>
+                </div>
+                <div class="input-group">
+                    <select name="interest" required>
+                        <option value="Customer">Customers - Launch Updates</option>
+                        <option value="Investor">Investors - Invest in Our Future</option>
+                        <option value="Partner">Partners - Partner with Us</option>
+                        <option value="Career">Work with Us - Career Portal</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <input type="file" name="attachment">
+                </div>
+                
+                <!-- Submit Button with Animation -->
+                <button type="submit" class="action-button">Join the Revolution</button>
             </form>
         </div>
     </div>
 </section>
-
+    
 <!-- Footer Section -->
 <footer>
     <div>
