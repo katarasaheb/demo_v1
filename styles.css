@@ -145,15 +145,24 @@ section video {
 }
 
 /* Problem Section */
-/* Problem Section */
+#problem .section-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 900px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6); /* Translucent box */
+    border-radius: 15px; /* Rounded corners for the translucent box */
+}
+
+/* Problem Section Heading Styling */
 #problem .section-content h1 {
     font-size: 3rem;
     font-weight: 600;
-    text-align: center;
     color: #fff;
 }
 
-/* Applying the same interactive text style from Hero Section to Problem Section */
+/* Interactive Text for Problem Section (same style as Hero Section) */
 #problem .section-content .interactive-text {
     position: relative;
     display: inline-block;
