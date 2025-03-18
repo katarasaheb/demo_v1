@@ -145,6 +145,7 @@ section video {
 }
 
 /* Problem Section */
+/* Problem Section */
 #problem .section-content {
     position: relative;
     z-index: 1;
@@ -162,13 +163,22 @@ section video {
     color: #fff;
 }
 
+/* Problem Section h2 (Interactive text) Styling */
+#problem .section-content h2 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    display: flex; /* Flex to align items horizontally */
+    justify-content: center; /* Align items to the center */
+    flex-wrap: wrap; /* Allow elements to wrap to the next line if necessary */
+    gap: 10px; /* Space between items */
+}
+
 /* Interactive Text for Problem Section (same style as Hero Section) */
 #problem .section-content .interactive-text {
     position: relative;
     display: inline-block;
     font-size: 2.5rem;
     padding: 0 10px;
-    margin: 10px;
     cursor: pointer;
     transition: transform 0.3s ease, width 0.3s ease;
     color: #fff; /* Text color */
@@ -241,7 +251,7 @@ section video {
 }
 
 #problem .action-button {
-    animation: buttonAnimation 6.0s ease-in-out infinite; /* Apply animation */
+    animation: buttonAnimation 1.5s ease-in-out infinite; /* Apply animation */
 }
 
 /* Solution Section */
