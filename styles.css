@@ -68,7 +68,7 @@ section video {
 #hero .section-content h2 .interactive-text {
     position: relative;
     display: inline-block;
-    font-size: 2.5rem;
+    font-size: 2.0rem;
     padding: 0 10px;
     margin: 10px;
     cursor: pointer;
@@ -158,7 +158,7 @@ section video {
 
 /* Problem Section Heading Styling */
 #problem .section-content h1 {
-    font-size: 5.0rem;
+    font-size: 3.0rem;
     font-weight: 600;
     color: #fff;
 }
@@ -289,7 +289,7 @@ section video {
 
 /* Title Styling */
 #solution .section-content h1 {
-    font-size: 5.0rem;
+    font-size: 3.0rem;
     font-weight: bold;
     color: #fff;
 }
@@ -480,7 +480,7 @@ section video {
 
 /* Update Alberta Section Heading Styles */
 .alberta h1 {
-    font-size: 3.5rem; /* Match the font size for the 'h1' in Advantage section */
+    font-size: 3.0rem; /* Match the font size for the 'h1' in Advantage section */
     font-weight: 700; /* Bold font weight */
     color: #fff; /* White text color */
     margin-bottom: 20px;
@@ -529,7 +529,7 @@ section video {
 
 /* Header styling */
 #advantage .section-content h1 {
-    font-size: 5.0rem;
+    font-size: 3.0rem;
     color: #fff;
     margin-bottom: 20px;
 }
@@ -679,7 +679,7 @@ section video {
 
 /* Title Styling for Join the Revolution Section */
 #join-the-revolution h1 {
-    font-size: 2.5rem;
+    font-size: 3.0rem;
     font-family: 'Roboto', sans-serif;
     margin-bottom: 20px;
 }
