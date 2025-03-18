@@ -73,6 +73,7 @@ section video {
     margin: 10px;
     cursor: pointer;
     transition: transform 0.3s ease, width 0.3s ease;
+    color: #ff5722;
 }
 
 #hero .section-content h2 .interactive-text:hover {
@@ -403,6 +404,7 @@ section video {
     margin: 10px;
     cursor: pointer;
     transition: transform 0.3s ease, width 0.3s ease;
+    color: #ff5722;
 }
 
 /* Hover effect for interactive text */
