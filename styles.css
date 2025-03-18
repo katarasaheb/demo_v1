@@ -115,7 +115,7 @@ section video {
     transition: background-color 0.3s, transform 0.3s ease; /* Animation transition */
     display: inline-block;
     position: absolute;
-    bottom: 40px; /* Position the button outside of the section-content */
+    bottom: 30px; /* Position the button outside of the section-content */
     left: 50%;
     transform: translateX(-50%); /* Center the button horizontally */
     text-align: center;
