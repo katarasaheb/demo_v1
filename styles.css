@@ -57,7 +57,7 @@ section video {
 }
 
 #hero .section-content h2 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     margin: 20px 0;
     display: flex;
     justify-content: center;
@@ -158,14 +158,14 @@ section video {
 
 /* Problem Section Heading Styling */
 #problem .section-content h1 {
-    font-size: 2.5rem;
+    font-size: 5.0rem;
     font-weight: 600;
     color: #fff;
 }
 
 /* Problem Section h2 (Interactive text) Styling */
 #problem .section-content h2 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     margin: 20px 0;
     display: flex; /* Flex to align items horizontally */
     justify-content: center; /* Align items to the center */
@@ -177,7 +177,7 @@ section video {
 #problem .section-content .interactive-text {
     position: relative;
     display: inline-block;
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     padding: 0 10px;
     cursor: pointer;
     transition: transform 0.3s ease, width 0.3s ease;
@@ -289,14 +289,14 @@ section video {
 
 /* Title Styling */
 #solution .section-content h1 {
-    font-size: 2.5rem;
+    font-size: 5.0rem;
     font-weight: bold;
     color: #fff;
 }
 
 /* Interactive Text in h2 */
 #solution .section-content h2 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     margin-top: 20px;
     display: flex;
     justify-content: center;
@@ -306,7 +306,7 @@ section video {
 #solution .section-content h2 .interactive-text {
     position: relative;
     display: inline-block;
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     padding: 0 10px;
     margin: 10px;
     cursor: pointer;
@@ -398,7 +398,7 @@ section video {
 .alberta .section-content h2 .interactive-text {
     position: relative;
     display: inline-block;
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     padding: 0 10px;
     margin: 10px;
     cursor: pointer;
@@ -487,7 +487,7 @@ section video {
 }
 
 .alberta h2 {
-    font-size: 2.5rem; /* Match the font size for the 'h2' in Advantage section */
+    font-size: 1.8rem; /* Match the font size for the 'h2' in Advantage section */
     font-weight: 600; /* Font weight for 'h2' */
     color: #fff; /* White text color */
     margin-bottom: 20px;
@@ -529,7 +529,7 @@ section video {
 
 /* Header styling */
 #advantage .section-content h1 {
-    font-size: 3.5rem;
+    font-size: 5.0rem;
     color: #fff;
     margin-bottom: 20px;
 }
