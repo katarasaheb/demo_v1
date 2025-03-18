@@ -158,7 +158,7 @@ section video {
 
 /* Problem Section Heading Styling */
 #problem .section-content h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 600;
     color: #fff;
 }
@@ -289,7 +289,7 @@ section video {
 
 /* Title Styling */
 #solution .section-content h1 {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: bold;
     color: #fff;
 }
@@ -398,7 +398,7 @@ section video {
 .alberta .section-content h2 .interactive-text {
     position: relative;
     display: inline-block;
-    font-size: 2rem;
+    font-size: 2.5rem;
     padding: 0 10px;
     margin: 10px;
     cursor: pointer;
