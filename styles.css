@@ -384,25 +384,100 @@ section video {
 }
 
 /* Alberta Section */
-.alberta .section-content h1 {
-    font-size: 3.5rem;
+.alberta .section-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 900px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6); /* Translucent box */
+    border-radius: 15px; /* Rounded corners for the translucent box */
 }
 
-.alberta .section-content h2 {
+/* Interactive Text Styling for <h2> */
+.alberta .section-content h2 .interactive-text {
+    position: relative;
+    display: inline-block;
     font-size: 2rem;
-    margin-bottom: 20px;
+    padding: 0 10px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, width 0.3s ease;
 }
 
-.alberta .section-content .interactive-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
+/* Hover effect for interactive text */
+.alberta .section-content h2 .interactive-text:hover {
+    transform: scale(1.2);
+    width: auto;
 }
 
-.alberta .section-content .interactive-text {
-    margin: 15px;
+/* Tooltip for interactive text */
+.alberta .section-content h2 .interactive-text::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+    z-index: 10;
 }
+
+/* Show tooltip on hover */
+.alberta .section-content h2 .interactive-text:hover::after {
+    display: block;
+    opacity: 1;
+    transform: translateX(-50%) translateY(10px);
+}
+
+/* Action Button Styling for Alberta Section */
+.alberta .action-button {
+    margin-top: 30px;
+    padding: 18px 40px;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    background-color: #ff5722; /* Dark orange */
+    color: #fff; /* White text color */
+    transition: background-color 0.3s, transform 0.3s ease; /* Animation transition */
+    display: inline-block;
+    position: absolute; /* Absolute positioning */
+    bottom: 50px; /* Position the button below the translucent box */
+    left: 50%;
+    transform: translateX(-50%); /* Center the button horizontally */
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+}
+
+/* Hover effect for action button */
+.alberta .action-button:hover {
+    background-color: #e64a19; /* Darker orange on hover */
+    transform: translateY(-5px); /* Slight movement on hover */
+}
+
+/* Animation for Action Button */
+@keyframes buttonAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.alberta .action-button {
+    animation: buttonAnimation 6.0s ease-in-out infinite; /* Apply animation */
+}
+
 
 /* Advantage Section */
 #advantage .section-content h1 {
