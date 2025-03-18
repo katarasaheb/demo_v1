@@ -488,7 +488,7 @@ section video {
 
 .alberta h2 {
     font-size: 1.8rem; /* Match the font size for the 'h2' in Advantage section */
-    font-weight: 600; /* Font weight for 'h2' */
+    font-weight: 500; /* Font weight for 'h2' */
     color: #fff; /* White text color */
     margin-bottom: 20px;
 }
