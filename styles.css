@@ -478,6 +478,25 @@ section video {
     animation: buttonAnimation 6.0s ease-in-out infinite; /* Apply animation */
 }
 
+/* Update Alberta Section Heading Styles */
+.alberta h1 {
+    font-size: 3.5rem; /* Match the font size for the 'h1' in Advantage section */
+    font-weight: 700; /* Bold font weight */
+    color: #fff; /* White text color */
+    margin-bottom: 20px;
+}
+
+.alberta h2 {
+    font-size: 2.5rem; /* Match the font size for the 'h2' in Advantage section */
+    font-weight: 600; /* Font weight for 'h2' */
+    color: #fff; /* White text color */
+    margin-bottom: 20px;
+}
+
+/* Ensures consistency across all sections for h1 and h2 */
+#advantage h1, #advantage h2, .alberta h1, .alberta h2 {
+    font-family: 'Poppins', sans-serif; /* Ensure consistent font family */
+}
 
 /* Advantage Section */
 #advantage {
@@ -557,26 +576,28 @@ section video {
     color: #fff;
 }
 
-advantage .interactive-text {
-    position: relative;
-    display: inline-block;
-    font-size: 2rem;
-    padding: 0 10px;
-    margin: 10px;
-    cursor: pointer;
-    transition: transform 0.3s ease, width 0.3s ease;
+/* Ensure same font styling for interactive-text in both Advantage and Solution sections */
+#advantage .interactive-text, #solution .interactive-text {
+    font-size: 1.8rem; /* Same font size as in the Solution section */
+    font-weight: 500; /* Medium weight, matching Solution section */
+    color: #fff; /* White color for text */
+    padding: 5px 10px; /* Add some padding for spacing around the text */
+    margin: 10px; /* Margin for spacing between elements */
+    border-radius: 5px; /* Rounded corners for the interactive elements */
+    cursor: pointer; /* Change cursor to pointer to indicate interactivity */
+    transition: transform 0.3s ease, width 0.3s ease, color 0.3s ease; /* Transition for hover effects */
 }
 
-#advantage .interactive-text:hover {
-    transform: scale(1.2);
-    width: auto;
+#advantage .interactive-text:hover, #solution .interactive-text:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    color: #ff5722; /* Change text color on hover to match action button color */
 }
 
 #advantage .interactive-text::after {
     content: attr(data-tooltip);
     position: absolute;
     top: 50%;
-    left: 100%; /* Position to the right */
+    left: 50%; /* Position to the right */
     transform: translateY(-50%); /* Align to the center vertically */
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
