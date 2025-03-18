@@ -352,13 +352,15 @@ section video {
     color: #fff; /* White text color */
     transition: background-color 0.3s, transform 0.3s ease; /* Animation transition */
     display: inline-block;
-    position: relative;
-    bottom: 30px; /* Position the button below the translucent box */
+    position: absolute;  /* Absolute positioning */
+    bottom: 50px; /* Move button below the translucent box */
     left: 50%;
     transform: translateX(-50%); /* Center the button horizontally */
     text-align: center;
+    text-decoration: none; /* Remove underline */
 }
 
+/* Action Button Hover Effect */
 #solution .action-button:hover {
     background-color: #e64a19; /* Darker orange on hover */
     transform: translateY(-5px); /* Slight movement on hover */
@@ -378,7 +380,7 @@ section video {
 }
 
 #solution .action-button {
-    animation: buttonAnimation 1.5s ease-in-out infinite; /* Apply animation */
+    animation: buttonAnimation 6.0s ease-in-out infinite; /* Apply animation */
 }
 
 /* Alberta Section */
