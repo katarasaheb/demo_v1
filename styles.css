@@ -623,7 +623,7 @@ section video {
     margin: 10px 0;
 }
 
-/* Action Button Styling */
+/* Action Button Styling for Advantage Section */
 #advantage .action-button {
     margin-top: 30px;
     padding: 18px 40px;
@@ -634,13 +634,14 @@ section video {
     transition: background-color 0.3s, transform 0.3s ease; /* Animation transition */
     display: inline-block;
     position: relative;
-    bottom: 30px; /* Position the button outside of the section-content */
+    bottom: 30px; /* Position the button below the translucent box */
     left: 50%;
     transform: translateX(-50%); /* Center the button horizontally */
     text-align: center;
     text-decoration: none; /* Remove underline */
 }
 
+/* Hover effect for Action Button */
 #advantage .action-button:hover {
     background-color: #e64a19; /* Darker orange on hover */
     transform: translateY(-5px); /* Slight movement on hover */
@@ -659,10 +660,10 @@ section video {
     }
 }
 
+/* Apply animation */
 #advantage .action-button {
-    animation: buttonAnimation 6.0s ease-in-out infinite; /* Apply animation */
+    animation: buttonAnimation 6.0s ease-in-out infinite;
 }
-
 
 /* Form Section */
 .form-container {
