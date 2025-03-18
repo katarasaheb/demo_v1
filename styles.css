@@ -255,13 +255,130 @@ section video {
 }
 
 /* Solution Section */
-#solution .section-content h1 {
-    font-size: 3.5rem;
+#solution {
+    position: relative;
+    overflow: hidden;
+    height: 100vh; /* Fullscreen height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
 }
 
+#solution video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Section content styling with translucent box */
+#solution .section-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 900px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6); /* Translucent box */
+    border-radius: 15px; /* Rounded corners for the translucent box */
+}
+
+/* Title Styling */
+#solution .section-content h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Interactive Text in h2 */
 #solution .section-content h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#solution .section-content h2 .interactive-text {
+    position: relative;
+    display: inline-block;
+    font-size: 2.5rem;
+    padding: 0 10px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, width 0.3s ease;
+}
+
+#solution .section-content h2 .interactive-text:hover {
+    transform: scale(1.2);
+    width: auto;
+}
+
+#solution .section-content h2 .interactive-text::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+#solution .section-content h2 .interactive-text:hover::after {
+    display: block;
+    opacity: 1;
+    transform: translateX(-50%) translateY(10px);
+}
+
+/* Action Button Styling */
+#solution .action-button {
+    margin-top: 30px;
+    padding: 18px 40px;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    background-color: #ff5722; /* Dark orange */
+    color: #fff; /* White text color */
+    transition: background-color 0.3s, transform 0.3s ease; /* Animation transition */
+    display: inline-block;
+    position: relative;
+    bottom: 30px; /* Position the button below the translucent box */
+    left: 50%;
+    transform: translateX(-50%); /* Center the button horizontally */
+    text-align: center;
+}
+
+#solution .action-button:hover {
+    background-color: #e64a19; /* Darker orange on hover */
+    transform: translateY(-5px); /* Slight movement on hover */
+}
+
+/* Animation for Action Button */
+@keyframes buttonAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#solution .action-button {
+    animation: buttonAnimation 1.5s ease-in-out infinite; /* Apply animation */
 }
 
 /* Alberta Section */
