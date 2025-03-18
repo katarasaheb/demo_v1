@@ -480,19 +480,128 @@ section video {
 
 
 /* Advantage Section */
+#advantage {
+    position: relative;
+    overflow: hidden;
+    padding: 60px 20px;
+}
+
+#advantage video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Apply the same translucent box to the section content */
+#advantage .section-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 900px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6); /* Translucent box */
+    border-radius: 15px; /* Rounded corners for the translucent box */
+    margin: 30px auto;
+}
+
+/* Header styling */
 #advantage .section-content h1 {
     font-size: 3.5rem;
+    color: #fff;
 }
 
 #advantage .section-content h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
+/* Interactive text */
 #advantage .section-content .interactive-text {
+    position: relative;
+    display: inline-block;
+    font-size: 2rem;
+    padding: 0 10px;
     margin: 10px;
-    font-size: 1.8rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, width 0.3s ease;
 }
+
+#advantage .section-content .interactive-text:hover {
+    transform: scale(1.2);
+    width: auto;
+}
+
+#advantage .section-content .interactive-text::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+#advantage .section-content .interactive-text:hover::after {
+    display: block;
+    opacity: 1;
+    transform: translateX(-50%) translateY(10px);
+}
+
+/* Action Button Styling */
+#advantage .action-button {
+    margin-top: 30px;
+    padding: 18px 40px;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    background-color: #ff5722; /* Dark orange */
+    color: #fff; /* White text color */
+    transition: background-color 0.3s, transform 0.3s ease; /* Animation transition */
+    display: inline-block;
+    position: relative;
+    bottom: 30px; /* Position the button outside of the section-content */
+    left: 50%;
+    transform: translateX(-50%); /* Center the button horizontally */
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+}
+
+#advantage .action-button:hover {
+    background-color: #e64a19; /* Darker orange on hover */
+    transform: translateY(-5px); /* Slight movement on hover */
+}
+
+/* Animation for Action Button */
+@keyframes buttonAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#advantage .action-button {
+    animation: buttonAnimation 1.5s ease-in-out infinite; /* Apply animation */
+}
+
 
 /* Footer Section */
 footer {
