@@ -545,6 +545,16 @@ section video {
 /* Content Block */
 #advantage .content-block {
     margin-bottom: 50px;
+    display: block; /* Ensures block-level layout */
+}
+
+/* Ensuring Better for Customers and Better for Investors are on Separate Lines */
+#advantage .content-block h2 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    display: block; /* Forces this element to be a block */
+    text-align: center;
+    color: #fff;
 }
 
 /* Interactive Text Styling */
@@ -587,6 +597,12 @@ section video {
     transform: translateX(-50%) translateY(10px);
 }
 
+/* Align the interactive text below the heading and in one line */
+#advantage .content-block .interactive-text {
+    display: block; /* Makes each interactive text item stack on top of the previous one */
+    margin: 10px 0;
+}
+
 /* Action Button Styling */
 #advantage .action-button {
     margin-top: 30px;
@@ -624,27 +640,9 @@ section video {
 }
 
 #advantage .action-button {
-    animation: buttonAnimation 1.5s ease-in-out infinite; /* Apply animation */
+    animation: buttonAnimation 6.0s ease-in-out infinite; /* Apply animation */
 }
 
-
-/* Footer Section */
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 30px 0;
-    text-align: center;
-    font-size: 1.2rem;
-}
-
-footer a {
-    color: #fff;
-    margin: 0 10px;
-}
-
-footer a:hover {
-    color: #0071e3;
-}
 
 /* Form Section */
 .form-container {
