@@ -540,7 +540,7 @@ section video {
     margin: 20px 0;
     display: inline-block;
     text-align: center;
-    color: #fff;
+    color: #ff5722;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 1s ease-out forwards;
@@ -580,7 +580,7 @@ section video {
 #advantage .interactive-text, #solution .interactive-text {
     font-size: 1.8rem; /* Same font size as in the Solution section */
     font-weight: 500; /* Medium weight, matching Solution section */
-    color: #fff; /* White color for text */
+    color: #ff5722; /* White color for text */
     padding: 5px 10px; /* Add some padding for spacing around the text */
     margin: 10px; /* Margin for spacing between elements */
     border-radius: 5px; /* Rounded corners for the interactive elements */
