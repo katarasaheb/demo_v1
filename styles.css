@@ -49,6 +49,397 @@ section video {
     border-radius: 15px; /* Rounded corners for the translucent box */
 }
 
+#hero .section-content h1 {
+    font-size: 5rem; /* Increased font size for <h1> */
+    font-weight: bold;
+    color: #fff;
+}
+
+#hero .section-content h2 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    display: flex; /* Flex to align items horizontally */
+    justify-content: center; /* Align items to the center */
+    flex-wrap: wrap; /* Allow elements to wrap to a new line if necessary */
+}
+
+#hero .section-content h2 .interactive-text {
+    position: relative;
+    display: inline-block;
+    font-size: 2.5rem;
+    padding: 0 10px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, width 0.3s ease;
+}
+
+#hero .section-content h2 .interactive-text:hover {
+    transform: scale(1.2);
+    width: auto;
+}
+
+#hero .section-content h2 .interactive-text::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+#hero .section-content h2 .interactive-text:hover::after {
+    display: block;
+    opacity: 1;
+    transform: translateX(-50%) translateY(10px);
+}
+
+/* Action Button Styling */
+#hero .section-content a {
+    margin-top: 30px;
+    padding: 18px 40px;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    background-color: #ff5722; /* Deep orange */
+    color: #fff; /* White text color */
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+#hero .section-content a:hover {
+    background-color: #e64a19; /* Darker orange on hover */
+}
+
+/* Problem Section */
+#problem .section-content h1 {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+#problem .section-content h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+/* Interactive Text Styling */
+.interactive-text {
+    position: relative;
+    display: inline-block;
+    font-size: 2rem;
+    padding: 0px 0px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, width 0.3s ease;
+}
+
+.interactive-text:hover {
+    transform: scale(1.2);
+    width: auto;
+}
+
+/* Tooltip (subtext) */
+.interactive-text::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.interactive-text:hover::after {
+    display: block;
+    opacity: 1;
+    transform: translateX(-50%) translateY(10px);
+}
+
+/* Solution Section */
+#solution .section-content h1 {
+    font-size: 3.5rem;
+}
+
+#solution .section-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Alberta Section */
+.alberta .section-content h1 {
+    font-size: 3.5rem;
+}
+
+.alberta .section-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.alberta .section-content .interactive-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.alberta .section-content .interactive-text {
+    margin: 15px;
+}
+
+/* Advantage Section */
+#advantage .section-content h1 {
+    font-size: 3.5rem;
+}
+
+#advantage .section-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#advantage .section-content .interactive-text {
+    margin: 10px;
+    font-size: 1.8rem;
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+footer a {
+    color: #fff;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    color: #0071e3;
+}
+
+/* Form Section */
+.form-container {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+}
+
+.form-container button {
+    padding: 15px 15px;
+    border: none;
+    background-color: #0071e3;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #005bb5;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #0071e3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    background-color: #005bb5;
+    transform: scale(1.1);
+}
+/* Hero Section */
+#hero .section-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 900px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6); /* Translucent box */
+    border-radius: 15px; /* Rounded corners for the translucent box */
+}
+
+/* Increased font size for <h1> */
+#hero .section-content h1 {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Hero Section h2 (Interactive text) */
+#hero .section-content h2 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Interactive Text for H2 */
+#hero .section-content h2 .interactive-text {
+    position: relative;
+    display: inline-block;
+    font-size: 2.5rem;
+    padding: 0 10px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, width 0.3s ease;
+}
+
+#hero .section-content h2 .interactive-text:hover {
+    transform: scale(1.2);
+    width: auto;
+}
+
+#hero .section-content h2 .interactive-text::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+#hero .section-content h2 .interactive-text:hover::after {
+    display: block;
+    opacity: 1;
+    transform: translateX(-50%) translateY(10px);
+}
+
+/* Move the action button outside the translucent box */
+#hero .action-button {
+    margin-top: 30px;
+    padding: 18px 40px;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    background-color: #ff5722; /* Deep orange */
+    color: #fff; /* White text */
+    transition: background-color 0.3s, transform 0.3s ease; /* Animation transition */
+    display: inline-block;
+    position: relative;
+    bottom: 30px; /* Move button below the translucent box */
+}
+
+/* Hover effect and animation for the action button */
+#hero .action-button:hover {
+    background-color: #e64a19; /* Darker orange on hover */
+    transform: translateY(-5px); /* Slight movement on hover */
+}
+
+/* Animation for Action Button */
+@keyframes buttonAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#hero .action-button {
+    animation: buttonAnimation 1.5s ease-in-out infinite; /* Apply animation */
+}
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #000; /* Dark background for contrast */
+    color: #fff; /* White text for better visibility */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Section styling */
+section {
+    position: relative;
+    overflow: hidden;
+    height: 100vh; /* Fullscreen height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+section video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Section content styling */
+.section-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 900px;
+    padding: 20px;
+}
+
+/* Hero Section */
+#hero .section-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 900px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6); /* Translucent box */
+    border-radius: 15px; /* Rounded corners for the translucent box */
+}
+
 /* Increased font size for <h1> */
 #hero .section-content h1 {
     font-size: 5rem; /* Increased font size for <h1> */
