@@ -496,7 +496,7 @@ section video {
     z-index: -1;
 }
 
-/* Apply the same translucent box to the section content */
+/* Single Translucent Box for Both Content Blocks */
 #advantage .section-content {
     position: relative;
     z-index: 1;
@@ -512,18 +512,43 @@ section video {
 #advantage .section-content h1 {
     font-size: 3.5rem;
     color: #fff;
+    margin-bottom: 20px;
 }
 
-#advantage .section-content h2 {
+/* Animated Heading Styling for Better for Customers & Better for Investors */
+.animated-header {
     font-size: 2.5rem;
     margin: 20px 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
 }
 
-/* Interactive text */
-#advantage .section-content .interactive-text {
+.animated-header:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.animated-header:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Content Block */
+#advantage .content-block {
+    margin-bottom: 50px;
+}
+
+/* Interactive Text Styling */
+#advantage .interactive-text {
     position: relative;
     display: inline-block;
     font-size: 2rem;
@@ -533,12 +558,12 @@ section video {
     transition: transform 0.3s ease, width 0.3s ease;
 }
 
-#advantage .section-content .interactive-text:hover {
+#advantage .interactive-text:hover {
     transform: scale(1.2);
     width: auto;
 }
 
-#advantage .section-content .interactive-text::after {
+#advantage .interactive-text::after {
     content: attr(data-tooltip);
     position: absolute;
     bottom: -30px;
@@ -556,7 +581,7 @@ section video {
     z-index: 10;
 }
 
-#advantage .section-content .interactive-text:hover::after {
+#advantage .interactive-text:hover::after {
     display: block;
     opacity: 1;
     transform: translateX(-50%) translateY(10px);
