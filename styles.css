@@ -286,3 +286,106 @@ footer a:hover {
     background-color: #005bb5;
     transform: scale(1.1);
 }
+/* Hero Section */
+#hero .section-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 900px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6); /* Translucent box */
+    border-radius: 15px; /* Rounded corners for the translucent box */
+}
+
+/* Increased font size for <h1> */
+#hero .section-content h1 {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Hero Section h2 (Interactive text) */
+#hero .section-content h2 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Interactive Text for H2 */
+#hero .section-content h2 .interactive-text {
+    position: relative;
+    display: inline-block;
+    font-size: 2.5rem;
+    padding: 0 10px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, width 0.3s ease;
+}
+
+#hero .section-content h2 .interactive-text:hover {
+    transform: scale(1.2);
+    width: auto;
+}
+
+#hero .section-content h2 .interactive-text::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+#hero .section-content h2 .interactive-text:hover::after {
+    display: block;
+    opacity: 1;
+    transform: translateX(-50%) translateY(10px);
+}
+
+/* Move the action button outside the translucent box */
+#hero .action-button {
+    margin-top: 30px;
+    padding: 18px 40px;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    background-color: #ff5722; /* Deep orange */
+    color: #fff; /* White text */
+    transition: background-color 0.3s, transform 0.3s ease; /* Animation transition */
+    display: inline-block;
+    position: relative;
+    bottom: 30px; /* Move button below the translucent box */
+}
+
+/* Hover effect and animation for the action button */
+#hero .action-button:hover {
+    background-color: #e64a19; /* Darker orange on hover */
+    transform: translateY(-5px); /* Slight movement on hover */
+}
+
+/* Animation for Action Button */
+@keyframes buttonAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#hero .action-button {
+    animation: buttonAnimation 1.5s ease-in-out infinite; /* Apply animation */
+}
