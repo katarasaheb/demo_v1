@@ -557,8 +557,7 @@ section video {
     color: #fff;
 }
 
-/* Interactive Text Styling */
-#advantage .interactive-text {
+advantage .interactive-text {
     position: relative;
     display: inline-block;
     font-size: 2rem;
@@ -576,9 +575,9 @@ section video {
 #advantage .interactive-text::after {
     content: attr(data-tooltip);
     position: absolute;
-    bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 50%;
+    left: 100%; /* Position to the right */
+    transform: translateY(-50%); /* Align to the center vertically */
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
     padding: 8px 12px;
@@ -594,7 +593,7 @@ section video {
 #advantage .interactive-text:hover::after {
     display: block;
     opacity: 1;
-    transform: translateX(-50%) translateY(10px);
+    transform: translateX(10px); /* Slight shift to the right */
 }
 
 /* Align the interactive text below the heading and in one line */
