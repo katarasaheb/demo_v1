@@ -251,7 +251,7 @@ section video {
 }
 
 #problem .action-button {
-    animation: buttonAnimation 1.5s ease-in-out infinite; /* Apply animation */
+    animation: buttonAnimation 6.0s ease-in-out infinite; /* Apply animation */
 }
 
 /* Solution Section */
