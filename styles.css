@@ -152,7 +152,7 @@ section video {
     text-align: center;
     max-width: 900px;
     padding: 20px;
-    background: #ff5722; /* Translucent box */
+    background: rgba(0, 0, 0, 0.6); /* Translucent box */
     border-radius: 15px; /* Rounded corners for the translucent box */
 }
 
@@ -181,7 +181,7 @@ section video {
     padding: 0 10px;
     cursor: pointer;
     transition: transform 0.3s ease, width 0.3s ease;
-    color: #fff; /* Text color */
+    color: #ff5722; /* Text color */
 }
 
 #problem .section-content .interactive-text:hover {
@@ -522,7 +522,7 @@ section video {
     text-align: center;
     max-width: 900px;
     padding: 20px;
-    background: #ff5722; /* Translucent box */
+    background: rgba(0, 0, 0, 0.6); /* Translucent box */
     border-radius: 15px; /* Rounded corners for the translucent box */
     margin: 30px auto;
 }
