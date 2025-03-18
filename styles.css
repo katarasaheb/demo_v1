@@ -680,10 +680,16 @@ section video {
 }
 
 /* Title Styling for Join the Revolution Section */
-#join-the-revolution h1 {
-    font-size: 3.0rem;
-    font-family: 'Roboto', sans-serif;
-    margin-bottom: 20px;
+##join-the-revolution .form-container {
+    background: rgba(0, 0, 0, 0.6); /* Make the form container translucent */
+    padding: 40px; /* Increase padding inside the form container */
+    border-radius: 10px;
+    margin-top: 20px;
+    max-width: 800px; /* Increase max-width for a larger form */
+    width: 100%; /* Ensure the form container takes full available width */
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Form Container Styling */
@@ -693,8 +699,15 @@ section video {
 }
 
 /* Input Fields Styling */
-#join-the-revolution .input-group {
-    margin-bottom: 15px;
+#join-the-revolution .form-container input,
+#join-the-revolution .form-container select,
+#join-the-revolution .form-container textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
 }
 
 #join-the-revolution input[type="text"],
