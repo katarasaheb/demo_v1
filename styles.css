@@ -255,7 +255,6 @@ section video {
     animation: buttonAnimation 6.0s ease-in-out infinite; /* Apply animation */
 }
 
-/* Solution Section */
 #solution {
     position: relative;
     overflow: hidden;
@@ -341,6 +340,31 @@ section video {
     display: block;
     opacity: 1;
     transform: translateX(-50%) translateY(10px);
+}
+
+/* New Image Styling */
+#solution .solution-image {
+    width: 70%; /* Responsive width */
+    max-width: 400px; /* Prevents it from being too large */
+    display: block;
+    border-radius: 15px; /* Match translucent box styling */
+    margin-top: 20px;
+    margin-left: 0; /* Align to the left */
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+/* Image hover effect */
+#solution .solution-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px rgba(255, 87, 34, 0.6); /* Subtle neon glow */
+}
+
+/* Image fade-in animation */
+#solution .section-content img.loaded {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Action Button Styling */
