@@ -255,6 +255,7 @@ section video {
     animation: buttonAnimation 6.0s ease-in-out infinite; /* Apply animation */
 }
 
+/* Solution Section */
 #solution {
     position: relative;
     overflow: hidden;
@@ -325,9 +326,9 @@ section video {
 #solution .section-content h2 .interactive-text::after {
     content: attr(data-tooltip);
     position: absolute;
-    bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 50%; /* Align vertically with the middle of the text */
+    left: 100%; /* Position it to the right of the text */
+    transform: translateX(10px) translateY(-50%); /* Adjust to place the tooltip on the right */
     background-color: #ff5722;
     color: #fff;
     padding: 8px 12px;
@@ -343,7 +344,7 @@ section video {
 #solution .section-content h2 .interactive-text:hover::after {
     display: block;
     opacity: 1;
-    transform: translateX(-50%) translateY(10px);
+    transform: translateX(10px) translateY(-50%); /* Keep it on the right when hovered */
 }
 
 /* New Image Styling */
@@ -352,8 +353,8 @@ section video {
     max-width: 150px; /* Prevents it from being too large */
     display: block;
     border-radius: 15px; /* Match translucent box styling */
-    margin-top: 120px;
-    margin-left: 150px; /* Align to the left */
+    margin-top: 100px;
+    margin-left: 200px; /* Align to the left */
     opacity: 1; /* Initially hidden */
     transform: translateY(20px);
     transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
@@ -373,7 +374,7 @@ section video {
 
 /* Action Button Styling */
 #solution .action-button {
-    margin-top: 20px;
+    margin-top: 30px;
     padding: 18px 40px;
     font-size: 1.5rem;
     border-radius: 50px;
