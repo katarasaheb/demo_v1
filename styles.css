@@ -370,6 +370,12 @@ section video {
     animation: buttonAnimation 6.0s ease-in-out infinite;
 }
 
+/* Fix: Ensure image fades in after loading */
+#solution .solution-image.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Alberta Section */
 .alberta .section-content {
     position: relative;
