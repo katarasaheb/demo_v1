@@ -91,7 +91,7 @@ section video {
     color: #fff;
     padding: 8px 12px;
     border-radius: 5px;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     display: none;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -201,7 +201,7 @@ section video {
     color: #fff;
     padding: 8px 12px;
     border-radius: 5px;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     display: none;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -328,7 +328,7 @@ section video {
     color: #fff;
     padding: 8px 12px;
     border-radius: 5px;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     display: none;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -448,7 +448,7 @@ section video {
     color: #fff;
     padding: 8px 12px;
     border-radius: 5px;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     display: none;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -629,7 +629,7 @@ section video {
     color: #fff;
     padding: 8px 12px;
     border-radius: 5px;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     display: none;
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -707,7 +707,7 @@ section video {
 ##join-the-revolution .form-container {
     background: rgba(0, 0, 0, 0.6); /* Make the form container translucent */
     padding: 40px; /* Increase padding inside the form container */
-    border-radius: 10px;
+    border-radius: 20px;
     margin-top: 20px;
     max-width: 800px; /* Increase max-width for a larger form */
     width: 100%; /* Ensure the form container takes full available width */
@@ -718,7 +718,7 @@ section video {
 
 /* Form Container Styling */
 #join-the-revolution .form-container {
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto;
 }
 
