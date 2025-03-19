@@ -19,7 +19,3 @@ function scrollToSection(sectionId) {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    const img = document.querySelector(".solution-image");
-    img.classList.add("loaded");
-});
