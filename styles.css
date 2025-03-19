@@ -630,9 +630,9 @@ section video {
 #advantage .interactive-text::after {
     content: attr(data-tooltip);
     position: absolute;
-    top: 50%;
-    left: 100%; /* Position to the right */
-    transform: translateY(-50%); /* Align to the center vertically */
+    top: 50%; /* Align vertically with the middle of the text */
+    left: 100%; /* Position it to the right of the text */
+    transform: translateX(10px) translateY(-50%); /* Adjust to place the tooltip on the right */
     background-color: #ff5722;
     color: #fff;
     padding: 8px 12px;
@@ -649,7 +649,7 @@ section video {
 #advantage .interactive-text:hover::after {
     display: block;
     opacity: 1;
-    transform: translateX(10px); /* Slight shift to the right */
+    transform: translateX(10px) translateY(-50%); /* Keep it on the right when hovered */
 }
 
 /* Align the interactive text vertically */
@@ -681,7 +681,7 @@ section video {
     transition: background-color 0.3s, transform 0.3s ease; /* Animation transition */
     display: inline-block;
     position: relative;
-    bottom: 30px; /* Position the button below the translucent box */
+    margin-top: 40px; /* Ensure a gap below the translucent container */
     left: 50%;
     transform: translateX(-50%); /* Center the button horizontally */
     text-align: center;
