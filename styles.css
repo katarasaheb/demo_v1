@@ -255,7 +255,6 @@ section video {
     animation: buttonAnimation 6.0s ease-in-out infinite; /* Apply animation */
 }
 
-/* Solution Section */
 #solution {
     position: relative;
     overflow: hidden;
@@ -285,7 +284,7 @@ section video {
     max-width: 900px;
     padding: 20px;
     background: rgba(0, 0, 0, 0.6); /* Translucent box */
-    border-radius: 15px; /* Rounded corners */
+    border-radius: 15px; /* Rounded corners for the translucent box */
 }
 
 /* Title Styling */
@@ -295,13 +294,52 @@ section video {
     color: #fff;
 }
 
-/* Interactive Text */
+/* Interactive Text in h2 */
 #solution .section-content h2 {
     font-size: 1.8rem;
     margin-top: 20px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+#solution .section-content h2 .interactive-text {
+    position: relative;
+    display: inline-block;
+    font-size: 1.8rem;
+    padding: 0 10px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, width 0.3s ease;
+}
+
+#solution .section-content h2 .interactive-text:hover {
+    transform: scale(1.2);
+    width: auto;
+}
+
+#solution .section-content h2 .interactive-text::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff5722;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+#solution .section-content h2 .interactive-text:hover::after {
+    display: block;
+    opacity: 1;
+    transform: translateX(-50%) translateY(10px);
 }
 
 /* New Image Styling */
@@ -335,22 +373,22 @@ section video {
     padding: 18px 40px;
     font-size: 1.5rem;
     border-radius: 50px;
-    background-color: #ff5722;
-    color: #fff;
-    transition: background-color 0.3s, transform 0.3s ease;
+    background-color: #ff5722; /* Dark orange */
+    color: #fff; /* White text color */
+    transition: background-color 0.3s, transform 0.3s ease; /* Animation transition */
     display: inline-block;
-    position: absolute;
-    bottom: 50px;
+    position: absolute;  /* Absolute positioning */
+    bottom: 50px; /* Move button below the translucent box */
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* Center the button horizontally */
     text-align: center;
-    text-decoration: none;
+    text-decoration: none; /* Remove underline */
 }
 
 /* Action Button Hover Effect */
 #solution .action-button:hover {
-    background-color: #e64a19;
-    transform: translateY(-5px);
+    background-color: #e64a19; /* Darker orange on hover */
+    transform: translateY(-5px); /* Slight movement on hover */
 }
 
 /* Animation for Action Button */
@@ -367,13 +405,7 @@ section video {
 }
 
 #solution .action-button {
-    animation: buttonAnimation 6.0s ease-in-out infinite;
-}
-
-/* Fix: Ensure image fades in after loading */
-#solution .solution-image.loaded {
-    opacity: 1;
-    transform: translateY(0);
+    animation: buttonAnimation 6.0s ease-in-out infinite; /* Apply animation */
 }
 
 /* Alberta Section */
