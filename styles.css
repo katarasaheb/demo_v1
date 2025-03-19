@@ -350,7 +350,7 @@ section video {
     border-radius: 15px; /* Match translucent box styling */
     margin-top: 20px;
     margin-left: 0; /* Align to the left */
-    opacity: 0; /* Initially hidden */
+    opacity: 1; /* Initially hidden */
     transform: translateY(20px);
     transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
 }
