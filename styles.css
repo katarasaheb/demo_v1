@@ -349,7 +349,7 @@ section video {
     display: block;
     border-radius: 15px; /* Match translucent box styling */
     margin-top: 120px;
-    margin-left: 120px; /* Align to the left */
+    margin-left: 150px; /* Align to the left */
     opacity: 1; /* Initially hidden */
     transform: translateY(20px);
     transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
@@ -369,7 +369,7 @@ section video {
 
 /* Action Button Styling */
 #solution .action-button {
-    margin-top: 30px;
+    margin-top: 20px;
     padding: 18px 40px;
     font-size: 1.5rem;
     border-radius: 50px;
