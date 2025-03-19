@@ -299,13 +299,16 @@ section video {
     font-size: 1.8rem;
     margin-top: 20px;
     display: flex;
+    flex-direction: column; /* Ensure the items stack vertically */
     justify-content: center;
+    align-items: center; /* Center align text */
     flex-wrap: wrap;
 }
 
+/* Each interactive text behaves like a block */
 #solution .section-content h2 .interactive-text {
     position: relative;
-    display: inline-block;
+    display: block; /* Makes each item take up a new line */
     font-size: 1.8rem;
     padding: 0 10px;
     margin: 10px;
@@ -313,6 +316,7 @@ section video {
     transition: transform 0.3s ease, width 0.3s ease;
 }
 
+/* Hover effect */
 #solution .section-content h2 .interactive-text:hover {
     transform: scale(1.2);
     width: auto;
