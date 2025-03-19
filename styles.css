@@ -709,8 +709,8 @@ section video {
     padding: 40px; /* Increase padding inside the form container */
     border-radius: 20px;
     margin-top: 20px;
-    max-width: 800px; /* Increase max-width for a larger form */
-    width: 100%; /* Ensure the form container takes full available width */
+    max-width: 600px; /* Increase max-width for a larger form */
+    width: 90%; /* Ensure the form container takes full available width */
     box-sizing: border-box; /* Ensure padding is included in width calculation */
     margin-left: auto;
     margin-right: auto;
