@@ -353,8 +353,8 @@ section video {
     max-width: 150px; /* Prevents it from being too large */
     display: block;
     border-radius: 15px; /* Match translucent box styling */
-    margin-top: 100px;
-    margin-left: 200px; /* Align to the left */
+    margin-top: 50px;
+    margin-left: 250px; /* Align to the left */
     opacity: 1; /* Initially hidden */
     transform: translateY(20px);
     transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
@@ -608,6 +608,7 @@ section video {
 }
 
 /* Ensure same font styling for interactive-text in both Advantage and Solution sections */
+/* Ensure same font styling for interactive-text in both Advantage and Solution sections */
 #advantage .interactive-text, #solution .interactive-text {
     font-size: 1.8rem; /* Same font size as in the Solution section */
     font-weight: 500; /* Medium weight, matching Solution section */
@@ -619,16 +620,18 @@ section video {
     transition: transform 0.3s ease, width 0.3s ease, color 0.3s ease; /* Transition for hover effects */
 }
 
+/* Hover effects */
 #advantage .interactive-text:hover, #solution .interactive-text:hover {
     transform: scale(1.1); /* Slightly enlarge on hover */
     color: #ff5722; /* Change text color on hover to match action button color */
 }
 
+/* Tooltip for interactive text */
 #advantage .interactive-text::after {
     content: attr(data-tooltip);
     position: absolute;
     top: 50%;
-    left: 50%; /* Position to the right */
+    left: 100%; /* Position to the right */
     transform: translateY(-50%); /* Align to the center vertically */
     background-color: #ff5722;
     color: #fff;
@@ -642,16 +645,29 @@ section video {
     z-index: 10;
 }
 
+/* Tooltip hover effect */
 #advantage .interactive-text:hover::after {
     display: block;
     opacity: 1;
     transform: translateX(10px); /* Slight shift to the right */
 }
 
-/* Align the interactive text below the heading and in one line */
+/* Align the interactive text vertically */
 #advantage .content-block .interactive-text {
-    display: block; /* Makes each interactive text item stack on top of the previous one */
-    margin: 10px 0;
+    display: block; /* Stack the items vertically */
+    margin: 10px 0; /* Space between the items vertically */
+}
+
+/* Additional styling for better vertical alignment of sections */
+#advantage h3 {
+    margin-top: 20px;
+    font-size: 2.2rem; /* Larger font for section headings */
+    color: #fff; /* White color for headings */
+    font-weight: bold;
+}
+
+#advantage .content-block {
+    margin-bottom: 40px; /* Space between different sections */
 }
 
 /* Action Button Styling for Advantage Section */
