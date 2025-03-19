@@ -348,8 +348,8 @@ section video {
     max-width: 150px; /* Prevents it from being too large */
     display: block;
     border-radius: 15px; /* Match translucent box styling */
-    margin-top: 80px;
-    margin-left: 80px; /* Align to the left */
+    margin-top: 100px;
+    margin-left: 100px; /* Align to the left */
     opacity: 1; /* Initially hidden */
     transform: translateY(20px);
     transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
