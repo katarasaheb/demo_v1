@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Kitchin — Rebuilding Grocery</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kitchin — Rebuilding Grocery from First Principles</title>
 
-<!-- Serif Typography -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
 <header class="nav">
   <div class="nav-logo">kitchin</div>
-  <nav>
-    <a href="#about">About</a>
+  <nav class="nav-menu">
+    <a href="#problem">Problem</a>
     <a href="#solution">Solution</a>
     <a href="#alberta">Alberta</a>
     <a href="#contact" class="nav-cta">Join</a>
@@ -24,78 +24,151 @@
 </header>
 
 <!-- HERO -->
-<section class="hero">
-  <h1>The Future of Grocery,<br>Built for Canada.</h1>
+<section class="hero" id="hero">
+  <h1>
+    Rebuilding Grocery<br>
+    from First Principles
+  </h1>
 
   <p class="hero-sub">
-    <span class="interactive-text" data-tooltip="Fresh, direct, transparent sourcing">FarmFresh</span>
-    <span class="interactive-text" data-tooltip="Efficient supply chains remove middlemen">DirectValue</span>
-    <span class="interactive-text" data-tooltip="AI-powered fulfillment and delivery">QuickShip</span>
-    <span class="interactive-text" data-tooltip="Sustainable, Canadian-first model">SustainaCan</span>
+    <span class="interactive-text" data-tooltip="Direct sourcing, minimal intermediaries">FarmFresh</span>
+    <span class="interactive-text" data-tooltip="Transparent pricing, not margin stacking">DirectValue</span>
+    <span class="interactive-text" data-tooltip="Demand-led logistics & fulfillment">QuickShip</span>
+    <span class="interactive-text" data-tooltip="Canadian-first, sustainability built in">SustainaCan</span>
   </p>
 
-  <a href="#contact" class="primary-btn">Join the Revolution</a>
+  <a href="#contact" class="primary-btn">Join the Grocery Revolution</a>
 </section>
 
-<!-- SOCIAL PROOF -->
-<section class="social-proof">
-  <p>Backed by research & public data</p>
-  <a href="https://competition-bureau.canada.ca/sites/default/files/attachments/2023/CB-Retail-Grocery-Market-Study-Report-EN-2023-06-23.pdf" target="_blank">
-    Competition Bureau Grocery Market Report →
-  </a>
-</section>
+<!-- PROBLEM / SCALE -->
+<section id="problem" class="problem">
+  <h2>The Canadian Grocery Crisis</h2>
 
-<!-- ABOUT -->
-<section id="about" class="about">
-  <h2>What is Kitchin?</h2>
   <p>
-    Kitchin is Canada’s grocery super-platform — combining AI-driven logistics,
-    direct sourcing, and local distribution to rebuild food access from the ground up.
+    Canada is not facing a grocery inconvenience.  
+    It is facing a <strong>food system breakdown</strong>.
+  </p>
+
+  <p>
+    Prices are rising faster than wages. Supply chains are optimized for margin,
+    not resilience. Millions of Canadians are now one emergency away from food insecurity —
+    even while working full-time.
   </p>
 </section>
 
-<!-- FEATURES -->
-<section id="solution" class="features">
-  <div class="feature">
-    <h3>Smart Logistics</h3>
-    <p>Hyper-efficient dark stores & AI routing</p>
+<!-- RESEARCH & DATA -->
+<section class="research">
+  <h3>Backed by Research & Public Data</h3>
+
+  <div class="research-block">
+    <h4>Competition Bureau of Canada</h4>
+    <p>
+      Canada’s grocery market is highly concentrated, reducing price competition,
+      weakening supply chain resilience, and limiting consumer choice.
+    </p>
+    <a href="https://competition-bureau.canada.ca/sites/default/files/attachments/2023/CB-Retail-Grocery-Market-Study-Report-EN-2023-06-23.pdf" target="_blank">
+      Read the Grocery Market Report →
+    </a>
   </div>
-  <div class="feature">
-    <h3>Direct Source</h3>
-    <p>From producers straight to consumers</p>
+
+  <div class="research-block">
+    <h4>Food Banks Canada</h4>
+    <ul>
+      <li>Over <strong>2 million food bank visits</strong> in a single month</li>
+      <li><strong>700,000+</strong> visits are on behalf of children</li>
+      <li>Nearly <strong>1 in 5 users are employed</strong></li>
+      <li>Many food banks run out of food before meeting demand</li>
+      <li>Food insecurity has risen ~90% since 2019</li>
+    </ul>
   </div>
-  <div class="feature">
-    <h3>Canada Secure</h3>
-    <p>Resilient supply, local-first economics</p>
+</section>
+
+<!-- SOLUTION -->
+<section id="solution" class="solution">
+  <h2>Designed from First Principles</h2>
+
+  <p class="solution-intro">
+    Most grocery platforms optimize on top of an inherited system.  
+    Kitchin starts earlier — at the physics of food.
+  </p>
+
+  <div class="pillars">
+    <div class="pillar">
+      <h4>Supply</h4>
+      <p>Local production, predictive demand, minimal intermediaries</p>
+    </div>
+
+    <div class="pillar">
+      <h4>Pricing</h4>
+      <p>Transparent cost structures, not compounding markups</p>
+    </div>
+
+    <div class="pillar">
+      <h4>Logistics</h4>
+      <p>Shorter routes, owned intelligence, demand-led fulfillment</p>
+    </div>
+
+    <div class="pillar">
+      <h4>Incentives</h4>
+      <p>Aligned outcomes for producers, consumers, and system efficiency</p>
+    </div>
+  </div>
+</section>
+
+<!-- ADVANTAGE -->
+<section class="advantage">
+  <h2>The Kitchin Advantage</h2>
+
+  <div class="advantage-grid">
+    <div>
+      <h4>For Customers</h4>
+      <p>Lower effective prices, fresher food, predictable availability.</p>
+    </div>
+
+    <div>
+      <h4>For Investors</h4>
+      <p>Infrastructure economics, defensibility, and long-term systemic value.</p>
+    </div>
   </div>
 </section>
 
 <!-- ALBERTA -->
 <section id="alberta" class="alberta">
-  <h2>Launching from Alberta</h2>
-  <p>Bowden hub • 50+ dark stores • $5B market by 2026</p>
+  <h2>Alberta — The Launchpad</h2>
+
+  <p>
+    Bowden Distribution Hub • 50+ dark stores •
+    Access to 10 major cities • $5B grocery market by 2026
+  </p>
+
   <a href="images/Alberta Retail grocery sales 2015-2020.pdf" target="_blank" class="secondary-btn">
-    View Alberta Market Report
+    Alberta Retail Grocery Sales Report →
   </a>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="contact">
-  <h2>Build the Future With Us</h2>
+  <h2>Build the Future of Grocery With Us</h2>
 
-  <form action="https://formsubmit.co/Varenyam@kitchinai.ca" method="POST">
+  <form
+    action="https://formsubmit.co/Varenyam@kitchinai.ca"
+    method="POST"
+    data-contact-form
+  >
     <input type="hidden" name="_subject" value="New Kitchin Website Submission">
     <input type="hidden" name="_captcha" value="false">
 
     <input type="text" name="name" placeholder="Name" required>
     <input type="email" name="email" placeholder="Email" required>
+
     <select name="interest" required>
       <option value="">I’m interested in…</option>
-      <option>Launch Updates</option>
+      <option>Alberta Launch Updates</option>
       <option>Investing</option>
       <option>Partnership</option>
       <option>Careers</option>
     </select>
+
     <textarea name="message" placeholder="Message (optional)"></textarea>
 
     <button type="submit" class="primary-btn">Submit</button>
@@ -103,9 +176,9 @@
 </section>
 
 <footer>
-  <p>© 2025 Kitchin Retail Solutions Inc.</p>
+  <p>© 2025 Kitchin Retail Solutions Inc. All rights reserved.</p>
 </footer>
 
-<script src="script.js"></script>
+<script src="scripts.js"></script>
 </body>
 </html>
