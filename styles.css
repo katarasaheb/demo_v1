@@ -18,6 +18,8 @@
 /* ---------- RESET ---------- */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -25,11 +27,11 @@ html {
 }
 
 body {
-  margin: 0;
   font-family: serif;
   line-height: 1.6;
   background: var(--bg);
   color: var(--text);
+  word-wrap: break-word; /* ensures text wraps */
 }
 
 /* =========================================================
@@ -85,18 +87,27 @@ body {
 }
 
 /* =========================================================
-   SECTIONS — WIDE SCREEN FRIENDLY
+   SECTIONS — FULL WIDTH FIX
    ========================================================= */
 section {
   width: 100%;
-  max-width: 1280px;
-  margin: auto;
-
   padding:
     clamp(4rem, 8vw, 8rem)
     clamp(1.5rem, 6vw, 6rem);
-
   scroll-margin-top: var(--nav-height);
+}
+
+.section-content {
+  width: 100%;
+  max-width: 1400px; /* allows wider text */
+  margin: auto;
+}
+
+/* Ensure all headings and paragraphs wrap properly */
+h1, h2, h3, h4, p, span.interactive-text, li {
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 /* =========================================================
@@ -117,7 +128,6 @@ section {
 
 .hero-content {
   width: 100%;
-  max-width: 1400px;
   padding-inline: clamp(1.5rem, 6vw, 6rem);
 }
 
@@ -196,6 +206,7 @@ section {
   padding: 2rem;
   box-shadow: 0 4px 14px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  word-wrap: break-word;
 }
 
 @media (hover: hover) {
