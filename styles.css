@@ -11,6 +11,8 @@
   --text: #1D1D1F;
   --hover-orange: #e04a00;
   --hover-blue: #00203f;
+  --pillars-color1: #EC5E27;
+  --pillars-color2: #002E50;
 
   --nav-height: 88px;
 }
@@ -103,7 +105,6 @@ section {
   margin: auto;
 }
 
-/* Ensure all headings and paragraphs wrap properly */
 h1, h2, h3, h4, p, span.interactive-text, li {
   white-space: normal;
   word-break: break-word;
@@ -148,27 +149,6 @@ h1, h2, h3, h4, p, span.interactive-text, li {
   margin-top: clamp(2.5rem, 5vw, 4rem);
 }
 
-/* Extra-large desktop */
-@media (min-width: 1440px) {
-  .hero h1 {
-    font-size: 7rem;
-  }
-}
-
-/* Tablet */
-@media (max-width: 1024px) {
-  .hero {
-    min-height: 85vh;
-  }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  .hero {
-    min-height: 75vh;
-  }
-}
-
 /* =========================================================
    BUTTONS
    ========================================================= */
@@ -211,13 +191,27 @@ h1, h2, h3, h4, p, span.interactive-text, li {
   word-wrap: break-word;
 }
 
-/* Add subtle differentiation for problem/research pillars */
 .problem .pillar h4,
 .research-section .pillar h4 {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
-  color: var(--blue);
+}
+
+/* Alternating pillar accent colors */
+.research-section .pillars .pillar:nth-child(odd) h4 {
+  color: var(--pillars-color1);
+}
+.research-section .pillars .pillar:nth-child(even) h4 {
+  color: var(--pillars-color2);
+}
+
+/* Optional colored top border accent */
+.research-section .pillars .pillar:nth-child(odd) {
+  border-top: 4px solid var(--pillars-color1);
+}
+.research-section .pillars .pillar:nth-child(even) {
+  border-top: 4px solid var(--pillars-color2);
 }
 
 .problem .pillar p,
