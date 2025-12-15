@@ -307,3 +307,24 @@ footer {
     font-size: clamp(0.8rem, 2.5vw, 1rem);
   }
 }
+
+/* Exclude hero from section width constraint */
+section:not(.hero) {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Hero refinements */
+.hero {
+  max-width: none;
+  padding-top: calc(clamp(4rem, 10vw, 10rem) + 2rem);
+}
+
+.hero-content {
+  max-width: 1200px;
+  padding-bottom: 2rem;
+}
+
+.hero h1 {
+  letter-spacing: -0.02em;
+}
