@@ -1,188 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>kitchin - The Grocery Revolution</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external styles.css -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kitchin — Rebuilding Grocery</title>
+
+<!-- Serif Typography -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<!-- Hero Section -->
-<!-- Hero Section -->
-<section id="hero">
-    <video autoplay loop muted alt="Hero Section Video Background">
-        <source src="images/HV3.mp4" type="video/mp4">
-    </video>
-    <div class="section-content">
-        <h1> kitchin</h1>
-        <!-- Making each word in h2 an interactive element -->
-        <h2>
-            <span class="interactive-text" data-tooltip="Taste the Freshness, Delivered Daily">FarmFresh</span>
-            <span class="interactive-text" data-tooltip="Best Quality, Fair Prices">DirectValue</span>
-            <span class="interactive-text" data-tooltip="Effortless 30-Minute Delivery">QuickShip</span>
-            <span class="interactive-text" data-tooltip="Sustainably Driven, Proudly Canadian">SustainaCan</span>
-        </h2>
-    </div>
-    <!-- Action Button Outside Section Content -->
-    <a href="#join-the-revolution" class="action-button" onclick="scrollToSection('join-the-revolution')">Join the Grocery Revolution</a>
+<header class="nav">
+  <div class="nav-logo">kitchin</div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#solution">Solution</a>
+    <a href="#alberta">Alberta</a>
+    <a href="#contact" class="nav-cta">Join</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>The Future of Grocery,<br>Built for Canada.</h1>
+
+  <p class="hero-sub">
+    <span class="interactive-text" data-tooltip="Fresh, direct, transparent sourcing">FarmFresh</span>
+    <span class="interactive-text" data-tooltip="Efficient supply chains remove middlemen">DirectValue</span>
+    <span class="interactive-text" data-tooltip="AI-powered fulfillment and delivery">QuickShip</span>
+    <span class="interactive-text" data-tooltip="Sustainable, Canadian-first model">SustainaCan</span>
+  </p>
+
+  <a href="#contact" class="primary-btn">Join the Revolution</a>
 </section>
 
-<!-- Problem Section -->
-<section id="problem">
-    <video autoplay loop muted alt="Problem Section Video Background">
-        <source src="images/HV.mp4" type="video/mp4">
-    </video>
-    <div class="section-content">
-        <h1>The Canadian Grocery Crisis</h1>
-        <h2>
-            <span class="interactive-text" data-tooltip="75% Market Control : Rising Prices, Limited Choice, Lower Affordability">Pricefixing</span>
-            <span class="interactive-text" data-tooltip="Long, Inefficient Supply Chains driving costs & waste">SupplyWaste</span>
-            <span class="interactive-text" data-tooltip="Tariffs and Disruptions drive up costs">CostInflation</span>
-            <span class="interactive-text" data-tooltip="Traditional Stores : High Costs, Higher Prices">Obsolescence</span>
-        </h2>
-    </div>
-    <a href="https://competition-bureau.canada.ca/sites/default/files/attachments/2023/CB-Retail-Grocery-Market-Study-Report-EN-2023-06-23.pdf" 
-       target="_blank" class="action-button">
-       Competition Bureau Market Report
-    </a>
+<!-- SOCIAL PROOF -->
+<section class="social-proof">
+  <p>Backed by research & public data</p>
+  <a href="https://competition-bureau.canada.ca/sites/default/files/attachments/2023/CB-Retail-Grocery-Market-Study-Report-EN-2023-06-23.pdf" target="_blank">
+    Competition Bureau Grocery Market Report →
+  </a>
 </section>
 
-<!-- Solution Section -->
-<section id="solution">
-    <video autoplay loop muted alt="Solution Section Video Background">
-        <source src="images/183448-871250596_medium.mp4" type="video/mp4">
-    </video>
-    
-    <div class="section-content">
-        <h1>Canada's Grocery SuperApp</h1>
-        <h2>
-            <span class="interactive-text" data-tooltip="Hyper Efficient Dark Store Network">SmartLogistics</span>
-            <span class="interactive-text" data-tooltip="Direct from Manufacturer">DirectSource</span>
-            <span class="interactive-text" data-tooltip="Built for Canada, Free from Supply Chain Vulnerabilities">CanadaSecure</span>
-            <span class="interactive-text" data-tooltip="Personalized Picks, Sustainably Sourced">SmartShop</span>
-            <span class="interactive-text" data-tooltip="Content builds Communities, Communities drive change">CommUnity</span>
-            <span class="interactive-text" data-tooltip="Driving towards Net-Zero emissions">ZeroFleet</span>
-        </h2>
-    </div>
-    
-        <!-- App Store Image (Aligned left inside the translucent box) -->
-        <div class="image-container">
-            <img src="images/Playstore.png" alt="Available on App Store" class="solution-image">
-        </div>
-    
-    <a href="#join-the-revolution" class="action-button" onclick="scrollToSection('join-the-revolution')">
-        Join the Grocery Revolution
-    </a>
+<!-- ABOUT -->
+<section id="about" class="about">
+  <h2>What is Kitchin?</h2>
+  <p>
+    Kitchin is Canada’s grocery super-platform — combining AI-driven logistics,
+    direct sourcing, and local distribution to rebuild food access from the ground up.
+  </p>
 </section>
 
-
-<!-- Advantage Section -->
-<section id="advantage">
-    <video autoplay loop muted>
-        <source src="images/175717-854057981.mp4" type="video/mp4">
-    </video>
-
-    <!-- Single Translucent Box for All Content -->
-    <div class="section-content">
-        <h1>The Kitchin Advantage</h1>
-
-        <!-- First content block: Better for Customers -->
-        <div class="content-block">
-            <h2 class="animated-header">Better for Customers</h2>
-            <div class="interactive-text" data-tooltip="AI-driven recommendations for personalized experience">AIPersonalize</div>
-            <div class="interactive-text" data-tooltip="Sustainable, Fresh, Farm-to-Table">FarmSustain</div>
-            <div class="interactive-text" data-tooltip="Empowering Canadian Farmers, one Harvest at a time">CanadaFirst</div>
-        </div>
-
-        <!-- Second content block: Better for Investors -->
-        <div class="content-block">
-            <h2 class="animated-header">Better for Investors</h2>
-            <div class="interactive-text" data-tooltip="Disrupting the Industry with Innovative Solutions">TrailBlazer</div>
-            <div class="interactive-text" data-tooltip="AI & Automation : Lean Operations, Strong Economics">Scalative</div>
-            <div class="interactive-text" data-tooltip="Scalable, Poised for Global Growth">Pioneering</div>
-        </div>
-
-        <!-- Single Action Button for Advantage Section -->
-        <a href="#join-the-revolution" onclick="scrollToSection('join-the-revolution')" class="action-button">Invest in Our Future</a>
-    </div>
+<!-- FEATURES -->
+<section id="solution" class="features">
+  <div class="feature">
+    <h3>Smart Logistics</h3>
+    <p>Hyper-efficient dark stores & AI routing</p>
+  </div>
+  <div class="feature">
+    <h3>Direct Source</h3>
+    <p>From producers straight to consumers</p>
+  </div>
+  <div class="feature">
+    <h3>Canada Secure</h3>
+    <p>Resilient supply, local-first economics</p>
+  </div>
 </section>
 
-
-<!-- Alberta Section -->
-<section class="alberta" id="alberta">
-    <video autoplay loop muted>
-        <source src="images/204095-923582446.mp4" type="video/mp4">
-    </video>
-    <div class="section-content">
-        <h1>Alberta - The Launchpad</h1>
-        <h2>Bowden Distribution Hub</h2>
-        <h2>
-            <span class="interactive-text" data-tooltip="50+ Dark Stores - Access to 10 major cities">Ubiquitous</span>
-            <span class="interactive-text" data-tooltip="2.7 Million - 70% Resident Population">Scope</span>
-            <span class="interactive-text" data-tooltip="1 Million+ Immigrants">MeltingPot</span>
-            <span class="interactive-text" data-tooltip="$5B by 2026, Tech-Savvy">Empowered</span>
-        </h2>
-    </div>
-    <a href="images/Alberta Retail grocery sales 2015-2020.pdf" target="_blank" class="action-button">Alberta Retail Grocery Sales Report</a>
+<!-- ALBERTA -->
+<section id="alberta" class="alberta">
+  <h2>Launching from Alberta</h2>
+  <p>Bowden hub • 50+ dark stores • $5B market by 2026</p>
+  <a href="images/Alberta Retail grocery sales 2015-2020.pdf" target="_blank" class="secondary-btn">
+    View Alberta Market Report
+  </a>
 </section>
 
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <h2>Build the Future With Us</h2>
 
-<!-- Join the Revolution Section -->
-<section id="join-the-revolution">
-    <video autoplay loop muted>
-        <source src="images/168388-839220647.mp4" type="video/mp4">
-    </video>
-    
-    <!-- Translucent Box for Section Content -->
-    <div class="section-content">
-        <h1 class="animated-header">Build the Future of Grocery With Us</h1>
-        
-        <!-- Form Container with Redesigned Styling -->
-        <div class="form-container">
-            <form action="https://forms.gle/2ZGPsVws9NDqekNY8" method="POST">
-                <div class="input-group">
-                    <input type="text" name="name" placeholder="Enter your name" required>
-                </div>
-                <div class="input-group">
-                    <input type="email" name="email" placeholder="Enter your email" required>
-                </div>
-                <div class="input-group">
-                    <textarea name="message" placeholder="Your Message (max 180 words)" maxlength="180"></textarea>
-                </div>
-                <div class="input-group">
-                    <select name="interest" required>
-                        <option value="Customer">Alberta Launch Updates</option>
-                        <option value="Investor">Invest in Our Future</option>
-                        <option value="Partner">Partner with Us</option>
-                        <option value="Career">Work with Us</option>
-                    </select>
-                </div>
-                
-                <!-- Submit Button with Animation -->
-                <button type="submit" class="action-button">Join the Revolution</button>
-            </form>
-        </div>
-    </div>
+  <form action="https://formsubmit.co/Varenyam@kitchinai.ca" method="POST">
+    <input type="hidden" name="_subject" value="New Kitchin Website Submission">
+    <input type="hidden" name="_captcha" value="false">
+
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <select name="interest" required>
+      <option value="">I’m interested in…</option>
+      <option>Launch Updates</option>
+      <option>Investing</option>
+      <option>Partnership</option>
+      <option>Careers</option>
+    </select>
+    <textarea name="message" placeholder="Message (optional)"></textarea>
+
+    <button type="submit" class="primary-btn">Submit</button>
+  </form>
 </section>
-    
-<!-- Footer Section -->
+
 <footer>
-    <div class="footer-container">
-        <div class="footer-links">
-            <a href="#hero">Home</a>
-            <a href="#problem">Problem</a>
-            <a href="#solution">Solution</a>
-            <a href="#advantage">Advantage</a>
-            <a href="#alberta">Alberta</a>
-            <a href="#join-the-revolution">Join the Revolution</a>
-        </div>
-        <div class="footer-info">
-            <p>&copy; 2025 Kitchin Retail Solutions Inc. All Rights Reserved</p>
-        </div>
-    </div>
+  <p>© 2025 Kitchin Retail Solutions Inc.</p>
 </footer>
 
 <script src="script.js"></script>
