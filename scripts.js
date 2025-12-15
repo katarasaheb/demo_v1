@@ -2,7 +2,7 @@
    Kitchin — Main JavaScript
    Purpose: UI behavior only (layout-agnostic)
    Fully mobile-adaptive
-   Safe to replace previous JS entirely
+   Production-safe
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -12,22 +12,21 @@ document.addEventListener("DOMContentLoaded", () => {
      ----------------------------------------- */
   const navToggle = document.querySelector(".nav-toggle");
   const navMenu = document.querySelector(".nav-menu");
+  const nav = document.querySelector(".nav");
   const body = document.body;
 
   if (navToggle && navMenu) {
     navToggle.addEventListener("click", () => {
       const isOpen = navMenu.classList.toggle("is-open");
       navToggle.classList.toggle("is-active", isOpen);
-      body.classList.toggle("nav-open", isOpen); // lock scroll on mobile
+      body.classList.toggle("nav-open", isOpen);
     });
   }
 
   /* -----------------------------------------
      2. Close mobile nav on link click
      ----------------------------------------- */
-  const navLinks = document.querySelectorAll(".nav-menu a");
-
-  navLinks.forEach(link => {
+  document.querySelectorAll(".nav-menu a").forEach(link => {
     link.addEventListener("click", () => {
       if (navMenu?.classList.contains("is-open")) {
         navMenu.classList.remove("is-open");
@@ -68,36 +67,23 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* -----------------------------------------
-     5. Contact form UX protection (FormSubmit-safe)
+     5. Sticky nav transparency (Tesla-style)
+     ----------------------------------------- */
+  if (nav) {
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle("scrolled", window.scrollY > 40);
+    });
+  }
+
+  /* -----------------------------------------
+     6. Contact form UX protection
      ----------------------------------------- */
   const contactForm = document.querySelector("form[data-contact-form]");
-
   if (contactForm) {
     contactForm.addEventListener("submit", () => {
       const submitBtn = contactForm.querySelector("button[type='submit']");
       if (submitBtn) submitBtn.disabled = true;
     });
   }
-
-  /* -----------------------------------------
-     6. Defensive cleanup (legacy safety)
-     ----------------------------------------- */
-  window.onscroll = null;
-  window.onresize = null;
-
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-
-  /* Sticky nav scroll effect */
-  const nav = document.querySelector(".nav");
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 40) {
-      nav.classList.add("scrolled");
-    } else {
-      nav.classList.remove("scrolled");
-    }
-  });
 
 });
