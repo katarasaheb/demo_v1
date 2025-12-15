@@ -17,7 +17,7 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: serif;
   line-height: 1.6;
   background: var(--bg);
   color: var(--text);
@@ -27,17 +27,17 @@ body {
 .nav {
   display: flex;
   justify-content: space-between;
-  padding: 24px 64px;
   align-items: center;
+  padding: clamp(1.5rem, 3vw, 4rem) clamp(1rem, 5vw, 6rem);
 }
 
 .nav-logo {
-  font-size: 28px;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
   font-weight: 700;
 }
 
 .nav-menu a {
-  margin-left: 24px;
+  margin-left: clamp(1rem, 2vw, 2rem);
   text-decoration: none;
   color: var(--text);
   transition: color 0.3s ease;
@@ -62,68 +62,41 @@ body {
 section {
   max-width: 1100px;
   margin: auto;
-  padding: 96px 64px;
+  padding: clamp(2rem, 5vw, 6rem) clamp(1rem, 5vw, 4rem);
 }
 
 /* HERO */
 .hero {
   background: var(--orange);
   color: white;
-  padding-bottom: 120px;
+  padding-bottom: clamp(6rem, 12vw, 10rem);
+  text-align: center;
 }
 
 .hero h1 {
-  font-size: 64px;
+  font-size: clamp(2.5rem, 6vw, 5rem);
   line-height: 1.1;
+  margin: 0 auto 1rem auto;
+  max-width: 900px;
 }
 
 .hero-sub {
-  margin-top: 32px;
-  font-size: 20px;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  margin-top: 1.5rem;
 }
 
-.interactive-text {
-  margin-right: 16px;
-  position: relative;
-  cursor: pointer;
-  border-bottom: 1px solid transparent;
-}
-
-.interactive-text:hover {
-  border-bottom: 1px solid var(--orange);
-}
-
-.interactive-text::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: -36px;
-  left: 0;
-  background: var(--blue);
-  color: white;
-  padding: 6px 10px;
-  font-size: 12px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  white-space: nowrap;
-  pointer-events: none;
-  z-index: 10;
-}
-
-.interactive-text:hover::after {
-  opacity: 1;
-}
-
-/* BUTTONS */
 .primary-btn {
   display: inline-block;
-  margin-top: 40px;
-  padding: 16px 36px;
+  margin-top: clamp(2rem, 5vw, 3rem);
+  padding: clamp(0.8rem, 1.5vw, 1.2rem) clamp(1.5rem, 3vw, 2rem);
   background: var(--blue);
   color: white;
   text-decoration: none;
   border-radius: 32px;
   border: none;
   cursor: pointer;
+  font-family: inherit;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
   transition: all 0.3s ease;
 }
 
@@ -136,6 +109,7 @@ section {
 .secondary-btn {
   color: var(--blue);
   text-decoration: underline;
+  font-family: inherit;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -144,36 +118,68 @@ section {
   transform: scale(1.05);
 }
 
-/* RESEARCH */
+/* INTERACTIVE TEXT / TOOLTIP */
+.interactive-text {
+  position: relative;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+  margin-right: 1rem;
+  font-family: inherit;
+}
+
+.interactive-text:hover {
+  border-bottom: 1px solid var(--orange);
+}
+
+.interactive-text::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--blue);
+  color: white;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.75rem;
+  opacity: 0;
+  white-space: normal;
+  max-width: 220px;
+  text-align: center;
+  pointer-events: none;
+  border-radius: 6px;
+  z-index: 10;
+  transition: opacity 0.3s ease;
+}
+
+.interactive-text:hover::after {
+  opacity: 1;
+}
+
+/* RESEARCH BLOCK */
 .research-block {
-  margin-top: 32px;
+  margin-top: 2rem;
 }
 
 .research ul {
-  padding-left: 20px;
+  padding-left: 1.25rem;
 }
 
-/* SOLUTION */
-.pillars {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 32px;
-  margin-top: 40px;
-}
-
-/* ADVANTAGE */
+/* SOLUTION / PILLARS */
+.pillars,
 .advantage-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: start;
+  justify-items: center;
 }
 
-/* CARD HOVER EFFECTS */
 .pillar,
 .advantage-grid > * {
   background: white;
   border-radius: 12px;
-  padding: 24px;
+  padding: 1.5rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -186,17 +192,18 @@ section {
   }
 }
 
-/* CONTACT */
+/* CONTACT FORM */
 .contact form {
   max-width: 520px;
+  margin: auto;
 }
 
 .contact input,
 .contact textarea,
 .contact select {
   width: 100%;
-  padding: 14px;
-  margin-bottom: 16px;
+  padding: 0.875rem;
+  margin-bottom: 1rem;
   border-radius: 8px;
   border: 1px solid #ccc;
   font-family: inherit;
@@ -209,42 +216,46 @@ section {
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 40px;
-  font-size: 14px;
+  padding: 2.5rem;
+  font-size: 0.875rem;
   color: #666;
   background: var(--bg);
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  section {
-    padding: 64px 24px;
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 1024px) {
+  .nav {
+    padding: 1.5rem 2rem;
   }
-
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+  }
   .pillars,
   .advantage-grid {
-    grid-template-columns: 1fr;
+    gap: 2rem;
   }
+}
 
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 1.5rem;
+  }
   .hero h1 {
-    font-size: 44px;
+    font-size: clamp(1.75rem, 6vw, 3rem);
   }
-
   .hero-sub {
-    font-size: 18px;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
   }
 }
 
 @media (max-width: 480px) {
   section {
-    padding: 48px 16px;
+    padding: 2rem 1rem;
   }
-
   .hero h1 {
-    font-size: 36px;
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
   }
-
   .hero-sub {
-    font-size: 16px;
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
   }
 }
