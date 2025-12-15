@@ -32,7 +32,6 @@ body {
 }
 
 .nav-logo {
-  font-family: 'Playfair Display', serif;
   font-size: 28px;
   font-weight: 700;
 }
@@ -51,11 +50,12 @@ body {
 .nav-cta {
   color: var(--orange);
   font-weight: 600;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-cta:hover {
   color: var(--hover-orange);
+  transform: scale(1.05);
 }
 
 /* SECTIONS */
@@ -68,12 +68,11 @@ section {
 /* HERO */
 .hero {
   background: var(--orange);
-  color: Blue;
+  color: white;
   padding-bottom: 120px;
 }
 
 .hero h1 {
-  font-family: 'Playfair Display', serif;
   font-size: 64px;
   line-height: 1.1;
 }
@@ -131,16 +130,18 @@ section {
 .primary-btn:hover {
   background: var(--hover-blue);
   opacity: 0.95;
+  transform: scale(1.05);
 }
 
 .secondary-btn {
   color: var(--blue);
   text-decoration: underline;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .secondary-btn:hover {
   color: var(--hover-blue);
+  transform: scale(1.05);
 }
 
 /* RESEARCH */
@@ -183,10 +184,6 @@ section {
     transform: translateY(-6px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.12);
   }
-}
-
-.pillar h4 {
-  font-family: 'Playfair Display', serif;
 }
 
 /* CONTACT */
