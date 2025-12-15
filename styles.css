@@ -295,3 +295,52 @@ footer {
     scroll-snap-type: none;
   }
 }
+
+/* =========================================================
+   RESEARCH BLOCKS — MATCHING PILLARS STYLE
+   ========================================================= */
+.research-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(2rem, 4vw, 4rem);
+  margin-top: clamp(2rem, 4vw, 4rem);
+}
+
+.research-block {
+  background: white;
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  word-wrap: break-word;
+}
+
+@media (hover: hover) {
+  .research-block:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+  }
+}
+
+.research-block h4 {
+  margin-bottom: 0.75rem;
+}
+
+.research-block p,
+.research-block ul {
+  margin-top: 0;
+  line-height: 1.5;
+}
+
+.research-block a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.research-block a:hover {
+  color: var(--hover-blue);
+}
