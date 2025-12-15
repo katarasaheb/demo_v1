@@ -55,6 +55,11 @@ section {
   line-height: 1.1;
 }
 
+.hero {
+  background: var(--orange);
+  color: white;
+}
+
 .hero-sub {
   margin-top: 32px;
   font-size: 20px;
@@ -94,12 +99,16 @@ section {
   display: inline-block;
   margin-top: 40px;
   padding: 16px 36px;
-  background: var(--orange);
+  background: var(--blue);
   color: white;
   text-decoration: none;
   border-radius: 32px;
   border: none;
   cursor: pointer;
+}
+
+.hero .primary-btn:hover {
+  opacity: 0.9;
 }
 
 .secondary-btn {
