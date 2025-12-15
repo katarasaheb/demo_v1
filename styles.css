@@ -66,24 +66,72 @@ section {
 }
 
 /* HERO */
+/* HERO — Tesla-style responsive */
 .hero {
+  width: 100%;
+  min-height: 90vh; /* gives presence on desktop */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: var(--orange);
   color: white;
-  padding-bottom: clamp(6rem, 12vw, 10rem);
   text-align: center;
+  padding: clamp(4rem, 10vw, 10rem) 1.5rem;
 }
 
+/* Inner content wrapper */
+.hero-content {
+  max-width: 1100px;
+  width: 100%;
+}
+
+/* Headline */
 .hero h1 {
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  line-height: 1.1;
-  margin: 0 auto 1rem auto;
-  max-width: 900px;
+  font-size: clamp(2.4rem, 6vw, 5.5rem);
+  line-height: 1.05;
+  margin: 0;
+  font-weight: 700;
 }
 
+/* Subheading */
 .hero-sub {
-  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
   margin-top: 1.5rem;
+  opacity: 0.95;
 }
+
+/* CTA */
+.hero .primary-btn {
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+}
+
+/* Large desktop enhancement */
+@media (min-width: 1440px) {
+  .hero {
+    min-height: 100vh;
+  }
+
+  .hero h1 {
+    font-size: 6rem;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .hero {
+    min-height: 80vh;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .hero {
+    min-height: 75vh;
+    padding-top: 6rem;
+  }
+}
+
 
 .primary-btn {
   display: inline-block;
