@@ -316,7 +316,7 @@ section:not(.hero) {
 
 /* Hero refinements */
 .hero {
-  max-width: none;
+  max-width: 1440px;
   padding-top: calc(clamp(4rem, 10vw, 10rem) + 2rem);
 }
 
@@ -327,4 +327,25 @@ section:not(.hero) {
 
 .hero h1 {
   letter-spacing: -0.02em;
+}
+/* FADE-IN ENTRANCE ANIMATION */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Default hidden state */
+.fade-in {
+  opacity: 0;
+}
+
+/* Activated state */
+.fade-in.visible {
+  animation: fadeUp 0.9s ease-out forwards;
 }
