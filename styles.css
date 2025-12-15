@@ -214,19 +214,32 @@ h1, h2, h3, h4, p, span.interactive-text, li {
   border-top: 4px solid var(--pillars-color2);
 }
 
-.problem .pillar p,
-.research-section .pillar p {
-  font-size: 1rem;
-  color: var(--text);
+/* =========================================================
+   PILLAR HOVER REVEAL
+   ========================================================= */
+.pillar {
+  position: relative;
+  overflow: hidden;
 }
 
-/* Hover Effects */
+.pillar p {
+  opacity: 0;                   /* hidden initially */
+  transform: translateY(20px);   /* start slightly below */
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  margin-top: 0.5rem;           /* spacing from heading */
+}
+
+/* Reveal paragraph on hover */
+.pillar:hover p {
+  opacity: 1;
+  transform: translateY(0);      /* slide into place */
+}
+
+/* Lift the entire pillar slightly on hover */
 @media (hover: hover) {
-  .pillar:hover,
-  .advantage-grid > *:hover,
-  .research-block:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+  .pillar:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
   }
 }
 
@@ -306,47 +319,5 @@ footer {
   html,
   body {
     scroll-snap-type: none;
-  }
-}
-
-/* ---------- Pillar Hover Reveal ---------- */
-.pillar p {
-  max-height: 0;           /* hide by default */
-  opacity: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
-  padding-top: 0;
-}
-
-/* Reveal on hover */
-.pillar:hover p {
-  max-height: 200px;       /* enough height for the text */
-  opacity: 1;
-  padding-top: 0.5rem;
-}
-
-/* ---------- Pillar Hover Slide-Up Reveal ---------- */
-.pillar {
-  position: relative;
-  overflow: hidden; /* ensures content doesn't spill outside */
-}
-
-.pillar p {
-  opacity: 0;               /* hidden initially */
-  transform: translateY(20px); /* start slightly below */
-  transition: transform 0.4s ease, opacity 0.4s ease;
-  margin-top: 0.5rem;       /* spacing from heading */
-}
-
-/* Reveal paragraph on hover */
-.pillar:hover p {
-  opacity: 1;
-  transform: translateY(0); /* slide into place */
-}
-
-@media (hover: hover) {
-  .pillar:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 14px 28px rgba(0,0,0,0.12);
   }
 }
