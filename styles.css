@@ -3,20 +3,27 @@
   --blue: #002E50;
   --bg: #F8F8F7;
   --text: #1D1D1F;
+  --hover-orange: #e04a00;
+  --hover-blue: #00203f;
 }
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
+  line-height: 1.6;
   background: var(--bg);
   color: var(--text);
 }
 
-/* NAV */
+/* NAVIGATION */
 .nav {
   display: flex;
   justify-content: space-between;
@@ -34,11 +41,21 @@ body {
   margin-left: 24px;
   text-decoration: none;
   color: var(--text);
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: var(--orange);
 }
 
 .nav-cta {
   color: var(--orange);
   font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-cta:hover {
+  color: var(--hover-orange);
 }
 
 /* SECTIONS */
@@ -49,15 +66,16 @@ section {
 }
 
 /* HERO */
+.hero {
+  background: var(--orange);
+  color: white;
+  padding-bottom: 120px;
+}
+
 .hero h1 {
   font-family: 'Playfair Display', serif;
   font-size: 64px;
   line-height: 1.1;
-}
-
-.hero {
-  background: var(--orange);
-  color: white;
 }
 
 .hero-sub {
@@ -86,8 +104,10 @@ section {
   padding: 6px 10px;
   font-size: 12px;
   opacity: 0;
-  transition: 0.3s;
+  transition: opacity 0.3s ease;
   white-space: nowrap;
+  pointer-events: none;
+  z-index: 10;
 }
 
 .interactive-text:hover::after {
@@ -105,15 +125,22 @@ section {
   border-radius: 32px;
   border: none;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.hero .primary-btn:hover {
-  opacity: 0.9;
+.primary-btn:hover {
+  background: var(--hover-blue);
+  opacity: 0.95;
 }
 
 .secondary-btn {
   color: var(--blue);
   text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.secondary-btn:hover {
+  color: var(--hover-blue);
 }
 
 /* RESEARCH */
@@ -128,20 +155,38 @@ section {
 /* SOLUTION */
 .pillars {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 32px;
   margin-top: 40px;
-}
-
-.pillar h4 {
-  font-family: 'Playfair Display', serif;
 }
 
 /* ADVANTAGE */
 .advantage-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 40px;
+}
+
+/* CARD HOVER EFFECTS */
+.pillar,
+.advantage-grid > * {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .pillar:hover,
+  .advantage-grid > *:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+  }
+}
+
+.pillar h4 {
+  font-family: 'Playfair Display', serif;
 }
 
 /* CONTACT */
@@ -160,12 +205,17 @@ section {
   font-family: inherit;
 }
 
+.contact textarea {
+  resize: vertical;
+}
+
 /* FOOTER */
 footer {
   text-align: center;
   padding: 40px;
   font-size: 14px;
   color: #666;
+  background: var(--bg);
 }
 
 /* RESPONSIVE */
@@ -181,5 +231,23 @@ footer {
 
   .hero h1 {
     font-size: 44px;
+  }
+
+  .hero-sub {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 48px 16px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero-sub {
+    font-size: 16px;
   }
 }
