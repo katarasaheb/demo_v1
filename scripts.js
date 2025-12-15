@@ -1,7 +1,7 @@
 /* =========================================================
-   Kitchin — Main JavaScript
+   Kitchin — Main JavaScript (Final)
    Purpose: UI behavior only (layout-agnostic)
-   Fully mobile-adaptive
+   Tesla-style responsive enhancements
    Production-safe
    ========================================================= */
 
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* -----------------------------------------
-     3. Reset nav state on resize (mobile → desktop)
+     3. Reset nav state on resize
      ----------------------------------------- */
   window.addEventListener("resize", () => {
     if (window.innerWidth > 768 && navMenu?.classList.contains("is-open")) {
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* -----------------------------------------
-     5. Sticky nav transparency (Tesla-style)
+     5. Sticky nav scroll state (Tesla-style)
      ----------------------------------------- */
   if (nav) {
     window.addEventListener("scroll", () => {
@@ -76,7 +76,34 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* -----------------------------------------
-     6. Contact form UX protection
+     6. Scroll-triggered Fade-in (IntersectionObserver)
+     ----------------------------------------- */
+  const fadeElements = document.querySelectorAll(".fade-in");
+
+  if ("IntersectionObserver" in window && fadeElements.length) {
+    const fadeObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target); // fire once
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: "0px 0px -60px 0px"
+      }
+    );
+
+    fadeElements.forEach(el => fadeObserver.observe(el));
+  } else {
+    // Fallback: reveal immediately
+    fadeElements.forEach(el => el.classList.add("visible"));
+  }
+
+  /* -----------------------------------------
+     7. Contact form UX protection
      ----------------------------------------- */
   const contactForm = document.querySelector("form[data-contact-form]");
   if (contactForm) {
