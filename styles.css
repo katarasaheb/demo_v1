@@ -211,6 +211,22 @@ h1, h2, h3, h4, p, span.interactive-text, li {
   word-wrap: break-word;
 }
 
+/* Add subtle differentiation for problem/research pillars */
+.problem .pillar h4,
+.research-section .pillar h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--blue);
+}
+
+.problem .pillar p,
+.research-section .pillar p {
+  font-size: 1rem;
+  color: var(--text);
+}
+
+/* Hover Effects */
 @media (hover: hover) {
   .pillar:hover,
   .advantage-grid > *:hover,
