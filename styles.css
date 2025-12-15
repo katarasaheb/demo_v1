@@ -1,12 +1,21 @@
+/* =========================================================
+   KITCHIN — MASTER STYLESHEET (TESLA-STYLE RESPONSIVE)
+   Typography: Serif (Global)
+   ========================================================= */
+
+/* ---------- ROOT VARIABLES ---------- */
 :root {
-  --orange: #FC5100;
+  --orange: #EC5E27;
   --blue: #002E50;
   --bg: #F8F8F7;
   --text: #1D1D1F;
   --hover-orange: #e04a00;
   --hover-blue: #00203f;
+
+  --nav-height: 88px;
 }
 
+/* ---------- RESET ---------- */
 * {
   box-sizing: border-box;
 }
@@ -23,12 +32,31 @@ body {
   color: var(--text);
 }
 
-/* NAVIGATION */
+/* =========================================================
+   NAVIGATION (GLASS + STICKY)
+   ========================================================= */
 .nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: var(--nav-height);
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: clamp(1.5rem, 3vw, 4rem) clamp(1rem, 5vw, 6rem);
+
+  padding: 0 clamp(1.5rem, 5vw, 6rem);
+
+  background: rgba(248, 248, 247, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  transition: background 0.35s ease, box-shadow 0.35s ease;
+}
+
+.nav.scrolled {
+  background: rgba(248, 248, 247, 0.95);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
 .nav-logo {
@@ -50,96 +78,77 @@ body {
 .nav-cta {
   color: var(--orange);
   font-weight: 600;
-  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-cta:hover {
   color: var(--hover-orange);
-  transform: scale(1.05);
 }
 
-/* STICKY NAV — TESLA STYLE */
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-
-  background: rgba(248, 248, 247, 0.7);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-
-  transition: background 0.35s ease, box-shadow 0.35s ease;
-}
-
-/* When scrolled */
-.nav.scrolled {
-  background: rgba(248, 248, 247, 0.95);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-}
-
-/* SECTIONS */
+/* =========================================================
+   SECTIONS — WIDE SCREEN FRIENDLY
+   ========================================================= */
 section {
-  max-width: 1100px;
+  width: 100%;
+  max-width: 1280px;
   margin: auto;
-  padding: clamp(2rem, 5vw, 6rem) clamp(1rem, 5vw, 4rem);
+
+  padding:
+    clamp(4rem, 8vw, 8rem)
+    clamp(1.5rem, 6vw, 6rem);
+
+  scroll-margin-top: var(--nav-height);
 }
 
-/* HERO */
-/* HERO — Tesla-style responsive */
+/* =========================================================
+   HERO — TESLA SCALE
+   ========================================================= */
 .hero {
-  width: 100%;
-  min-height: 90vh; /* gives presence on desktop */
+  max-width: none;
+  min-height: calc(100vh - var(--nav-height));
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   background: var(--orange);
   color: white;
   text-align: center;
-  padding: clamp(4rem, 10vw, 10rem) 1.5rem;
 }
 
-/* Inner content wrapper */
 .hero-content {
-  max-width: 1100px;
   width: 100%;
+  max-width: 1400px;
+  padding-inline: clamp(1.5rem, 6vw, 6rem);
 }
 
-/* Headline */
 .hero h1 {
-  font-size: clamp(2.4rem, 6vw, 5.5rem);
+  font-size: clamp(2.8rem, 6vw, 6.5rem);
   line-height: 1.05;
+  letter-spacing: -0.02em;
   margin: 0;
-  font-weight: 700;
 }
 
-/* Subheading */
 .hero-sub {
-  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  font-size: clamp(1.05rem, 2vw, 1.4rem);
   margin-top: 1.5rem;
   opacity: 0.95;
 }
 
-/* CTA */
 .hero .primary-btn {
-  margin-top: clamp(2rem, 4vw, 3.5rem);
-  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  margin-top: clamp(2.5rem, 5vw, 4rem);
 }
 
-/* Large desktop enhancement */
+/* Extra-large desktop */
 @media (min-width: 1440px) {
-  .hero {
-    min-height: 100vh;
-  }
-
   .hero h1 {
-    font-size: 6rem;
+    font-size: 7rem;
   }
 }
 
 /* Tablet */
 @media (max-width: 1024px) {
   .hero {
-    min-height: 80vh;
+    min-height: 85vh;
   }
 }
 
@@ -147,207 +156,59 @@ section {
 @media (max-width: 600px) {
   .hero {
     min-height: 75vh;
-    padding-top: 6rem;
   }
 }
 
-
+/* =========================================================
+   BUTTONS
+   ========================================================= */
 .primary-btn {
   display: inline-block;
-  margin-top: clamp(2rem, 5vw, 3rem);
-  padding: clamp(0.8rem, 1.5vw, 1.2rem) clamp(1.5rem, 3vw, 2rem);
+  padding: 0.9rem 2.2rem;
   background: var(--blue);
   color: white;
   text-decoration: none;
   border-radius: 32px;
-  border: none;
-  cursor: pointer;
   font-family: inherit;
-  font-size: clamp(1rem, 1.5vw, 1.25rem);
-  transition: all 0.3s ease;
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .primary-btn:hover {
   background: var(--hover-blue);
-  opacity: 0.95;
   transform: scale(1.05);
 }
 
-.secondary-btn {
-  color: var(--blue);
-  text-decoration: underline;
-  font-family: inherit;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.secondary-btn:hover {
-  color: var(--hover-blue);
-  transform: scale(1.05);
-}
-
-/* INTERACTIVE TEXT / TOOLTIP */
-.interactive-text {
-  position: relative;
-  cursor: pointer;
-  border-bottom: 1px solid transparent;
-  display: inline-block;
-  margin-right: 1rem;
-  font-family: inherit;
-}
-
-.interactive-text:hover {
-  border-bottom: 1px solid var(--orange);
-}
-
-.interactive-text::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: -calc(100% + 0.5rem);
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--blue);
-  color: white;
-  padding: 0.4rem 0.6rem;
-  font-size: 0.75rem;
-  opacity: 0;
-  white-space: normal;
-  max-width: 220px;
-  text-align: center;
-  pointer-events: none;
-  border-radius: 6px;
-  z-index: 10;
-  transition: opacity 0.3s ease;
-}
-
-.interactive-text:hover::after {
-  opacity: 1;
-}
-
-/* RESEARCH BLOCK */
-.research-block {
-  margin-top: 2rem;
-}
-
-.research ul {
-  padding-left: 1.25rem;
-}
-
-/* SOLUTION / PILLARS */
+/* =========================================================
+   GRID SYSTEMS
+   ========================================================= */
 .pillars,
 .advantage-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: clamp(1.5rem, 3vw, 3rem);
-  align-items: start;
-  justify-items: center;
+  gap: clamp(2rem, 4vw, 4rem);
 }
 
 .pillar,
 .advantage-grid > * {
   background: white;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-@media (hover: hover) and (pointer: fine) {
+@media (hover: hover) {
   .pillar:hover,
   .advantage-grid > *:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+    transform: translateY(-8px);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.12);
   }
 }
 
-/* CONTACT FORM */
-.contact form {
-  max-width: 520px;
-  margin: auto;
-}
-
-.contact input,
-.contact textarea,
-.contact select {
-  width: 100%;
-  padding: 0.875rem;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-family: inherit;
-}
-
-.contact textarea {
-  resize: vertical;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 2.5rem;
-  font-size: 0.875rem;
-  color: #666;
-  background: var(--bg);
-}
-
-/* RESPONSIVE BREAKPOINTS */
-@media (max-width: 1024px) {
-  .nav {
-    padding: 1.5rem 2rem;
-  }
-  .hero h1 {
-    font-size: clamp(2rem, 5vw, 4rem);
-  }
-  .pillars,
-  .advantage-grid {
-    gap: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  section {
-    padding: 3rem 1.5rem;
-  }
-  .hero h1 {
-    font-size: clamp(1.75rem, 6vw, 3rem);
-  }
-  .hero-sub {
-    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-  }
-}
-
-@media (max-width: 480px) {
-  section {
-    padding: 2rem 1rem;
-  }
-  .hero h1 {
-    font-size: clamp(1.5rem, 6vw, 2.5rem);
-  }
-  .hero-sub {
-    font-size: clamp(0.8rem, 2.5vw, 1rem);
-  }
-}
-
-/* Exclude hero from section width constraint */
-section:not(.hero) {
-  max-width: 1100px;
-  margin: auto;
-}
-
-/* Hero refinements */
-.hero {
-  max-width: none;
-  padding-top: calc(clamp(4rem, 10vw, 10rem) + 2rem);
-}
-
-.hero-content {
-  max-width: 1200px;
-  padding-bottom: 2rem;
-}
-
-.hero h1 {
-  letter-spacing: -0.02em;
-}
-/* FADE-IN ENTRANCE ANIMATION */
+/* =========================================================
+   FADE-IN (INTERSECTIONOBSERVER READY)
+   ========================================================= */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -359,12 +220,67 @@ section:not(.hero) {
   }
 }
 
-/* Default hidden state */
 .fade-in {
   opacity: 0;
 }
 
-/* Activated state */
 .fade-in.visible {
   animation: fadeUp 0.9s ease-out forwards;
+}
+
+/* =========================================================
+   FORMS
+   ========================================================= */
+.contact form {
+  max-width: 560px;
+  margin: auto;
+}
+
+.contact input,
+.contact textarea,
+.contact select {
+  width: 100%;
+  padding: 0.9rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+footer {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+/* =========================================================
+   TESLA-STYLE SCROLL SNAP (DESKTOP / TABLET)
+   ========================================================= */
+@media (min-width: 768px) {
+  html,
+  body {
+    height: 100%;
+    scroll-snap-type: y mandatory;
+  }
+
+  section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  .hero {
+    scroll-snap-align: start;
+  }
+}
+
+/* Disable snap on phones */
+@media (max-width: 767px) {
+  html,
+  body {
+    scroll-snap-type: none;
+  }
 }
