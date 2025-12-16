@@ -222,3 +222,54 @@ document.querySelectorAll('.system-step').forEach(step => {
     step.classList.add('active');
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* ---------- Staggered entrance ---------- */
+  document.querySelectorAll('[data-delay]').forEach(el => {
+    el.style.transitionDelay = `${el.dataset.delay * 120}ms`;
+  });
+
+  /* ---------- Layer tooltip ---------- */
+  const tooltip = document.getElementById("layerTooltip");
+  document.querySelectorAll(".layer-card").forEach(card => {
+    card.addEventListener("mouseenter", () => {
+      tooltip.innerHTML = `<p>${card.dataset.desc}</p>`;
+    });
+    card.addEventListener("mouseleave", () => {
+      tooltip.innerHTML = `<p>Hover over a layer to see details.</p>`;
+    });
+  });
+
+  /* ---------- Scroll-synced + auto-advance moat ---------- */
+  const steps = document.querySelectorAll(".system-step");
+  let current = 0;
+  let idleTimer;
+
+  const activateStep = index => {
+    steps.forEach(s => s.classList.remove("active"));
+    steps[index].classList.add("active");
+  };
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        current = [...steps].indexOf(entry.target);
+        activateStep(current);
+        resetIdle();
+      }
+    });
+  }, { threshold: 0.6 });
+
+  steps.forEach(step => observer.observe(step));
+
+  function resetIdle() {
+    clearInterval(idleTimer);
+    idleTimer = setInterval(() => {
+      current = (current + 1) % steps.length;
+      activateStep(current);
+    }, 2400);
+  }
+
+  resetIdle();
+});
