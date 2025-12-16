@@ -723,6 +723,18 @@ footer {
   transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
 }
 
+/* Ensure readable text on hover */
+.layer-card,
+.layer-card span {
+  color: var(--text);
+}
+
+.layer-card:hover,
+.layer-card:hover span {
+  color: var(--blue); /* or #1D1D1F */
+}
+
+
 .layer-card span {
   font-size: 1.3rem;
 }
