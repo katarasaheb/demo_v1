@@ -1491,3 +1491,33 @@ y
   flex-direction: column;
   gap: 1.25rem;
 }
+
+/* ===============================
+   ISTACK / MOAT — FINAL AUTHORITY
+   =============================== */
+
+.istack-moat-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: flex-start;
+}
+
+.istack-column,
+.moat-column {
+  width: 100%;
+}
+
+.istack-vertical,
+.moat-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .istack-moat-layout {
+    grid-template-columns: 1fr;
+  }
+}
