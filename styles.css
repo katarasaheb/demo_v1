@@ -1,22 +1,24 @@
 /* =========================================================
-   KITCHIN — MASTER STYLESHEET (TESLA-GRADE)
+   KITCHIN — MASTER STYLESHEET (TESLA-STYLE)
    Typography: Playfair Display (Global Serif)
    ========================================================= */
 
+/* ---------- ROOT VARIABLES ---------- */
 :root {
   --orange: #EC5E27;
   --blue: #002E50;
   --bg: #F8F8F7;
   --text: #1D1D1F;
-
+  --hover-orange: #e04a00;
+  --hover-blue: #00203f;
   --nav-height: 88px;
 }
 
 /* ---------- RESET ---------- */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 html {
@@ -25,37 +27,38 @@ html {
 
 body {
   font-family: "Playfair Display", serif;
+  line-height: 1.6;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
 }
 
 /* =========================================================
-   NAV (GLASS)
+   NAVIGATION (GLASS + STICKY)
    ========================================================= */
 .nav {
   position: sticky;
   top: 0;
-  height: var(--nav-height);
   z-index: 1000;
+  height: var(--nav-height);
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  padding: 0 clamp(1.5rem, 6vw, 6rem);
-  background: rgba(248,248,247,0.75);
+  padding: 0 clamp(1.5rem, 5vw, 6rem);
+
+  background: rgba(248, 248, 247, 0.75);
   backdrop-filter: blur(14px);
   transition: box-shadow 0.3s ease;
 }
 
 .nav.scrolled {
-  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 
 .nav-logo {
-  font-weight: 700;
   font-size: 1.8rem;
+  font-weight: 700;
 }
 
 .nav-menu a {
@@ -68,11 +71,18 @@ body {
   color: var(--orange);
 }
 
+.nav-cta {
+  color: var(--orange);
+  font-weight: 600;
+}
+
 /* =========================================================
    SECTIONS
    ========================================================= */
 section {
-  padding: clamp(5rem, 10vw, 10rem) clamp(1.5rem, 6vw, 6rem);
+  width: 100%;
+  padding: clamp(4rem, 8vw, 8rem)
+           clamp(1.5rem, 6vw, 6rem);
   scroll-margin-top: var(--nav-height);
 }
 
@@ -96,18 +106,16 @@ section {
 }
 
 .hero h1 {
-  font-size: clamp(3rem, 7vw, 7rem);
+  font-size: clamp(3rem, 6vw, 6.5rem);
   line-height: 1.05;
 }
 
 .hero-sub {
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-size: clamp(1.05rem, 2vw, 1.4rem);
   margin-top: 1.5rem;
+  opacity: 0.95;
 }
 
-/* =========================================================
-   BUTTON
-   ========================================================= */
 .primary-btn {
   margin-top: 3rem;
   display: inline-block;
@@ -115,7 +123,7 @@ section {
   background: var(--blue);
   color: white;
   text-decoration: none;
-  border-radius: 40px;
+  border-radius: 32px;
   transition: transform 0.3s ease;
 }
 
@@ -124,87 +132,84 @@ section {
 }
 
 /* =========================================================
-   CANADIAN GROCERY CRISIS — REDESIGN
+   CANADIAN GROCERY CRISIS — SCALED + ANIMATED
    ========================================================= */
-.crisis {
-  background: linear-gradient(
-    to bottom,
-    #ffffff 0%,
-    #f2f2f2 100%
-  );
-}
-
-.crisis-header {
+.crisis-scale {
   text-align: center;
-  margin-bottom: 5rem;
 }
 
-.crisis-header h1 {
+.crisis-scale h1 {
   font-size: clamp(3rem, 6vw, 5.5rem);
   font-weight: 700;
   line-height: 1.1;
+  margin-bottom: 2rem;
 }
 
-.crisis-header p {
+.crisis-intro {
   max-width: 900px;
-  margin: 2rem auto 0;
+  margin: 0 auto 4rem;
   font-size: 1.25rem;
   opacity: 0.9;
 }
 
-/* ----- Impact Grid ----- */
 .crisis-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: clamp(2rem, 4vw, 4rem);
 }
 
-.impact-card {
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(10px);
-  border-radius: 18px;
+.crisis-card {
+  background: white;
+  border-radius: 16px;
   padding: 3rem 2.5rem;
-  text-align: center;
-
-  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
-  transition: transform 0.35s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-.impact-card:hover {
-  transform: translateY(-10px);
+@media (hover: hover) {
+  .crisis-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.16);
+  }
 }
 
-.impact-number {
+.crisis-number {
   font-size: clamp(3rem, 5vw, 4.5rem);
   font-weight: 700;
   color: var(--orange);
 }
 
-.impact-title {
+.crisis-title {
   margin-top: 1rem;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   font-weight: 600;
 }
 
-.impact-desc {
+.crisis-desc {
   margin-top: 1rem;
   opacity: 0.85;
 }
 
 /* =========================================================
-   FADE IN
+   FADE-IN
    ========================================================= */
 .fade-in {
   opacity: 0;
 }
 
 .fade-in.visible {
-  animation: fadeUp 0.9s ease forwards;
+  animation: fadeUp 0.9s ease-out forwards;
 }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(32px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* =========================================================
@@ -213,6 +218,6 @@ section {
 footer {
   text-align: center;
   padding: 3rem;
-  font-size: 0.9rem;
-  opacity: 0.7;
+  font-size: 0.875rem;
+  color: #666;
 }
