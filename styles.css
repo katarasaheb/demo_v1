@@ -430,3 +430,91 @@ footer {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
+
+/* =========================================================
+   ISTACK — INTERACTIVE TECH STACK
+   ========================================================= */
+.istack-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+/* Desktop layout */
+@media (min-width: 768px) {
+  .istack-diagram {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/* Individual layers */
+.layer {
+  background: var(--orange);
+  color: #fff;
+  padding: 1.5rem 2.5rem;
+  border-radius: 2rem;
+  min-width: 220px;
+  text-align: center;
+  position: relative;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  animation: float 3s ease-in-out infinite;
+}
+
+.layer span {
+  display: block;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.layer p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Hover effect — lift + glow + connected layers highlight */
+.layer:hover {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  background: #ff6b3a;
+}
+
+/* Arrows between layers */
+.layer:not(:last-child)::after {
+  content: "→";
+  font-size: 2rem;
+  color: var(--blue);
+  display: block;
+  margin: 1rem auto 0 auto;
+}
+
+@media (min-width: 768px) {
+  .layer:not(:last-child)::after {
+    position: absolute;
+    top: 50%;
+    right: -2rem;
+    transform: translateY(-50%);
+    margin: 0;
+  }
+
+  .layer:last-child::after { content: ""; }
+}
+
+/* Highlight connected layers on hover */
+.layer:hover ~ .layer,
+.layer:hover ~ .layer ~ .layer {
+  opacity: 0.85;
+  transform: scale(0.98);
+}
