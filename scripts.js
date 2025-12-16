@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ---------- Fade-in animation ---------- */
+  /* Fade-in observer for layer cards + intro */
   const fadeObserver = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
@@ -123,9 +123,10 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     { threshold: 0.15 }
   );
+
   document.querySelectorAll(".fade-in").forEach(el => fadeObserver.observe(el));
 
-  /* ---------- Layer tooltip ---------- */
+  /* Layer Tooltip */
   const tooltip = document.getElementById('layerTooltip');
   const layerCards = document.querySelectorAll('.layer-card');
 
@@ -145,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* ---------- How It Works hover ---------- */
+  /* How It Works Hover */
   const howItems = document.querySelectorAll('.how-it-works ul li');
   const howDetailBox = document.querySelector('.how-it-works-detail');
 
@@ -153,6 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
     item.addEventListener('mouseenter', () => {
       howDetailBox.innerHTML = `<p>${item.dataset.desc}</p>`;
     });
+
     item.addEventListener('mouseleave', () => {
       howDetailBox.innerHTML = `<p>Hover over a point to see details.</p>`;
     });
