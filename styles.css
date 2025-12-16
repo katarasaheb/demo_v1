@@ -746,3 +746,50 @@ footer {
   font-size: 0.9rem;
   z-index: 999;
 }
+/* Layers Grid */
+.layers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  justify-items: center;
+}
+
+/* Layer Card */
+.layer-card {
+  background: var(--orange);
+  color: #fff;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.layer-card span {
+  display: block;
+  font-size: 1.2rem;
+}
+
+.layer-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  background: #ff6b3a;
+}
+
+/* Tooltip */
+.layer-tooltip {
+  position: fixed;
+  padding: 0.8rem 1rem;
+  background: var(--blue);
+  color: #fff;
+  border-radius: 12px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.2s;
+  max-width: 220px;
+  font-size: 0.9rem;
+  z-index: 999;
+}
