@@ -273,3 +273,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   resetIdle();
 });
+
+/* ===============================
+   iStack Moat Sync
+   =============================== */
+
+const moatSteps = document.querySelectorAll('.moat-step');
+let moatIndex = 0;
+
+const advanceMoat = () => {
+  moatSteps.forEach(s => s.classList.remove('active'));
+  moatSteps[moatIndex].classList.add('active');
+  moatIndex = (moatIndex + 1) % moatSteps.length;
+};
+
+setInterval(advanceMoat, 2200);
