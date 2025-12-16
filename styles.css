@@ -1460,3 +1460,17 @@ footer {
   transform: translateX(2px);
 }
 y
+/* Moat uses the SAME system */
+.moat-vertical {
+  margin-top: 0;
+}
+
+/* Optional: slightly firmer presence */
+.moat-layer {
+  background: #fff;
+}
+
+/* Keep interactions perfectly mirrored */
+.moat-layer:hover {
+  transform: translateX(-6px);
+}
