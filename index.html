@@ -6,263 +6,171 @@
 <meta name="description" content="Kitchin — Rebuilding grocery from first principles. Fresh, Transparent, Scalable Grocery Solutions"> 
 <title>Kitchin — Rebuilding Grocery from First Principles</title>
 
-<!-- Typography --> <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet"> 
+<!-- Typography --> 
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet"> 
 <link rel="stylesheet" href="styles.css">
 </head> 
 
 <body> 
 
 <header class="nav" aria-label="Main navigation">
-<div class="nav-logo fade-in">kitchin</div> 
-<nav class="nav-menu"> 
-<a href="#problem" class="fade-in">The Canadian Grocery Crisis</a> 
-<a href="#solution" class="fade-in">The iStack</a>
-<a href="#advantage" class="fade-in">Avantage</a> 
-<a href="#alberta" class="fade-in">Alberta</a> 
-<a href="#contact" class="nav-cta fade-in">Join</a>
-</nav> 
+  <div class="nav-logo fade-in">kitchin</div> 
+  <nav class="nav-menu"> 
+    <a href="#problem" class="fade-in">The Canadian Grocery Crisis</a> 
+    <a href="#solution" class="fade-in">The iStack</a>
+    <a href="#advantage" class="fade-in">Avantage</a> 
+    <a href="#alberta" class="fade-in">Alberta</a> 
+    <a href="#contact" class="nav-cta fade-in">Join</a>
+  </nav> 
 </header>
 
+<!-- HERO -->
 <section class="hero">
   <div class="fade-in">
-    <h1>
-      Rebuilding Grocery<br>
-      from First Principles
-    </h1>
-    <p class="hero-sub">
-      Fresh • Transparent • Scalable • Sustainable
-    </p>
+    <h1>Rebuilding Grocery<br>from First Principles</h1>
+    <p class="hero-sub">Fresh • Transparent • Scalable • Sustainable</p>
     <a href="#contact" class="primary-btn">Join the Grocery Revolution</a>
   </div>
 </section>
 
+<!-- PROBLEM -->
 <section id="problem" class="crisis-scale">
   <div class="section-content">
-
     <h1 class="fade-in">The Canadian Grocery Crisis</h1>
-
     <p class="crisis-intro fade-in">
       Canada’s grocery system is structurally broken — concentrated power,
       inefficient logistics, and compounding costs affect every household.
     </p>
 
     <div class="crisis-grid">
-
       <div class="crisis-card fade-in">
         <div class="crisis-number" data-count="75" data-suffix="%">0</div>
         <div class="crisis-title">Market Control</div>
         <div class="crisis-desc">Controlled by a handful of retailers.</div>
       </div>
-
       <div class="crisis-card fade-in">
         <div class="crisis-number" data-count="7" data-suffix="B+">$0</div>
         <div class="crisis-title">Food Waste</div>
         <div class="crisis-desc">Lost annually due to inefficiencies.</div>
       </div>
-
       <div class="crisis-card fade-in">
         <div class="crisis-number" data-count="90" data-suffix="%">0</div>
         <div class="crisis-title">Food Insecurity Rise</div>
         <div class="crisis-desc">Increase since 2019.</div>
       </div>
-
       <div class="crisis-card fade-in">
         <div class="crisis-number" data-count="2" data-suffix="M">0</div>
         <div class="crisis-title">Monthly Food Bank Visits</div>
         <div class="crisis-desc">A national alarm signal.</div>
       </div>
-
     </div>
-<div class="crisis-cta-group fade-in">
-  <a
-    href="https://competition-bureau.canada.ca/sites/default/files/attachments/2023/CB-Retail-Grocery-Market-Study-Report-EN-2023-06-23.pdf"
-    target="_blank"
-    rel="noopener"
-    class="primary-btn"
-  >
-    Competition Bureau Report →
-  </a>
 
-  <a
-    href="images/Food Bank Reports 2025.pdf"
-    target="_blank"
-    rel="noopener"
-    class="primary-btn"
-  >
-    Food Bank Canada Report →
-  </a>
-</div>
-
+    <div class="crisis-cta-group fade-in">
+      <a href="https://competition-bureau.canada.ca/sites/default/files/attachments/2023/CB-Retail-Grocery-Market-Study-Report-EN-2023-06-23.pdf" target="_blank" rel="noopener" class="primary-btn">
+        Competition Bureau Report →
+      </a>
+      <a href="images/Food Bank Reports 2025.pdf" target="_blank" rel="noopener" class="primary-btn">
+        Food Bank Canada Report →
+      </a>
+    </div>
   </div>
 </section>
 
-<!-- ISTACK SECTION -->
-<section class="iStack">
+<!-- ISTACK -->
+<section id="solution" class="iStack">
   <div class="section-content">
     <h1>The Kitchin Model</h1>
     <p class="solution-intro">
-      Kitchin is not a store. It is a living, learning ecosystem built on layers of intelligence, infrastructure, and operational precision. At the heart of this system lies the i-Stack — five interlocking layers that together define how Kitchin sources, stores, fulfills, and connects with its customers.
+      Kitchin is a living, learning ecosystem built on layers of intelligence, infrastructure, and operational precision. At its heart is the i-Stack — five interlocking layers that flow into one another like a flywheel.
     </p>
 
-  <!-- Flywheel Diagram -->
-  <div class="istack-diagram flywheel">
-    <!-- Layer 1 -->
-    <div class="layer" data-desc="Real-time inventory intelligence and automated micro-milling for zero idle stock.">
-      <span>iGranary</span>
-      <div class="data-stream"></div>
+    <!-- Flywheel Diagram -->
+    <div class="flywheel-container">
+      <div class="layer" data-desc="Real-time inventory intelligence and automated micro-milling for zero idle stock."><span>iGranary</span><div class="data-stream"></div></div>
+      <div class="layer" data-desc="Predictive routing and real-time orchestration of deliveries and operations."><span>iLogistics</span><div class="data-stream"></div></div>
+      <div class="layer" data-desc="Controlled indoor farms synchronized with demand forecasts for maximum yield."><span>iHydroponics</span><div class="data-stream"></div></div>
+      <div class="layer" data-desc="End-to-end automated bakery that bakes to demand, reducing waste."><span>iBakery</span><div class="data-stream"></div></div>
+      <div class="layer" data-desc="Content engine that generates data-driven insights and drives engagement."><span>iStudio</span></div>
     </div>
 
-    <!-- Layer 2 -->
-    <div class="layer" data-desc="Predictive routing and real-time orchestration of deliveries and operations.">
-      <span>iLogistics</span>
-      <div class="data-stream"></div>
-    </div>
+    <!-- Floating tooltip -->
+    <div class="layer-tooltip" id="layerTooltip"></div>
 
-    <!-- Layer 3 -->
-    <div class="layer" data-desc="Controlled indoor farms synchronized with demand forecasts for maximum yield.">
-      <span>iHydroponics</span>
-      <div class="data-stream"></div>
-    </div>
-
-    <!-- Layer 4 -->
-    <div class="layer" data-desc="End-to-end automated bakery that bakes to demand, reducing waste.">
-      <span>iBakery</span>
-      <div class="data-stream"></div>
-    </div>
-
-    <!-- Layer 5 -->
-    <div class="layer" data-desc="Content engine that generates data-driven insights and drives engagement.">
-      <span>iStudio</span>
+    <!-- How It Works -->
+    <div class="how-it-works">
+      <h3>How It Works</h3>
+      <ul>
+        <li data-desc="The AI brain coordinating all layers in real time.">Smart Grocery Engine</li>
+        <li data-desc="Anticipates SKU-level consumption patterns.">Demand Forecasting</li>
+        <li data-desc="Monitors stock, expiry, and triggers restocking automatically.">Inventory Intelligence</li>
+        <li data-desc="Dynamically orchestrates deliveries to minimize distance and emissions.">Route Optimization</li>
+        <li data-desc="Tracks excess, redistributes inventory, and minimizes spoilage.">Waste Reduction</li>
+      </ul>
+      <div class="how-it-works-detail"><p>Hover over a point to see details.</p></div>
     </div>
   </div>
-
-  <!-- Flywheel Hover Detail -->
-  <div class="layer-details">
-    <p>Hover over a layer to see details.</p>
-  </div>
-
-  <!-- How It Works -->
-  <div class="how-it-works">
-    <h3>How It Works</h3>
-    <ul>
-      <li data-desc="The AI brain coordinating all layers in real time.">Smart Grocery Engine</li>
-      <li data-desc="Anticipates SKU-level consumption patterns.">Demand Forecasting</li>
-      <li data-desc="Monitors stock, expiry, and triggers restocking automatically.">Inventory Intelligence</li>
-      <li data-desc="Dynamically orchestrates deliveries to minimize distance and emissions.">Route Optimization</li>
-      <li data-desc="Tracks excess, redistributes inventory, and minimizes spoilage.">Waste Reduction</li>
-    </ul>
-    <div class="how-it-works-detail">
-      <p>Hover over a point to see details.</p>
-    </div>
-  </div>
-
-    <section class="istack-flywheel">
-  <h2>The Kitchin i-Stack Flywheel</h2>
-  <p class="solution-intro">Each layer of the i-Stack flows into the next, creating a living, learning ecosystem.</p>
-
-  <!-- Flywheel Container -->
-  <div class="flywheel-container">
-    <!-- Layer 1 -->
-    <div class="layer" data-desc="Real-time inventory intelligence and automated micro-milling for zero idle stock.">
-      <span>iGranary</span>
-      <div class="data-stream"></div>
-    </div>
-
-    <!-- Layer 2 -->
-    <div class="layer" data-desc="Predictive routing and real-time orchestration of deliveries and operations.">
-      <span>iLogistics</span>
-      <div class="data-stream"></div>
-    </div>
-
-    <!-- Layer 3 -->
-    <div class="layer" data-desc="Controlled indoor farms synchronized with demand forecasts for maximum yield.">
-      <span>iHydroponics</span>
-      <div class="data-stream"></div>
-    </div>
-
-    <!-- Layer 4 -->
-    <div class="layer" data-desc="End-to-end automated bakery that bakes to demand, reducing waste.">
-      <span>iBakery</span>
-      <div class="data-stream"></div>
-    </div>
-
-    <!-- Layer 5 -->
-    <div class="layer" data-desc="Content engine that generates data-driven insights and drives engagement.">
-      <span>iStudio</span>
-      <div class="data-stream"></div>
-    </div>
-  </div>
-
-  <!-- Floating tooltip -->
-  <div class="layer-tooltip" id="layerTooltip"></div>
-
 </section>
 
-
 <!-- ADVANTAGE --> 
-<section class="Advantage"> 
-<div class="section-content fade-in"> 
-<h2 class="fade-in">The Kitchin Advantage</h2> 
-<div class="advantage-grid"> 
-<div class="content-block fade-in"> 
-<h3>Better for Customers</h3> 
-<div class="interactive-text fade-in" data-tooltip="Direct sourcing, minimal intermediaries">FarmFresh</div> 
-<div class="interactive-text fade-in" data-tooltip="Transparent pricing, not margin stacking">DirectValue</div> 
-<div class="interactive-text fade-in" data-tooltip="Demand-led logistics & fulfillment">QuickShip</div> 
-<div class="interactive-text fade-in" data-tooltip="Canadian-first, sustainability built in">SustainaCan</div> 
-<p>Lower effective prices, fresher food, predictable availability.</p> 
-</div>
-
-<div class="content-block fade-in"> 
-<h3>Better for Investors</h3> 
-<div class="interactive-text fade-in" data-tooltip="Disrupting the Industry with Innovative Solutions">TrailBlazer</div> 
-<div class="interactive-text fade-in" data-tooltip="AI & Automation: Lean Operations, Strong Economics">Scalative</div> 
-<div class="interactive-text fade-in" data-tooltip="Scalable, Poised for Global Growth">Pioneering</div> 
-<p>Infrastructure economics, defensibility, and long-term systemic value.</p> 
-</div> 
-</div> 
-</div> 
+<section id="advantage" class="Advantage"> 
+  <div class="section-content fade-in"> 
+    <h2 class="fade-in">The Kitchin Advantage</h2> 
+    <div class="advantage-grid"> 
+      <div class="content-block fade-in"> 
+        <h3>Better for Customers</h3> 
+        <div class="interactive-text fade-in" data-tooltip="Direct sourcing, minimal intermediaries">FarmFresh</div> 
+        <div class="interactive-text fade-in" data-tooltip="Transparent pricing, not margin stacking">DirectValue</div> 
+        <div class="interactive-text fade-in" data-tooltip="Demand-led logistics & fulfillment">QuickShip</div> 
+        <div class="interactive-text fade-in" data-tooltip="Canadian-first, sustainability built in">SustainaCan</div> 
+        <p>Lower effective prices, fresher food, predictable availability.</p> 
+      </div>
+      <div class="content-block fade-in"> 
+        <h3>Better for Investors</h3> 
+        <div class="interactive-text fade-in" data-tooltip="Disrupting the Industry with Innovative Solutions">TrailBlazer</div> 
+        <div class="interactive-text fade-in" data-tooltip="AI & Automation: Lean Operations, Strong Economics">Scalative</div> 
+        <div class="interactive-text fade-in" data-tooltip="Scalable, Poised for Global Growth">Pioneering</div> 
+        <p>Infrastructure economics, defensibility, and long-term systemic value.</p> 
+      </div> 
+    </div> 
+  </div> 
 </section>
 
 <!-- ALBERTA -->
 <section id="alberta" class="alberta"> 
-<div class="section-content fade-in"> 
-<h2 class="fade-in">Alberta — The Launchpad</h2> 
-<p>Bowden Distribution Hub • 50+ dark stores • Access to 10 major cities • $5B grocery market by 2026</p> 
-<a href="images/Alberta Retail grocery sales 2015-2020.pdf" target="_blank" rel="noopener" class="secondary-btn fade-in"> Alberta Retail Grocery Sales Report → </a> 
-</div> 
+  <div class="section-content fade-in"> 
+    <h2 class="fade-in">Alberta — The Launchpad</h2> 
+    <p>Bowden Distribution Hub • 50+ dark stores • Access to 10 major cities • $5B grocery market by 2026</p> 
+    <a href="images/Alberta Retail grocery sales 2015-2020.pdf" target="_blank" rel="noopener" class="secondary-btn fade-in"> Alberta Retail Grocery Sales Report → </a> 
+  </div> 
 </section>
 
 <!-- CONTACT --> 
 <section id="contact" class="contact"> 
-<div class="section-content fade-in"> 
-<h2 class="fade-in">Build the Future of Grocery With Us</h2> 
-<form action="https://formsubmit.co/Varenyam@kitchinai.ca" 
-method="POST" 
-data-contact-form 
-aria-label="Contact form for Kitchin website" 
-> 
-<input type="hidden" name="_subject" value="New Kitchin Website Submission"> 
-<input type="hidden" name="_captcha" value="false">
+  <div class="section-content fade-in"> 
+    <h2 class="fade-in">Build the Future of Grocery With Us</h2> 
+    <form action="https://formsubmit.co/Varenyam@kitchinai.ca" method="POST" data-contact-form aria-label="Contact form for Kitchin website"> 
+      <input type="hidden" name="_subject" value="New Kitchin Website Submission"> 
+      <input type="hidden" name="_captcha" value="false">
 
-<input type="text" name="name" placeholder="Name" required class="fade-in"> 
-<input type="email" name="email" placeholder="Email" required class="fade-in"> 
-<select name="interest" required class="fade-in">
-<option value="">I’m interested in…</option> 
-<option>Alberta Launch Updates</option>
-<option>Investing</option> 
-<option>Partnership</option> 
-<option>Careers</option> 
-</select>
-<textarea name="message" placeholder="Message (optional)" class="fade-in"></textarea> 
-<button type="submit" class="primary-btn fade-in">Submit</button>
-</form> 
-</div> 
+      <input type="text" name="name" placeholder="Name" required class="fade-in"> 
+      <input type="email" name="email" placeholder="Email" required class="fade-in"> 
+      <select name="interest" required class="fade-in">
+        <option value="">I’m interested in…</option> 
+        <option>Alberta Launch Updates</option>
+        <option>Investing</option> 
+        <option>Partnership</option> 
+        <option>Careers</option> 
+      </select>
+      <textarea name="message" placeholder="Message (optional)" class="fade-in"></textarea> 
+      <button type="submit" class="primary-btn fade-in">Submit</button>
+    </form> 
+  </div> 
 </section>
 
 <footer> 
-<p>© 2025 Kitchin Retail Solutions Inc. All rights reserved.</p>
+  <p>© 2025 Kitchin Retail Solutions Inc. All rights reserved.</p>
 </footer> 
+
 <script src="scripts.js"></script>
 </body>
 </html>
