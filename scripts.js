@@ -1,16 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* =======================
-     Sticky navigation
-  ======================= */
+  /* ---------- Sticky nav ---------- */
   const nav = document.querySelector(".nav");
   window.addEventListener("scroll", () => {
     nav.classList.toggle("scrolled", window.scrollY > 40);
   });
 
-  /* =======================
-     Fade-in observer
-  ======================= */
+  /* ---------- Fade-in observer ---------- */
   const fadeObserver = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
@@ -22,11 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     { threshold: 0.15 }
   );
+
   document.querySelectorAll(".fade-in").forEach(el => fadeObserver.observe(el));
 
-  /* =======================
-     Animated counters — Crisis
-  ======================= */
+  /* ---------- Animated counters (Crisis section) ---------- */
   const counters = document.querySelectorAll(".crisis-number");
   const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
 
@@ -43,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (progress < 1) requestAnimationFrame(tick);
       else el.textContent = target + suffix;
     };
+
     requestAnimationFrame(tick);
   };
 
@@ -57,11 +53,10 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     { threshold: 0.6 }
   );
+
   counters.forEach(c => counterObserver.observe(c));
 
-  /* =======================
-     iStack layer hover details
-  ======================= */
+  /* ---------- iStack layer hover (regular + flywheel) ---------- */
   const layers = document.querySelectorAll('.istack-diagram .layer');
   const layerDetailBox = document.querySelector('.layer-details');
 
@@ -74,9 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* =======================
-     How It Works hover details
-  ======================= */
+  /* ---------- How It Works hover ---------- */
   const howItems = document.querySelectorAll('.how-it-works ul li');
   const howDetailBox = document.querySelector('.how-it-works-detail');
 
@@ -89,9 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* =======================
-     Flywheel tooltip
-  ======================= */
+  /* ---------- Flywheel layer tooltip ---------- */
   const tooltip = document.getElementById('layerTooltip');
 
   layers.forEach(layer => {
