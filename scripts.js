@@ -1,12 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* Sticky nav */
+  /* =======================
+     Sticky navigation
+  ======================= */
   const nav = document.querySelector(".nav");
   window.addEventListener("scroll", () => {
     nav.classList.toggle("scrolled", window.scrollY > 40);
   });
 
-  /* Fade-in observer */
+  /* =======================
+     Fade-in observer
+  ======================= */
   const fadeObserver = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
@@ -18,13 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     { threshold: 0.15 }
   );
+  document.querySelectorAll(".fade-in").forEach(el => fadeObserver.observe(el));
 
-  document.querySelectorAll(".fade-in")
-    .forEach(el => fadeObserver.observe(el));
-
-  /* Animated counters — Crisis only */
+  /* =======================
+     Animated counters — Crisis
+  ======================= */
   const counters = document.querySelectorAll(".crisis-number");
-
   const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
 
   const animateCount = el => {
@@ -40,7 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (progress < 1) requestAnimationFrame(tick);
       else el.textContent = target + suffix;
     };
-
     requestAnimationFrame(tick);
   };
 
@@ -55,75 +57,53 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     { threshold: 0.6 }
   );
-
   counters.forEach(c => counterObserver.observe(c));
 
-});
+  /* =======================
+     iStack layer hover details
+  ======================= */
+  const layers = document.querySelectorAll('.istack-diagram .layer');
+  const layerDetailBox = document.querySelector('.layer-details');
 
-
-// Layer hover for supply flow
-const layers = document.querySelectorAll('.istack-diagram .layer');
-const layerDetailBox = document.querySelector('.layer-details');
-
-layers.forEach(layer => {
-  layer.addEventListener('mouseenter', () => {
-    layerDetailBox.innerHTML = `<p>${layer.dataset.desc}</p>`;
+  layers.forEach(layer => {
+    layer.addEventListener('mouseenter', () => {
+      layerDetailBox.innerHTML = `<p>${layer.dataset.desc}</p>`;
+    });
+    layer.addEventListener('mouseleave', () => {
+      layerDetailBox.innerHTML = `<p>Hover over a layer to see details.</p>`;
+    });
   });
-  layer.addEventListener('mouseleave', () => {
-    layerDetailBox.innerHTML = `<p>Hover over a layer to see details.</p>`;
-  });
-});
 
-// How It Works hover
-const howItems = document.querySelectorAll('.how-it-works ul li');
-const howDetailBox = document.querySelector('.how-it-works-detail');
+  /* =======================
+     How It Works hover details
+  ======================= */
+  const howItems = document.querySelectorAll('.how-it-works ul li');
+  const howDetailBox = document.querySelector('.how-it-works-detail');
 
-howItems.forEach(item => {
-  item.addEventListener('mouseenter', () => {
-    howDetailBox.innerHTML = `<p>${item.dataset.desc}</p>`;
+  howItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      howDetailBox.innerHTML = `<p>${item.dataset.desc}</p>`;
+    });
+    item.addEventListener('mouseleave', () => {
+      howDetailBox.innerHTML = `<p>Hover over a point to see details.</p>`;
+    });
   });
-  item.addEventListener('mouseleave', () => {
-    howDetailBox.innerHTML = `<p>Hover over a point to see details.</p>`;
-  });
-});
 
-// Flywheel Layers
-const layers = document.querySelectorAll('.istack-diagram .layer');
-const layerDetailBox = document.querySelector('.layer-details');
+  /* =======================
+     Flywheel tooltip
+  ======================= */
+  const tooltip = document.getElementById('layerTooltip');
 
-layers.forEach(layer => {
-  layer.addEventListener('mouseenter', () => {
-    layerDetailBox.innerHTML = `<p>${layer.dataset.desc}</p>`;
+  layers.forEach(layer => {
+    layer.addEventListener('mousemove', e => {
+      tooltip.innerText = layer.dataset.desc;
+      tooltip.style.top = e.clientY + 20 + 'px';
+      tooltip.style.left = e.clientX + 20 + 'px';
+      tooltip.style.opacity = 1;
+    });
+    layer.addEventListener('mouseleave', () => {
+      tooltip.style.opacity = 0;
+    });
   });
-  layer.addEventListener('mouseleave', () => {
-    layerDetailBox.innerHTML = `<p>Hover over a layer to see details.</p>`;
-  });
-});
 
-// How It Works hover
-const howItems = document.querySelectorAll('.how-it-works ul li');
-const howDetailBox = document.querySelector('.how-it-works-detail');
-
-howItems.forEach(item => {
-  item.addEventListener('mouseenter', () => {
-    howDetailBox.innerHTML = `<p>${item.dataset.desc}</p>`;
-  });
-  item.addEventListener('mouseleave', () => {
-    howDetailBox.innerHTML = `<p>Hover over a point to see details.</p>`;
-  });
-});
-
-const tooltip = document.getElementById('layerTooltip');
-const layers = document.querySelectorAll('.layer');
-
-layers.forEach(layer => {
-  layer.addEventListener('mousemove', e => {
-    tooltip.innerText = layer.dataset.desc;
-    tooltip.style.top = e.clientY + 20 + 'px';
-    tooltip.style.left = e.clientX + 20 + 'px';
-    tooltip.style.opacity = 1;
-  });
-  layer.addEventListener('mouseleave', () => {
-    tooltip.style.opacity = 0;
-  });
 });
