@@ -1474,3 +1474,20 @@ y
 .moat-layer:hover {
   transform: translateX(-6px);
 }
+.istack-moat-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.istack-column,
+.moat-column {
+  display: block;
+}
+
+.istack-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
