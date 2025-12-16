@@ -288,3 +288,13 @@ const advanceMoat = () => {
 };
 
 setInterval(advanceMoat, 2200);
+
+const spineProgress = document.querySelector(".spine-progress");
+const totalLayers = document.querySelectorAll(".istack-layer").length;
+
+document.querySelectorAll(".istack-layer").forEach((layer, index) => {
+  layer.addEventListener("mouseenter", () => {
+    const progress = ((index + 1) / totalLayers) * 100;
+    spineProgress.style.height = `${progress}%`;
+  });
+});
