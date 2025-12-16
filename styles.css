@@ -216,13 +216,12 @@ section {
   html,
   body {
     height: 100%;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
   }
 
   .hero,
   .crisis-scale {
     scroll-snap-align: start;
-    scroll-snap-stop: always;
   }
 }
 
