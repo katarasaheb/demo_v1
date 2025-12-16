@@ -1,5 +1,5 @@
 /* =========================================================
-   KITCHIN — MASTER STYLESHEET (TESLA-STYLE)
+   KITCHIN — MASTER STYLESHEET (TESLA-STYLE RESPONSIVE)
    ========================================================= */
 
 /* ---------- ROOT VARIABLES ---------- */
@@ -280,7 +280,6 @@ section {
   box-shadow: 0 12px 30px rgba(0,0,0,0.25);
 }
 
-
 /* =========================================================
    FOOTER
    ========================================================= */
@@ -312,127 +311,8 @@ footer {
   color: var(--text);
 }
 
-.layer {
-  background: var(--orange);
-  color: #fff;
-  padding: 1.2rem 2rem;
-  border-radius: 2rem;
-  width: 280px;
-  text-align: center;
-  position: relative;
-  font-weight: 600;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-}
-
-.layer span {
-  display: block;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.layer p {
-  font-size: 0.9rem;
-  font-weight: 400;
-}
-
-/* Layer hover effect */
-.layer:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
-/* Connecting arrows (simplified with pseudo-element) */
-.layer:not(:last-child)::after {
-  content: "↓";
-  font-size: 2rem;
-  color: var(--blue);
-  display: block;
-  margin: 0.5rem auto;
-}
-
-/* How it Works */
-.how-it-works {
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.how-it-works h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-.how-it-works ul {
-  list-style-type: disc;
-  padding-left: 2rem;
-  font-size: 1rem;
-  color: var(--text);
-  line-height: 1.6;
-}
-/* iStack Diagram — Horizontal Flow */
-.istack-diagram {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 3rem;
-}
-
-@media (min-width: 768px) {
-  .istack-diagram {
-    flex-direction: row;
-    justify-content: center;
-    gap: 2rem;
-  }
-
-  /* Horizontal arrows between layers */
-  .layer:not(:last-child)::after {
-    content: "→";
-    font-size: 2rem;
-    color: var(--blue);
-    position: absolute;
-    right: -2rem;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .layer:last-child::after {
-    content: "";
-  }
-}
-
-.layer {
-  background: var(--orange);
-  color: #fff;
-  padding: 1.2rem 2rem;
-  border-radius: 2rem;
-  min-width: 200px;
-  text-align: center;
-  position: relative;
-  font-weight: 600;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-}
-
-.layer span {
-  display: block;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.layer p {
-  font-size: 0.9rem;
-  font-weight: 400;
-}
-
-.layer:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
 /* =========================================================
-   ISTACK — INTERACTIVE TECH STACK
+   ISTACK — INTERACTIVE TECH STACK WITH MOVING DOTS
    ========================================================= */
 .istack-diagram {
   display: flex;
@@ -448,6 +328,8 @@ footer {
   .istack-diagram {
     flex-direction: row;
     justify-content: center;
+    align-items: center;
+    gap: 3rem;
   }
 }
 
@@ -484,7 +366,7 @@ footer {
   50% { transform: translateY(-6px); }
 }
 
-/* Hover effect — lift + glow + connected layers highlight */
+/* Hover effect — lift + glow */
 .layer:hover {
   transform: translateY(-12px) scale(1.05);
   box-shadow: 0 12px 30px rgba(0,0,0,0.25);
@@ -512,29 +394,8 @@ footer {
   .layer:last-child::after { content: ""; }
 }
 
-/* Highlight connected layers on hover */
-.layer:hover ~ .layer,
-.layer:hover ~ .layer ~ .layer {
-  opacity: 0.85;
-  transform: scale(0.98);
-}
-
 /* Horizontal data stream between layers (desktop only) */
 @media (min-width: 768px) {
-  .istack-diagram {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    position: relative;
-  }
-
-  .layer {
-    min-width: 220px;
-    text-align: center;
-    position: relative;
-  }
-
   .layer .data-stream {
     position: absolute;
     top: 50%;
@@ -543,20 +404,41 @@ footer {
     height: 4px;
     background: linear-gradient(90deg, var(--blue), var(--orange));
     border-radius: 2px;
-    animation: flow 2s linear infinite;
+    overflow: hidden;
     transform: translateY(-50%);
+  }
+
+  /* Moving dots along the stream */
+  .layer .data-stream::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: move-dot 1.5s linear infinite;
   }
 
   /* Remove stream for last layer */
   .layer:last-child .data-stream {
     display: none;
   }
+}
 
-  /* Flow animation */
-  @keyframes flow {
-    0% { transform: translateX(0) translateY(-50%); }
-    100% { transform: translateX(20px) translateY(-50%); }
-  }
+/* Dot animation along stream */
+@keyframes move-dot {
+  0% { left: 0%; }
+  100% { left: 100%; }
+}
+
+/* Highlight connected layers on hover */
+.layer:hover ~ .layer,
+.layer:hover ~ .layer ~ .layer {
+  opacity: 0.85;
+  transform: scale(0.98);
 }
 
 /* Vertical on mobile stays unchanged */
@@ -564,5 +446,25 @@ footer {
   .istack-diagram {
     flex-direction: column;
     gap: 1.5rem;
+  }
+
+  .layer .data-stream {
+    width: 4px;
+    height: 60px;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+  }
+
+  .layer .data-stream::before {
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    animation: move-dot-vertical 1.5s linear infinite;
+  }
+
+  @keyframes move-dot-vertical {
+    0% { top: 0%; }
+    100% { top: 100%; }
   }
 }
