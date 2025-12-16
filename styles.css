@@ -291,3 +291,142 @@ footer {
   color: #666;
 }
 
+/* =========================================================
+   ISTACK SECTION
+   ========================================================= */
+.iStack {
+  background-color: var(--bg);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.iStack h1, .iStack h2, .iStack h3 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1rem;
+}
+
+.solution-intro {
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.layer {
+  background: var(--orange);
+  color: #fff;
+  padding: 1.2rem 2rem;
+  border-radius: 2rem;
+  width: 280px;
+  text-align: center;
+  position: relative;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.layer span {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.layer p {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+/* Layer hover effect */
+.layer:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Connecting arrows (simplified with pseudo-element) */
+.layer:not(:last-child)::after {
+  content: "↓";
+  font-size: 2rem;
+  color: var(--blue);
+  display: block;
+  margin: 0.5rem auto;
+}
+
+/* How it Works */
+.how-it-works {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.how-it-works h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.how-it-works ul {
+  list-style-type: disc;
+  padding-left: 2rem;
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+/* iStack Diagram — Horizontal Flow */
+.istack-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .istack-diagram {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  /* Horizontal arrows between layers */
+  .layer:not(:last-child)::after {
+    content: "→";
+    font-size: 2rem;
+    color: var(--blue);
+    position: absolute;
+    right: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .layer:last-child::after {
+    content: "";
+  }
+}
+
+.layer {
+  background: var(--orange);
+  color: #fff;
+  padding: 1.2rem 2rem;
+  border-radius: 2rem;
+  min-width: 200px;
+  text-align: center;
+  position: relative;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.layer span {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.layer p {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.layer:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
