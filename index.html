@@ -77,88 +77,103 @@
 </section>
 
 <!-- ISTACK -->
+<!-- ISTACK -->
 <section id="solution" class="iStack">
   <div class="section-content">
-    <h1>The Kitchin Model</h1>
-    <p class="solution-intro">
-      Kitchin is a living, learning ecosystem built on layers of intelligence, infrastructure, and operational precision.<br>
-      At the heart is the i-Stack — five interlocking layers that flow into one another like a flywheel.<br>
-      Our Smart Grocery System Integrates every layer of grocery operations, from micro-milling to content insights, driving efficiency and sustainability.
+
+    <h1 class="fade-in">The Kitchin Model</h1>
+
+    <p class="solution-intro fade-in">
+      Kitchin is a living, learning ecosystem built on layers of intelligence,
+      infrastructure, and operational precision.<br><br>
+      At the heart is the i-Stack — five interlocking layers that compound
+      efficiency across the grocery lifecycle.
     </p>
 
-  <!-- Layers Grid -->
-  <div class="layers-grid">
-    <div class="layer-card fade-in" data-desc="Real-time inventory intelligence and automated micro-milling for zero idle stock.">
-      <span>iGranary</span>
+    <!-- LAYERS -->
+    <div class="layers-grid">
+      <div class="layer-card fade-in" data-delay="0" data-desc="Real-time inventory intelligence and automated micro-milling for zero idle stock.">
+        <span>iGranary</span>
+      </div>
+
+      <div class="layer-card fade-in" data-delay="1" data-desc="Predictive routing and real-time orchestration of deliveries and operations.">
+        <span>iLogistics</span>
+      </div>
+
+      <div class="layer-card fade-in" data-delay="2" data-desc="Controlled indoor farms synchronized with demand forecasts for maximum yield.">
+        <span>iHydroponics</span>
+      </div>
+
+      <div class="layer-card fade-in" data-delay="3" data-desc="End-to-end automated bakery that bakes to demand, reducing waste.">
+        <span>iBakery</span>
+      </div>
+
+      <div class="layer-card fade-in" data-delay="4" data-desc="Content engine that generates data-driven insights and drives engagement.">
+        <span>iStudio</span>
+      </div>
     </div>
-    <div class="layer-card fade-in" data-desc="Predictive routing and real-time orchestration of deliveries and operations.">
-      <span>iLogistics</span>
+
+    <!-- SVG DATA PULSE -->
+    <svg class="data-pulse" viewBox="0 0 1000 120" preserveAspectRatio="none">
+      <path d="M0 60 Q 250 20 500 60 T 1000 60" />
+    </svg>
+
+    <!-- TOOLTIP -->
+    <div class="layer-tooltip" id="layerTooltip">
+      Hover over a layer to see details.
     </div>
-    <div class="layer-card fade-in" data-desc="Controlled indoor farms synchronized with demand forecasts for maximum yield.">
-      <span>iHydroponics</span>
+
+    <!-- OUR MOAT -->
+    <div class="how-it-works fade-in">
+      <h3>Our Moat</h3>
+
+      <div class="system-rail">
+
+        <div class="system-step active">
+          <span class="step-index">01</span>
+          <div>
+            <h4>Smart Grocery Engine</h4>
+            <p>The AI brain coordinating all layers in real time.</p>
+          </div>
+        </div>
+
+        <div class="system-step">
+          <span class="step-index">02</span>
+          <div>
+            <h4>Demand Forecasting</h4>
+            <p>Anticipates SKU-level consumption patterns.</p>
+          </div>
+        </div>
+
+        <div class="system-step">
+          <span class="step-index">03</span>
+          <div>
+            <h4>Inventory Intelligence</h4>
+            <p>Monitors stock, expiry, and triggers restocking automatically.</p>
+          </div>
+        </div>
+
+        <div class="system-step">
+          <span class="step-index">04</span>
+          <div>
+            <h4>Route Optimization</h4>
+            <p>Minimizes distance, time, and emissions dynamically.</p>
+          </div>
+        </div>
+
+        <div class="system-step">
+          <span class="step-index">05</span>
+          <div>
+            <h4>Waste Reduction</h4>
+            <p>Tracks excess and redistributes inventory intelligently.</p>
+          </div>
+        </div>
+
+      </div>
     </div>
-    <div class="layer-card fade-in" data-desc="End-to-end automated bakery that bakes to demand, reducing waste.">
-      <span>iBakery</span>
-    </div>
-    <div class="layer-card fade-in" data-desc="Content engine that generates data-driven insights and drives engagement.">
-      <span>iStudio</span>
-    </div>
+
   </div>
-
-  <!-- Floating tooltip -->
-  <div class="layer-tooltip" id="layerTooltip">Hover over a layer to see details.</div>
-
- <!-- How It Works — System Rail -->
-<div class="how-it-works fade-in">
-  <h3>Our Moat</h3>
-
-  <div class="system-rail">
-
-    <div class="system-step active" data-desc="The AI brain coordinating all layers in real time.">
-      <span class="step-index">01</span>
-      <div class="step-content">
-        <h4>Smart Grocery Engine</h4>
-        <p>The AI brain coordinating all layers in real time.</p>
-      </div>
-    </div>
-
-    <div class="system-step" data-desc="Anticipates SKU-level consumption patterns.">
-      <span class="step-index">02</span>
-      <div class="step-content">
-        <h4>Demand Forecasting</h4>
-        <p>Anticipates SKU-level consumption patterns.</p>
-      </div>
-    </div>
-
-    <div class="system-step" data-desc="Monitors stock, expiry, and triggers restocking automatically.">
-      <span class="step-index">03</span>
-      <div class="step-content">
-        <h4>Inventory Intelligence</h4>
-        <p>Monitors stock, expiry, and triggers restocking automatically.</p>
-      </div>
-    </div>
-
-    <div class="system-step" data-desc="Dynamically orchestrates deliveries to minimize distance and emissions.">
-      <span class="step-index">04</span>
-      <div class="step-content">
-        <h4>Route Optimization</h4>
-        <p>Dynamically orchestrates deliveries to minimize distance and emissions.</p>
-      </div>
-    </div>
-
-    <div class="system-step" data-desc="Tracks excess, redistributes inventory, and minimizes spoilage.">
-      <span class="step-index">05</span>
-      <div class="step-content">
-        <h4>Waste Reduction</h4>
-        <p>Tracks excess, redistributes inventory, and minimizes spoilage.</p>
-      </div>
-    </div>
-
-  </div>
-</div>
-
 </section>
-
 
 
 <!-- ADVANTAGE --> 
