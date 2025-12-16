@@ -298,3 +298,27 @@ document.querySelectorAll(".istack-layer").forEach((layer, index) => {
     spineProgress.style.height = `${progress}%`;
   });
 });
+
+const sections = ["hero", "crisis", "istack"];
+let activeIndex = 0;
+let isLocked = false;
+
+window.addEventListener("wheel", (e) => {
+  if (isLocked) return;
+
+  const direction = e.deltaY > 0 ? 1 : -1;
+  const nextIndex = activeIndex + direction;
+
+  if (nextIndex < 0 || nextIndex >= sections.length) return;
+
+  isLocked = true;
+  activeIndex = nextIndex;
+
+  document
+    .getElementById(sections[activeIndex])
+    .scrollIntoView({ behavior: "smooth" });
+
+  setTimeout(() => {
+    isLocked = false;
+  }, 900);
+});
