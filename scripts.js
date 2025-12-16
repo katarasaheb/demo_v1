@@ -108,3 +108,54 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* ---------- Fade-in animation ---------- */
+  const fadeObserver = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+  document.querySelectorAll(".fade-in").forEach(el => fadeObserver.observe(el));
+
+  /* ---------- Layer tooltip ---------- */
+  const tooltip = document.getElementById('layerTooltip');
+  const layerCards = document.querySelectorAll('.layer-card');
+
+  layerCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      tooltip.innerText = card.dataset.desc;
+      tooltip.style.opacity = 1;
+    });
+
+    card.addEventListener('mousemove', e => {
+      tooltip.style.top = e.clientY + 20 + 'px';
+      tooltip.style.left = e.clientX + 20 + 'px';
+    });
+
+    card.addEventListener('mouseleave', () => {
+      tooltip.style.opacity = 0;
+    });
+  });
+
+  /* ---------- How It Works hover ---------- */
+  const howItems = document.querySelectorAll('.how-it-works ul li');
+  const howDetailBox = document.querySelector('.how-it-works-detail');
+
+  howItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      howDetailBox.innerHTML = `<p>${item.dataset.desc}</p>`;
+    });
+    item.addEventListener('mouseleave', () => {
+      howDetailBox.innerHTML = `<p>Hover over a point to see details.</p>`;
+    });
+  });
+
+});
