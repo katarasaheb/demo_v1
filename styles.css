@@ -595,3 +595,111 @@ footer {
   color: var(--orange);
   font-weight: 600;
 }
+.istack-flywheel {
+  padding: 5rem 2rem;
+  text-align: center;
+  position: relative;
+  background: var(--bg);
+}
+
+.istack-flywheel h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.solution-intro {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+/* Flywheel Container */
+.flywheel-container {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+/* Flywheel Layers */
+.layer {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background: var(--orange);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.layer span {
+  font-size: 1rem;
+}
+
+/* Data Streams */
+.data-stream {
+  position: absolute;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--blue), var(--orange));
+  border-radius: 2px;
+  animation: flow 2s linear infinite;
+}
+
+@keyframes flow {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(20px); }
+}
+
+/* Tooltip */
+.layer-tooltip {
+  position: fixed;
+  padding: 0.8rem 1rem;
+  background: var(--blue);
+  color: #fff;
+  border-radius: 12px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+  max-width: 220px;
+  font-size: 0.9rem;
+  z-index: 999;
+}
+
+/* Hover effect */
+.layer:hover {
+  transform: scale(1.1) translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  background: #ff6b3a;
+}
+
+/* Flywheel positions */
+.layer:nth-child(1) { top: 0; left: 50%; transform: translate(-50%, 0); }
+.layer:nth-child(2) { top: 25%; right: 0; transform: translate(0, -50%); }
+.layer:nth-child(3) { bottom: 0; left: 50%; transform: translate(-50%, 0); }
+.layer:nth-child(4) { top: 25%; left: 0; transform: translate(0, -50%); }
+.layer:nth-child(5) { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .flywheel-container {
+    width: 100%;
+    height: 400px;
+  }
+
+  .layer {
+    width: 100px;
+    height: 100px;
+    font-size: 0.9rem;
+  }
+}
