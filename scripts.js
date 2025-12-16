@@ -113,3 +113,17 @@ howItems.forEach(item => {
   });
 });
 
+const tooltip = document.getElementById('layerTooltip');
+const layers = document.querySelectorAll('.layer');
+
+layers.forEach(layer => {
+  layer.addEventListener('mousemove', e => {
+    tooltip.innerText = layer.dataset.desc;
+    tooltip.style.top = e.clientY + 20 + 'px';
+    tooltip.style.left = e.clientX + 20 + 'px';
+    tooltip.style.opacity = 1;
+  });
+  layer.addEventListener('mouseleave', () => {
+    tooltip.style.opacity = 0;
+  });
+});
