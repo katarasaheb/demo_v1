@@ -499,3 +499,99 @@ footer {
   color: var(--orange);
   font-weight: 600;
 }
+/* Flywheel Diagram */
+.istack-diagram.flywheel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+  padding: 3rem 0;
+}
+
+.layer {
+  background: var(--orange);
+  color: #fff;
+  border-radius: 2rem;
+  padding: 1.5rem 2rem;
+  min-width: 180px;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  position: relative;
+  cursor: pointer;
+  animation: float 3s ease-in-out infinite;
+}
+
+.layer span {
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.layer .data-stream {
+  position: absolute;
+  width: 80px;
+  height: 4px;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  background: linear-gradient(90deg, var(--blue), var(--orange));
+  border-radius: 2px;
+  animation: flow 2s linear infinite;
+}
+
+.layer:last-child .data-stream {
+  display: none;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes flow {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(20px); }
+}
+
+/* Hover effects */
+.layer:hover {
+  transform: scale(1.05) translateY(-10px);
+  background: #ff6b3a;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+/* Hover connected layers fade */
+.layer:hover ~ .layer {
+  opacity: 0.85;
+  transform: scale(0.98);
+}
+
+/* Detail box */
+.layer-details, .how-it-works-detail {
+  max-width: 700px;
+  margin: 2rem auto 0;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  font-size: 1rem;
+  color: var(--text);
+  text-align: center;
+  transition: opacity 0.3s ease;
+}
+
+/* How It Works interactive list */
+.how-it-works ul li {
+  padding: 0.5rem 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.how-it-works ul li:hover {
+  transform: scale(1.05);
+  color: var(--orange);
+  font-weight: 600;
+}
