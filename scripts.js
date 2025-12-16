@@ -61,3 +61,28 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// Layer hover for supply flow
+const layers = document.querySelectorAll('.istack-diagram .layer');
+const layerDetailBox = document.querySelector('.layer-details');
+
+layers.forEach(layer => {
+  layer.addEventListener('mouseenter', () => {
+    layerDetailBox.innerHTML = `<p>${layer.dataset.desc}</p>`;
+  });
+  layer.addEventListener('mouseleave', () => {
+    layerDetailBox.innerHTML = `<p>Hover over a layer to see details.</p>`;
+  });
+});
+
+// How It Works hover
+const howItems = document.querySelectorAll('.how-it-works ul li');
+const howDetailBox = document.querySelector('.how-it-works-detail');
+
+howItems.forEach(item => {
+  item.addEventListener('mouseenter', () => {
+    howDetailBox.innerHTML = `<p>${item.dataset.desc}</p>`;
+  });
+  item.addEventListener('mouseleave', () => {
+    howDetailBox.innerHTML = `<p>Hover over a point to see details.</p>`;
+  });
+});
