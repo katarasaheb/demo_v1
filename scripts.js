@@ -1,26 +1,61 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* Sticky nav shadow */
+  /* Sticky nav */
   const nav = document.querySelector(".nav");
   window.addEventListener("scroll", () => {
     nav.classList.toggle("scrolled", window.scrollY > 40);
   });
 
   /* Fade-in observer */
-  const elements = document.querySelectorAll(".fade-in");
-
-  const observer = new IntersectionObserver(
+  const fadeObserver = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
+          fadeObserver.unobserve(entry.target);
         }
       });
     },
     { threshold: 0.15 }
   );
 
-  elements.forEach(el => observer.observe(el));
+  document.querySelectorAll(".fade-in")
+    .forEach(el => fadeObserver.observe(el));
+
+  /* Animated counters — Crisis only */
+  const counters = document.querySelectorAll(".crisis-number");
+
+  const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+
+  const animateCount = el => {
+    const target = Number(el.dataset.count);
+    const suffix = el.dataset.suffix || "";
+    const duration = 1400;
+    const start = performance.now();
+
+    const tick = now => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = easeOutCubic(progress);
+      el.textContent = Math.floor(eased * target) + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+      else el.textContent = target + suffix;
+    };
+
+    requestAnimationFrame(tick);
+  };
+
+  const counterObserver = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.6 }
+  );
+
+  counters.forEach(c => counterObserver.observe(c));
 
 });
