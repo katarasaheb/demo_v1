@@ -518,3 +518,51 @@ footer {
   opacity: 0.85;
   transform: scale(0.98);
 }
+
+/* Horizontal data stream between layers (desktop only) */
+@media (min-width: 768px) {
+  .istack-diagram {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    position: relative;
+  }
+
+  .layer {
+    min-width: 220px;
+    text-align: center;
+    position: relative;
+  }
+
+  .layer .data-stream {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--blue), var(--orange));
+    border-radius: 2px;
+    animation: flow 2s linear infinite;
+    transform: translateY(-50%);
+  }
+
+  /* Remove stream for last layer */
+  .layer:last-child .data-stream {
+    display: none;
+  }
+
+  /* Flow animation */
+  @keyframes flow {
+    0% { transform: translateX(0) translateY(-50%); }
+    100% { transform: translateX(20px) translateY(-50%); }
+  }
+}
+
+/* Vertical on mobile stays unchanged */
+@media (max-width: 767px) {
+  .istack-diagram {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
