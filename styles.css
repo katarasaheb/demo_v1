@@ -1,27 +1,22 @@
 /* =========================================================
-   KITCHIN — MASTER STYLESHEET (TESLA-STYLE RESPONSIVE)
-   Typography: Serif (Global)
+   KITCHIN — MASTER STYLESHEET (TESLA-GRADE)
+   Typography: Playfair Display (Global Serif)
    ========================================================= */
 
-/* ---------- ROOT VARIABLES ---------- */
 :root {
   --orange: #EC5E27;
   --blue: #002E50;
   --bg: #F8F8F7;
   --text: #1D1D1F;
-  --hover-orange: #e04a00;
-  --hover-blue: #00203f;
-  --pillars-color1: #EC5E27;
-  --pillars-color2: #002E50;
 
   --nav-height: 88px;
 }
 
 /* ---------- RESET ---------- */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -29,259 +24,187 @@ html {
 }
 
 body {
-  font-family: serif;
-  line-height: 1.6;
+  font-family: "Playfair Display", serif;
   background: var(--bg);
   color: var(--text);
-  word-wrap: break-word;
+  line-height: 1.6;
 }
 
 /* =========================================================
-   NAVIGATION (GLASS + STICKY)
+   NAV (GLASS)
    ========================================================= */
 .nav {
   position: sticky;
   top: 0;
-  z-index: 1000;
   height: var(--nav-height);
+  z-index: 1000;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  padding: 0 clamp(1.5rem, 5vw, 6rem);
-
-  background: rgba(248, 248, 247, 0.75);
+  padding: 0 clamp(1.5rem, 6vw, 6rem);
+  background: rgba(248,248,247,0.75);
   backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-
-  transition: background 0.35s ease, box-shadow 0.35s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 .nav.scrolled {
-  background: rgba(248, 248, 247, 0.95);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
 }
 
 .nav-logo {
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
   font-weight: 700;
+  font-size: 1.8rem;
 }
 
 .nav-menu a {
-  margin-left: clamp(1rem, 2vw, 2rem);
+  margin-left: 2rem;
   text-decoration: none;
   color: var(--text);
-  transition: color 0.3s ease;
 }
 
 .nav-menu a:hover {
   color: var(--orange);
 }
 
-.nav-cta {
-  color: var(--orange);
-  font-weight: 600;
-}
-
-.nav-cta:hover {
-  color: var(--hover-orange);
-}
-
 /* =========================================================
-   SECTIONS — FULL WIDTH FIX
+   SECTIONS
    ========================================================= */
 section {
-  width: 100%;
-  padding:
-    clamp(4rem, 8vw, 8rem)
-    clamp(1.5rem, 6vw, 6rem);
+  padding: clamp(5rem, 10vw, 10rem) clamp(1.5rem, 6vw, 6rem);
   scroll-margin-top: var(--nav-height);
 }
 
 .section-content {
-  width: 100%;
   max-width: 1400px;
   margin: auto;
 }
 
-h1, h2, h3, h4, p, span.interactive-text, li {
-  white-space: normal;
-  word-break: break-word;
-  overflow-wrap: break-word;
-}
-
 /* =========================================================
-   HERO — TESLA SCALE
+   HERO
    ========================================================= */
 .hero {
-  max-width: none;
   min-height: calc(100vh - var(--nav-height));
+  background: var(--orange);
+  color: white;
 
   display: flex;
   align-items: center;
   justify-content: center;
-
-  background: var(--orange);
-  color: white;
   text-align: center;
 }
 
-.hero-content {
-  width: 100%;
-  padding-inline: clamp(1.5rem, 6vw, 6rem);
-}
-
 .hero h1 {
-  font-size: clamp(2.8rem, 6vw, 6.5rem);
+  font-size: clamp(3rem, 7vw, 7rem);
   line-height: 1.05;
-  letter-spacing: -0.02em;
-  margin: 0;
 }
 
 .hero-sub {
-  font-size: clamp(1.05rem, 2vw, 1.4rem);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
   margin-top: 1.5rem;
-  opacity: 0.95;
-}
-
-.hero .primary-btn {
-  margin-top: clamp(2.5rem, 5vw, 4rem);
 }
 
 /* =========================================================
-   BUTTONS
+   BUTTON
    ========================================================= */
 .primary-btn {
+  margin-top: 3rem;
   display: inline-block;
-  padding: 0.9rem 2.2rem;
+  padding: 0.9rem 2.4rem;
   background: var(--blue);
   color: white;
   text-decoration: none;
-  border-radius: 32px;
-  font-family: inherit;
-  font-size: clamp(1rem, 1.3vw, 1.15rem);
-  transition: transform 0.3s ease, background 0.3s ease;
+  border-radius: 40px;
+  transition: transform 0.3s ease;
 }
 
 .primary-btn:hover {
-  background: var(--hover-blue);
   transform: scale(1.05);
 }
 
 /* =========================================================
-   GRID SYSTEMS (Pillars / Advantage / Research)
+   CANADIAN GROCERY CRISIS — REDESIGN
    ========================================================= */
-.pillars,
-.advantage-grid,
-.research-section {
+.crisis {
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #f2f2f2 100%
+  );
+}
+
+.crisis-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.crisis-header h1 {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.crisis-header p {
+  max-width: 900px;
+  margin: 2rem auto 0;
+  font-size: 1.25rem;
+  opacity: 0.9;
+}
+
+/* ----- Impact Grid ----- */
+.crisis-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: clamp(2rem, 4vw, 4rem);
 }
 
-.pillar,
-.advantage-grid > *,
-.research-block {
-  background: white;
-  border-radius: 14px;
-  padding: 2rem;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  word-wrap: break-word;
+.impact-card {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 3rem 2.5rem;
+  text-align: center;
+
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+  transition: transform 0.35s ease;
 }
 
-.problem .pillar h4,
-.research-section .pillar h4 {
-  font-size: 1.25rem;
+.impact-card:hover {
+  transform: translateY(-10px);
+}
+
+.impact-number {
+  font-size: clamp(3rem, 5vw, 4.5rem);
   font-weight: 700;
-  margin-bottom: 0.75rem;
+  color: var(--orange);
 }
 
-/* Alternating pillar accent colors */
-.research-section .pillars .pillar:nth-child(odd) h4 {
-  color: var(--pillars-color1);
-}
-.research-section .pillars .pillar:nth-child(even) h4 {
-  color: var(--pillars-color2);
+.impact-title {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
 }
 
-/* Optional colored top border accent */
-.research-section .pillars .pillar:nth-child(odd) {
-  border-top: 4px solid var(--pillars-color1);
-}
-.research-section .pillars .pillar:nth-child(even) {
-  border-top: 4px solid var(--pillars-color2);
+.impact-desc {
+  margin-top: 1rem;
+  opacity: 0.85;
 }
 
 /* =========================================================
-   PILLAR HOVER REVEAL
+   FADE IN
    ========================================================= */
-.pillar {
-  position: relative;
-  overflow: hidden;
-}
-
-.pillar p {
-  opacity: 0;                   /* hidden initially */
-  transform: translateY(20px);   /* start slightly below */
-  transition: transform 0.4s ease, opacity 0.4s ease;
-  margin-top: 0.5rem;           /* spacing from heading */
-}
-
-/* Reveal paragraph on hover */
-.pillar:hover p {
-  opacity: 1;
-  transform: translateY(0);      /* slide into place */
-}
-
-/* Lift the entire pillar slightly on hover */
-@media (hover: hover) {
-  .pillar:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
-  }
-}
-
-/* =========================================================
-   FADE-IN (INTERSECTIONOBSERVER READY)
-   ========================================================= */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(32px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .fade-in {
   opacity: 0;
 }
 
 .fade-in.visible {
-  animation: fadeUp 0.9s ease-out forwards;
+  animation: fadeUp 0.9s ease forwards;
 }
 
-/* =========================================================
-   FORMS
-   ========================================================= */
-.contact form {
-  max-width: 560px;
-  margin: auto;
-}
-
-.contact input,
-.contact textarea,
-.contact select {
-  width: 100%;
-  padding: 0.9rem;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-family: inherit;
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* =========================================================
@@ -289,35 +212,7 @@ h1, h2, h3, h4, p, span.interactive-text, li {
    ========================================================= */
 footer {
   text-align: center;
-  padding: 3rem 1.5rem;
-  font-size: 0.875rem;
-  color: #666;
-}
-
-/* =========================================================
-   TESLA-STYLE SCROLL SNAP (DESKTOP / TABLET)
-   ========================================================= */
-@media (min-width: 768px) {
-  html,
-  body {
-    height: 100%;
-    scroll-snap-type: y mandatory;
-  }
-
-  section {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-  }
-
-  .hero {
-    scroll-snap-align: start;
-  }
-}
-
-/* Disable snap on phones */
-@media (max-width: 767px) {
-  html,
-  body {
-    scroll-snap-type: none;
-  }
+  padding: 3rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
 }
