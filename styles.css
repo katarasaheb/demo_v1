@@ -1276,3 +1276,110 @@ footer {
     margin-bottom: 4rem;
   }
 }
+
+/* ===============================
+   iStack System (Architectural)
+   =============================== */
+
+.iStack-system {
+  background: var(--bg);
+  padding: 8rem 0;
+}
+
+.istack-header {
+  max-width: 900px;
+  margin-bottom: 6rem;
+}
+
+.istack-header h1 {
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  margin-bottom: 1.5rem;
+}
+
+.istack-intro {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+/* Vertical Stack */
+.istack-vertical {
+  position: relative;
+  border-left: 2px solid rgba(0,0,0,0.08);
+  margin-left: 1rem;
+}
+
+/* Subtle data pulse */
+.istack-vertical::before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(236, 94, 39, 0.4),
+    transparent
+  );
+  animation: pulseLine 7s ease-in-out infinite;
+}
+
+@keyframes pulseLine {
+  0% { opacity: 0.2; }
+  50% { opacity: 0.7; }
+  100% { opacity: 0.2; }
+}
+
+/* Layers */
+.istack-layer {
+  padding: 3.5rem 0 3.5rem 3rem;
+  max-width: 720px;
+}
+
+.layer-label {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  opacity: 0.5;
+}
+
+.istack-layer h2 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+
+.istack-layer p {
+  opacity: 0.75;
+  max-width: 520px;
+}
+
+/* Our Moat */
+.moat-system {
+  margin-top: 7rem;
+}
+
+.moat-system h3 {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.moat-rail {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+}
+
+.moat-step {
+  flex: 0 0 auto;
+  padding-bottom: 0.75rem;
+  font-size: 0.95rem;
+  opacity: 0.4;
+  border-bottom: 2px solid transparent;
+  transition: all 0.4s ease;
+}
+
+.moat-step.active {
+  opacity: 1;
+  border-color: var(--orange);
+}
