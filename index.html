@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Kitchin — Rebuilding grocery from first principles.">
   <title>Kitchin — Rebuilding Grocery</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
@@ -12,68 +13,81 @@
 <body>
 
 <header class="nav">
-  <div class="nav-logo">kitchin</div>
+  <div class="nav-logo fade-in">kitchin</div>
   <nav class="nav-menu">
-    <a href="#crisis">Crisis</a>
-    <a href="#contact">Join</a>
+    <a href="#problem">Crisis</a>
+    <a href="#contact" class="nav-cta">Join</a>
   </nav>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-  <div>
-    <h1 class="fade-in">Rebuilding Grocery<br>from First Principles</h1>
-    <p class="hero-sub fade-in">Fresh • Transparent • Scalable</p>
-    <a href="#contact" class="primary-btn fade-in">Join the Revolution</a>
+  <div class="fade-in">
+    <h1>
+      Rebuilding Grocery<br>
+      from First Principles
+    </h1>
+    <p class="hero-sub">
+      Fresh • Transparent • Scalable • Sustainable
+    </p>
+    <a href="#contact" class="primary-btn">Join the Grocery Revolution</a>
   </div>
 </section>
 
 <!-- CANADIAN GROCERY CRISIS -->
-<section id="crisis" class="crisis">
+<section id="problem" class="crisis-scale">
   <div class="section-content">
 
-    <div class="crisis-header fade-in">
-      <h1>The Canadian Grocery Crisis</h1>
-      <p>
-        Canada’s grocery system is structurally broken — concentrated power,
-        inefficient logistics, and compounding costs now affect every household.
-      </p>
-    </div>
+    <h1 class="fade-in">The Canadian Grocery Crisis</h1>
+
+    <p class="crisis-intro fade-in">
+      Canada’s grocery system is structurally broken — concentrated market
+      power, inefficient logistics, and compounding costs now affect every
+      household nationwide.
+    </p>
 
     <div class="crisis-grid">
-      <div class="impact-card fade-in">
-        <div class="impact-number">75%</div>
-        <div class="impact-title">Market Control</div>
-        <div class="impact-desc">
-          A handful of retailers dominate pricing and supply.
+
+      <div class="crisis-card fade-in">
+        <div class="crisis-number" data-count="75">0</div>
+        <div class="crisis-title">Market Control (%)</div>
+        <div class="crisis-desc">
+          A handful of retailers dominate national grocery pricing.
         </div>
       </div>
 
-      <div class="impact-card fade-in">
-        <div class="impact-number">$7B+</div>
-        <div class="impact-title">Food Waste</div>
-        <div class="impact-desc">
-          Lost annually due to inefficient supply chains.
+      <div class="crisis-card fade-in">
+        <div class="crisis-number" data-count="7" data-suffix="B+">$0</div>
+        <div class="crisis-title">Annual Food Waste ($)</div>
+        <div class="crisis-desc">
+          Lost due to inefficient and outdated supply chains.
         </div>
       </div>
 
-      <div class="impact-card fade-in">
-        <div class="impact-number">90%</div>
-        <div class="impact-title">Food Insecurity Rise</div>
-        <div class="impact-desc">
-          Increase since 2019 across Canadian households.
+      <div class="crisis-card fade-in">
+        <div class="crisis-number" data-count="90">0</div>
+        <div class="crisis-title">Food Insecurity Increase (%)</div>
+        <div class="crisis-desc">
+          Growth in food insecurity since 2019.
         </div>
       </div>
 
-      <div class="impact-card fade-in">
-        <div class="impact-number">2M</div>
-        <div class="impact-title">Monthly Food Bank Visits</div>
-        <div class="impact-desc">
+      <div class="crisis-card fade-in">
+        <div class="crisis-number" data-count="2" data-suffix="M">0</div>
+        <div class="crisis-title">Monthly Food Bank Visits</div>
+        <div class="crisis-desc">
           A national signal of systemic failure.
         </div>
       </div>
+
     </div>
 
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-content fade-in">
+    <h2>Build the Future of Grocery With Us</h2>
   </div>
 </section>
 
