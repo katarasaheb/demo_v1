@@ -214,3 +214,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+document.querySelectorAll('.system-step').forEach(step => {
+  step.addEventListener('mouseenter', () => {
+    document.querySelectorAll('.system-step')
+      .forEach(s => s.classList.remove('active'));
+    step.classList.add('active');
+  });
+});
