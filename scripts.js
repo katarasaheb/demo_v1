@@ -1,116 +1,26 @@
-/* =========================================================
-   Kitchin — Main JavaScript (Final)
-   Purpose: UI behavior only (layout-agnostic)
-   Tesla-style responsive enhancements
-   Production-safe
-   ========================================================= */
-
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* -----------------------------------------
-     1. Mobile Navigation Toggle (Adaptive)
-     ----------------------------------------- */
-  const navToggle = document.querySelector(".nav-toggle");
-  const navMenu = document.querySelector(".nav-menu");
+  /* Sticky nav shadow */
   const nav = document.querySelector(".nav");
-  const body = document.body;
-
-  if (navToggle && navMenu) {
-    navToggle.addEventListener("click", () => {
-      const isOpen = navMenu.classList.toggle("is-open");
-      navToggle.classList.toggle("is-active", isOpen);
-      body.classList.toggle("nav-open", isOpen);
-    });
-  }
-
-  /* -----------------------------------------
-     2. Close mobile nav on link click
-     ----------------------------------------- */
-  document.querySelectorAll(".nav-menu a").forEach(link => {
-    link.addEventListener("click", () => {
-      if (navMenu?.classList.contains("is-open")) {
-        navMenu.classList.remove("is-open");
-        navToggle?.classList.remove("is-active");
-        body.classList.remove("nav-open");
-      }
-    });
+  window.addEventListener("scroll", () => {
+    nav.classList.toggle("scrolled", window.scrollY > 40);
   });
 
-  /* -----------------------------------------
-     3. Reset nav state on resize
-     ----------------------------------------- */
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 768 && navMenu?.classList.contains("is-open")) {
-      navMenu.classList.remove("is-open");
-      navToggle?.classList.remove("is-active");
-      body.classList.remove("nav-open");
-    }
-  });
+  /* Fade-in observer */
+  const elements = document.querySelectorAll(".fade-in");
 
-  /* -----------------------------------------
-     4. Smooth anchor scrolling
-     ----------------------------------------- */
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", e => {
-      const targetId = anchor.getAttribute("href");
-      if (targetId.length > 1) {
-        const targetEl = document.querySelector(targetId);
-        if (targetEl) {
-          e.preventDefault();
-          targetEl.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-          });
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
         }
-      }
-    });
-  });
+      });
+    },
+    { threshold: 0.15 }
+  );
 
-  /* -----------------------------------------
-     5. Sticky nav scroll state (Tesla-style)
-     ----------------------------------------- */
-  if (nav) {
-    window.addEventListener("scroll", () => {
-      nav.classList.toggle("scrolled", window.scrollY > 40);
-    });
-  }
-
-  /* -----------------------------------------
-     6. Scroll-triggered Fade-in (IntersectionObserver)
-     ----------------------------------------- */
-  const fadeElements = document.querySelectorAll(".fade-in");
-
-  if ("IntersectionObserver" in window && fadeElements.length) {
-    const fadeObserver = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target); // fire once
-          }
-        });
-      },
-      {
-        threshold: 0.15,
-        rootMargin: "0px 0px -60px 0px"
-      }
-    );
-
-    fadeElements.forEach(el => fadeObserver.observe(el));
-  } else {
-    // Fallback: reveal immediately
-    fadeElements.forEach(el => el.classList.add("visible"));
-  }
-
-  /* -----------------------------------------
-     7. Contact form UX protection
-     ----------------------------------------- */
-  const contactForm = document.querySelector("form[data-contact-form]");
-  if (contactForm) {
-    contactForm.addEventListener("submit", () => {
-      const submitBtn = contactForm.querySelector("button[type='submit']");
-      if (submitBtn) submitBtn.disabled = true;
-    });
-  }
+  elements.forEach(el => observer.observe(el));
 
 });
