@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     { threshold: 0.15 }
   );
-
   document.querySelectorAll(".fade-in").forEach(el => fadeObserver.observe(el));
 
   /* ---------- Animated counters (Crisis section) ---------- */
@@ -53,19 +52,44 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     { threshold: 0.6 }
   );
-
   counters.forEach(c => counterObserver.observe(c));
 
-  /* ---------- iStack layer hover (regular + flywheel) ---------- */
-  const layers = document.querySelectorAll('.istack-diagram .layer');
-  const layerDetailBox = document.querySelector('.layer-details');
+  /* ---------- iStack regular diagram hover ---------- */
+  const istackLayers = document.querySelectorAll('.istack-diagram .layer');
+  const istackDetailBox = document.querySelector('.layer-details');
 
-  layers.forEach(layer => {
+  istackLayers.forEach(layer => {
     layer.addEventListener('mouseenter', () => {
-      layerDetailBox.innerHTML = `<p>${layer.dataset.desc}</p>`;
+      istackDetailBox.innerHTML = `<p>${layer.dataset.desc}</p>`;
     });
     layer.addEventListener('mouseleave', () => {
-      layerDetailBox.innerHTML = `<p>Hover over a layer to see details.</p>`;
+      istackDetailBox.innerHTML = `<p>Hover over a layer to see details.</p>`;
+    });
+  });
+
+  /* ---------- Flywheel diagram hover & tooltip ---------- */
+  const tooltip = document.getElementById('layerTooltip');
+  const flywheelLayers = document.querySelectorAll('.flywheel-container .layer');
+
+  flywheelLayers.forEach(layer => {
+    const dataStream = layer.querySelector('.data-stream');
+
+    layer.addEventListener('mouseenter', () => {
+      tooltip.innerText = layer.dataset.desc;
+      tooltip.style.opacity = 1;
+
+      // Highlight data-stream on hover
+      if (dataStream) dataStream.style.background = 'linear-gradient(90deg, #ff6b3a, #002E50)';
+    });
+
+    layer.addEventListener('mousemove', e => {
+      tooltip.style.top = e.clientY + 20 + 'px';
+      tooltip.style.left = e.clientX + 20 + 'px';
+    });
+
+    layer.addEventListener('mouseleave', () => {
+      tooltip.style.opacity = 0;
+      if (dataStream) dataStream.style.background = 'linear-gradient(90deg, #002E50, #EC5E27)';
     });
   });
 
@@ -77,23 +101,9 @@ document.addEventListener("DOMContentLoaded", () => {
     item.addEventListener('mouseenter', () => {
       howDetailBox.innerHTML = `<p>${item.dataset.desc}</p>`;
     });
+
     item.addEventListener('mouseleave', () => {
       howDetailBox.innerHTML = `<p>Hover over a point to see details.</p>`;
-    });
-  });
-
-  /* ---------- Flywheel layer tooltip ---------- */
-  const tooltip = document.getElementById('layerTooltip');
-
-  layers.forEach(layer => {
-    layer.addEventListener('mousemove', e => {
-      tooltip.innerText = layer.dataset.desc;
-      tooltip.style.top = e.clientY + 20 + 'px';
-      tooltip.style.left = e.clientX + 20 + 'px';
-      tooltip.style.opacity = 1;
-    });
-    layer.addEventListener('mouseleave', () => {
-      tooltip.style.opacity = 0;
     });
   });
 
