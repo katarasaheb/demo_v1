@@ -793,3 +793,102 @@ footer {
   font-size: 0.9rem;
   z-index: 999;
 }
+/* Layer Card */
+.layer-card {
+  background: var(--orange);
+  color: #fff;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  animation: floatCard 3s ease-in-out infinite;
+}
+
+.layer-card span {
+  display: block;
+  font-size: 1.2rem;
+}
+
+/* Floating animation */
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.layer-card:hover {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  background: #ff6b3a;
+}
+
+/* Tooltip */
+.layer-tooltip {
+  position: fixed;
+  padding: 0.8rem 1rem;
+  background: var(--blue);
+  color: #fff;
+  border-radius: 12px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.2s;
+  max-width: 220px;
+  font-size: 0.9rem;
+  z-index: 999;
+}
+
+/* Fade-in effect (reuse from previous) */
+.fade-in {
+  opacity: 0;
+}
+.fade-in.visible {
+  animation: fadeUp 0.9s ease-out forwards;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.layer-card {
+  background: var(--orange);
+  color: #fff;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  animation: floatCard 3s ease-in-out infinite;
+  opacity: 0; /* start hidden for fade-in */
+}
+
+.layer-card span {
+  display: block;
+  font-size: 1.2rem;
+}
+
+/* Floating animation */
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.layer-card:hover {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  background: #ff6b3a;
+}
+
+/* Fade-in animation */
+.fade-up {
+  opacity: 0;
+  transform: translateY(32px);
+  animation-fill-mode: forwards;
+}
+@keyframes fadeUpStagger {
+  0% { opacity: 0; transform: translateY(32px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
