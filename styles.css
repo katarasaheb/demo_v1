@@ -892,3 +892,99 @@ footer {
   100% { opacity: 1; transform: translateY(0); }
 }
 
+/* ===============================
+   HOW IT WORKS — SYSTEM RAIL
+   =============================== */
+
+.how-it-works {
+  max-width: 900px;
+  margin: 6rem auto;
+}
+
+.how-it-works h3 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.system-rail {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.system-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 1.5rem;
+  padding: 1.6rem 2rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.system-step::before {
+  content: "";
+  position: absolute;
+  left: 30px;
+  top: -28px;
+  width: 2px;
+  height: calc(100% + 28px);
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.15));
+}
+
+.system-step:first-child::before {
+  display: none;
+}
+
+.step-index {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--orange);
+  align-self: center;
+}
+
+.step-content h4 {
+  font-size: 1.15rem;
+  margin-bottom: 0.4rem;
+}
+
+.step-content p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.75;
+}
+
+/* Hover / Active */
+.system-step:hover,
+.system-step.active {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.08);
+}
+
+.system-step:hover p,
+.system-step.active p {
+  opacity: 1;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .system-step {
+    grid-template-columns: 1fr;
+  }
+
+  .step-index {
+    font-size: 0.9rem;
+    opacity: 0.6;
+  }
+
+  .system-step::before {
+    display: none;
+  }
+}
