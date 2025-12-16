@@ -1521,3 +1521,47 @@ y
     grid-template-columns: 1fr;
   }
 }
+
+/* ===============================
+   CENTER DATA SPINE
+   =============================== */
+
+.data-spine {
+  position: relative;
+  width: 2px;
+  background: rgba(0,0,0,0.08);
+  border-radius: 2px;
+}
+
+/* animated intelligence flow */
+.spine-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(
+    to bottom,
+    var(--orange),
+    var(--blue)
+  );
+  border-radius: 2px;
+  transition: height 0.4s ease-out;
+}
+
+/* Grid correction (3 columns now) */
+.istack-moat-layout {
+  grid-template-columns: 1fr 2px 1fr;
+  gap: 4rem;
+}
+
+/* Hide spine on mobile */
+@media (max-width: 768px) {
+  .data-spine {
+    display: none;
+  }
+
+  .istack-moat-layout {
+    grid-template-columns: 1fr;
+  }
+}
