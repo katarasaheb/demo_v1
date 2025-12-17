@@ -640,3 +640,10 @@ body, h1, h2, h3, h4, h5, h6, p, a, li, span {
   margin: 0 2rem;
   border-radius: 1px;
 }
+
+section h1 {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
