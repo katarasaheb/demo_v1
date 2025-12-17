@@ -545,3 +545,33 @@ h2.section-title {
 body, h1, h2, h3, h4, h5, h6, p, a, li, span {
   font-family: 'Playfair Display', serif;
 }
+
+/* Ensure the card title stays above the overlay */
+.istack-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.istack-card__title {
+  position: relative;
+  z-index: 2; /* keep title above overlay */
+}
+
+.istack-card__overlay {
+  position: absolute;
+  top: 100%; /* start hidden below the card */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+  padding: 1rem;
+  box-sizing: border-box;
+  transition: top 0.3s ease;
+  z-index: 1; /* behind the title */
+}
+
+/* Slide overlay up on hover */
+.istack-card:hover .istack-card__overlay {
+  top: 0;
+}
