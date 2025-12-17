@@ -575,3 +575,69 @@ body, h1, h2, h3, h4, h5, h6, p, a, li, span {
 .istack-card:hover .istack-card__overlay {
   top: 0;
 }
+
+/* Advantage section */
+.advantage-system {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.advantage-column {
+  flex: 1;
+}
+
+.advantage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.advantage-card {
+  position: relative;
+  background: #f8f8f7;
+  border-radius: 1rem;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.advantage-card:hover {
+  transform: translateY(-5px);
+}
+
+.advantage-card__title {
+  position: relative;
+  z-index: 2;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+.advantage-card__overlay {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+  padding: 1rem;
+  box-sizing: border-box;
+  transition: top 0.3s ease;
+  z-index: 1;
+}
+
+.advantage-card:hover .advantage-card__overlay {
+  top: 0;
+}
+
+.system-spine {
+  width: 2px;
+  background: #ec5e27;
+  margin: 0 2rem;
+  border-radius: 1px;
+}
