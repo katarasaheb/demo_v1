@@ -333,1279 +333,211 @@ footer {
   }
 }
 
-/* Individual layers */
-.layer {
-  background: var(--orange);
-  color: #fff;
-  padding: 1.5rem 2.5rem;
-  border-radius: 2rem;
-  min-width: 220px;
-  text-align: center;
-  position: relative;
-  font-weight: 600;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
-  animation: float 3s ease-in-out infinite;
-}
+/* =========================================================
+   KITCHIN — MASTER STYLESHEET (REFACTORED)
+   Scope: Grid iStack (cards) + Vertical iStack + Moat
+   Status: Production-safe, namespaced, collision-free
+   ========================================================= */
 
-.layer span {
-  display: block;
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
-}
-
-.layer p {
-  font-size: 1rem;
-  font-weight: 400;
-}
-
-/* Floating animation */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-/* Hover effect — lift + glow */
-.layer:hover {
-  transform: translateY(-12px) scale(1.05);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-  background: #ff6b3a;
-}
-
-/* Arrows between layers */
-.layer:not(:last-child)::after {
-  content: "→";
-  font-size: 2rem;
-  color: var(--blue);
-  display: block;
-  margin: 1rem auto 0 auto;
-}
-
-@media (min-width: 768px) {
-  .layer:not(:last-child)::after {
-    position: absolute;
-    top: 50%;
-    right: -2rem;
-    transform: translateY(-50%);
-    margin: 0;
-  }
-
-  .layer:last-child::after { content: ""; }
-}
-
-/* Horizontal data stream between layers (desktop only) */
-@media (min-width: 768px) {
-  .layer .data-stream {
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--blue), var(--orange));
-    border-radius: 2px;
-    overflow: hidden;
-    transform: translateY(-50%);
-  }
-
-  /* Moving dots along the stream */
-  .layer .data-stream::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 10px;
-    height: 10px;
-    background: #fff;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    animation: move-dot 1.5s linear infinite;
-  }
-
-  /* Remove stream for last layer */
-  .layer:last-child .data-stream {
-    display: none;
-  }
-}
-
-/* Dot animation along stream */
-@keyframes move-dot {
-  0% { left: 0%; }
-  100% { left: 100%; }
-}
-
-/* Highlight connected layers on hover */
-.layer:hover ~ .layer,
-.layer:hover ~ .layer ~ .layer {
-  opacity: 0.85;
-  transform: scale(0.98);
-}
-
-/* Vertical on mobile stays unchanged */
-@media (max-width: 767px) {
-  .istack-diagram {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .layer .data-stream {
-    width: 4px;
-    height: 60px;
-    left: 50%;
-    top: 100%;
-    transform: translateX(-50%);
-  }
-
-  .layer .data-stream::before {
-    left: 50%;
-    top: 0;
-    transform: translate(-50%, -50%);
-    animation: move-dot-vertical 1.5s linear infinite;
-  }
-
-  @keyframes move-dot-vertical {
-    0% { top: 0%; }
-    100% { top: 100%; }
-  }
-}
-
-/* Layer hover detail box */
-.layer-details, .how-it-works-detail {
-  max-width: 700px;
-  margin: 2rem auto 0;
-  padding: 1.5rem;
-  background: var(--card-bg);
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  font-size: 1rem;
-  color: var(--text);
-  transition: opacity 0.3s ease;
-  text-align: center;
-}
-
-/* Highlight on hover */
-.layer:hover {
-  background: #ff6b3a;
-}
-
-.how-it-works ul li {
-  padding: 0.6rem 0;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.how-it-works ul li:hover {
-  transform: scale(1.05);
-  color: var(--orange);
-  font-weight: 600;
-}
-/* Flywheel Diagram */
-.istack-diagram.flywheel {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  position: relative;
-  padding: 3rem 0;
-}
-
-.layer {
-  background: var(--orange);
-  color: #fff;
-  border-radius: 2rem;
-  padding: 1.5rem 2rem;
-  min-width: 180px;
-  text-align: center;
-  font-weight: 600;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-  position: relative;
-  cursor: pointer;
-  animation: float 3s ease-in-out infinite;
-}
-
-.layer span {
-  font-size: 1.2rem;
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-.layer .data-stream {
-  position: absolute;
-  width: 80px;
-  height: 4px;
-  top: 50%;
-  left: 100%;
-  transform: translateY(-50%);
-  background: linear-gradient(90deg, var(--blue), var(--orange));
-  border-radius: 2px;
-  animation: flow 2s linear infinite;
-}
-
-.layer:last-child .data-stream {
-  display: none;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-@keyframes flow {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(20px); }
-}
-
-/* Hover effects */
-.layer:hover {
-  transform: scale(1.05) translateY(-10px);
-  background: #ff6b3a;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-}
-
-/* Hover connected layers fade */
-.layer:hover ~ .layer {
-  opacity: 0.85;
-  transform: scale(0.98);
-}
-
-/* Detail box */
-.layer-details, .how-it-works-detail {
-  max-width: 700px;
-  margin: 2rem auto 0;
-  padding: 1.5rem;
-  background: var(--card-bg);
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  font-size: 1rem;
-  color: var(--text);
-  text-align: center;
-  transition: opacity 0.3s ease;
-}
-
-/* How It Works interactive list */
-.how-it-works ul li {
-  padding: 0.5rem 0;
-  cursor: pointer;
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-.how-it-works ul li:hover {
-  transform: scale(1.05);
-  color: var(--orange);
-  font-weight: 600;
-}
-.istack-flywheel {
-  padding: 5rem 2rem;
-  text-align: center;
-  position: relative;
-  background: var(--bg);
-}
-
-.istack-flywheel h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.solution-intro {
-  max-width: 800px;
-  margin: 0 auto 3rem;
-  font-size: 1.1rem;
-  color: var(--text);
-}
-
-/* Flywheel Container */
-.flywheel-container {
-  position: relative;
-  width: 600px;
-  height: 600px;
-  margin: 0 auto;
-  border-radius: 50%;
-}
-
-/* Flywheel Layers */
-.layer {
-  position: absolute;
-  width: 140px;
-  height: 140px;
-  background: var(--orange);
-  color: #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-}
-
-.layer span {
-  font-size: 1rem;
-}
-
-/* Data Streams */
-.data-stream {
-  position: absolute;
-  width: 60px;
-  height: 4px;
-  background: linear-gradient(90deg, var(--blue), var(--orange));
-  border-radius: 2px;
-  animation: flow 2s linear infinite;
-}
-
-@keyframes flow {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(20px); }
-}
-
-/* Tooltip */
-.layer-tooltip {
-  position: fixed;
-  padding: 0.8rem 1rem;
-  background: var(--blue);
-  color: #fff;
-  border-radius: 12px;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.2s;
-  max-width: 220px;
-  font-size: 0.9rem;
-  z-index: 999;
-}
-
-/* Hover effect */
-.layer:hover {
-  transform: scale(1.1) translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-  background: #ff6b3a;
-}
-
-/* Flywheel positions */
-.layer:nth-child(1) { top: 0; left: 50%; transform: translate(-50%, 0); }
-.layer:nth-child(2) { top: 25%; right: 0; transform: translate(0, -50%); }
-.layer:nth-child(3) { bottom: 0; left: 50%; transform: translate(-50%, 0); }
-.layer:nth-child(4) { top: 25%; left: 0; transform: translate(0, -50%); }
-.layer:nth-child(5) { top: 50%; left: 50%; transform: translate(-50%, -50%); }
-
-/* Responsive */
-@media (max-width: 768px) {
-  .flywheel-container {
-    width: 100%;
-    height: 400px;
-  }
-
-  .layer {
-    width: 100px;
-    height: 100px;
-    font-size: 0.9rem;
-  }
-}
-
-.istack-layer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.layer-card {
-  background: var(--orange);
-  color: #fff;
-  padding: 2rem 1.5rem;
-  border-radius: 1.5rem;
-  text-align: center;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
-}
-
-/* Ensure readable text on hover */
-.layer-card,
-.layer-card span {
-  color: var(--text);
-}
-
-.layer-card:hover,
-.layer-card:hover span {
-  color: var(--blue); /* or #1D1D1F */
-}
-
-
-.layer-card span {
-  font-size: 1.3rem;
-}
-
-.layer-card:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.2);
-  background: #ff6b3a;
-}
-
-.layer-tooltip {
-  position: fixed;
-  padding: 0.8rem 1rem;
-  background: var(--blue);
-  color: #fff;
-  border-radius: 12px;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.2s;
-  max-width: 220px;
-  font-size: 0.9rem;
-  z-index: 999;
-}
-/* Layers Grid */
-.layers-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-  justify-items: center;
-}
-
-/* Layer Card */
-.layer-card {
-  background: var(--orange);
-  color: #fff;
-  border-radius: 16px;
-  padding: 2rem 1.5rem;
-  text-align: center;
-  font-weight: 600;
-  cursor: pointer;
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-}
-
-.layer-card span {
-  display: block;
-  font-size: 1.2rem;
-}
-
-.layer-card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-  background: #ff6b3a;
-}
-
-/* Tooltip */
-.layer-tooltip {
-  position: fixed;
-  padding: 0.8rem 1rem;
-  background: var(--blue);
-  color: #fff;
-  border-radius: 12px;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.2s, transform 0.2s;
-  max-width: 220px;
-  font-size: 0.9rem;
-  z-index: 999;
-}
-/* Layer Card */
-.layer-card {
-  background: var(--orange);
-  color: #fff;
-  border-radius: 16px;
-  padding: 2rem 1.5rem;
-  text-align: center;
-  font-weight: 600;
-  cursor: pointer;
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-  animation: floatCard 3s ease-in-out infinite;
-}
-
-.layer-card span {
-  display: block;
-  font-size: 1.2rem;
-}
-
-/* Floating animation */
-@keyframes floatCard {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-.layer-card:hover {
-  transform: translateY(-12px) scale(1.05);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-  background: #ff6b3a;
-}
-
-/* Tooltip */
-.layer-tooltip {
-  position: fixed;
-  padding: 0.8rem 1rem;
-  background: var(--blue);
-  color: #fff;
-  border-radius: 12px;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.2s, transform 0.2s;
-  max-width: 220px;
-  font-size: 0.9rem;
-  z-index: 999;
-}
-
-/* Fade-in effect (reuse from previous) */
-.fade-in {
-  opacity: 0;
-}
-.fade-in.visible {
-  animation: fadeUp 0.9s ease-out forwards;
-}
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(32px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.layer-card {
-  background: var(--orange);
-  color: #fff;
-  border-radius: 16px;
-  padding: 2rem 1.5rem;
-  text-align: center;
-  font-weight: 600;
-  cursor: pointer;
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-  animation: floatCard 3s ease-in-out infinite;
-  opacity: 0; /* start hidden for fade-in */
-}
-
-.layer-card span {
-  display: block;
-  font-size: 1.2rem;
-}
-
-/* Floating animation */
-@keyframes floatCard {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-.layer-card:hover {
-  transform: translateY(-12px) scale(1.05);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-  background: #ff6b3a;
-}
-
-/* Fade-in animation */
-.fade-up {
-  opacity: 0;
-  transform: translateY(32px);
-  animation-fill-mode: forwards;
-}
-@keyframes fadeUpStagger {
-  0% { opacity: 0; transform: translateY(32px); }
-  100% { opacity: 1; transform: translateY(0); }
+/* ===============================
+   ROOT VARIABLES
+   =============================== */
+:root {
+  --orange: #EC5E27;
+  --blue: #002E50;
+  --bg: #F8F8F7;
+  --text: #1D1D1F;
+  --muted: #6e6e73;
 }
 
 /* ===============================
-   HOW IT WORKS — SYSTEM RAIL
+   GLOBAL RESET / BASE
    =============================== */
-
-.how-it-works {
-  max-width: 900px;
-  margin: 6rem auto;
+* {
+  box-sizing: border-box;
 }
 
-.how-it-works h3 {
-  font-size: 2rem;
-  margin-bottom: 3rem;
-  text-align: center;
-}
-
-.system-rail {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 1.8rem;
-}
-
-.system-step {
-  position: relative;
-  display: grid;
-  grid-template-columns: 60px 1fr;
-  gap: 1.5rem;
-  padding: 1.6rem 2rem;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-}
-
-.system-step::before {
-  content: "";
-  position: absolute;
-  left: 30px;
-  top: -28px;
-  width: 2px;
-  height: calc(100% + 28px);
-  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.15));
-}
-
-.system-step:first-child::before {
-  display: none;
-}
-
-.step-index {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--orange);
-  align-self: center;
-}
-
-.step-content h4 {
-  font-size: 1.15rem;
-  margin-bottom: 0.4rem;
-}
-
-.step-content p {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  opacity: 0.75;
-}
-
-/* Hover / Active */
-.system-step:hover,
-.system-step.active {
-  background: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 20px 45px rgba(0,0,0,0.08);
-}
-
-.system-step:hover p,
-.system-step.active p {
-  opacity: 1;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .system-step {
-    grid-template-columns: 1fr;
-  }
-
-  .step-index {
-    font-size: 0.9rem;
-    opacity: 0.6;
-  }
-
-  .system-step::before {
-    display: none;
-  }
-}
-
-/* ===============================
-   ISTACK — TESLA-STYLE SYSTEM
-   =============================== */
-
-.iStack {
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--bg);
-}
-
-.layers-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
-  margin: 4rem 0 2rem;
-}
-
-.layer-card {
-  background: var(--card-bg);
-  border-radius: 18px;
-  padding: 2.5rem 2rem;
-  text-align: center;
-  font-weight: 600;
-  font-size: 1.2rem;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-  cursor: pointer;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.layer-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.18);
-}
-
-/* Tooltip */
-.layer-tooltip {
-  margin-top: 2rem;
-  padding: 1.5rem;
-  max-width: 700px;
-  margin-inline: auto;
-  text-align: center;
-  background: var(--card-bg);
-  border-radius: 16px;
-  box-shadow: 0 8px 26px rgba(0,0,0,0.14);
-  font-size: 1rem;
-}
-
-/* SVG Data Pulse */
-.data-pulse {
-  width: 100%;
-  height: 120px;
-  margin: 3rem 0;
-}
-
-.data-pulse path {
-  fill: none;
-  stroke: var(--orange);
-  stroke-width: 2;
-  stroke-dasharray: 6 10;
-  animation: pulse 6s linear infinite;
-}
-
-@keyframes pulse {
-  to {
-    stroke-dashoffset: -200;
-  }
-}
-
-/* OUR MOAT */
-.system-rail {
-  max-width: 900px;
-  margin: 4rem auto 0;
-}
-
-.system-step {
-  display: flex;
-  gap: 1.5rem;
-  padding: 1.8rem 0;
-  border-left: 3px solid transparent;
-  transition: background 0.4s ease, border-color 0.4s ease;
-}
-
-.system-step.active {
-  border-left-color: var(--orange);
-  background: linear-gradient(90deg, rgba(236,94,39,0.08), transparent 60%);
-}
-
-.step-index {
-  font-weight: 700;
-  color: var(--orange);
-  min-width: 42px;
-}
-
-/* Split layout */
-.istack-moat-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: flex-start;
-}
-
-/* ISTACK vertical */
-.layers-vertical {
-  display: flex;
-  flex-direction: column;
-  gap: 1.4rem;
-}
-
-.layer-card {
-  position: relative;
-  padding: 1.6rem 2rem;
-  border-radius: 20px;
-  background: var(--card-bg);
-  box-shadow: 0 10px 28px rgba(0,0,0,0.12);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.layer-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.18);
-}
-
-.layer-card span {
-  font-size: 1.35rem;
-  font-weight: 600;
   color: var(--text);
 }
 
-/* Data pulse */
-.data-pulse {
-  position: absolute;
-  right: 1.4rem;
-  top: 50%;
-  width: 10px;
-  height: 10px;
-  background: var(--orange);
-  border-radius: 50%;
-  transform: translateY(-50%);
-  animation: pulse 1.6s ease-in-out infinite;
+h2.section-title {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 600;
+  margin-bottom: 4rem;
 }
 
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(236,94,39,0.6); }
-  70% { box-shadow: 0 0 0 14px rgba(236,94,39,0); }
-  100% { box-shadow: 0 0 0 0 rgba(236,94,39,0); }
-}
+/* =========================================================
+   SYSTEM LAYOUT — iSTACK (LEFT) + MOAT (RIGHT)
+   ========================================================= */
 
-/* MOAT */
-.moat-column h3 {
-  font-size: 2.2rem;
-  margin-bottom: 2rem;
-}
-
-.system-rail {
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-}
-
-.system-step {
-  padding: 1.6rem;
-  border-left: 4px solid #ddd;
-  transition: all 0.35s ease;
-}
-
-.system-step.active {
-  border-color: var(--orange);
-  background: rgba(236,94,39,0.06);
-}
-
-.step-index {
-  font-weight: 700;
-  color: var(--orange);
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .istack-moat-layout {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ===============================
-   iStack System Section
-   =============================== */
-
-.iStack-system {
-  background: var(--bg);
-  padding: 8rem 2rem;
-}
-
-.system-header {
-  max-width: 900px;
-  margin-bottom: 6rem;
-}
-
-.system-header h1 {
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-  margin-bottom: 1.5rem;
-}
-
-.system-layout {
+.istack-moat-system {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: minmax(0, 1fr) 2px minmax(0, 1fr);
   gap: 6rem;
   align-items: start;
 }
 
-.system-anchor h2 {
-  font-size: clamp(2rem, 3vw, 2.8rem);
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
+.system-spine {
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0,0,0,0.18),
+    transparent
+  );
 }
 
-.system-anchor p {
-  max-width: 420px;
-  opacity: 0.85;
+/* =========================================================
+   iSTACK — GRID CARDS (PRIMARY)
+   ========================================================= */
+
+.istack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
 }
 
-/* Layers */
-
-.system-layers {
-  display: flex;
-  flex-direction: column;
-  gap: 3.5rem;
+.istack-card {
   position: relative;
+  padding: 2.5rem;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(6px);
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-.system-layer {
-  padding-left: 3rem;
-  border-left: 1px solid rgba(0,0,0,0.08);
+.istack-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.12);
+}
+
+.istack-card__title {
   position: relative;
+  z-index: 2;
+  font-size: 1.35rem;
+  font-weight: 600;
 }
 
-.layer-index {
+.istack-card__overlay {
   position: absolute;
-  left: -2.2rem;
-  top: 0;
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  opacity: 0.4;
-}
-
-.system-layer h3 {
-  font-size: 1.4rem;
-  margin-bottom: 0.4rem;
-}
-
-.system-layer p {
-  max-width: 420px;
-  opacity: 0.85;
-}
-
-/* Scroll polish */
-
-.fade-in {
+  inset: 0;
+  padding: 2.5rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.92),
+    rgba(255,255,255,0.97)
+  );
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(8px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
 }
 
-.fade-in.visible {
+.istack-card__desc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #2a2a2a;
+}
+
+.istack-card:hover .istack-card__overlay {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Mobile */
+/* =========================================================
+   iSTACK — VERTICAL SYSTEM (LEFT COLUMN)
+   ========================================================= */
+
+.istack-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.istack-vertical__item {
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+.istack-vertical__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.4rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--orange);
+}
+
+.istack-vertical__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.istack-vertical__desc {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* =========================================================
+   MOAT — RIGHT COLUMN
+   ========================================================= */
+
+.moat {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.moat-item {
+  padding-left: 2.5rem;
+  position: relative;
+}
+
+.moat-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.4rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--blue);
+}
+
+.moat-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.moat-desc {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 
 @media (max-width: 900px) {
-  .system-layout {
+  .istack-moat-system {
     grid-template-columns: 1fr;
+    gap: 4rem;
   }
 
-  .system-anchor {
-    margin-bottom: 4rem;
-  }
-}
-
-/* ===============================
-   iStack System (Architectural)
-   =============================== */
-
-.iStack-system {
-  background: var(--bg);
-  padding: 8rem 0;
-}
-
-.istack-header {
-  max-width: 900px;
-  margin-bottom: 6rem;
-}
-
-.istack-header h1 {
-  font-size: clamp(2.8rem, 5vw, 4rem);
-  margin-bottom: 1.5rem;
-}
-
-.istack-intro {
-  font-size: 1.15rem;
-  line-height: 1.6;
-  opacity: 0.85;
-}
-
-/* Vertical Stack */
-.istack-vertical {
-  position: relative;
-  border-left: 2px solid rgba(0,0,0,0.08);
-  margin-left: 1rem;
-}
-
-/* Subtle data pulse */
-.istack-vertical::before {
-  content: "";
-  position: absolute;
-  left: -2px;
-  top: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(236, 94, 39, 0.4),
-    transparent
-  );
-  animation: pulseLine 7s ease-in-out infinite;
-}
-
-@keyframes pulseLine {
-  0% { opacity: 0.2; }
-  50% { opacity: 0.7; }
-  100% { opacity: 0.2; }
-}
-
-/* Layers */
-.istack-layer {
-  padding: 3.5rem 0 3.5rem 3rem;
-  max-width: 720px;
-}
-
-.layer-label {
-  font-size: 0.85rem;
-  letter-spacing: 0.12em;
-  opacity: 0.5;
-}
-
-.istack-layer h2 {
-  font-size: 2rem;
-  margin: 0.5rem 0;
-}
-
-.istack-layer p {
-  opacity: 0.75;
-  max-width: 520px;
-}
-
-/* Our Moat */
-.moat-system {
-  margin-top: 7rem;
-}
-
-.moat-system h3 {
-  font-size: 1.6rem;
-  margin-bottom: 2rem;
-}
-
-.moat-rail {
-  display: flex;
-  gap: 2rem;
-  overflow-x: auto;
-}
-
-.moat-step {
-  flex: 0 0 auto;
-  padding-bottom: 0.75rem;
-  font-size: 0.95rem;
-  opacity: 0.4;
-  border-bottom: 2px solid transparent;
-  transition: all 0.4s ease;
-}
-
-.moat-step.active {
-  opacity: 1;
-  border-color: var(--orange);
-}
-/* --- Layout --- */
-.istack-moat-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
-  align-items: start;
-}
-
-/* --- Intro text --- */
-.istack-intro {
-  max-width: 520px;
-  margin-bottom: 3rem;
-}
-
-.istack-intro p {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: var(--text-muted);
-}
-
-/* --- iStack Vertical --- */
-.istack-vertical {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  position: relative;
-}
-
-/* subtle spine */
-.istack-vertical::before {
-  content: "";
-  position: absolute;
-  left: -24px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(0,0,0,0.08),
-    transparent
-  );
-}
-
-/* --- Layers --- */
-.istack-layer {
-  background: #fff;
-  border-radius: 14px;
-  padding: 1.6rem 1.8rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  cursor: default;
-  position: relative;
-}
-
-/* Hover interaction — flow, not pop */
-.istack-layer:hover {
-  transform: translateX(6px);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.06);
-}
-
-/* Typography */
-.istack-layer h2 {
-  font-size: 1.2rem;
-  margin-bottom: 0.35rem;
-}
-
-.istack-layer p {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-}
-
-/* ripple effect to neighbors */
-.istack-layer:hover ~ .istack-layer {
-  transform: translateX(2px);
-}
-y
-/* Moat uses the SAME system */
-.moat-vertical {
-  margin-top: 0;
-}
-
-/* Optional: slightly firmer presence */
-.moat-layer {
-  background: #fff;
-}
-
-/* Keep interactions perfectly mirrored */
-.moat-layer:hover {
-  transform: translateX(-6px);
-}
-.istack-moat-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
-  align-items: start;
-}
-
-.istack-column,
-.moat-column {
-  display: block;
-}
-
-.istack-vertical {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-/* ===============================
-   ISTACK / MOAT — FINAL AUTHORITY
-   =============================== */
-
-.istack-moat-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
-  align-items: flex-start;
-}
-
-.istack-column,
-.moat-column {
-  width: 100%;
-}
-
-.istack-vertical,
-.moat-vertical {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .istack-moat-layout {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ===============================
-   CENTER DATA SPINE
-   =============================== */
-
-.data-spine {
-  position: relative;
-  width: 2px;
-  background: rgba(0,0,0,0.08);
-  border-radius: 2px;
-}
-
-/* animated intelligence flow */
-.spine-progress {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 0%;
-  background: linear-gradient(
-    to bottom,
-    var(--orange),
-    var(--blue)
-  );
-  border-radius: 2px;
-  transition: height 0.4s ease-out;
-}
-
-/* Grid correction (3 columns now) */
-.istack-moat-layout {
-  grid-template-columns: 1fr 2px 1fr;
-  gap: 4rem;
-}
-
-/* Hide spine on mobile */
-@media (max-width: 768px) {
-  .data-spine {
+  .system-spine {
     display: none;
-  }
-
-  .istack-moat-layout {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ===============================
-   CENTER DATA SPINE
-   =============================== */
-
-.data-spine {
-  position: relative;
-  width: 2px;
-  background: rgba(0,0,0,0.08);
-  border-radius: 2px;
-}
-
-/* animated intelligence flow */
-.spine-progress {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 0%;
-  background: linear-gradient(
-    to bottom,
-    var(--orange),
-    var(--blue)
-  );
-  border-radius: 2px;
-  transition: height 0.4s ease-out;
-}
-
-/* Grid correction (3 columns now) */
-.istack-moat-layout {
-  grid-template-columns: 1fr 2px 1fr;
-  gap: 4rem;
-}
-
-/* Hide spine on mobile */
-@media (max-width: 768px) {
-  .data-spine {
-    display: none;
-  }
-
-  .istack-moat-layout {
-    grid-template-columns: 1fr;
   }
 }
