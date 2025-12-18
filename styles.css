@@ -522,3 +522,42 @@ body,h1,h2,h3,h4,h5,h6,p,a,li,span { font-family:'Playfair Display', serif; }
   line-height: 1.1;
   margin-bottom: 2rem;
 }
+
+/* =========================================================
+   UNIFIED HEADING SIZES
+   ========================================================= */
+
+/* H1 - All section main titles (like Crisis section) */
+h1 {
+  font-size: clamp(3rem, 6vw, 5.5rem); /* same as .crisis-scale h1 */
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  text-align: center; /* center all section titles */
+}
+
+/* H2 - Subtitles (like iStack section) */
+h2 {
+  font-size: clamp(1.35rem, 3vw, 2rem); /* same as .istack-card__title / section subtitle */
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+/* H3 - Smaller headings / descriptive lines (like 5 interlocking layers…) */
+h3 {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem); /* same as .istack-vertical__title / .moat-title */
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+/* Optional: Ensure Alberta section titles follow same sizing */
+.alberta h1, .alberta h2, .alberta h3 {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-align: inherit;
+}
