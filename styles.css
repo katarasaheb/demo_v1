@@ -654,3 +654,126 @@ h3 {
     color: var(--text-dark);
   }
 }
+
+/* =========================================================
+   JOIN — SYSTEM-LED DESIGN
+   ========================================================= */
+
+.join-system {
+  background: var(--bg);
+}
+
+.join-grid-system {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) 2px minmax(0,1fr);
+  gap: 6rem;
+  align-items: start;
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* Spine (same language as iStack) */
+.join-spine {
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0,0,0,0.2),
+    transparent
+  );
+  border-radius: 1px;
+}
+
+/* LEFT */
+.join-intent h1 {
+  margin-bottom: 2rem;
+}
+
+.join-lead {
+  font-size: 1.2rem;
+  max-width: 520px;
+  opacity: 0.9;
+}
+
+.join-paths {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.join-path {
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+.join-path span {
+  position: absolute;
+  left: 0;
+  top: 0.4rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--orange);
+}
+
+.join-path p {
+  font-size: 1.05rem;
+  opacity: 0.85;
+}
+
+/* RIGHT */
+.join-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.join-form input,
+.join-form select,
+.join-form textarea {
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.15);
+  background: transparent;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.join-form input:focus,
+.join-form select:focus,
+.join-form textarea:focus {
+  outline: none;
+  border-color: var(--orange);
+  box-shadow: 0 0 0 2px rgba(236,94,39,0.15);
+}
+
+.join-form button {
+  margin-top: 1.5rem;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .join-grid-system {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .join-spine {
+    display: none;
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .join-system {
+    background: var(--bg-dark);
+  }
+
+  .join-form input,
+  .join-form select,
+  .join-form textarea {
+    border-color: rgba(255,255,255,0.2);
+    color: var(--text-dark);
+  }
+}
