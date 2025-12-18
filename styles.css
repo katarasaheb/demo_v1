@@ -458,23 +458,26 @@ footer {
   line-height: 1.5;
 }
 
-/* Advantage section */
+/* =========================================================
+   ADVANTAGE SECTION — STACKED CARDS
+   ========================================================= */
 .advantage-system {
   display: flex;
+  flex-direction: column; /* stack columns vertically on smaller screens */
   gap: 4rem;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   max-width: 1400px;
   margin: auto;
 }
 
 .advantage-column {
-  flex: 1;
+  width: 100%; /* make each column full-width */
 }
 
 .advantage-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  display: flex; /* switch from grid to flex for vertical stacking */
+  flex-direction: column;
   gap: 1.5rem;
   margin-top: 2rem;
 }
@@ -488,6 +491,7 @@ footer {
   cursor: pointer;
   overflow: hidden;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
+  width: 100%;
 }
 
 .advantage-card:hover {
@@ -503,7 +507,6 @@ footer {
   cursor: pointer;
 }
 
-/* Overlay with slide-up & unified hover */
 .advantage-card__overlay {
   position: absolute;
   inset: 0;
@@ -528,22 +531,23 @@ footer {
   box-shadow: 0 18px 40px rgba(0,0,0,0.16);
 }
 
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
+/* Responsive tweaks for vertical stacking */
 @media (max-width: 900px) {
-  .istack-moat-system,
   .advantage-system {
-    grid-template-columns: 1fr;
-    display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 3rem;
   }
 
-  .system-spine {
-    display: none;
+  .advantage-column {
+    width: 100%;
+  }
+
+  .advantage-grid {
+    flex-direction: column;
+    gap: 1.5rem;
   }
 }
+
 
 /* =========================================================
    FOOTER
