@@ -435,6 +435,33 @@ section {
    TYPOGRAPHY
    ========================================================= */
 body,h1,h2,h3,h4,h5,h6,p,a,li,span { font-family:'Playfair Display', serif; }
+/* =========================================================
+   GLOBAL HEADING SCALE — SINGLE SOURCE OF TRUTH
+   ========================================================= */
+
+h1 {
+  font-size: clamp(3rem, 6vw, 5.5rem); /* same as Crisis title */
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: center;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem); /* same as iStack heading */
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: clamp(1.15rem, 2vw, 1.35rem); /* like descriptive subheads */
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+}
+
+
 
 /* =========================================================
    ALBERTA CARDS
