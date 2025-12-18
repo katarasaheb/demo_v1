@@ -479,3 +479,22 @@ body,h1,h2,h3,h4,h5,h6,p,a,li,span { font-family:'Playfair Display', serif; }
   font-size: 1rem;
   opacity: 0.85;
 }
+
+/* Section Titles */
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(2.5rem, 5vw, 3.5rem); /* responsive size */
+  text-align: center; /* center horizontally */
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.section-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+  text-align: center;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
