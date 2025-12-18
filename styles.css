@@ -335,7 +335,7 @@ footer {
 .istack-card {
   position: relative;
   padding: 2.5rem;
-  border-radius: 16px;
+  border-radius: 18px;
   background: var(--card-bg);
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0,0,0,0.12);
@@ -365,7 +365,7 @@ footer {
 .istack-card__overlay {
   position: absolute;
   inset: 0;
-  padding: 2rem;
+  padding: 1.5rem;
   background: rgba(0,0,0,0.85);
   color: #fff;
   display: flex;
@@ -374,6 +374,7 @@ footer {
   text-align: center;
   font-size: 1rem;
   opacity: 0;
+  pointer-events: none; 
   transform: translateY(20px);
   transition: opacity 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
   z-index: 2;
