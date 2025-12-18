@@ -17,6 +17,8 @@
   --card-bg-dark: #1a1a1c;
 
   --nav-height: 88px;
+
+  --muted: #6e6e73;
 }
 
 /* ---------- RESET ---------- */
@@ -258,7 +260,6 @@ section {
   flex-wrap: wrap;
 }
 
-/* Force BOTH buttons to appear identical */
 .crisis-cta-group .primary-btn,
 .crisis-cta-group .secondary-btn {
   display: inline-block;
@@ -323,7 +324,6 @@ footer {
   position: relative;
 }
 
-/* Desktop layout */
 @media (min-width: 768px) {
   .istack-diagram {
     flex-direction: row;
@@ -334,46 +334,10 @@ footer {
 }
 
 /* =========================================================
-   KITCHIN — MASTER STYLESHEET (REFACTORED)
-   Scope: Grid iStack (cards) + Vertical iStack + Moat
-   Status: Production-safe, namespaced, collision-free
+   iSTACK + ADVANTAGE FIXED BLOCK
    ========================================================= */
 
-/* ===============================
-   ROOT VARIABLES
-   =============================== */
-:root {
-  --orange: #EC5E27;
-  --blue: #002E50;
-  --bg: #F8F8F7;
-  --text: #1D1D1F;
-  --muted: #6e6e73;
-}
-
-/* ===============================
-   GLOBAL RESET / BASE
-   =============================== */
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-}
-
-h2.section-title {
-  font-size: clamp(2.2rem, 4vw, 3rem);
-  font-weight: 600;
-  margin-bottom: 4rem;
-}
-
-/* =========================================================
-   SYSTEM LAYOUT — iSTACK (LEFT) + MOAT (RIGHT)
-   ========================================================= */
-
+/* iStack + Moat system */
 .istack-moat-system {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 2px minmax(0, 1fr);
@@ -383,18 +347,12 @@ h2.section-title {
 
 .system-spine {
   width: 2px;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(0,0,0,0.18),
-    transparent
-  );
+  background: #ec5e27;
+  margin: 0 2rem;
+  border-radius: 1px;
 }
 
-/* =========================================================
-   iSTACK — GRID CARDS (PRIMARY)
-   ========================================================= */
-
+/* iStack grid cards */
 .istack-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -421,23 +379,8 @@ h2.section-title {
   z-index: 2;
   font-size: 1.35rem;
   font-weight: 600;
+  cursor: pointer;
 }
-
-.istack-card__overlay {
-  position: absolute;
-  top: 100%; /* start hidden below */
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255,255,255,0.95); /* light background so it doesn't hide text */
-  color: var(--orange); /* hover text in orange */
-  padding: 2.5rem;
-  box-sizing: border-box;
-  transition: top 0.35s ease, opacity 0.35s ease;
-  z-index: 2; /* below the title but above card background */
-  display: flex;
-  align-items: center;
-
 
 .istack-card__desc {
   font-size: 0.95rem;
@@ -445,15 +388,31 @@ h2.section-title {
   color: #2a2a2a;
 }
 
-.istack-card:hover .istack-card__overlay {
-  top: 0; /* slide overlay up */
-  opacity: 1;
+/* Overlay with slide-up animation */
+.istack-card__overlay {
+  position: absolute;
+  inset: 0;
+  padding: 2rem;
+  background: rgba(0,0,0,0.85);
+  color: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  z-index: 2;
 }
 
-/* =========================================================
-   iSTACK — VERTICAL SYSTEM (LEFT COLUMN)
-   ========================================================= */
+.istack-card:hover .istack-card__overlay,
+.istack-card__title:hover + .istack-card__overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
 
+/* Vertical iStack */
 .istack-vertical {
   display: flex;
   flex-direction: column;
@@ -480,6 +439,7 @@ h2.section-title {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.6rem;
+  cursor: pointer;
 }
 
 .istack-vertical__desc {
@@ -488,10 +448,7 @@ h2.section-title {
   line-height: 1.5;
 }
 
-/* =========================================================
-   MOAT — RIGHT COLUMN
-   ========================================================= */
-
+/* Moat */
 .moat {
   display: flex;
   flex-direction: column;
@@ -518,6 +475,7 @@ h2.section-title {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.6rem;
+  cursor: pointer;
 }
 
 .moat-desc {
@@ -526,56 +484,6 @@ h2.section-title {
   line-height: 1.5;
 }
 
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-
-@media (max-width: 900px) {
-  .istack-moat-system {
-    grid-template-columns: 1fr;
-    gap: 4rem;
-  }
-
-  .system-spine {
-    display: none;
-  }
-}
-
-body, h1, h2, h3, h4, h5, h6, p, a, li, span {
-  font-family: 'Playfair Display', serif;
-}
-
-/* Ensure the card title stays above the overlay */
-.istack-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.istack-card__title {
-  position: relative;
-  z-index: 2; /* keep title above overlay */
-}
-
-.istack-card__overlay {
-  position: absolute;
-  inset: 0; /* full cover */
-  padding: 2rem;
-  background: rgba(0,0,0,0.85); /* dark semi-transparent background */
-  color: var(--orange); /* hover text in orange */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 1rem;
-  opacity: 0;
-  transition: opacity 0.35s ease;
-  z-index: 2;
-}
-
-.istack-card:hover .istack-card__overlay {
-  opacity: 1;
-}
-   
 /* Advantage section */
 .advantage-system {
   display: flex;
@@ -615,31 +523,44 @@ body, h1, h2, h3, h4, h5, h6, p, a, li, span {
   z-index: 2;
   font-family: 'Playfair Display', serif;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .advantage-card__overlay {
   position: absolute;
-  inset: 0; /* full cover */
+  inset: 0;
   padding: 1rem;
   background: rgba(0,0,0,0.85);
-  color: var(--orange); /* make hover text orange */
+  color: var(--orange);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   font-size: 0.95rem;
   opacity: 0;
-  transition: opacity 0.35s ease;
+  transform: translateY(20px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
   z-index: 2;
 }
 
-.advantage-card:hover .advantage-card__overlay {
+.advantage-card:hover .advantage-card__overlay,
+.advantage-card__title:hover + .advantage-card__overlay {
   opacity: 1;
+  transform: translateY(0);
 }
 
-.system-spine {
-  width: 2px;
-  background: #ec5e27;
-  margin: 0 2rem;
-  border-radius: 1px;
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .istack-moat-system {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .system-spine {
+    display: none;
+  }
+}
+
+body, h1, h2, h3, h4, h5, h6, p, a, li, span {
+  font-family: 'Playfair Display', serif;
 }
