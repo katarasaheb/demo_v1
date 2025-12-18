@@ -595,3 +595,80 @@ footer {
 body, h1, h2, h3, h4, h5, h6, p, a, li, span {
   font-family: 'Playfair Display', serif;
 }
+
+
+/* =========================================================
+   iSTACK — Hover Overlay Fix (Text Visible + Crisis-style Hover)
+   ========================================================= */
+.istack-card {
+  position: relative;
+  padding: 2.5rem;
+  border-radius: 18px;
+  background: var(--card-bg);
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.istack-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.16);
+}
+
+.istack-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+  z-index: 2;
+}
+
+.istack-card:hover .istack-card__overlay,
+.istack-card__title:hover + .istack-card__overlay {
+  opacity: 1;
+  transform: translateY(0);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.16);
+}
+
+/* =========================================================
+   ALBERTA SECTION — Animated Numbers
+   ========================================================= */
+.alberta {
+  text-align: center;
+  padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 6vw, 6rem);
+}
+
+.alberta h1, .alberta h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1rem;
+}
+
+.interactive-text {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--orange);
+  margin: 0 1rem;
+  transition: transform 0.35s ease, color 0.35s ease;
+}
+
+.interactive-text::after {
+  content: "";
+  display: block;
+  height: 3px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+
+.interactive-text:hover::after {
+  transform: scaleX(1);
+}
