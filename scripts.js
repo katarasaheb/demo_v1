@@ -259,3 +259,36 @@ const animateCounter = counter => {
   }, { threshold: 0.5 });
   interactiveCounters.forEach(counter => counterSectionObserver.observe(counter));
 });
+
+/* ===============================
+   ALBERTA COUNTERS
+=============================== */
+const albertaCounters = document.querySelectorAll(".alberta-counter");
+
+const animateAlbertaCounter = (counter) => {
+  const target = +counter.dataset.target;
+  let current = 0;
+  const duration = 2000; // 2 seconds
+  const stepTime = Math.max(20, duration / target); // step time in ms
+
+  const update = () => {
+    current += Math.ceil(target / (duration / stepTime));
+    if (current > target) current = target;
+    counter.textContent = current.toLocaleString();
+    if (current < target) {
+      requestAnimationFrame(update);
+    }
+  };
+  update();
+};
+
+const observer = new IntersectionObserver((entries, obs) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateAlbertaCounter(entry.target);
+      obs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+albertaCounters.forEach(counter => observer.observe(counter));
