@@ -18,7 +18,7 @@
   <nav class="nav-menu"> 
     <a href="#problem" class="fade-in">The Canadian Grocery Crisis</a> 
     <a href="#solution" class="fade-in">The iStack</a>
-    <a href="#advantage" class="fade-in">Avantage</a> 
+    <a href="#advantage" class="fade-in">Advantage</a> 
     <a href="#alberta" class="fade-in">Alberta</a> 
     <a href="#contact" class="nav-cta fade-in">Join</a>
   </nav> 
@@ -302,27 +302,78 @@
 
 
 <!-- CONTACT --> 
-<section id="contact" class="contact"> 
-  <div class="section-content fade-in"> 
-    <h2 class="fade-in">Build the Future of Grocery With Us</h2> 
-    <form action="https://formsubmit.co/Varenyam@kitchinai.ca" method="POST" data-contact-form aria-label="Contact form for Kitchin website"> 
-      <input type="hidden" name="_subject" value="New Kitchin Website Submission"> 
-      <input type="hidden" name="_captcha" value="false">
+<section id="contact" class="join-system">
+  <div class="section-content fade-in">
 
-      <input type="text" name="name" placeholder="Name" required class="fade-in"> 
-      <input type="email" name="email" placeholder="Email" required class="fade-in"> 
-      <select name="interest" required class="fade-in">
-        <option value="">I’m interested in…</option> 
-        <option>Alberta Launch Updates</option>
-        <option>Investing</option> 
-        <option>Partnership</option> 
-        <option>Careers</option> 
-      </select>
-      <textarea name="message" placeholder="Message (optional)" class="fade-in"></textarea> 
-      <button type="submit" class="primary-btn fade-in">Submit</button>
-    </form> 
-  </div> 
+    <div class="join-grid-system">
+
+      <!-- LEFT: Narrative -->
+      <div class="join-intent">
+        <h1>Build the Future of Grocery</h1>
+
+        <p class="join-lead">
+          Kitchin is being built by operators, technologists, investors, and partners
+          who believe grocery should be faster, fairer, and system-led.
+        </p>
+
+        <div class="join-paths">
+          <div class="join-path">
+            <span></span>
+            <p>Early access to Alberta launch</p>
+          </div>
+          <div class="join-path">
+            <span></span>
+            <p>Investor & partner conversations</p>
+          </div>
+          <div class="join-path">
+            <span></span>
+            <p>Careers & builder network</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SPINE -->
+      <div class="join-spine"></div>
+
+      <!-- RIGHT: Form -->
+      <div class="join-form">
+        <form
+          action="https://formsubmit.co/Varenyam@kitchinai.ca"
+          method="POST"
+          data-contact-form
+          aria-label="Join Kitchin"
+        >
+          <input type="hidden" name="_subject" value="New Kitchin Website Submission">
+          <input type="hidden" name="_captcha" value="false">
+
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="email" name="email" placeholder="Your email" required>
+
+          <select name="interest" required>
+            <option value="">I’m here for…</option>
+            <option>Alberta Launch Updates</option>
+            <option>Investing</option>
+            <option>Partnership</option>
+            <option>Careers</option>
+          </select>
+
+          <textarea
+            name="message"
+            placeholder="Anything we should know?"
+            rows="4"
+          ></textarea>
+
+          <button type="submit" class="primary-btn">
+            Join Kitchin
+          </button>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
 </section>
+
   
 <footer> 
   <p>© 2025 Kitchin Retail Solutions Inc. All rights reserved.</p>
