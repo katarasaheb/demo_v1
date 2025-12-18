@@ -47,11 +47,9 @@ body {
   top: 0;
   height: var(--nav-height);
   z-index: 1000;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   padding: 0 clamp(1.5rem, 6vw, 6rem);
   background: rgba(248,248,247,0.75);
   backdrop-filter: blur(14px);
@@ -86,8 +84,7 @@ body {
    SECTIONS
    ========================================================= */
 section {
-  padding: clamp(4rem, 8vw, 8rem)
-           clamp(1.5rem, 6vw, 6rem);
+  padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 6vw, 6rem);
   scroll-margin-top: var(--nav-height);
 }
 
@@ -103,7 +100,6 @@ section {
   min-height: calc(100vh - var(--nav-height));
   background: var(--orange);
   color: white;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -137,7 +133,7 @@ section {
 }
 
 /* =========================================================
-   CANADIAN GROCERY CRISIS (SCALED)
+   CANADIAN GROCERY CRISIS
    ========================================================= */
 .crisis-scale {
   text-align: center;
@@ -212,46 +208,22 @@ section {
 }
 
 /* =========================================================
-   SCROLL SNAP (HERO → CRISIS ONLY)
+   SCROLL SNAP
    ========================================================= */
 @media (min-width: 768px) {
-  html,
-  body {
+  html, body {
     height: 100%;
     scroll-snap-type: y proximity;
   }
 
-  .hero,
-  .crisis-scale {
+  .hero, .crisis-scale {
     scroll-snap-align: start;
   }
 }
 
 /* =========================================================
-   DARK MODE — CRISIS ONLY
+   CRISIS CTA
    ========================================================= */
-@media (prefers-color-scheme: dark) {
-  body {
-    background: var(--bg-dark);
-    color: var(--text-dark);
-  }
-
-  .crisis-scale {
-    background: var(--bg-dark);
-  }
-
-  .crisis-card {
-    background: var(--card-bg-dark);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  }
-
-  .crisis-intro,
-  .crisis-desc {
-    opacity: 0.85;
-  }
-}
-
-/* Crisis CTAs */
 .crisis-cta-group {
   margin-top: 5rem;
   display: flex;
@@ -267,11 +239,9 @@ section {
   border-radius: 32px;
   text-decoration: none;
   font-weight: 600;
-
   background: var(--blue);
   color: #fff;
   border: none;
-
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -282,20 +252,10 @@ section {
 }
 
 /* =========================================================
-   FOOTER
-   ========================================================= */
-footer {
-  text-align: center;
-  padding: 3rem;
-  font-size: 0.875rem;
-  color: #666;
-}
-
-/* =========================================================
-   ISTACK + ADVANTAGE SECTIONS
+   iSTACK + MOAT
    ========================================================= */
 .iStack {
-  background-color: var(--bg);
+  background: var(--bg);
   padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 6vw, 6rem);
   text-align: center;
 }
@@ -305,13 +265,11 @@ footer {
   margin: 0 auto 4rem auto;
   font-size: 1.1rem;
   color: var(--text);
-  text-align: center;
 }
 
-/* iStack + Moat system */
 .istack-moat-system {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 2px minmax(0, 1fr);
+  grid-template-columns: minmax(0,1fr) 2px minmax(0,1fr);
   gap: 6rem;
   align-items: start;
   max-width: 1400px;
@@ -325,10 +283,10 @@ footer {
   border-radius: 1px;
 }
 
-/* iStack grid cards */
+/* iStack Cards */
 .istack-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
   gap: 2.5rem;
 }
 
@@ -340,6 +298,7 @@ footer {
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0,0,0,0.12);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: pointer;
 }
 
 .istack-card:hover {
@@ -352,7 +311,6 @@ footer {
   z-index: 2;
   font-size: 1.35rem;
   font-weight: 600;
-  cursor: pointer;
 }
 
 .istack-card__desc {
@@ -361,7 +319,6 @@ footer {
   color: var(--text);
 }
 
-/* Overlay with slide-up & unified hover */
 .istack-card__overlay {
   position: absolute;
   inset: 0;
@@ -374,25 +331,23 @@ footer {
   text-align: center;
   font-size: 1rem;
   opacity: 0;
-  pointer-events: none; 
+  pointer-events: none;
   transform: translateY(20px);
-  transition: opacity 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
-  z-index: 2;
+  transition: opacity 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+  z-index: 10;
+  border-radius: 18px;
 }
 
 .istack-card:hover .istack-card__overlay,
 .istack-card__title:hover + .istack-card__overlay {
   opacity: 1;
+  pointer-events: auto;
   transform: translateY(0);
   box-shadow: 0 18px 40px rgba(0,0,0,0.16);
 }
 
 /* Vertical iStack */
-.istack-vertical {
-  display: flex;
-  flex-direction: column;
-  gap: 3.5rem;
-}
+.istack-vertical { display: flex; flex-direction: column; gap: 3.5rem; }
 
 .istack-vertical__item {
   position: relative;
@@ -410,284 +365,73 @@ footer {
   background: var(--orange);
 }
 
-.istack-vertical__title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 0.6rem;
-  cursor: pointer;
-}
-
-.istack-vertical__desc {
-  font-size: 0.95rem;
-  color: var(--muted);
-  line-height: 1.5;
-}
+.istack-vertical__title { font-size:1.1rem; font-weight:600; margin-bottom:0.6rem; }
+.istack-vertical__desc { font-size:0.95rem; color:var(--muted); line-height:1.5; }
 
 /* Moat */
-.moat {
-  display: flex;
-  flex-direction: column;
-  gap: 3.5rem;
-}
-
-.moat-item {
-  padding-left: 2.5rem;
-  position: relative;
-}
-
-.moat-item::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.4rem;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--blue);
-}
-
-.moat-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 0.6rem;
-  cursor: pointer;
-}
-
-.moat-desc {
-  font-size: 0.95rem;
-  color: var(--muted);
-  line-height: 1.5;
-}
+.moat { display:flex; flex-direction:column; gap:3.5rem; }
+.moat-item { position:relative; padding-left:2.5rem; }
+.moat-item::before { content:""; position:absolute; left:0; top:0.4rem; width:10px; height:10px; border-radius:50%; background:var(--blue);}
+.moat-title { font-size:1.1rem; font-weight:600; margin-bottom:0.6rem; }
+.moat-desc { font-size:0.95rem; color:var(--muted); line-height:1.5; }
 
 /* =========================================================
-   ADVANTAGE SECTION — STACKED CARDS
+   ADVANTAGE
    ========================================================= */
-.advantage-system {
-  display: flex;
-  flex-direction: column; /* stack columns vertically on smaller screens */
-  gap: 4rem;
-  justify-content: center;
-  align-items: center;
-  max-width: 1400px;
-  margin: auto;
-}
-
-.advantage-column {
-  width: 100%; /* make each column full-width */
-}
-
-.advantage-grid {
-  display: flex;
-  flex-direction: row;      /* side by side on desktop */
-  flex-wrap: wrap;          /* wrap on smaller screens */
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.advantage-card {
-  position: relative;
-  background: var(--card-bg);
-  border-radius: 1rem;
-  padding: 1.5rem 1rem;
-  text-align: center;
-  cursor: pointer;
-  overflow: hidden;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  width: 100%;
-}
-
-.advantage-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.16);
-}
-
-.advantage-card__title {
-  position: relative;
-  z-index: 2;
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.advantage-card__overlay {
-  position: absolute;
-  inset: 0;
-  padding: 1rem;
-  background: rgba(0,0,0,0.85);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 0.95rem;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
-  z-index: 2;
-}
-
+.advantage-system { display:flex; flex-direction:column; gap:4rem; max-width:1400px; margin:auto; align-items:center; justify-content:center; }
+.advantage-column { width:100%; }
+.advantage-grid { display:flex; flex-wrap:wrap; gap:1.5rem; margin-top:2rem; }
+.advantage-card { flex:1 1 300px; max-width:100%; position:relative; background:var(--card-bg); border-radius:1rem; padding:1.5rem 1rem; text-align:center; cursor:pointer; overflow:hidden; transition:transform 0.35s ease, box-shadow 0.35s ease; }
+.advantage-card:hover { transform:translateY(-10px); box-shadow:0 18px 40px rgba(0,0,0,0.16); }
+.advantage-card__overlay { position:absolute; inset:0; padding:1rem; background:rgba(0,0,0,0.85); color:#fff; display:flex; align-items:center; justify-content:center; text-align:center; font-size:0.95rem; opacity:0; transform:translateY(20px); transition:opacity 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease; z-index:2; }
 .advantage-card:hover .advantage-card__overlay,
-.advantage-card__title:hover + .advantage-card__overlay {
-  opacity: 1;
-  transform: translateY(0);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.16);
-}
-
-/* Responsive tweaks for vertical stacking */
-@media (max-width: 900px) {
-  .advantage-system {
-    flex-direction: column;
-    gap: 3rem;
-  }
-
-  .advantage-column {
-    width: 100%;
-  }
-
-  .advantage-grid {
-    flex-direction: row;
-    gap: 1.5rem;
-  }
-}
-
-.advantage-card {
-  flex: 1 1 300px; /* grow, shrink, min-width 300px */
-  max-width: 100%;
-}
+.advantage-card__title:hover + .advantage-card__overlay { opacity:1; transform:translateY(0); box-shadow:0 18px 40px rgba(0,0,0,0.16);}
+.advantage-card__title { font-family:'Playfair Display', serif; font-weight:600; position:relative; z-index:2; }
 
 /* =========================================================
-   FOOTER
+   ALBERTA — Animated Numbers
    ========================================================= */
-footer {
-  text-align: center;
-  padding: 3rem;
-  font-size: 0.875rem;
-  color: #666;
+.alberta { text-align:center; padding:clamp(4rem,8vw,8rem) clamp(1.5rem,6vw,6rem); }
+.alberta h1, .alberta h2 { font-family:'Playfair Display', serif; margin-bottom:1rem; }
+
+.interactive-text {
+  display:inline-block;
+  font-size:2rem;
+  font-weight:600;
+  color:var(--orange);
+  margin:0 1rem;
+  transition:transform 0.35s ease, color 0.35s ease;
+}
+
+.interactive-text::after {
+  content:"";
+  display:block;
+  height:3px;
+  background:var(--orange);
+  transform:scaleX(0);
+  transition:transform 0.3s ease;
+  transform-origin:left;
+}
+
+.interactive-text:hover::after { transform:scaleX(1); }
+
+/* Animated counter numbers */
+@keyframes countUp {
+  from { counter-increment: num 0; }
+  to { counter-increment: num var(--target); }
 }
 
 /* =========================================================
    DARK MODE
    ========================================================= */
 @media (prefers-color-scheme: dark) {
-  body {
-    background: var(--bg-dark);
-    color: var(--text-dark);
-  }
-
-  .crisis-scale,
-  .iStack,
-  .advantage-system {
-    background: var(--bg-dark);
-  }
-
-  .crisis-card,
-  .istack-card,
-  .advantage-card {
-    background: var(--card-bg-dark);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  }
-
-  .crisis-intro,
-  .crisis-desc,
-  .solution-intro,
-  .istack-card__desc,
-  .istack-vertical__desc,
-  .moat-desc,
-  .advantage-card__overlay {
-    opacity: 0.85;
-  }
-}
-
-body, h1, h2, h3, h4, h5, h6, p, a, li, span {
-  font-family: 'Playfair Display', serif;
-}
-
-
-/* =========================================================
-   iSTACK — Hover Overlay Fix (Text Visible + Crisis-style Hover)
-   ========================================================= */
-.istack-card {
-  position: relative;
-  padding: 2.5rem;
-  border-radius: 18px;
-  background: var(--card-bg);
-  overflow: hidden;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.istack-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.16);
-}
-
-.istack-card__overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 1rem;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
-  z-index: 2;
-}
-
-.istack-card:hover .istack-card__overlay,
-.istack-card__title:hover + .istack-card__overlay {
-  opacity: 1;
-  transform: translateY(0);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.16);
+  body { background:var(--bg-dark); color:var(--text-dark); }
+  .crisis-scale, .iStack, .advantage-system { background:var(--bg-dark); }
+  .crisis-card, .istack-card, .advantage-card { background:var(--card-bg-dark); box-shadow:0 10px 30px rgba(0,0,0,0.5); }
+  .crisis-intro, .crisis-desc, .solution-intro, .istack-card__desc, .istack-vertical__desc, .moat-desc, .advantage-card__overlay { opacity:0.85; }
 }
 
 /* =========================================================
-   ALBERTA SECTION — Animated Numbers
+   TYPOGRAPHY
    ========================================================= */
-.alberta {
-  text-align: center;
-  padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 6vw, 6rem);
-}
-
-.alberta h1, .alberta h2 {
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 1rem;
-}
-
-.interactive-text {
-  display: inline-block;
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--orange);
-  margin: 0 1rem;
-  transition: transform 0.35s ease, color 0.35s ease;
-}
-
-.interactive-text::after {
-  content: "";
-  display: block;
-  height: 3px;
-  background: var(--orange);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-  transform-origin: left;
-}
-
-.interactive-text:hover::after {
-  transform: scaleX(1);
-}
-
-section h1,
-section h2 {
-section h3 {
-section h4 {
-section h5 { 
-   text-align: center;
-  margin-bottom: 1rem;
-}
-
-.advantage-scale {
-  text-align: center;
-}   
+body,h1,h2,h3,h4,h5,h6,p,a,li,span { font-family:'Playfair Display', serif; }
