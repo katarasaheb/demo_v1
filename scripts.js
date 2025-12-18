@@ -229,20 +229,25 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ===============================
      ALBERTA SECTION — ANIMATED NUMBERS
   =============================== */
-  const interactiveCounters = document.querySelectorAll(".interactive-text");
-  const animateCounter = counter => {
-    const target = +counter.dataset.target;
-    let current = 0;
-    const increment = Math.ceil(target / 100);
+const animateCounter = counter => {
+  const target = +counter.dataset.target;
+  let current = 0;
+  const increment = Math.ceil(target / 100);
 
-    const update = () => {
-      current += increment;
-      if (current > target) current = target;
-      counter.textContent = current.toLocaleString();
-      if (current < target) requestAnimationFrame(update);
-    };
-    update();
+  // detect prefix/suffix outside the span
+  const parent = counter.parentElement;
+  const prefix = parent.textContent.replace(counter.textContent, "").replace(/\d|,/g, "");
+  const suffix = parent.textContent.includes("+") ? "+" : parent.textContent.includes("B") ? "B" : "";
+
+  const update = () => {
+    current += increment;
+    if (current > target) current = target;
+    counter.textContent = current.toLocaleString();
+    parent.textContent = prefix + counter.textContent + suffix;
+    if (current < target) requestAnimationFrame(update);
   };
+  update();
+};
 
   const counterSectionObserver = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
