@@ -561,3 +561,104 @@ h3 {
   line-height: inherit;
   text-align: inherit;
 }
+
+/* =========================================================
+   JOIN / CONTACT SECTION
+   ========================================================= */
+
+.join {
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.02),
+    rgba(0,0,0,0.04)
+  );
+  text-align: center;
+}
+
+.join-header {
+  max-width: 900px;
+  margin: 0 auto 3.5rem;
+}
+
+.join-subtitle {
+  font-size: 1.15rem;
+  opacity: 0.85;
+  max-width: 720px;
+  margin: 1.5rem auto 0;
+}
+
+/* Card container */
+.join-card {
+  max-width: 760px;
+  margin: 0 auto;
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: clamp(2.5rem, 5vw, 3.5rem);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.14);
+}
+
+/* Grid for inputs */
+.join-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Inputs */
+.join input,
+.join select,
+.join textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.12);
+  font-family: inherit;
+  font-size: 1rem;
+  background: transparent;
+  transition: border 0.25s ease, box-shadow 0.25s ease;
+}
+
+.join textarea {
+  margin-top: 1rem;
+  resize: vertical;
+}
+
+.join input:focus,
+.join select:focus,
+.join textarea:focus {
+  outline: none;
+  border-color: var(--orange);
+  box-shadow: 0 0 0 2px rgba(236,94,39,0.15);
+}
+
+/* Button */
+.join-btn {
+  margin-top: 2.5rem;
+  width: 100%;
+  font-size: 1.05rem;
+  padding: 1rem 2.6rem;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .join {
+    background: linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.02),
+      rgba(255,255,255,0.04)
+    );
+  }
+
+  .join-card {
+    background: var(--card-bg-dark);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.5);
+  }
+
+  .join input,
+  .join select,
+  .join textarea {
+    border-color: rgba(255,255,255,0.18);
+    color: var(--text-dark);
+  }
+}
