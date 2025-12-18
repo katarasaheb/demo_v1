@@ -476,8 +476,9 @@ footer {
 }
 
 .advantage-grid {
-  display: flex; /* switch from grid to flex for vertical stacking */
-  flex-direction: column;
+  display: flex;
+  flex-direction: row;      /* side by side on desktop */
+  flex-wrap: wrap;          /* wrap on smaller screens */
   gap: 1.5rem;
   margin-top: 2rem;
 }
@@ -548,6 +549,10 @@ footer {
   }
 }
 
+.advantage-card {
+  flex: 1 1 300px; /* grow, shrink, min-width 300px */
+  max-width: 100%;
+}
 
 /* =========================================================
    FOOTER
