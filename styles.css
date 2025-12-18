@@ -489,3 +489,36 @@ body,h1,h2,h3,h4,h5,h6,p,a,li,span { font-family:'Playfair Display', serif; }
   margin-bottom: 1rem;
   line-height: 1.1;
 }
+
+ .istack-scale {
+  text-align: center;
+}
+
+.istack-scale h1 {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+
+ .advantage-scale {
+  text-align: center;
+}
+
+.advantage-scale h1 {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+
+ .Join-scale {
+  text-align: center;
+}
+
+.Join-scale h1 {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
