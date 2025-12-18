@@ -322,3 +322,38 @@ window.addEventListener("wheel", (e) => {
     isLocked = false;
   }, 900);
 });
+
+// =========================================================
+// ALBERTA SECTION — Animated Numbers on Scroll
+// =========================================================
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll(".interactive-text");
+
+  const animateCounter = (counter) => {
+    const target = +counter.getAttribute("data-target");
+    let current = 0;
+    const increment = Math.ceil(target / 100); // 100 steps for smooth animation
+
+    const updateCounter = () => {
+      current += increment;
+      if (current > target) current = target;
+      counter.textContent = current.toLocaleString();
+      if (current < target) {
+        requestAnimationFrame(updateCounter);
+      }
+    };
+
+    updateCounter();
+  };
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        obs.unobserve(entry.target); // animate only once
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(counter => observer.observe(counter));
+});
