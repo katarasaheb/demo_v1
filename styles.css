@@ -544,7 +544,7 @@ footer {
   }
 
   .advantage-grid {
-    flex-direction: column;
+    flex-direction: row;
     gap: 1.5rem;
   }
 }
