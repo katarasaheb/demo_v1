@@ -554,14 +554,6 @@ h3 {
   text-align: center;
 }
 
-/* Optional: Ensure Alberta section titles follow same sizing */
-.alberta h1, .alberta h2, .alberta h3 {
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
-  text-align: inherit;
-}
-
 /* =========================================================
    JOIN / CONTACT SECTION
    ========================================================= */
