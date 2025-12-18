@@ -261,20 +261,21 @@ const animateCounter = counter => {
 });
 
 /* ===============================
-   ALBERTA COUNTERS
+   ALBERTA COUNTERS WITH SUFFIX
 =============================== */
 const albertaCounters = document.querySelectorAll(".alberta-counter");
 
 const animateAlbertaCounter = (counter) => {
   const target = +counter.dataset.target;
+  const suffix = counter.dataset.suffix || "";
   let current = 0;
   const duration = 2000; // 2 seconds
-  const stepTime = Math.max(20, duration / target); // step time in ms
+  const stepTime = Math.max(20, duration / target);
 
   const update = () => {
     current += Math.ceil(target / (duration / stepTime));
     if (current > target) current = target;
-    counter.textContent = current.toLocaleString();
+    counter.textContent = current.toLocaleString() + suffix;
     if (current < target) {
       requestAnimationFrame(update);
     }
