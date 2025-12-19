@@ -797,3 +797,26 @@ h3 {
     color: var(--text-dark);
   }
 }
+
+.center-line {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 720px; /* keeps it elegant, not stretched */
+}
+
+/* Customer / Investor one-liners */
+.advantage-column p,
+.join-subtitle,
+.solution-intro {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Footer copyright */
+footer,
+footer p {
+  text-align: center;
+}
+
