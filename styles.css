@@ -822,7 +822,7 @@ footer p {
 
 @media (min-width: 1024px) {
   html, body {
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
   }
 
   section {
