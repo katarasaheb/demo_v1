@@ -865,3 +865,33 @@ p {
   height: 1px;
   background: rgba(0,0,0,0.15);
 }
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+@media (max-width: 768px) {
+  .nav {
+    padding: 0 1.25rem;
+  }
+
+  .nav-menu {
+    display: none; /* JS will toggle later */
+  }
+}
+@media (max-width: 1024px) {
+  .istack-moat-system {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .system-spine {
+    display: none;
+  }
+}
