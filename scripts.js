@@ -1,41 +1,87 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ===============================
-     STICKY NAV (TESLA-LIKE RESTRAINT)
-  =============================== */
+  /* =====================================================
+     GLOBAL SAFETY FLAGS
+     ===================================================== */
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  const supportsIO = "IntersectionObserver" in window;
+
+  /* =====================================================
+     STICKY NAV (SMOOTH, BATTERY-SAFE)
+     ===================================================== */
   const nav = document.querySelector(".nav");
   if (nav) {
-    window.addEventListener("scroll", () => {
-      nav.classList.toggle("scrolled", window.scrollY > 40);
-    });
+    let lastScroll = 0;
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (Math.abs(window.scrollY - lastScroll) < 5) return;
+        nav.classList.toggle("scrolled", window.scrollY > 40);
+        lastScroll = window.scrollY;
+      },
+      { passive: true }
+    );
   }
 
-  /* ===============================
+  /* =====================================================
+     INTERSECTION OBSERVER FALLBACK (SAFETY NET)
+     ===================================================== */
+  if (!supportsIO) {
+    document.querySelectorAll(".fade-in").forEach(el =>
+      el.classList.add("visible")
+    );
+
+    document
+      .querySelectorAll(".crisis-number, .alberta-counter")
+      .forEach(el => {
+        const value =
+          el.dataset.count || el.dataset.target || "";
+        el.textContent = value.toLocaleString();
+      });
+
+    return;
+  }
+
+  /* =====================================================
      FADE-IN OBSERVER (APPLE POLISH)
-  =============================== */
+     ===================================================== */
   const fadeObserver = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
+        if (!entry.isIntersecting) return;
+
+        if (prefersReducedMotion) {
+          entry.target.classList.add("visible");
+        } else {
           setTimeout(() => {
             entry.target.classList.add("visible");
           }, 120); // intentional Apple delay
-          fadeObserver.unobserve(entry.target);
         }
+
+        fadeObserver.unobserve(entry.target);
       });
     },
     { threshold: 0.18 }
   );
 
-  document.querySelectorAll(".fade-in").forEach(el =>
-    fadeObserver.observe(el)
-  );
+  if (!prefersReducedMotion) {
+    document.querySelectorAll(".fade-in").forEach(el =>
+      fadeObserver.observe(el)
+    );
+  } else {
+    document.querySelectorAll(".fade-in").forEach(el =>
+      el.classList.add("visible")
+    );
+  }
 
-  /* ===============================
-     CRISIS COUNTERS (EASED)
-  =============================== */
+  /* =====================================================
+     CRISIS COUNTERS (EASED, SAFARI-SAFE)
+     ===================================================== */
   const crisisCounters = document.querySelectorAll(".crisis-number");
-
   const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
 
   const animateCount = el => {
@@ -46,11 +92,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const tick = now => {
       const progress = Math.min((now - start) / duration, 1);
-      el.textContent =
-        Math.floor(easeOutCubic(progress) * target).toLocaleString() + suffix;
+      const value = Math.floor(easeOutCubic(progress) * target);
+      el.textContent = value + suffix;
 
-      if (progress < 1) requestAnimationFrame(tick);
-      else el.textContent = target.toLocaleString() + suffix;
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        el.textContent = target.toLocaleString() + suffix;
+      }
     };
 
     requestAnimationFrame(tick);
@@ -60,10 +109,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const counterObserver = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) {
+          if (!entry.isIntersecting) return;
+
+          if (prefersReducedMotion) {
+            entry.target.textContent =
+              entry.target.dataset.count?.toLocaleString() || "";
+          } else {
             animateCount(entry.target);
-            counterObserver.unobserve(entry.target);
           }
+
+          counterObserver.unobserve(entry.target);
         });
       },
       { threshold: 0.6 }
@@ -72,22 +127,19 @@ document.addEventListener("DOMContentLoaded", () => {
     crisisCounters.forEach(c => counterObserver.observe(c));
   }
 
-  /* ===============================
+  /* =====================================================
      iSTACK CARDS — CLEAN OVERLAY ONLY
-     (NO FLOATING TOOLTIPS)
-  =============================== */
+     ===================================================== */
   document.querySelectorAll(".istack-card").forEach(card => {
     const overlay = card.querySelector(".istack-card__overlay");
     const desc = card.dataset.desc;
-
-    if (overlay && desc) {
-      overlay.innerHTML = `<p>${desc}</p>`;
-    }
+    if (!overlay || !desc) return;
+    overlay.innerHTML = `<p>${desc}</p>`;
   });
 
-  /* ===============================
-     ALBERTA COUNTERS (SUFFIX-AWARE)
-  =============================== */
+  /* =====================================================
+     ALBERTA COUNTERS (SUFFIX-AWARE, SAFE)
+     ===================================================== */
   const albertaCounters = document.querySelectorAll(".alberta-counter");
 
   const animateAlbertaCounter = counter => {
@@ -99,10 +151,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const tick = now => {
       const progress = Math.min((now - start) / duration, 1);
       const value = Math.floor(progress * target);
-      counter.textContent = value.toLocaleString() + suffix;
+      counter.textContent = value + suffix;
 
-      if (progress < 1) requestAnimationFrame(tick);
-      else counter.textContent = target.toLocaleString() + suffix;
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        counter.textContent = target.toLocaleString() + suffix;
+      }
     };
 
     requestAnimationFrame(tick);
@@ -112,10 +167,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const albertaObserver = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) {
+          if (!entry.isIntersecting) return;
+
+          if (prefersReducedMotion) {
+            entry.target.textContent =
+              entry.target.dataset.target?.toLocaleString() || "";
+          } else {
             animateAlbertaCounter(entry.target);
-            albertaObserver.unobserve(entry.target);
           }
+
+          albertaObserver.unobserve(entry.target);
         });
       },
       { threshold: 0.5 }
