@@ -1,381 +1,387 @@
-/* =========================================================
-   KITCHIN — MASTER STYLESHEET (TESLA-SMOOTH)
-   Plug-and-play replacement
-   ========================================================= */
+<!DOCTYPE html>
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+<meta name="description" content="Kitchin — Rebuilding grocery from first principles. Fresh, Transparent, Scalable Grocery Solutions"> 
+<title>Kitchin — Rebuilding Grocery from First Principles</title>
 
-/* =========================================================
-   ROOT TOKENS
-   ========================================================= */
-:root {
-  --orange: #EC5E27;
-  --blue: #002E50;
+<!-- Typography --> 
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" href="styles.css">
+</head> 
 
-  --bg: #F8F8F7;
-  --bg-dark: #0f0f10;
+<body> 
 
-  --text: #1D1D1F;
-  --text-dark: #f2f2f2;
+<header class="nav" aria-label="Main navigation">
+  <div class="nav-logo fade-in">kitchin</div> 
+  <nav class="nav-menu"> 
+    <a href="#problem" class="fade-in">The Canadian Grocery Crisis</a> 
+    <a href="#solution" class="fade-in">The iStack</a>
+    <a href="#advantage" class="fade-in">Advantage</a> 
+    <a href="#alberta" class="fade-in">Alberta</a> 
+    <a href="#contact" class="nav-cta fade-in">Join</a>
+  </nav> 
+</header>
 
-  --card-bg: #ffffff;
-  --card-bg-dark: #1a1a1c;
+<!-- HERO -->
+<section class="hero">
+  <div class="fade-in">
+    <h1>Rebuilding Grocery<br>from First Principles</h1>
+    <p class="hero-sub">Fresh • Transparent • Scalable • Sustainable</p>
+    <a href="#contact" class="primary-btn">Join the Grocery Revolution</a>
+  </div>
+</section>
 
-  --muted: #6e6e73;
-  --nav-height: 88px;
+<!-- PROBLEM -->
+<section id="problem" class="crisis-scale">
+  <div class="section-content">
+    <h1 class="fade-in">The Canadian Grocery Crisis</h1>
+    <p class="crisis-intro fade-in">
+      Canada’s grocery system is structurally broken — concentrated power,
+      inefficient logistics, and compounding costs affect every household.
+    </p>
 
-  /* Tesla-style motion */
-  --motion: cubic-bezier(0.22, 1, 0.36, 1);
-  --motion-fast: 0.35s;
-  --motion-medium: 0.55s;
+    <div class="crisis-grid">
+      <div class="crisis-card fade-in">
+        <div class="crisis-number" data-count="75" data-suffix="%">0</div>
+        <div class="crisis-title">Market Control</div>
+        <div class="crisis-desc">Controlled by a handful of retailers.</div>
+      </div>
+      <div class="crisis-card fade-in">
+        <div class="crisis-number" data-count="7" data-suffix="B+">$0</div>
+        <div class="crisis-title">Food Waste</div>
+        <div class="crisis-desc">Lost annually due to inefficiencies.</div>
+      </div>
+      <div class="crisis-card fade-in">
+        <div class="crisis-number" data-count="90" data-suffix="%">0</div>
+        <div class="crisis-title">Food Insecurity Rise</div>
+        <div class="crisis-desc">Increase since 2019.</div>
+      </div>
+      <div class="crisis-card fade-in">
+        <div class="crisis-number" data-count="2" data-suffix="M">0</div>
+        <div class="crisis-title">Monthly Food Bank Visits</div>
+        <div class="crisis-desc">A national alarm signal.</div>
+      </div>
+    </div>
 
-  /* Shadow system */
-  --shadow-soft: 0 12px 40px rgba(0,0,0,0.10);
-  --shadow-hover: 0 20px 60px rgba(0,0,0,0.14);
-}
+    <div class="crisis-cta-group fade-in">
+      <a href="https://competition-bureau.canada.ca/sites/default/files/attachments/2023/CB-Retail-Grocery-Market-Study-Report-EN-2023-06-23.pdf" target="_blank" rel="noopener" class="primary-btn">
+        Competition Bureau Report →
+      </a>
+      <a href="images/Food Bank Reports 2025.pdf" target="_blank" rel="noopener" class="primary-btn">
+        Food Bank Canada Report →
+      </a>
+    </div>
+  </div>
+</section>
 
-/* =========================================================
-   RESET
-   ========================================================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-html { scroll-behavior: smooth; }
+<!-- ISTACK -->
+<section id="solution" class="iStack">
+  <div class="section-content">
 
-body {
-  font-family: "Playfair Display", serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-}
+    <h1 class="fade-in">The Kitchin Model</h1>
+    <p class="solution-intro fade-in">
+      Kitchin is a living, learning ecosystem built on layers of intelligence, infrastructure, and operational precision.
+    </p>
 
-/* =========================================================
-   GLOBAL TYPOGRAPHY (SINGLE SOURCE)
-   ========================================================= */
-body,h1,h2,h3,h4,h5,h6,p,a,li,span {
-  font-family: "Playfair Display", serif;
-}
+    <div class="istack-moat-system fade-in">
 
-h1 {
-  font-size: clamp(3rem, 6vw, 5.5rem);
-  font-weight: 700;
-  line-height: 1.1;
-  text-align: center;
-  margin-bottom: 2rem;
-}
+      <!-- LEFT: iStack -->
+      <div class="istack-column">
+        <div class="istack-intro">
+          <h2 class="fade-in">The iStack</h1>
+          <p>5 interlocking layers that flow into one another. Our Smart Grocery System integrates every layer of grocery operations.</p>
+        </div>
+        <div class="istack-grid fade-in">
+          <div class="istack-card" data-desc="Real-time inventory intelligence and automated micro-milling.">
+            <h3 class="istack-card__title">iGranary</h3>
+            <div class="istack-card__overlay">
+              <p class="istack-card__desc">Real-time inventory intelligence and automated micro-milling.</p>
+            </div>
+          </div>
+          <div class="istack-card" data-desc="Predictive routing and real-time orchestration of deliveries.">
+            <h3 class="istack-card__title">iLogistics</h3>
+            <div class="istack-card__overlay">
+              <p class="istack-card__desc">Predictive routing and real-time orchestration of deliveries.</p>
+            </div>
+          </div>
+          <div class="istack-card" data-desc="Controlled indoor farms synchronized with demand forecasts.">
+            <h3 class="istack-card__title">iHydroponics</h3>
+            <div class="istack-card__overlay">
+              <p class="istack-card__desc">Controlled indoor farms synchronized with demand forecasts.</p>
+            </div>
+          </div>
+          <div class="istack-card" data-desc="End-to-end automated baking, triggered by demand.">
+            <h3 class="istack-card__title">iBakery</h3>
+            <div class="istack-card__overlay">
+              <p class="istack-card__desc">End-to-end automated baking, triggered by demand.</p>
+            </div>
+          </div>
+          <div class="istack-card" data-desc="Content and insight engine powering feedback loops.">
+            <h3 class="istack-card__title">iStudio</h3>
+            <div class="istack-card__overlay">
+              <p class="istack-card__desc">Content and insight engine powering feedback loops.</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-h2 {
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
-  font-weight: 600;
-  line-height: 1.2;
-  text-align: center;
-  margin-bottom: 1.4rem;
-}
+      <!-- CENTER DATA SPINE -->
+      <div class="system-spine"></div>
 
-h3 {
-  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-  font-weight: 500;
-  line-height: 1.4;
-  text-align: center;
-}
+      <!-- RIGHT: Moat -->
+      <div class="moat-column">
+        <div class="istack-intro">
+          <h2 class="fade-in">Our Moat</h1>
+          <p>Our moat is not a single feature — it is the compounding intelligence that emerges when every layer operates as one system.</p>
+        </div>
+        <div class="istack-grid fade-in">
+          <div class="istack-card" data-desc="The AI brain coordinating all layers in real time.">
+            <h3 class="istack-card__title">Smart Grocery Engine</h3>
+            <div class="istack-card__overlay">
+              <p class="istack-card__desc">The AI brain coordinating all layers in real time.</p>
+            </div>
+          </div>
+          <div class="istack-card" data-desc="Anticipates SKU-level consumption patterns.">
+            <h3 class="istack-card__title">Demand Forecasting</h3>
+            <div class="istack-card__overlay">
+              <p class="istack-card__desc">Anticipates SKU-level consumption patterns.</p>
+            </div>
+          </div>
+          <div class="istack-card" data-desc="Monitors stock, expiry, and triggers restocking automatically.">
+            <h3 class="istack-card__title">Inventory Intelligence</h3>
+            <div class="istack-card__overlay">
+              <p class="istack-card__desc">Monitors stock, expiry, and triggers restocking automatically.</p>
+            </div>
+          </div>
+          <div class="istack-card" data-desc="Dynamically orchestrates deliveries to minimize distance and emissions.">
+            <h3 class="istack-card__title">Route Optimization</h3>
+            <div class="istack-card__overlay">
+              <p class="istack-card__desc">Dynamically orchestrates deliveries to minimize distance and emissions.</p>
+            </div>
+          </div>
+          <div class="istack-card" data-desc="Tracks excess, redistributes inventory, and minimizes spoilage.">
+            <h3 class="istack-card__title">Waste Reduction</h3>
+            <div class="istack-card__overlay">
+              <p class="istack-card__desc">Tracks excess, redistributes inventory, and minimizes spoilage.</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-p {
-  max-width: 720px;
-  margin-left: auto;
-  margin-right: auto;
-}
+    </div> <!-- end istack-moat-system -->
 
-/* =========================================================
-   NAVIGATION
-   ========================================================= */
-.nav {
-  position: sticky;
-  top: 0;
-  height: var(--nav-height);
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 clamp(1.5rem, 6vw, 6rem);
-  background: rgba(248,248,247,0.75);
-  backdrop-filter: blur(14px);
-  transition: box-shadow var(--motion-fast) var(--motion);
-}
+  </div>
+</section>
 
-.nav.scrolled {
-  box-shadow: var(--shadow-soft);
-}
+  
+<!-- ADVANTAGE --> 
+<section id="advantage" class="advantage">
+  <div class="section-content fade-in">
+    <h1 class="fade-in">The Kitchin Advantage</h1>
 
-.nav-logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-}
+    <div class="advantage-system fade-in">
+      
+      <!-- LEFT: Better for Customers -->
+      <div class="advantage-column">
+        <h2 class="section-title fade-in">Better for Customers</h2>
+        <p>Lower effective prices, fresher food, predictable availability.</p>
+        <div class="advantage-grid fade-in">
+          <div class="advantage-card" data-tooltip="Direct sourcing, minimal intermediaries">
+            <h3 class="advantage-card__title">FarmFresh</h3>
+            <div class="advantage-card__overlay">
+              <p>Direct sourcing, minimal intermediaries</p>
+            </div>
+          </div>
+          <div class="advantage-card" data-tooltip="Transparent pricing, not margin stacking">
+            <h3 class="advantage-card__title">DirectValue</h3>
+            <div class="advantage-card__overlay">
+              <p>Transparent pricing, not margin stacking</p>
+            </div>
+          </div>
+          <div class="advantage-card" data-tooltip="Demand-led logistics & fulfillment">
+            <h3 class="advantage-card__title">QuickShip</h3>
+            <div class="advantage-card__overlay">
+              <p>Demand-led logistics & fulfillment</p>
+            </div>
+          </div>
+          <div class="advantage-card" data-tooltip="Canadian-first, sustainability built in">
+            <h3 class="advantage-card__title">SustainaCan</h3>
+            <div class="advantage-card__overlay">
+              <p>Canadian-first, sustainability built in</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-.nav-menu a {
-  margin-left: 2rem;
-  text-decoration: none;
-  color: var(--text);
-}
+      <!-- CENTER SPINE (optional) -->
+      <div class="system-spine"></div>
 
-.nav-menu a:hover { color: var(--orange); }
+      <!-- RIGHT: Better for Investors -->
+      <div class="advantage-column">
+        <h2 class="section-title fade-in">Better for Investors</h2>
+        <p class="center-line">
+  Infrastructure economics, defensibility, and long-term systemic value.
+</p>
+        <div class="advantage-grid fade-in">
+          <div class="advantage-card" data-tooltip="Disrupting the Industry with Innovative Solutions">
+            <h3 class="advantage-card__title">TrailBlazer</h3>
+            <div class="advantage-card__overlay">
+              <p>Disrupting the Industry with Innovative Solutions</p>
+            </div>
+          </div>
+          <div class="advantage-card" data-tooltip="AI & Automation: Lean Operations, Strong Economics">
+            <h3 class="advantage-card__title">Scalative</h3>
+            <div class="advantage-card__overlay">
+              <p>AI & Automation: Lean Operations, Strong Economics</p>
+            </div>
+          </div>
+          <div class="advantage-card" data-tooltip="Scalable, Poised for Global Growth">
+            <h3 class="advantage-card__title">Pioneering</h3>
+            <div class="advantage-card__overlay">
+              <p>Scalable, Poised for Global Growth</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-.nav-cta {
-  color: var(--orange);
-  font-weight: 600;
-}
+    </div> <!-- end advantage-system -->
 
-/* =========================================================
-   SECTIONS
-   ========================================================= */
-section {
-  padding: clamp(5rem, 9vw, 9rem) clamp(1.5rem, 6vw, 6rem);
-  scroll-margin-top: var(--nav-height);
-}
+  </div>
+</section>
+  
 
-.section-content {
-  max-width: 1400px;
-  margin: auto;
-}
+<!-- ALBERTA -->
+<section id="alberta" class="alberta">
+  <div class="section-content">
+    <h1>Alberta -  The Launchpad</h1>
+    <h2>One Hub. Ten Cities. Over 2 Million Daily Servicable Plates Targeted</h2>
 
-/* =========================================================
-   HERO
-   ========================================================= */
-.hero {
-  min-height: calc(100vh - var(--nav-height));
-  background: var(--orange);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
+ <div class="alberta-grid">
+      <div class="alberta-card">
+        <div class="alberta-number">
+          <span class="alberta-counter" data-target="50" data-suffix="+">0</span>
+        </div>
+        <div class="alberta-title">Ubiquitous</div>
+        <div class="alberta-desc">Planned Dark Stores</div>
+      </div>
 
-.hero h1 { color: #fff; }
+      <div class="alberta-card">
+        <div class="alberta-number">
+          <span class="alberta-counter" data-target="5" data-suffix="M">0</span>
+        </div>
+        <div class="alberta-title">Scope</div>
+        <div class="alberta-desc">Resident Population</div>
+      </div>
 
-.hero-sub {
-  font-size: clamp(1.05rem, 2vw, 1.4rem);
-  margin-top: 1.5rem;
-  opacity: 0.95;
-}
+      <div class="alberta-card">
+        <div class="alberta-number">
+          <span class="alberta-counter" data-target="1" data-suffix="M+">0</span>
+        </div>
+        <div class="alberta-title">MeltingPot</div>
+        <div class="alberta-desc">Immigrants</div>
+      </div>
 
-.primary-btn {
-  margin-top: 3rem;
-  display: inline-block;
-  padding: 0.9rem 2.4rem;
-  background: var(--blue);
-  color: #fff;
-  text-decoration: none;
-  border-radius: 32px;
-  transition: transform var(--motion-fast) var(--motion);
-}
+      <div class="alberta-card">
+        <div class="alberta-number">
+          $<span class="alberta-counter" data-target="5" data-suffix="B">0</span>
+        </div>
+        <div class="alberta-title">Servicable Market</div>
+        <div class="alberta-desc">By 2030, 75% Tech-Savvy</div>
+      </div>
+    </div>
 
-.primary-btn:hover { transform: scale(1.05); }
+    <div class="crisis-cta-group" style="margin-top:3rem;">
+      <a href="images/Alberta Retail grocery sales 2015-2020.pdf" target="_blank" class="primary-btn">
+        Alberta Grocery Sales Report →
+      </a>
+    </div>
+  </div>
+</section>
 
-/* =========================================================
-   FADE-IN (ENTRY ONLY)
-   ========================================================= */
-.fade-in { opacity: 0; }
 
-.fade-in.visible {
-  animation: fadeUp 1.15s var(--motion) forwards;
-}
+<!-- CONTACT --> 
+<section id="contact" class="join-system">
+  <div class="section-content fade-in">
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
+    <div class="join-grid-system">
 
-/* GPU hinting (surgical) */
-.fade-in,
-.crisis-card,
-.istack-card,
-.advantage-card,
-.primary-btn {
-  will-change: transform, opacity;
-}
+      <!-- LEFT: Narrative -->
+      <div class="join-intent">
+        <h1>Build the Future of Grocery</h1>
 
-/* =========================================================
-   CRISIS
-   ========================================================= */
-.crisis-scale { text-align: center; }
+        <p class="join-lead">
+          Kitchin is being built by operators, technologists, investors, and partners
+          who believe grocery should be faster, fairer, and system-led.
+        </p>
 
-.crisis-intro {
-  margin: 0 auto 4rem;
-  font-size: 1.25rem;
-  opacity: 0.9;
-}
+        <div class="join-paths">
+          <div class="join-path">
+            <span></span>
+            <p>Early access to Alberta launch</p>
+          </div>
+          <div class="join-path">
+            <span></span>
+            <p>Investor & partner conversations</p>
+          </div>
+          <div class="join-path">
+            <span></span>
+            <p>Careers & builder network</p>
+          </div>
+        </div>
+      </div>
 
-.crisis-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: clamp(2rem, 4vw, 4rem);
-}
+      <!-- SPINE -->
+      <div class="join-spine"></div>
 
-.crisis-card {
-  background: var(--card-bg);
-  border-radius: 16px;
-  padding: 3rem 2.5rem;
-  box-shadow: var(--shadow-soft);
-  transition: transform var(--motion-medium) var(--motion),
-              box-shadow var(--motion-medium) var(--motion);
-}
+      <!-- RIGHT: Form -->
+      <div class="join-form">
+        <form
+          action="https://formsubmit.co/Varenyam@kitchinai.ca"
+          method="POST"
+          data-contact-form
+          aria-label="Join Kitchin"
+        >
+          <input type="hidden" name="_subject" value="New Kitchin Website Submission">
+          <input type="hidden" name="_captcha" value="false">
 
-@media (hover:hover) {
-  .crisis-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-hover);
-  }
-}
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="email" name="email" placeholder="Your email" required>
 
-.crisis-number {
-  font-size: clamp(3rem, 5vw, 4.5rem);
-  font-weight: 700;
-  color: var(--orange);
-}
+          <select name="interest" required>
+            <option value="">I’m here for…</option>
+            <option>Alberta Launch Updates</option>
+            <option>Investing</option>
+            <option>Partnership</option>
+            <option>Careers</option>
+          </select>
 
-.crisis-title {
-  margin-top: 1rem;
-  font-size: 1.35rem;
-  font-weight: 600;
-}
+          <textarea
+            name="message"
+            placeholder="Anything we should know?"
+            rows="4"
+          ></textarea>
 
-.crisis-desc {
-  margin-top: 1rem;
-  opacity: 0.85;
-}
+          <button type="submit" class="primary-btn">
+            Join Kitchin
+          </button>
+        </form>
+      </div>
 
-/* =========================================================
-   CTA GROUP
-   ========================================================= */
-.crisis-cta-group {
-  margin-top: 5rem;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
+    </div>
 
-.crisis-cta-group a {
-  padding: 0.9rem 2.4rem;
-  border-radius: 32px;
-  font-weight: 600;
-  background: var(--blue);
-  color: #fff;
-  text-decoration: none;
-  transition: transform var(--motion-fast) var(--motion),
-              box-shadow var(--motion-fast) var(--motion);
-}
+  </div>
+</section>
 
-.crisis-cta-group a:hover {
-  transform: scale(1.05);
-  box-shadow: var(--shadow-hover);
-}
+  
+<footer class="site-footer">
+  <p class="copyright">
+    © 2025 Kitchin Retail Solutions Inc. All rights reserved.
+  </p>
+</footer>
 
-/* =========================================================
-   iSTACK + MOAT (UNCHANGED BEHAVIOR)
-   ========================================================= */
-.iStack { text-align: center; }
-
-.istack-moat-system {
-  display: grid;
-  grid-template-columns: minmax(0,1fr) 2px minmax(0,1fr);
-  gap: 6rem;
-  max-width: 1400px;
-  margin: auto;
-}
-
-.system-spine {
-  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.18), transparent);
-}
-
-/* Cards */
-.istack-card {
-  background: var(--card-bg);
-  border-radius: 18px;
-  padding: 2.5rem;
-  box-shadow: var(--shadow-soft);
-  transition: transform var(--motion-medium) var(--motion),
-              box-shadow var(--motion-medium) var(--motion);
-}
-
-.istack-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-hover);
-}
-
-/* =========================================================
-   ADVANTAGE
-   ========================================================= */
-.advantage-system {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
-  align-items: center;
-}
-
-.advantage-card {
-  background: var(--card-bg);
-  border-radius: 1rem;
-  padding: 1.5rem 1rem;
-  box-shadow: var(--shadow-soft);
-  transition: transform var(--motion-medium) var(--motion),
-              box-shadow var(--motion-medium) var(--motion);
-}
-
-.advantage-card:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-hover);
-}
-
-/* =========================================================
-   JOIN
-   ========================================================= */
-.join { text-align: center; }
-
-.join-system {
-  position: relative;
-}
-
-.join-system::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  height: 1px;
-  background: rgba(0,0,0,0.15);
-}
-
-/* =========================================================
-   SCROLL SNAP (TESLA DISCIPLINE)
-   ========================================================= */
-@media (min-width: 1024px) {
-  html, body {
-    scroll-snap-type: y proximity;
-  }
-
-  .hero,
-  .crisis-scale,
-  .istack-scale {
-    scroll-snap-align: start;
-  }
-}
-
-/* =========================================================
-   DARK MODE
-   ========================================================= */
-@media (prefers-color-scheme: dark) {
-  body {
-    background: var(--bg-dark);
-    color: var(--text-dark);
-  }
-
-  .crisis-card,
-  .istack-card,
-  .advantage-card {
-    background: var(--card-bg-dark);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.5);
-  }
-}
+<script src="scripts.js"></script>
+</body>
+</html>
